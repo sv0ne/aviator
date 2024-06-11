@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-3.5.1.min.js"></script>
+	<script src="js/script.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	<header class="header">
+		<div class="header__panel">
+			<div class="logo">
+				<img src="img/logo.svg" width="94" height="24" alt="">
+				<svg class="w-16 ml-4"><use xlink:href="img/sprite/countries-flags-sprite.svg#armenia"/></svg>
+			</div>
+			<div class="header__nav">
+				<div class="popover">
+					<button class="btn-dropdown popover-trigger">
+						<span>Where to play</span>
+						<svg class="w-24 ml-8"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
+					</button>
+					<div class="popover-popup">
+						<div class="popover-popup__body whereToPlayList">
+							<a href="/update-page/#4rabet" class="whereToPlayList__item">
+								<span class="whereToPlayList__img">
+									<img src="img/4rabet.svg" loading="lazy" width="93" height="16" alt="">
+								</span>
+								<span class="bold">4RaBet</span>
+							</a>
+							<a href="/update-page/#1win" class="whereToPlayList__item">
+								<span class="whereToPlayList__img">
+									<img src="img/1win_2.svg" loading="lazy" width="52" height="21" alt="">
+								</span>
+								<span class="bold">1Win</span>
+							</a>
+							<a href="/update-page/#1win" class="whereToPlayList__item">
+								<span class="whereToPlayList__img">
+									<img src="img/parimatch.svg" loading="lazy" width="71" height="24" alt="">
+								</span>
+								<span class="bold">Parimatch</span>
+							</a>
+							<a href="/update-page/#1win" class="whereToPlayList__item">
+								<span class="whereToPlayList__img">
+									<img src="img/pinup.svg" loading="lazy" width="75.5" height="24" alt="">
+								</span>
+								<span class="bold">Pin-Up</span>
+							</a>
+							<a href="/update-page/#1win" class="whereToPlayList__item">
+								<span class="whereToPlayList__img">
+									<img src="img/mostbet.svg" loading="lazy" width="100" height="16" alt="">
+								</span>
+								<span class="bold">MostBet</span>
+							</a>
+							<a href="/update-page/#1win" class="whereToPlayList__item">
+								<span class="whereToPlayList__img">
+									<img src="img/dafabet.png" loading="lazy" width="100" height="24" alt="">
+								</span>
+								<span class="bold">Dafabet</span>
+							</a>
+							<a href="/update-page/#1win" class="whereToPlayList__item">
+								<span class="whereToPlayList__img">
+									<img src="img/becric.png" loading="lazy" width="48" height="24" alt="">
+								</span>
+								<span class="bold">Becric</span>
+							</a>
+							<a href="/update-page/#1win" class="whereToPlayList__item">
+								<span class="whereToPlayList__img">
+									<img src="img/odds96.svg" loading="lazy" width="93" height="24" alt="">
+								</span>
+								<span class="bold">Odds96</span>
+							</a>
+							<a href="/update-page/#1win" class="whereToPlayList__item">
+								<span class="whereToPlayList__img">
+									<img src="img/1xbet.svg" loading="lazy" width="88" height="20" alt="">
+								</span>
+								<span class="bold">1XBet</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="popover">
+					<button class="btn-dropdown popover-trigger">
+						<span>Live bonuses</span>
+						<svg class="w-24 ml-8"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
+					</button>
+					<div class="popover-popup">
+						<div class="popover-popup__body nlc-mb-16">
+							<p class="bold">Install the app and get bonuses</p>
+							<div class="cardApp cardApp_blue">
+								<div>
+									<img src="img/1win.svg" alt="">
+									<p class="text-small mt-4">Install the app and get 100$ bonuses</p>
+								</div>
+								<a href="" class="logoApp">
+									<svg width="20.5" height="24"><use xlink:href="img/sprite/icons-sprite.svg#apple"/></svg>
+								</a>
+								<a href="" class="logoApp">
+									<svg width="28" height="24"><use xlink:href="img/sprite/icons-sprite.svg#android"/></svg>
+								</a>
+							</div>
+							<div class="cardApp cardApp_gradient">
+								<div>
+									<img src="img/mostbet.svg" alt="">
+									<p class="text-small mt-4">Install the app and get 250FS + 100% first deposit bonuses</p>
+								</div>
+								<a href="" class="logoApp">
+									<svg width="20.5" height="24"><use xlink:href="img/sprite/icons-sprite.svg#apple"/></svg>
+								</a>
+								<a href="" class="logoApp">
+									<svg width="28" height="24"><use xlink:href="img/sprite/icons-sprite.svg#android"/></svg>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a href="/download-app" class="btn-dropdown">Download app</a>
+				<div class="popover">
+					<button class="btn-dropdown popover-trigger">
+						<span>More</span>
+						<svg class="w-24 ml-8"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
+					</button>
+					<div class="popover-popup">
+						<ul class="moreList popover-popup__body">
+							<li><a href="/about-us">About us</a></li>
+							<li><a href="/blog">Blog</a></li>
+							<li><a href="/contacts">Contacts</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="header__nav2">
+				<div class="searchField js-searchField">
+					<button class="btn-dropdown btn-dropdown_mini btn-dropdown_round searchField__open">
+						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#search"/></svg>
+					</button>
+					<div class="searchField__input">
+						<svg class="w-24 searchField__icon"><use xlink:href="img/sprite/icons-sprite.svg#search"/></svg>
+						<input type="text" class="searchField__input" placeholder="Search by site">
+						<button class="searchField__close">
+							<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close-fill"/></svg>
+						</button>
+					</div>
+				</div>
+				<button class="btn-dropdown btn-dropdown_mini js-popup-opener" data-popup-id="language">
+					<span>EN</span>
+					<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#arrow"/></svg>
+					<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#united-kingdom"/></svg>
+				</button>
+				<a href="#" class="btnDemo">Demo</a>
+			</div>
+		</div>
+		<div class="header__buttons">
+			<a href="" class="btn btn_blue">Download App</a>
+			<a href="" class="btn btn_green">Play Aviator</a>
+		</div>
+	</header>
+
+	<div class="container f-jcc-aic fdc">
+		<p style="margin-top: 200px; margin-bottom: 200px;">content</p>
+		<p style="margin-bottom: 200px;">content</p>
+		<p style="margin-bottom: 200px;">content</p>
+		<p style="margin-bottom: 200px;">content</p>
+		<p style="margin-bottom: 200px;">content</p>
+	</div>
+
+	<footer class="footer">
+		<div class="container footer__body nlc-mb-16">
+			<div class="f-jcsb-aic">
+				<div class="logo p-0">
+					<img src="img/logo.svg" width="94" height="24" alt="">
+					<svg class="w-16 ml-4"><use xlink:href="img/sprite/countries-flags-sprite.svg#armenia"/></svg>
+				</div>
+				<button class="btn-dropdown btn-dropdown_mini js-popup-opener" data-popup-id="language">
+					<span>EN</span>
+					<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#arrow"/></svg>
+					<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#united-kingdom"/></svg>
+				</button>
+			</div>
+			<div class="boxInfo text-small">
+				<div class="boxInfo__col">
+					<p class="bold mb-16">24/7 support</p>
+					<div class="boxInfo__subcol">
+						<p class="gray ws-n">Technical support</p>
+						<p><a href="">support@in-aviator-game.com</a></p>
+					</div>
+					<div class="boxInfo__subcol">
+						<p class="gray ws-n">Security service</p>
+						<p><a href="">support@in-aviator-game.com</a></p>
+					</div>
+				</div>
+				<div class="boxInfo__col">
+					<p class="gray mb-16 leter-sp">Information</p>
+					<div class="boxInfo__subcol boxInfo__subcol_texttrim">
+						<div>
+							<p><a href="">Sitemap</a></p>
+							<p><a href="">Terms</a></p>
+							<p><a href="">Privacy Policy</a></p>
+						</div>
+						<div>
+							<p><a href="">About us</a></p>
+							<p><a href="">Contacts</a></p>
+							<p><a href="">Blog</a></p>
+						</div>
+						<div>
+							<p><a href="">Responsible Gambling</a></p>
+							<p><a href="">Bonuses</a></p>
+						</div>
+					</div>
+				</div>
+				<div class="boxInfo__col">
+					<p class="gray mb-16 leter-sp">Top online casinos</p>
+					<div class="boxInfo__subcol boxInfo__subcol_texttrim">
+						<div>
+							<p><a href="">4RaBet</a></p>
+							<p><a href="">1Win</a></p>
+							<p><a href="">Parimatch</a></p>
+						</div>
+						<div>
+							<p><a href="">MostBet</a></p>
+							<p><a href="">Dafabet</a></p>
+							<p><a href="">Becric</a></p>
+						</div>
+						<div>
+							<p><a href="">Odds96</a></p>
+							<p><a href="">1XBet</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="boxLinksApp">
+				<div class="boxLinksApp__subscribe">
+					<div class="subscribe">
+						<div class="mb-16 text-small">
+							<p class="bold">Let’s keep in touch</p>
+							<p>Subscribe to get an emails with bonuses and tips.</p>
+						</div>
+						<div class="subscribe__input">
+							<input type="text" placeholder="Your email">
+							<button type="submit">Subscribe</button>
+						</div>
+					</div>
+				</div>
+				<div class="boxLinksApp__mobile">
+					<a href="" class="linkApp">
+						<span class="f-aic">
+							<svg width="18" height="24"><use xlink:href="img/sprite/icons-sprite.svg#apple"/></svg>
+							<span class="text-small d-flex aifs fdc ml-8">
+								<span class="gray">Application</span>
+								<span class="bold">for iOS</span>
+							</span>
+						</span>
+						<svg class="w-24 rotate-270"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
+					</a>
+					<a href="" class="linkApp">
+						<span class="f-aic">
+							<svg width="28" height="24"><use xlink:href="img/sprite/icons-sprite.svg#android-green"/></svg>
+							<span class="text-small d-flex aifs fdc ml-8">
+								<span class="gray">Application</span>
+								<span class="bold">for Android</span>
+							</span>
+						</span>
+						<svg class="w-24 rotate-270"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
+					</a>
+				</div>
+				<div class="boxLinksApp__windows">
+					<a href="" class="linkApp linkApp_windows">
+						<span class="f-aic linkApp__mod">
+							<img src="img/windows.svg" loading="lazy" width="25" height="25" alt="">
+							<span class="text-small d-flex aifs fdc ml-8">
+								<span class="gray">Application</span>
+								<span class="bold">for Windows</span>
+							</span>
+						</span>
+						<svg class="w-24 rotate-270"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Список попапов -->
+	<div>
+		<div class="popup" id="language">
+			<div class="popup__body">
+				<div class="popup__header">
+					<p class="text-medium">Select a lenguage</p>
+					<button class="popup__close js-popup-closer">
+						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close"/></svg>
+					</button>
+				</div>
+				<div class="popup__content nlc-mb-16">
+					<p class="bold">Suggested languages</p>
+					<div class="brad-8 o-h">
+						<button class="langItem js-change-language">
+							<span class="f-aic">
+								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#united-kingdom"/></svg>
+								<span class="d-flex fdc aifs">
+									<span>English</span>
+									<span class="text-small gray">English</span>
+								</span>
+							</span>
+							<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#selected"/></svg>
+						</button>
+						<button class="langItem js-change-language">
+							<span class="f-aic">
+								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#france"/></svg>
+								<span class="d-flex fdc aifs">
+									<span>Le français</span>
+									<span class="text-small gray">French</span>
+								</span>
+							</span>
+						</button>
+						<button class="langItem js-change-language">
+							<span class="f-aic">
+								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#russia"/></svg>
+								<span class="d-flex fdc aifs">
+									<span>Русский</span>
+									<span class="text-small gray">Russian</span>
+								</span>
+							</span>
+						</button>
+					</div>
+					<p class="bold">All languages</p>
+					<div class="brad-8 o-h">
+						<button class="langItem js-change-language">
+							<span class="f-aic">
+								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#azerbaijan"/></svg>
+								<span class="d-flex fdc aifs">
+									<span>Azərbaycan dili</span>
+									<span class="text-small gray">Azeri</span>
+								</span>
+							</span>
+						</button>
+						<button class="langItem js-change-language">
+							<span class="f-aic">
+								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#bangladesh"/></svg>
+								<span class="d-flex fdc aifs">
+									<span>বাংলা</span>
+									<span class="text-small gray">Bengali</span>
+								</span>
+							</span>
+						</button>
+						<button class="langItem js-change-language">
+							<span class="f-aic">
+								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#china"/></svg>
+								<span class="d-flex fdc aifs">
+									<span>中文</span>
+									<span class="text-small gray">Chinese</span>
+								</span>
+							</span>
+						</button>
+						<button class="langItem js-change-language">
+							<span class="f-aic">
+								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#germany"/></svg>
+								<span class="d-flex fdc aifs">
+									<span>Deutsch</span>
+									<span class="text-small gray">German</span>
+								</span>
+							</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

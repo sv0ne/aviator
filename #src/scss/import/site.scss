@@ -1,0 +1,130 @@
+.header{
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $black;
+    &__panel{
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+    &__nav{
+        padding: 8px 32px;
+        display: flex;
+        gap: 16px;
+    }
+    &__nav2{
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        flex: 1;
+        justify-content: flex-end;
+        gap: 16px;
+    }
+    &__buttons{
+        gap: 16px;
+        display: flex;
+        padding: 8px;
+    }
+}
+
+///////////////////////////////////////////////////////////
+
+.footer{
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    &__body{
+        padding: 16px;
+    }
+}
+
+.boxInfo{
+    display: flex;
+    gap: 32px;
+    &__col{
+        flex: 1;
+        background-color: rgb(138, 127, 138);
+    }
+    &__subcol{
+        display: flex;
+        gap: 32px;
+        &_texttrim{
+            p{
+                white-space: nowrap;
+                max-width: 135px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+
+.boxLinksApp{
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    gap: 16px;
+    @media (max-width:#{$md3}px) {
+        flex-direction: column-reverse;
+    }
+    > * {
+        flex: 1;
+    }
+    &__mobile{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        flex: 0 1 280px;
+        @media (max-width:#{$md3}px) {
+            flex-direction: row;
+            flex: 1;
+        }
+    }
+    &__windows{
+        flex: 0 1 280px;
+        @media (max-width:#{$md3}px) {
+            display: none;
+            flex: 1;
+        }
+    }
+}
+
+.subscribe{
+    border-radius: 8px;
+    padding: 16px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    &__input{
+        display: flex;
+        input{
+            flex: 1;
+            border-radius: 8px 0px 0px 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: transparent;
+            outline: none;
+            padding: 8px;
+            color: $white;
+        }
+        button{
+            @extend .text-small;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 0px 8px 8px 0px;
+            color: rgba(18, 18, 20, 1);
+            background-color: rgba(150,150,151, 1);
+            &:hover{
+                background-color: rgba(150,150,151, 0.8);
+            }
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////

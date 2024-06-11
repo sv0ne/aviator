@@ -1,0 +1,58 @@
+@import "import/mixin"; // Подключаю миксины
+
+// ================== Подключаем шрифты ===================
+@import "import/fonts";
+// --------------------------------------------------------
+
+// ====================== Переменные ======================
+
+$minwidth: 320px;
+$mw: 1200;
+$md1: $mw;
+$md2: 992.98;
+$md3: 767.98;
+$md4: 479.98;
+$fontfamily: -apple-system, BlinkMacSystemFont, 'Helvetica', 'Arial', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', sans-serif;
+
+$black: rgba(35, 35, 37, 1);
+$gray: rgba(255, 255, 255, 0.3);
+$white: rgba(255, 255, 255, 1);
+$blue: rgba(63, 105, 255, 1);
+$green: rgba(52, 199, 89, 1);
+$shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
+
+// --------------------------------------------------------
+
+@import "import/null"; // Обнуляющие стили
+
+// ===================== Оболочка =========================
+
+.wrapper{
+	width: 100%;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	@media (max-width:#{$md3}px) {
+	    overflow: hidden;/* Выше 768 мы его убираем чтобы сработал 
+	    position sticky у блока .stickyBlock */
+	}
+}
+
+// --------------------------------------------------------
+
+// ================= Основная сетка =======================
+.container{
+	max-width: $mw+px; margin: 0 auto; width: 100%;
+}
+// --------------------------------------------------------
+
+// ============== Импортируем все стили ===================
+
+@import "import/base"; // Вертска переиспользуемых блоков
+@import "import/popups"; // Попапы
+@import "import/components"; // Компоненты
+@import "import/site"; // Последовательная верстка всего сайта
+@import "import/text"; // Для текста
+@import "import/test"; // Для теста
+
+// --------------------------------------------------------

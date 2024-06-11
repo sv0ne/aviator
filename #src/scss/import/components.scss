@@ -1,0 +1,228 @@
+.btn{
+    font-weight: normal;
+    border-radius: 8px;
+    width: 156px;
+    text-align: center;
+    font-weight: 700;
+    padding: 12px;
+    transition: 0.15s ease;
+    &:hover{
+        transition: 0.15s ease;
+        transform: scale(1.08) translateZ(0) perspective(1px);
+    }
+    &_blue{
+        background: $blue;
+        box-shadow: 0px 8px 50px 0px rgba(63, 105, 255, 1);
+    }
+    &_green{
+        background: $green;
+        box-shadow: 0px 8px 50px 0px rgba(42, 128, 71, 1);
+        position: relative;
+        overflow: hidden;
+        &:after{
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: calc(50% - 8px);
+            width: 15px;
+            height: 80px;
+            transform: rotate(45deg);
+            background: rgba(255, 255, 255, 0.3);
+        }
+    }
+}
+
+.logo{
+    display: flex;
+    padding: 8px;
+    align-items: flex-start;
+}
+
+.searchField{
+    &__input{
+        display: none;
+        position: relative;
+        input{
+            border: 2px solid rgba(63, 105, 255, 0.3);
+            border-radius: 8px;
+            width: 328px;
+            height: 40px;
+            outline: none;
+            background-color: transparent;
+            padding: 8px 32px;
+            color: $white;
+        }
+    }
+    &__icon{
+        position: absolute;
+        top: 8px;
+        left: 8px;
+    }
+    &__close{
+        background-color: transparent;
+        outline: none;
+        position: absolute;
+        right: 8px;
+        top: 8px;
+    }
+    &.active{
+        .searchField__input{
+            display: block;
+        }
+        .searchField__open{
+            display: none;
+        }
+    }
+}
+
+.btn-dropdown{
+    background-color: transparent;
+    color: $white;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 8px;
+    &_mini{
+        padding: 8px;
+    }
+    &_round{
+        border-radius: 99px;
+    }
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
+.popover{
+    position: relative;
+    &-popup{
+        position: absolute;
+        padding-top: 8px;
+        opacity: 0;
+        visibility: hidden;
+    }
+    &-popup__body{
+        border-radius: 12px;
+        padding: 16px;
+        background-color: $black;
+        box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
+        width: 360px;
+    }
+    &:hover{
+        > .popover-trigger{
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        > .popover-popup{
+            transition: 0s ease 0.15s;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.btnDemo{
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 4px;
+    font-weight: 700;
+}
+
+.logoApp{
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    @extend .f-jcc-aic;
+}
+
+.cardApp{
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    gap: 8px;
+    &_blue{
+        background: linear-gradient(0deg, #0167CA -13.77%, #38A8FA 102.34%);
+    }
+    &_gradient{
+        background: linear-gradient(85.83deg, #004DB8 1.14%, #F14624 100%);
+    }
+}
+
+.langItem{
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $white;
+    background-color: rgba(255, 255, 255, 0.05);
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+}
+
+.linkApp{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 16px 8px 16px 16px;
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+    &_windows{
+        height: 100%;
+        .linkApp__mod{
+            height: 100%;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            .ml-8{
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+/////////////////////// Попапы ////////////////////////
+
+.moreList li a{
+    padding: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    display: inline-block;
+    width: 100%;
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
+.whereToPlayList{
+    &__item{
+        border-radius: 8px;
+        padding: 16px;
+        width: 100%;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        color: $white;
+        &:hover{
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+    }
+    &__img{
+        height: 24px;
+        display: flex;
+        align-items: center;
+        flex: 0 0 100px;
+        margin-right: 16px;
+    }
+}
+
+////////////////////////////////////////////////////////
