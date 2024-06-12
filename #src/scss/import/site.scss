@@ -34,6 +34,41 @@
     }
 }
 
+////////// Попапы в header-е
+
+.moreList li a{
+    padding: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    display: inline-block;
+    width: 100%;
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
+.whereToPlayList{
+    &__item{
+        border-radius: 8px;
+        padding: 16px;
+        width: 100%;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        color: $white;
+        &:hover{
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+    }
+    &__img{
+        height: 24px;
+        display: flex;
+        align-items: center;
+        flex: 0 0 100px;
+        margin-right: 16px;
+    }
+}
+
 ///////////////////////////////////////////////////////////
 
 .footer{
@@ -44,21 +79,61 @@
 }
 
 .boxInfo{
-    display: flex;
-    gap: 32px;
-    &__col{
-        flex: 1;
-        background-color: rgb(138, 127, 138);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 16px;
+    column-gap: 32px;
+    @media (max-width:#{$md2}px) {
+        grid-template-columns: 1fr 1fr;
+        .boxInfo__col:nth-child(1){
+            grid-column: 1 / 3;
+        }
     }
-    &__subcol{
+    @media (max-width:#{$md3}px) {
+        grid-template-columns: 1fr;
+        .boxInfo__col:nth-child(1){
+            grid-column: auto;
+        }
+        .boxInfo__col:nth-child(3){
+           display: none;
+        }
+    }
+    &__col{
+        //background-color: rgb(138, 127, 138);
+    }
+    &__grid{
+        display: grid;
+        row-gap: 4px;
+        column-gap: 32px;
+        &_2col{
+            grid-template-columns: auto 1fr;
+            @media (max-width:#{$md3}px) {
+                grid-template-columns: 1fr auto;
+            }
+        }
+        &_3col{
+            grid-template-columns: auto auto 1fr;
+            @media (max-width:#{$md3}px) {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        p,a{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    &__btn{
+        background-color: transparent;
         display: flex;
-        gap: 32px;
-        &_texttrim{
-            p{
-                white-space: nowrap;
-                max-width: 135px;
-                overflow: hidden;
-                text-overflow: ellipsis;
+        align-items: center;
+        color: $gray;
+        @media (min-width:#{$md3}px) {
+            display: none;
+        }
+        &.active{
+            svg{
+                transform: rotate(180deg);
             }
         }
     }
@@ -95,10 +170,6 @@
 }
 
 .subscribe{
-    border-radius: 8px;
-    padding: 16px;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.05);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -124,6 +195,121 @@
                 background-color: rgba(150,150,151, 0.8);
             }
         }
+    }
+}
+
+.certificates{
+    &__item{
+        display: inline-flex;
+        align-items: center;
+        margin-right: 13px;
+        margin-bottom: 16px;
+        cursor: pointer;
+        overflow: hidden;
+        &:hover, &.active{
+            svg{
+                mix-blend-mode: normal;
+            }
+            span{
+                display: inline;
+            }
+        }
+        svg{
+            mix-blend-mode: luminosity;
+        }
+        span{
+            margin-left: 8px;
+            display: none;
+        }
+    }
+    &__text{
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 16px;
+        @media (max-width:#{$md3}px) {
+            display: block;
+        }
+    }
+    &__fake{
+        display: inline-block;
+        height: 24px;
+        @media (max-width:#{$md3}px) {
+            display: none;
+        }
+    }
+}
+
+.socials{
+    display: flex;
+    gap: 16px;
+    @media (max-width:#{$md3}px) {
+        flex-direction: column;
+    }
+    &__row{
+        display: flex;
+        gap: 16px;
+        > * {
+            flex: 1;
+        }
+        &_1{
+            flex: 0 1 66%;
+            @media (max-width:#{$md4}px) {
+                flex-direction: column;
+            }
+        }
+        &_2{
+            flex: 1;
+            align-items: center;
+        }
+    }
+}
+
+.ufcPartner{
+    background: linear-gradient(90deg, #FA4031 0%, #6C0606 100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    > * {
+        flex: 0 0 50%;
+    }
+    &__img{
+        position: relative;
+        img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.social{
+    @extend .text-small;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 12px;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &_tg{
+        background: linear-gradient(180deg, #2AABEE 0%, #229ED9 99.21%);
+    }
+    &_insta{
+        background: linear-gradient(262.93deg, #7E2BF4 0%, #ED146E 50%, #FFC90C 100%);
+    }
+}
+
+.lastLine{
+    &__ad{
+        border-radius: 4px;
+        padding: 1px 4px 1px 4px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        font-size: 11px;
+        line-height: 13px;
+    }
+    &__gambleImg{
+        transform: translateY(-2px);
     }
 }
 

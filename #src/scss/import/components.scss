@@ -1,3 +1,5 @@
+/////////////////////////// Кнопки ////////////////////////
+
 .btn{
     font-weight: normal;
     border-radius: 8px;
@@ -32,11 +34,139 @@
     }
 }
 
-.logo{
-    display: flex;
+.btn-2{
+    width: 100%;
     padding: 8px;
-    align-items: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $white;
+    background-color: rgba(255, 255, 255, 0.05);
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.10);
+    }
 }
+
+.btnDemo{
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 4px;
+    font-weight: 700;
+}
+
+.btn-dropdown{
+    background-color: transparent;
+    color: $white;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 8px;
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+    &_filled{
+        padding: 8px;
+        background: rgba(255, 255, 255, 0.05);
+        &:hover{
+            background-color: rgba(255, 255, 255, 0.10);
+        }
+    }
+    &_round{
+        border-radius: 99px;
+    }
+}
+
+////////////////////////// Ссылки /////////////////////////
+
+.linkApp{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 16px 8px 16px 16px;
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.10);
+    }
+    &_windows{
+        height: 100%;
+        .linkApp__mod{
+            height: 100%;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            .ml-8{
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.link-2{
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+    @extend .f-jcc-aic;
+}
+
+///////////////// Ховер подсказки (попапы) ////////////////
+
+.popover{
+    position: relative;
+    &-popup{
+        position: absolute;
+        padding-top: 8px;
+        opacity: 0;
+        visibility: hidden;
+    }
+    &-popup__body{
+        border-radius: 12px;
+        padding: 16px;
+        background-color: $black;
+        box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
+        width: 360px;
+    }
+    &:hover{
+        > .popover-trigger{
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        > .popover-popup{
+            transition: 0s ease 0.15s;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+////////////////// Карточки, контейнеры ///////////////////
+
+.card-1{
+    border-radius: 8px;
+    padding: 16px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.cardApp{
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    gap: 8px;
+    &_blue{
+        background: linear-gradient(0deg, #0167CA -13.77%, #38A8FA 102.34%);
+    }
+    &_gradient{
+        background: linear-gradient(85.83deg, #004DB8 1.14%, #F14624 100%);
+    }
+}
+
+//////////////////////// Поля input ///////////////////////
 
 .searchField{
     &__input{
@@ -75,154 +205,12 @@
     }
 }
 
-.btn-dropdown{
-    background-color: transparent;
-    color: $white;
+////////////////////////// Прочее /////////////////////////
+
+.logo{
     display: flex;
-    white-space: nowrap;
-    align-items: center;
-    font-weight: 700;
-    padding: 8px 16px;
-    border-radius: 8px;
-    &_mini{
-        padding: 8px;
-    }
-    &_round{
-        border-radius: 99px;
-    }
-    &:hover{
-        background-color: rgba(255, 255, 255, 0.05);
-    }
-}
-
-.popover{
-    position: relative;
-    &-popup{
-        position: absolute;
-        padding-top: 8px;
-        opacity: 0;
-        visibility: hidden;
-    }
-    &-popup__body{
-        border-radius: 12px;
-        padding: 16px;
-        background-color: $black;
-        box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
-        width: 360px;
-    }
-    &:hover{
-        > .popover-trigger{
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-        > .popover-popup{
-            transition: 0s ease 0.15s;
-            opacity: 1;
-            visibility: visible;
-        }
-    }
-}
-
-.btnDemo{
-    text-decoration: underline;
-    text-decoration-style: dashed;
-    text-underline-offset: 4px;
-    font-weight: 700;
-}
-
-.logoApp{
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    width: 48px;
-    height: 48px;
-    flex: 0 0 48px;
-    @extend .f-jcc-aic;
-}
-
-.cardApp{
-    padding: 16px;
-    display: flex;
-    align-items: center;
-    border-radius: 8px;
-    gap: 8px;
-    &_blue{
-        background: linear-gradient(0deg, #0167CA -13.77%, #38A8FA 102.34%);
-    }
-    &_gradient{
-        background: linear-gradient(85.83deg, #004DB8 1.14%, #F14624 100%);
-    }
-}
-
-.langItem{
-    width: 100%;
     padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: $white;
-    background-color: rgba(255, 255, 255, 0.05);
-    &:hover{
-        background-color: rgba(255, 255, 255, 0.15);
-    }
+    align-items: flex-start;
 }
 
-.linkApp{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-    padding: 16px 8px 16px 16px;
-    &:hover{
-        background-color: rgba(255, 255, 255, 0.15);
-    }
-    &_windows{
-        height: 100%;
-        .linkApp__mod{
-            height: 100%;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-start;
-            .ml-8{
-                margin-left: 0;
-            }
-        }
-    }
-}
-
-/////////////////////// Попапы ////////////////////////
-
-.moreList li a{
-    padding: 16px;
-    font-weight: bold;
-    border-radius: 8px;
-    display: inline-block;
-    width: 100%;
-    &:hover{
-        background-color: rgba(255, 255, 255, 0.05);
-    }
-}
-
-.whereToPlayList{
-    &__item{
-        border-radius: 8px;
-        padding: 16px;
-        width: 100%;
-        background-color: transparent;
-        display: flex;
-        align-items: center;
-        color: $white;
-        &:hover{
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-    }
-    &__img{
-        height: 24px;
-        display: flex;
-        align-items: center;
-        flex: 0 0 100px;
-        margin-right: 16px;
-    }
-}
-
-////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////

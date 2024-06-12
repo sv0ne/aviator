@@ -27,5 +27,11 @@ $(document).ready(function () {
     // Закрыть поле поиска
     $(".js-searchField .searchField__close").click(function(){
         $(".js-searchField").removeClass("active");
-    })
+    });
+
+    // Блок boxInfo, кнопка "ALL" показвающая/скрывающая всю информацию
+    $(".js-boxInfo-btn").click(function(){
+        $(this).toggleClass('active');
+        $(".js-boxInfo-casinos").fadeToggle(200);
+    });
 });

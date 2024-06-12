@@ -38,6 +38,12 @@ img, video{
 	object-fit: cover;
 }
 
+// * {
+//     user-select: none;
+//     -webkit-user-select: none; /* Safari */
+//     -moz-user-select: none;    /* Firefox */
+//     -ms-user-select: none;     /* Internet Explorer/Edge */
+// }
 
 ///////////////////// MARGIN-PADDING //////////////////////
 
@@ -73,7 +79,7 @@ img, video{
 .p-0-8{padding: 0 8px;}
 
 .nlc-mb-16{
-	> *:not(:last-child){
+	> *:not(:last-child):not(.not-nlc){
 		margin-bottom: 16px;
 	}
 }
@@ -92,6 +98,12 @@ img, video{
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+
+.has-links{
+	a:hover{
+		text-decoration: underline;
+	}
 }
 
 .ta-c{text-align: center;}
@@ -130,6 +142,9 @@ img, video{
 .d-inline-flex{display: inline-flex;}
 .fww{flex-wrap: wrap;}
 .fdc{flex-direction: column;}
+
+.gap-16{gap: 16px;}
+.gap-32{gap: 32px;}
 
 .aic{align-items: center;}
 .aifs{align-items: flex-start;}
@@ -190,4 +205,10 @@ img, video{
 	@media (max-width:#{$md3}px) {
 	    flex: 0 0 100%;
 	}
+}
+
+.md2-jcfs{
+    @media (max-width:#{$md2}px) {
+        justify-content: flex-start;
+    }
 }

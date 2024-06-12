@@ -5,9 +5,10 @@ img/sprite/icons-sprite.svg#arrow
 img/sprite/icons-sprite.svg#chevron
 img/sprite/icons-sprite.svg#close-fill
 img/sprite/icons-sprite.svg#close
+img/sprite/icons-sprite.svg#instagram
 img/sprite/icons-sprite.svg#search
 img/sprite/icons-sprite.svg#selected
-img/sprite/icons-sprite.svg#windows
+img/sprite/icons-sprite.svg#telegram
 img/sprite/countries-flags-sprite.svg#abkhazia
 img/sprite/countries-flags-sprite.svg#afghanistan
 img/sprite/countries-flags-sprite.svg#aland-islands
