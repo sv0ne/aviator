@@ -366,6 +366,12 @@ video {
           flex-direction: column;
 }
 
+.flex-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
 .gap-16 {
   gap: 16px;
 }
@@ -571,8 +577,7 @@ video {
 #language {
   width: 360px;
   top: 65px;
-  left: auto;
-  right: 418px;
+  left: 5px;
 }
 
 .btn {
@@ -771,6 +776,15 @@ video {
 .searchField {
   position: relative;
   height: 40px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .searchField__input {
@@ -787,7 +801,7 @@ video {
   height: 40px;
   outline: none;
   background-color: rgb(35, 35, 37);
-  padding: 8px 32px;
+  padding: 8px 36px;
   color: rgb(255, 255, 255);
 }
 
@@ -884,27 +898,24 @@ video {
 }
 
 .header__menu {
-  padding: 8px 32px;
+  padding: 8px 0px 8px 32px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   gap: 16px;
 }
 
 .header__nav {
-  padding: 8px;
+  padding: 8px 8px 8px 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   gap: 16px;
 }
 
@@ -1513,7 +1524,21 @@ position sticky у блока .stickyBlock */
             transform: rotate(180deg);
   }
 
-  .searchField {
+  .searchField__input {
+    display: block;
+    width: 100%;
+  }
+
+  .searchField__input input {
+    border-color: rgba(255, 255, 255, 0.05);
+    width: 100%;
+  }
+
+  .searchField__open {
+    display: none;
+  }
+
+  .searchField__close {
     display: none;
   }
 
@@ -1562,6 +1587,9 @@ position sticky у блока .stickyBlock */
   }
 
   .header__nav {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;

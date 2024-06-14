@@ -45,8 +45,9 @@
         }
     }
     &__menu{
-        padding: 8px 32px;
+        padding: 8px 0px 8px 32px;
         display: flex;
+        flex: 1;
         gap: 16px;
         @media (max-width:1420px) {
             padding: 8px 0;
@@ -82,13 +83,12 @@
         }
     }
     &__nav{
-        padding: 8px;
+        padding: 8px 8px 8px 16px;
         display: flex;
         align-items: center;
-        flex: 1;
-        justify-content: flex-end;
         gap: 16px;
         @media (max-width:#{$md3}px) {
+            flex: 1;
             flex-direction: row-reverse;
             justify-content: flex-start;
         }

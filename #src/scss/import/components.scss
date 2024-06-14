@@ -207,6 +207,9 @@
 .searchField{
     position: relative;
     height: 40px;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
     &__input{
         display: none;
         position: absolute;
@@ -219,7 +222,7 @@
             height: 40px;
             outline: none;
             background-color: $black;
-            padding: 8px 32px;
+            padding: 8px 36px;
             color: $white;
         }
         &:before{
@@ -245,7 +248,20 @@
         top: 8px;
     }
     @media (max-width:#{$md3}px) {
-        display: none;
+        &__input{
+            display: block;
+            width: 100%;
+            input{
+                border-color: rgba(255, 255, 255, 0.05);
+                width: 100%;
+            }
+        }
+        &__open{
+            display: none;
+        }
+        &__close{
+            display: none;
+        }
     }
     &.active{
         .searchField__input{
