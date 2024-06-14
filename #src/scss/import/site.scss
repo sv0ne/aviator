@@ -40,6 +40,11 @@
         }
     }
     &__menuHeader{
+        position: sticky;
+        top: 0;
+        background-color: #232325;
+        z-index: 2;
+        padding: 16px 0;
         @media (min-width:#{$md3}px) {
             display: none;
         }
@@ -67,7 +72,7 @@
                 animation: showModal 0.15s forwards 0s linear;
                 z-index: 55;
                 background-color: rgba(35, 35, 37, 1);
-                padding: 16px;
+                padding: 0px 16px 16px 16px;
                 border-radius: 12px 12px 0 0;
                 > *:not(:last-child):not(.not-nlc){
                     margin-bottom: 16px;

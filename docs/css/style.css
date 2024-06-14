@@ -897,6 +897,14 @@ video {
           backdrop-filter: blur(5px);
 }
 
+.header__menuHeader {
+  position: sticky;
+  top: 0;
+  background-color: #232325;
+  z-index: 2;
+  padding: 16px 0;
+}
+
 .header__menu {
   padding: 8px 0px 8px 32px;
   display: -webkit-box;
@@ -1568,7 +1576,7 @@ position sticky у блока .stickyBlock */
             animation: showModal 0.15s forwards 0s linear;
     z-index: 55;
     background-color: rgb(35, 35, 37);
-    padding: 16px;
+    padding: 0px 16px 16px 16px;
     border-radius: 12px 12px 0 0;
   }
 
