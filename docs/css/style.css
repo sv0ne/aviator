@@ -552,13 +552,17 @@ video {
   text-align: center;
   font-weight: 700;
   padding: 12px;
-  -webkit-transition: 0.15s ease;
-  transition: 0.15s ease;
+  -webkit-transition: -webkit-transform 0.15s ease;
+  transition: -webkit-transform 0.15s ease;
+  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, -webkit-transform 0.15s ease;
 }
 
 .btn:hover {
-  -webkit-transition: 0.15s ease;
-  transition: 0.15s ease;
+  -webkit-transition: -webkit-transform 0.15s ease;
+  transition: -webkit-transform 0.15s ease;
+  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, -webkit-transform 0.15s ease;
   -webkit-transform: scale(1.08) translateZ(0) perspective(1px);
           transform: scale(1.08) translateZ(0) perspective(1px);
 }
@@ -706,33 +710,6 @@ video {
   position: relative;
 }
 
-.popover-popup {
-  position: absolute;
-  padding-top: 8px;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.popover-popup__body {
-  border-radius: 12px;
-  padding: 16px;
-  background-color: rgb(35, 35, 37);
-  -webkit-box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
-  width: 360px;
-}
-
-.popover:hover > .popover-trigger {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-.popover:hover > .popover-popup {
-  -webkit-transition: 0s ease 0.15s;
-  transition: 0s ease 0.15s;
-  opacity: 1;
-  visibility: visible;
-}
-
 .card-1 {
   border-radius: 8px;
   padding: 16px;
@@ -761,9 +738,16 @@ video {
   background: linear-gradient(85.83deg, #004DB8 1.14%, #F14624 100%);
 }
 
+.searchField {
+  position: relative;
+  height: 40px;
+}
+
 .searchField__input {
   display: none;
-  position: relative;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .searchField__input input {
@@ -772,9 +756,20 @@ video {
   width: 328px;
   height: 40px;
   outline: none;
-  background-color: transparent;
+  background-color: rgb(35, 35, 37);
   padding: 8px 32px;
   color: rgb(255, 255, 255);
+}
+
+.searchField__input:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40px;
+  width: 40px;
+  height: 40px;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(35, 35, 37, 0)), color-stop(50%, rgba(35, 35, 37, 0.9)), to(#232325));
+  background: linear-gradient(90deg, rgba(35, 35, 37, 0) 0%, rgba(35, 35, 37, 0.9) 50%, #232325 100%);
 }
 
 .searchField__icon {
@@ -810,7 +805,9 @@ video {
 }
 
 .header {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -818,12 +815,13 @@ video {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 8px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 50;
   background-color: rgb(35, 35, 37);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .header__panel {
@@ -838,7 +836,24 @@ video {
           flex: 1;
 }
 
-.header__nav {
+.header__bgOverlay {
+  display: none;
+}
+
+.header__bgOverlay.active {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 52;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.header__menu {
   padding: 8px 32px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -846,7 +861,7 @@ video {
   gap: 16px;
 }
 
-.header__nav2 {
+.header__nav {
   padding: 8px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -869,6 +884,30 @@ video {
   display: -ms-flexbox;
   display: flex;
   padding: 8px;
+}
+
+@-webkit-keyframes showModal {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes showModal {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
 }
 
 .moreList li a {
@@ -1286,8 +1325,77 @@ video {
 }
 
 @media (min-width: 767.98px) {
+  .btn-dropdown.mod-download-app svg {
+    display: none;
+  }
+
+  .popover-popup__body {
+    border-radius: 12px;
+    padding: 16px;
+    background-color: rgb(35, 35, 37);
+    -webkit-box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
+    width: 360px;
+  }
+
+  .popover-popup {
+    position: absolute;
+    top: 40px;
+    padding-top: 8px;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .popover:hover > .popover-trigger {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .popover:hover > .popover-popup {
+    -webkit-transition: 0s ease 0.15s;
+    transition: 0s ease 0.15s;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .header__bgOverlay {
+    display: none !important;
+  }
+
+  .header__menuHeader {
+    display: none;
+  }
+
+  .header__menuBtn {
+    display: none;
+  }
+
   .boxInfo__btn {
     display: none;
+  }
+}
+
+@media (max-width: 1420px) {
+  .header__menu {
+    padding: 8px 0;
+    gap: 0;
+  }
+}
+
+@media (max-width: 1310px) {
+  .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+
+  .header__buttons {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 
@@ -1302,6 +1410,10 @@ video {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+  }
+
+  .header .btn-dropdown {
+    padding: 8px;
   }
 
   .boxInfo {
@@ -1340,6 +1452,111 @@ position sticky у блока .stickyBlock */
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
+  }
+
+  .popover {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .popover .popover-popup {
+    display: none;
+  }
+
+  .popover .btn-dropdown {
+    border-radius: 0;
+  }
+
+  .popover .popover-popup__body > * {
+    border-top: 1px solid rgba(18, 18, 20, 0.3);
+  }
+
+  .popover.active .btn-dropdown svg {
+    -webkit-transition: 0.15s ease;
+    transition: 0.15s ease;
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+
+  .searchField {
+    display: none;
+  }
+
+  .header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .header__menu {
+    display: none;
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+
+  .header__menu.active {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-height: 75vh;
+    overflow-y: auto;
+    -webkit-animation: showModal 0.15s forwards 0s linear;
+            animation: showModal 0.15s forwards 0s linear;
+    z-index: 55;
+    background-color: rgb(35, 35, 37);
+    padding: 16px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .header__menu.active > *:not(:last-child):not(.not-nlc) {
+    margin-bottom: 16px;
+  }
+
+  .header__menu .btn-dropdown:not(.btn-dropdown_round) {
+    background-color: rgba(255, 255, 255, 0.05);
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 16px;
+    font-weight: 400;
+  }
+
+  .header__nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+
+  .header__buttons > * {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+
+  .moreList li a {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0px;
+  }
+
+  .whereToPlayList__item {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0;
+  }
+
+  .whereToPlayList__img {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33%;
+            flex: 0 0 33%;
   }
 
   .boxInfo {
@@ -1412,5 +1629,19 @@ position sticky у блока .stickyBlock */
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+}
+
+@media (min-width: 767.98px) and (max-width: 1310px) {
+  .popover-popup:not(.mod-left) {
+    left: -100px;
+  }
+}
+
+@media (max-width: 1310px) and (min-width: 767.98px) {
+  .header__logo {
+    position: absolute;
+    top: 16px;
+    left: 8px;
   }
 }

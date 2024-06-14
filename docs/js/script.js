@@ -79,15 +79,50 @@ $(document).on("click", ".js-popup-closer", function(e){
         close_popup();
     });
 
-    // Открыть поле поиска
-    $(".js-searchField .searchField__open").click(function(){
-        $(".js-searchField").addClass("active");
-        $(".js-searchField input").focus();
-    });
+    // Управление полем поиска
+    (function() {
+        // Открыть поле поиска
+        $(".js-searchField .searchField__open").click(function(){
+            $(".js-searchField").addClass("active");
+            $(".js-searchField input").focus();
+        });
 
-    // Закрыть поле поиска
-    $(".js-searchField .searchField__close").click(function(){
-        $(".js-searchField").removeClass("active");
+        // Закрыть поле поиска
+        $(".js-searchField .searchField__close").click(function(){
+            $(".js-searchField").removeClass("active");
+        });
+    })();
+
+    // Управление меню | Открыть/закрыть
+    (function() {
+        // Открыть меню
+        $('.js-menuBtn').click(function(){
+            $('body').addClass('lock');
+            $('.js-menu').addClass('active');
+            $('.js-bgOverlay').addClass('active');
+        });
+
+        // Закрыть меню
+        $('.js-bgOverlay, .js-menuClose').click(function(){
+            $('body').removeClass('lock');
+            $('.js-bgOverlay').removeClass('active');
+            $('.js-menu').removeClass('active');
+        });
+    })();
+
+    // Открыть/закрыть выпадающие списки меню на мобилках
+    $('.js-dropdown-menu-mobile').click(function(){
+        if(w < BREAKPOINT_md3){
+            if($(this).hasClass('active')){
+                $(this).find('.popover-popup').slideUp(150);
+                $(this).removeClass('active');
+            }else{
+                $('.js-dropdown-menu-mobile').removeClass('active');
+                $('.js-dropdown-menu-mobile').find('.popover-popup').slideUp(150);
+                $(this).addClass('active');
+                $(this).find('.popover-popup').slideDown(150);
+            }
+        }
     });
 
     // Блок boxInfo, кнопка "ALL" показвающая/скрывающая всю информацию

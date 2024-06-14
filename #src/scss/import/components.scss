@@ -7,9 +7,9 @@
     text-align: center;
     font-weight: 700;
     padding: 12px;
-    transition: 0.15s ease;
+    transition: transform 0.15s ease;
     &:hover{
-        transition: 0.15s ease;
+        transition: transform 0.15s ease;
         transform: scale(1.08) translateZ(0) perspective(1px);
     }
     &_blue{
@@ -76,6 +76,13 @@
     &_round{
         border-radius: 99px;
     }
+    &.mod-download-app{
+        @media (min-width:#{$md3}px) {
+            svg{
+                display: none;
+            }
+        }
+    }
 }
 
 ////////////////////////// Ссылки /////////////////////////
@@ -118,27 +125,56 @@
 
 .popover{
     position: relative;
-    &-popup{
-        position: absolute;
-        padding-top: 8px;
-        opacity: 0;
-        visibility: hidden;
-    }
-    &-popup__body{
-        border-radius: 12px;
-        padding: 16px;
-        background-color: $black;
-        box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
-        width: 360px;
-    }
-    &:hover{
-        > .popover-trigger{
-            background-color: rgba(255, 255, 255, 0.05);
+    @media (min-width:#{$md3}px) {
+        &-popup__body{
+            border-radius: 12px;
+            padding: 16px;
+            background-color: $black;
+            box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
+            width: 360px;
         }
-        > .popover-popup{
-            transition: 0s ease 0.15s;
-            opacity: 1;
-            visibility: visible;
+        &-popup{
+            position: absolute;
+            top: 40px;
+            padding-top: 8px;
+            opacity: 0;
+            visibility: hidden;
+            &:not(.mod-left){
+                @media (max-width:1310px) {
+                    left: -100px;
+                }
+            }
+        }
+        &:hover{
+            > .popover-trigger{
+                background-color: rgba(255, 255, 255, 0.05);
+            }
+            > .popover-popup{
+                transition: 0s ease 0.15s;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+    @media (max-width:#{$md3}px) {
+        border-radius: 8px;
+        overflow: hidden;
+        .popover-popup{
+            display: none;
+        }
+        .btn-dropdown{
+            border-radius: 0;
+        }
+        .popover-popup__body{
+            > * {
+                border-top: 1px solid rgba(18, 18, 20, 0.3);
+            }
+        }
+        &.active{
+            .btn-dropdown svg{
+                transition: 0.15s ease;
+                transform: rotate(180deg);
+            }
         }
     }
 }
@@ -169,18 +205,31 @@
 //////////////////////// Поля input ///////////////////////
 
 .searchField{
+    position: relative;
+    height: 40px;
     &__input{
         display: none;
-        position: relative;
+        position: absolute;
+        right: 0;
+        top: 0;
         input{
             border: 2px solid rgba(63, 105, 255, 0.3);
             border-radius: 8px;
             width: 328px;
             height: 40px;
             outline: none;
-            background-color: transparent;
+            background-color: $black;
             padding: 8px 32px;
             color: $white;
+        }
+        &:before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -40px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(90deg, rgba(35, 35, 37, 0) 0%, rgba(35, 35, 37, 0.9) 50%, #232325 100%);
         }
     }
     &__icon{
@@ -194,6 +243,9 @@
         position: absolute;
         right: 8px;
         top: 8px;
+    }
+    @media (max-width:#{$md3}px) {
+        display: none;
     }
     &.active{
         .searchField__input{

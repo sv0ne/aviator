@@ -11,17 +11,24 @@
 <body>
 	<header class="header">
 		<div class="header__panel">
-			<div class="logo">
+			<div class="header__logo logo">
 				<img src="img/logo.svg" width="94" height="24" alt="">
 				<svg class="w-16 ml-4"><use xlink:href="img/sprite/countries-flags-sprite.svg#armenia"/></svg>
 			</div>
-			<div class="header__nav">
-				<div class="popover">
+			<div class="header__bgOverlay js-bgOverlay"></div>
+			<div class="header__menu js-menu">
+				<div class="header__menuHeader f-jcsb-aic">
+					<p class="text-medium">Menu</p>
+					<button class="btn-dropdown btn-dropdown_filled btn-dropdown_round js-menuClose">
+						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close"/></svg>
+					</button>
+				</div>
+				<div class="popover js-dropdown-menu-mobile">
 					<button class="btn-dropdown popover-trigger">
 						<span>Where to play</span>
 						<svg class="w-24 ml-8"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
 					</button>
-					<div class="popover-popup">
+					<div class="popover-popup mod-left">
 						<div class="popover-popup__body whereToPlayList">
 							<a href="/update-page/#4rabet" class="whereToPlayList__item">
 								<span class="whereToPlayList__img">
@@ -115,8 +122,11 @@
 						</div>
 					</div>
 				</div>
-				<a href="/download-app" class="btn-dropdown">Download app</a>
-				<div class="popover">
+				<a href="/download-app" class="btn-dropdown mod-download-app">
+					<span>Download app</span>
+					<svg class="w-24 ml-8 rotate-270"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
+				</a>
+				<div class="popover js-dropdown-menu-mobile">
 					<button class="btn-dropdown popover-trigger">
 						<span>More</span>
 						<svg class="w-24 ml-8"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
@@ -130,19 +140,22 @@
 					</div>
 				</div>
 			</div>
-			<div class="header__nav2">
+			<div class="header__nav">
 				<div class="searchField js-searchField">
 					<button class="btn-dropdown btn-dropdown_filled btn-dropdown_round searchField__open">
 						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#search"/></svg>
 					</button>
 					<div class="searchField__input">
 						<svg class="w-24 searchField__icon"><use xlink:href="img/sprite/icons-sprite.svg#search"/></svg>
-						<input type="text" class="searchField__input" placeholder="Search by site">
+						<input type="text" placeholder="Search by site">
 						<button class="searchField__close">
 							<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close-fill"/></svg>
 						</button>
 					</div>
 				</div>
+				<button class="btn-dropdown btn-dropdown_filled btn-dropdown_round header__menuBtn js-menuBtn">
+					<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#menu"/></svg>
+				</button>
 				<button class="btn-dropdown btn-dropdown_filled js-popup-opener" data-popup-id="language">
 					<span>EN</span>
 					<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#arrow"/></svg>
