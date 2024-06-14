@@ -132,6 +132,23 @@
 
 ////////// Попапы в header-е
 
+.liveBonuses{
+    @media (max-width:#{$md3}px) {
+        border-radius: 0px;
+        .btn-dropdown{
+            display: none;
+        }
+        .popover-popup{
+            display: block;
+        }
+        .popover-popup__body{
+            > * {
+                border-top: none;
+            }
+        }
+    }
+}
+
 .moreList li a{
     padding: 16px;
     font-weight: bold;

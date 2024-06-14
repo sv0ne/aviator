@@ -374,6 +374,36 @@ video {
   gap: 32px;
 }
 
+.order-1 {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+.order-2 {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+.order-3 {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+
+.order-4 {
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
+}
+
+.order-5 {
+  -webkit-box-ordinal-group: 6;
+      -ms-flex-order: 5;
+          order: 5;
+}
+
 .aic {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -1325,6 +1355,10 @@ video {
 }
 
 @media (min-width: 767.98px) {
+  .min-md3-dn {
+    display: none !important;
+  }
+
   .btn-dropdown.mod-download-app svg {
     display: none;
   }
@@ -1432,7 +1466,7 @@ video {
 position sticky у блока .stickyBlock */
   }
 
-  .md3-dn {
+  .max-md3-dn {
     display: none !important;
   }
 
@@ -1543,6 +1577,22 @@ position sticky у блока .stickyBlock */
             flex: 1;
   }
 
+  .liveBonuses {
+    border-radius: 0px;
+  }
+
+  .liveBonuses .btn-dropdown {
+    display: none;
+  }
+
+  .liveBonuses .popover-popup {
+    display: block;
+  }
+
+  .liveBonuses .popover-popup__body > * {
+    border-top: none;
+  }
+
   .moreList li a {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 0px;
@@ -1620,10 +1670,6 @@ position sticky у блока .stickyBlock */
 }
 
 @media (max-width: 479.98px) {
-  .md4-dn {
-    display: none !important;
-  }
-
   .socials__row_1 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

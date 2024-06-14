@@ -110,13 +110,13 @@ img, video{
 .ta-r{text-align: right;}
 
 .dn{ display: none !important;}
-.md3-dn{
+.max-md3-dn{
 	@media (max-width:#{$md3}px) {
 	    display: none !important;
 	}
 }
-.md4-dn{
-	@media (max-width:#{$md4}px) {
+.min-md3-dn{
+	@media (min-width:#{$md3}px) {
 	    display: none !important;
 	}
 }
@@ -143,6 +143,12 @@ img, video{
 
 .gap-16{gap: 16px;}
 .gap-32{gap: 32px;}
+
+.order-1{order: 1;}
+.order-2{order: 2;}
+.order-3{order: 3;}
+.order-4{order: 4;}
+.order-5{order: 5;}
 
 .aic{align-items: center;}
 .aifs{align-items: flex-start;}
