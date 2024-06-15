@@ -5,6 +5,9 @@ img/sprite/icons-sprite.svg#arrow
 img/sprite/icons-sprite.svg#chevron
 img/sprite/icons-sprite.svg#close-fill
 img/sprite/icons-sprite.svg#close
+img/sprite/icons-sprite.svg#download
+img/sprite/icons-sprite.svg#gift
+img/sprite/icons-sprite.svg#information
 img/sprite/icons-sprite.svg#instagram
 img/sprite/icons-sprite.svg#menu
 img/sprite/icons-sprite.svg#search

@@ -64,9 +64,81 @@ $(document).ready(function () {
         }
     });
 
+    // Плашка "Cookie"
+    (function () {
+        // Показать плашку через 11 сек после загрузки если еще небыла показана
+        setTimeout(function(){
+            let cookie = localStorage.getItem('cookie');
+            if(cookie == null){
+                $('.cookie').slideDown(150);
+            }
+        }, 11000);
+
+        // Скрыть плашку
+        $('.js-btn-cookie').click(function(){
+            $('.cookie').slideUp(150);
+            localStorage.setItem('cookie', 'true');
+        });
+    })();
+
     // Блок boxInfo, кнопка "ALL" показвающая/скрывающая всю информацию
     $(".js-boxInfo-btn").click(function(){
         $(this).toggleClass('active');
         $(".js-boxInfo-casinos").fadeToggle(200);
     });
+
+    //////////////////////////////////////////////////////////////////////////////////////
+
+    // Прокрутка вверх / Плашка бонуса / Кнопка бонуса
+    (function () {
+        let showBonuse = "box"; // btn | box
+        // Обработчик события прокрутки
+        $(window).scroll(function() {
+            let scrollTop = $(this).scrollTop();
+
+            // Показать/Скрыть кнопку прокрутки "Вверх"
+            if (scrollTop > 500) {
+                $('.js-btnScrollToTop').show();
+            } else {
+                $('.js-btnScrollToTop').hide();
+            }
+
+            // Показать/Скрыть блок бонуса
+            if (scrollTop > 1000) {
+                if(showBonuse === "box"){
+                    $('.js-welcomeBonus').show();
+                    $('.js-btnScrollToTop').addClass('hasBoxWelcomeBonus');
+                }else{
+                    $('.js-btnBonus').show();
+                }
+                
+            } else {
+                $('.js-welcomeBonus').hide();
+                $('.js-btnScrollToTop').removeClass('hasBoxWelcomeBonus');
+                $('.js-btnBonus').hide();
+            }
+        });
+
+        // Закрыть плашку бонуса показать кнопку
+        $('.js-btnWelcomeBonusClose').click(function(){
+            $('.js-welcomeBonus').hide();
+            $('.js-btnScrollToTop').removeClass('hasBoxWelcomeBonus');
+            $('.js-btnBonus').show();
+            showBonuse = "btn";
+        });
+
+        // Закрыть кнопку бонуса показать плашку
+        $('.js-btnBonus').click(function(){
+            $('.js-btnBonus').hide();
+            $('.js-welcomeBonus').show();
+            $('.js-btnScrollToTop').addClass('hasBoxWelcomeBonus');
+            showBonuse = "box";
+        });
+
+        // Прокрутить вверх
+        $('.js-btnScrollToTop').click(function() {
+            $('html, body').animate({ scrollTop: 0 }, 'smooth');
+            return false;
+        });
+    })();
 });

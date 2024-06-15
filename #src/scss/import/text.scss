@@ -1,5 +1,6 @@
 .text-big{
   font-size: 30px;
+  line-height: 36px;
   font-weight: bold;
 }
 
@@ -25,4 +26,18 @@
 .leter-sp{
   letter-spacing: 0.7px;
   text-transform: uppercase;
+}
+
+.md3-text-small{
+  @media (max-width:#{$md3}px) {
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+.md3-text-default{
+  @media (max-width:#{$md3}px) {
+    font-size: 15px;
+    line-height: 18px;
+  }
 }

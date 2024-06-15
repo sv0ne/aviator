@@ -28,15 +28,6 @@
 	&__content{
 		padding: 0 16px 16px 16px;
 	}
-	&__close{
-		cursor: pointer;
-		background-color: rgba(255, 255, 255, 0.05);
-		padding: 8px;
-		border-radius: 99px;
-		&:hover{
-			background-color: rgba(255, 255, 255, 0.10);
-		}
-	}
 }
 
 ////////// Стили для каждого попапа отдельно ////////////

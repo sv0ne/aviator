@@ -94,6 +94,7 @@
         gap: 16px;
         @media (max-width:#{$md3}px) {
             flex: 1;
+            padding: 8px;
             flex-direction: row-reverse;
             justify-content: flex-start;
         }
@@ -197,6 +198,109 @@
         }
     }
 }
+
+///////////////////////////////////////////////////////////
+
+.btnBonus{
+    position: fixed;
+    top: 146px;
+    right: 40px;
+    z-index: 33;
+    display: none;
+    background: linear-gradient(225deg, #6D28FF 0%, #FA00FF 100%);
+    &:hover{
+        background: linear-gradient(225deg,#FA00FF 0%, #6D28FF 100%);
+    }
+    @media (max-width:1413px) {
+        right: 16px;
+    }
+}
+
+///////////////////////////////////////////////////////////
+
+.btnScrollToTop{
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    z-index: 33;
+    display: none;
+    @media (max-width:1413px) {
+        right: 16px;
+    }
+    &.hasBoxWelcomeBonus{
+        bottom: 146px;
+        @media (max-width:#{$md3}px) {
+            bottom: 124px;
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////
+
+.welcomeBonus {
+    z-index: 32;
+    @media (min-width:1413px) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        bottom: 16px;
+    }
+    &__boby {
+        padding: 24px 16px;
+        position: relative;
+    }
+    &__label{
+        position: absolute;
+        left: 32px;
+        top: -13px;
+        padding: 4px 12px;
+        border-radius: 8px;
+        background: linear-gradient(90deg, #FFF173 0%, #FFB800 100%);
+        color: $black;
+        @media (max-width:#{$md3}px) {
+            left: 16px;
+        }
+    }
+    &__btn{
+        position: absolute;
+        top: calc(50% - 20px);
+        right: 40px;
+        @media (max-width:1413px) {
+            background-color: rgba(46, 46, 48, 1);
+            right: 16px;
+            top: -20px;
+            border: 1px solid transparent;
+            border-top-color: rgba(255, 255, 255, 0.05);
+            padding: 7px;
+            &:hover{
+                background-color: #454547;
+            }
+        }
+    }
+}
+///////////////////////////////////////////////////////////
+
+.fixedBottomBox{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 30;
+    display: none;
+    background-color: #2F2F2F;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cookie{
+    &__body{
+        @media (max-width:#{$md3}px) {
+            padding: 8px 16px;
+        }
+    }
+    @media (max-width:#{$md3}px) {
+        font-size: 13px;
+        line-height: 16px;
+    }
+}
+
 
 ///////////////////////////////////////////////////////////
 

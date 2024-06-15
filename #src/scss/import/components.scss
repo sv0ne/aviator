@@ -3,10 +3,9 @@
 .btn{
     font-weight: normal;
     border-radius: 8px;
-    width: 156px;
     text-align: center;
     font-weight: 700;
-    padding: 12px;
+    padding: 12px 24px;
     transition: transform 0.15s ease;
     &:hover{
         transition: transform 0.15s ease;
@@ -25,14 +24,25 @@
             content: "";
             position: absolute;
             top: -20px;
-            left: calc(50% - 8px);
+            left: -75px;
             width: 15px;
             height: 80px;
             transform: rotate(45deg);
             background: rgba(255, 255, 255, 0.3);
+            animation: btnLine 2s linear 0s infinite;
         }
     }
+    @media (max-width:#{$md3}px) {
+        padding: 8px 16px;
+    }
 }
+
+@keyframes btnLine {
+    0%{ left: -75px;}
+    25%{left: 120%;}
+    100%{left: 120%;}
+}
+
 
 .btn-2{
     width: 100%;
@@ -44,6 +54,17 @@
     background-color: rgba(255, 255, 255, 0.05);
     &:hover{
         background-color: rgba(255, 255, 255, 0.10);
+    }
+}
+
+.btn-3{
+    padding: 12px 24px;
+    font-weight: 700;
+    border-radius: 8px;
+    background: rgba(35, 35, 37, 1);
+    color: $white;
+    &:hover{
+        background: rgba(35, 35, 37, 0.7);
     }
 }
 
@@ -81,6 +102,17 @@
             svg{
                 display: none;
             }
+        }
+    }
+}
+
+.btn-round{
+    @extend .btn-dropdown_filled;
+    border-radius: 99px;
+    &_white{
+        background-color: #fff;
+        &:hover{
+            background-color: #D3D3D3;
         }
     }
 }

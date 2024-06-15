@@ -372,6 +372,10 @@ video {
           flex: 1;
 }
 
+.gap-8 {
+  gap: 8px;
+}
+
 .gap-16 {
   gap: 16px;
 }
@@ -563,17 +567,6 @@ video {
   padding: 0 16px 16px 16px;
 }
 
-.popup__close {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 8px;
-  border-radius: 99px;
-}
-
-.popup__close:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
 #language {
   width: 360px;
   top: 65px;
@@ -583,10 +576,9 @@ video {
 .btn {
   font-weight: normal;
   border-radius: 8px;
-  width: 156px;
   text-align: center;
   font-weight: 700;
-  padding: 12px;
+  padding: 12px 24px;
   -webkit-transition: -webkit-transform 0.15s ease;
   transition: -webkit-transform 0.15s ease;
   transition: transform 0.15s ease;
@@ -620,13 +612,43 @@ video {
   content: "";
   position: absolute;
   top: -20px;
-  left: calc(50% - 8px);
+  left: -75px;
   width: 15px;
   height: 80px;
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
   background: rgba(255, 255, 255, 0.3);
+  -webkit-animation: btnLine 2s linear 0s infinite;
+          animation: btnLine 2s linear 0s infinite;
+}
+
+@-webkit-keyframes btnLine {
+  0% {
+    left: -75px;
+  }
+
+  25% {
+    left: 120%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+@keyframes btnLine {
+  0% {
+    left: -75px;
+  }
+
+  25% {
+    left: 120%;
+  }
+
+  100% {
+    left: 120%;
+  }
 }
 
 .btn-2 {
@@ -647,6 +669,18 @@ video {
 
 .btn-2:hover {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-3 {
+  padding: 12px 24px;
+  font-weight: 700;
+  border-radius: 8px;
+  background: rgb(35, 35, 37);
+  color: rgb(255, 255, 255);
+}
+
+.btn-3:hover {
+  background: rgba(35, 35, 37, 0.7);
 }
 
 .btnDemo {
@@ -676,17 +710,31 @@ video {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-.btn-dropdown_filled {
+.btn-dropdown_filled,
+.btn-round {
   padding: 8px;
   background: rgba(255, 255, 255, 0.05);
 }
 
-.btn-dropdown_filled:hover {
+.btn-dropdown_filled:hover,
+.btn-round:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
 .btn-dropdown_round {
   border-radius: 99px;
+}
+
+.btn-round {
+  border-radius: 99px;
+}
+
+.btn-round_white {
+  background-color: #fff;
+}
+
+.btn-round_white:hover {
+  background-color: #D3D3D3;
 }
 
 .linkApp {
@@ -1003,6 +1051,68 @@ video {
   margin-right: 16px;
 }
 
+.btnBonus {
+  position: fixed;
+  top: 146px;
+  right: 40px;
+  z-index: 33;
+  display: none;
+  background: linear-gradient(225deg, #6D28FF 0%, #FA00FF 100%);
+}
+
+.btnBonus:hover {
+  background: linear-gradient(225deg, #FA00FF 0%, #6D28FF 100%);
+}
+
+.btnScrollToTop {
+  position: fixed;
+  bottom: 80px;
+  right: 40px;
+  z-index: 33;
+  display: none;
+}
+
+.btnScrollToTop.hasBoxWelcomeBonus {
+  bottom: 146px;
+}
+
+.welcomeBonus {
+  z-index: 32;
+}
+
+.welcomeBonus__boby {
+  padding: 24px 16px;
+  position: relative;
+}
+
+.welcomeBonus__label {
+  position: absolute;
+  left: 32px;
+  top: -13px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  background: -webkit-gradient(linear, left top, right top, from(#FFF173), to(#FFB800));
+  background: linear-gradient(90deg, #FFF173 0%, #FFB800 100%);
+  color: rgb(35, 35, 37);
+}
+
+.welcomeBonus__btn {
+  position: absolute;
+  top: calc(50% - 20px);
+  right: 40px;
+}
+
+.fixedBottomBox {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 30;
+  display: none;
+  background-color: #2F2F2F;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 .footer {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -1294,6 +1404,7 @@ video {
 
 .text-big {
   font-size: 30px;
+  line-height: 36px;
   font-weight: bold;
 }
 
@@ -1427,10 +1538,40 @@ video {
   }
 }
 
+@media (min-width: 1413px) {
+  .welcomeBonus {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    bottom: 16px;
+  }
+}
+
 @media (max-width: 1420px) {
   .header__menu {
     padding: 8px 0;
     gap: 0;
+  }
+}
+
+@media (max-width: 1413px) {
+  .btnBonus {
+    right: 16px;
+  }
+
+  .btnScrollToTop {
+    right: 16px;
+  }
+
+  .welcomeBonus__btn {
+    background-color: rgb(46, 46, 48);
+    right: 16px;
+    top: -20px;
+    border: 1px solid transparent;
+    border-top-color: rgba(255, 255, 255, 0.05);
+    padding: 7px;
+  }
+
+  .welcomeBonus__btn:hover {
+    background-color: #454547;
   }
 }
 
@@ -1485,6 +1626,14 @@ video {
 position sticky у блока .stickyBlock */
   }
 
+  .md3-m0 {
+    margin: 0;
+  }
+
+  .md3-ta-c {
+    text-align: center;
+  }
+
   .max-md3-dn {
     display: none !important;
   }
@@ -1505,6 +1654,10 @@ position sticky у блока .stickyBlock */
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
+  }
+
+  .btn {
+    padding: 8px 16px;
   }
 
   .popover {
@@ -1598,6 +1751,7 @@ position sticky у блока .stickyBlock */
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+    padding: 8px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
@@ -1643,6 +1797,23 @@ position sticky у блока .stickyBlock */
     -webkit-box-flex: 0;
         -ms-flex: 0 0 33%;
             flex: 0 0 33%;
+  }
+
+  .btnScrollToTop.hasBoxWelcomeBonus {
+    bottom: 124px;
+  }
+
+  .welcomeBonus__label {
+    left: 16px;
+  }
+
+  .cookie__body {
+    padding: 8px 16px;
+  }
+
+  .cookie {
+    font-size: 13px;
+    line-height: 16px;
   }
 
   .boxInfo {
@@ -1702,6 +1873,16 @@ position sticky у блока .stickyBlock */
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+
+  .md3-text-small {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .md3-text-default {
+    font-size: 15px;
+    line-height: 18px;
   }
 }
 
