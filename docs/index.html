@@ -11,16 +11,16 @@
 <!-- role="dialog" -->
 <body> 
 	<header class="header">
-		<div class="header__panel">
+		<div class="header__panel js-modalContainer">
 			<a href="/" class="header__logo logo">
 				<img src="img/logo.svg" width="94" height="24" alt="">
 				<svg class="w-16 ml-4"><use xlink:href="img/sprite/countries-flags-sprite.svg#armenia"/></svg>
 			</a>
-			<div class="header__bgOverlay js-bgOverlay"></div>
-			<div class="header__menu js-menu">
-				<div class="header__menuHeader not-nlc f-jcsb-aic">
+			<div class="modal__bgOverlay js-modalOverlay"></div>
+			<div class="header__menu modal__body js-modalBody">
+				<div class="modal__header f-jcsb-aic">
 					<p class="text-medium">Menu</p>
-					<button class="btn-round js-menuClose">
+					<button class="btn-round js-modalClose">
 						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close"/></svg>
 					</button>
 				</div>
@@ -75,13 +75,13 @@
 							</a>
 							<a href="/update-page/#1win" class="whereToPlayList__item">
 								<span class="whereToPlayList__img">
-									<img src="img/dafabet.png" loading="lazy" width="100" height="24" alt="">
+									<img src="img/dafabet.svg" loading="lazy" width="100" height="24" alt="">
 								</span>
 								<span class="bold">Dafabet</span>
 							</a>
 							<a href="/update-page/#1win" class="whereToPlayList__item">
 								<span class="whereToPlayList__img">
-									<img src="img/becric.png" loading="lazy" width="48" height="24" alt="">
+									<img src="img/becric.svg" loading="lazy" width="58.5" height="24" alt="">
 								</span>
 								<span class="bold">Becric</span>
 							</a>
@@ -159,7 +159,7 @@
 				</div>
 			</div>
 			<div class="header__nav">
-				<button class="btn-round header__menuBtn js-menuBtn">
+				<button class="btn-round header__menuBtn js-modalOpener">
 					<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#menu"/></svg>
 				</button>
 				<button class="btn-dropdown btn-dropdown_filled js-popup-opener" data-popup-id="language">
@@ -266,7 +266,7 @@
 		<div class="container p-16 f-jcsb-aic cookie__body">
 			<p>We use cookies to improve your experience on our website</p>
 			<div class="f-aic gap-16">
-				<a href="/privacy-policy">
+				<a href="/privacy-policy" target="_blank">
 					<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#information"/></svg>
 				</a>
 				<button class="btn-3 js-btn-cookie">Agree</button>
@@ -464,81 +464,85 @@
 					</a>
 				</div>
 			</div>
-			<div class="text-small not-nlc">
+			<div class="text-small js-modalContainer">
 				<p class="leter-sp gray mb-16">Developer Licenses & Certificates</p>
-				<div class="certificates__list">
-					<span class="certificates__item">
+				<div class="modal__bgOverlay js-modalOverlay"></div>
+				<div class="certificates__list modal__body js-modalOpener js-modalBody">
+					<div class="modal__header f-jcsb-aic">
+						<p class="text-medium">Developer Licenses & Certificates</p>
+						<button class="btn-round js-modalClose">
+							<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close"/></svg>
+						</button>
+					</div>
+					<div class="certificates__item">
 						<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#malta"/></svg>
 						<span>Malta Gaming Authority</span>
-					</span>
-					<span class="certificates__item">
+					</div>
+					<div class="certificates__item">
 						<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#canada"/></svg>
 						<span>Alcohol and Gaming Commission of Ontario</span>
-					</span>
-					<span class="certificates__item">
+					</div>
+					<div class="certificates__item">
 						<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#switzerland"/></svg>
 						<span>Swiss Gambling Supervisory Authority (Gespa)</span>
-					</span>
-					<span class="certificates__item">
+					</div>
+					<div class="certificates__item">
 						<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#gibraltar"/></svg>
 						<span>Gibraltar Gaming Commission</span>
-					</span>
-					<span class="certificates__item">
+					</div>
+					<div class="certificates__item">
 						<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#romania"/></svg>
 						<span>Romania National Gambling Office</span>
-					</span>
-					<span class="certificates__item">
+					</div>
+					<div class="certificates__item">
 						<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#croatia"/></svg>
 						<span>MINISTARSTVO FINANCIJA Porezna uprava</span>
-					</span>
-					<span class="certificates__item">
+					</div>
+					<div class="certificates__item">
 						<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#italy"/></svg>
 						<span>Autonoma dei Monopoli di Stato</span>
-					</span>
-					<span class="certificates__item">
+					</div>
+					<div class="certificates__item">
 						<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#bulgaria"/></svg>
 						<span>State Gambling Commission</span>
-					</span>
-					<span class="certificates__item">
+					</div>
+					<div class="certificates__item">
 						<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#serbia"/></svg>
 						<span>Ministry of Finance Gaming Authority</span>
-					</span>
-					<span class="certificates__item">
+					</div>
+					<div class="certificates__item">
 						<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#colombia"/></svg>
 						<span>Colijuegos</span>
-					</span>
-					<span class="certificates__item">
+					</div>
+					<div class="certificates__item">
 						<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#sweden"/></svg>
 						<span>Spelinspektionen</span>
-					</span>
-					<span class="certificates__item">
+					</div>
+					<div class="certificates__item">
 						<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#south-africa"/></svg>
 						<span>Western Cape Gambling and Racing Board</span>
-					</span>
-					<span class="certificates__item">
+					</div>
+					<div class="certificates__item">
 						<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#georgia"/></svg>
 						<span>Ministry of Finance of Georgia</span>
-					</span>
-					<span class="certificates__item">
+					</div>
+					<div class="certificates__item">
 						<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#greece"/></svg>
 						<span>Hellenic Gaming Commission</span>
-					</span>
-					<span class="certificates__item">
+					</div>
+					<div class="certificates__item">
 						<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#latvia"/></svg>
 						<span>Lotteries and Gambling Supervisory Inspection</span>
-					</span>
-					<span class="certificates__item">
+					</div>
+					<div class="certificates__item">
 						<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#lithuania"/></svg>
 						<span>Gaming Control Authority</span>
-					</span>
-					<span class="certificates__item">
+					</div>
+					<div class="certificates__item">
 						<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#netherlands"/></svg>
 						<span>Kansspelautoriteit</span>
-					</span>
-					<span class="certificates__text">
-						<span class="certificates__fake"></span>
-						<span>All Licenses & Certificates</span>
-					</span>
+					</div>
+					<p class="certificates__licenses md3-text-default">All Licenses & Certificates</p>
 				</div>
 			</div>
 			<div class="socials">

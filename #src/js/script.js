@@ -32,21 +32,24 @@ $(document).ready(function () {
         });
     })();
 
-    // Управление меню | Открыть/закрыть
+    // Управление модальными окнами на мобилках | Открыть/закрыть
     (function() {
-        // Открыть меню
-        $('.js-menuBtn').click(function(){
-            $('body').addClass('lock');
-            $('.js-menu').addClass('active');
-            $('.js-bgOverlay').addClass('active');
-        });
+        if(w < BREAKPOINT_md3){
+            // Открыть окно
+            $('.js-modalOpener').click(function(){
+                $('body').addClass('lock');
+                $(this).closest('.js-modalContainer').find('.js-modalBody').addClass('active');
+                $(this).closest('.js-modalContainer').find('.js-modalOverlay').addClass('active');
+            });
 
-        // Закрыть меню
-        $('.js-bgOverlay, .js-menuClose').click(function(){
-            $('body').removeClass('lock');
-            $('.js-bgOverlay').removeClass('active');
-            $('.js-menu').removeClass('active');
-        });
+            // Закрыть окно
+            $('.js-modalOverlay, .js-modalClose').click(function(e){
+                e.stopPropagation();
+                $('body').removeClass('lock');
+                $(this).closest('.js-modalContainer').find('.js-modalBody').removeClass('active');
+                $(this).closest('.js-modalContainer').find('.js-modalOverlay').removeClass('active');
+            });
+        }
     })();
 
     // Открыть/закрыть выпадающие списки меню на мобилках
@@ -86,8 +89,6 @@ $(document).ready(function () {
         $(this).toggleClass('active');
         $(".js-boxInfo-casinos").fadeToggle(200);
     });
-
-    //////////////////////////////////////////////////////////////////////////////////////
 
     // Прокрутка вверх / Плашка бонуса / Кнопка бонуса
     (function () {
@@ -141,4 +142,18 @@ $(document).ready(function () {
             return false;
         });
     })();
+
+    // Для блока "CERTIFICATES" определить позицию выводимой всплывашки
+    if(w > BREAKPOINT_md3){
+        $('.certificates__item').mouseenter(function(){
+            const rect = this.getBoundingClientRect();
+            if(w-rect.x < 230){
+                $(this).addClass('tooltipPosLeft');
+            }
+        });
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////
+
+    
 });

@@ -22,33 +22,6 @@
         align-items: center;
         flex: 1;
     }
-    &__bgOverlay{
-        display: none;
-        &.active{
-            display: block;
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 52;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-        }
-        @media (min-width:#{$md3}px) {
-            display: none !important;
-        }
-    }
-    &__menuHeader{
-        position: sticky;
-        top: 0;
-        background-color: #232325;
-        z-index: 2;
-        padding: 16px 0;
-        @media (min-width:#{$md3}px) {
-            display: none;
-        }
-    }
     &__menu{
         padding: 8px 0px 8px 32px;
         display: flex;
@@ -57,34 +30,6 @@
         @media (max-width:1420px) {
             padding: 8px 0;
             gap: 0;
-        }
-        @media (max-width:#{$md3}px) {
-            display: none;
-            transform: translateY(100%);
-            &.active{
-                display: block;
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                max-height: 75vh;
-                overflow-y: auto;
-                animation: showModal 0.15s forwards 0s linear;
-                z-index: 55;
-                background-color: rgba(35, 35, 37, 1);
-                padding: 0px 16px 16px 16px;
-                border-radius: 12px 12px 0 0;
-                > *:not(:last-child):not(.not-nlc){
-                    margin-bottom: 16px;
-                }
-            }
-            .btn-dropdown:not(.btn-dropdown_round){
-                background-color: rgba(255, 255, 255, 0.05);
-                width: 100%;
-                justify-content: space-between;
-                padding: 16px;
-                font-weight: 400;
-            }
         }
     }
     &__nav{
@@ -129,11 +74,6 @@
             padding: 8px;
         }
     }
-}
-
-@keyframes showModal {
-    from{transform: translateY(100%);}
-    to{transform: translateY(0%);}
 }
 
 ////////// Попапы в header-е
@@ -237,6 +177,17 @@
 
 ///////////////////////////////////////////////////////////
 
+.fixedBottomBox{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 30;
+    display: none;
+    background-color: #2F2F2F;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 .welcomeBonus {
     z-index: 32;
     @media (min-width:1413px) {
@@ -278,17 +229,6 @@
 }
 ///////////////////////////////////////////////////////////
 
-.fixedBottomBox{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 30;
-    display: none;
-    background-color: #2F2F2F;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
 .cookie{
     &__body{
         @media (max-width:#{$md3}px) {
@@ -300,7 +240,6 @@
         line-height: 16px;
     }
 }
-
 
 ///////////////////////////////////////////////////////////
 
@@ -433,44 +372,88 @@
 
 .certificates{
     &__list{
-        //isolation: isolate;
+        display: flex !important;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+        &.active{
+            @media (max-width:#{$md3}px) {
+                display: block !important;
+                .certificates__item{
+                    display: flex;
+                    align-items: center;
+                    span{
+                        display: inline;
+                        margin-left: 16px;
+                    }
+                    svg{
+                        mix-blend-mode: normal;
+                    }
+                }
+                .certificates__licenses{
+                    background-color: rgba(255, 255, 255, 1);
+                    border-radius: 8px;
+                    padding: 8px 16px;
+                    color: $black;
+                    text-align: center;
+                    font-weight: bold;
+                }
+                .modal__header{
+                    display: flex;
+                }
+            }
+        }
+        @media (max-width:#{$md3}px) {
+            cursor: pointer;
+            .modal__header{
+                display: none;
+            }
+        }
     }
     &__item{
-        display: inline-flex;
-        align-items: center;
-        margin-right: 13px;
-        margin-bottom: 16px;
-        cursor: pointer;
-        overflow: hidden;
-        &:hover, &.active{
+        @media (min-width:#{$md3}px) {
+            cursor: pointer;
+            position: relative;
+            &:hover{
+                svg{
+                    mix-blend-mode: normal;
+                }
+                span{
+                    bottom: 32px;
+                    left: 0;
+                    transition: 0s ease 0.15s;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
             svg{
-                mix-blend-mode: normal;
+                mix-blend-mode: luminosity;
             }
             span{
-                display: inline;
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                z-index: 12;
+                background-color: rgba(35, 35, 37, 1);
+                box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
+                padding: 16px;
+                border-radius: 12px;
+                width: 200px;
+            }
+            &.tooltipPosLeft:hover{
+                span{
+                    left: auto;
+                    right: 0;
+                }
             }
         }
-        svg{
-            mix-blend-mode: luminosity;
-        }
-        span{
-            margin-left: 8px;
-            display: none;
-        }
-    }
-    &__text{
-        display: inline-flex;
-        align-items: center;
-        margin-bottom: 16px;
         @media (max-width:#{$md3}px) {
-            display: block;
-        }
-    }
-    &__fake{
-        display: inline-block;
-        height: 24px;
-        @media (max-width:#{$md3}px) {
-            display: none;
+            svg{
+                mix-blend-mode: luminosity;
+            }
+            span{
+                display: none;
+            }
         }
     }
 }
