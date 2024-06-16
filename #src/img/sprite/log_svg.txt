@@ -5,6 +5,7 @@ img/sprite/icons-sprite.svg#arrow
 img/sprite/icons-sprite.svg#chevron
 img/sprite/icons-sprite.svg#close-fill
 img/sprite/icons-sprite.svg#close
+img/sprite/icons-sprite.svg#copy
 img/sprite/icons-sprite.svg#download
 img/sprite/icons-sprite.svg#gift
 img/sprite/icons-sprite.svg#information

@@ -214,7 +214,51 @@ $(document).on("click", ".js-popup-closer", function(e){
         });
     }
 
+    // Копирование текста в буфер обмена
+    (function () {
+        // Копировать в буфер
+        function copy_in_buffer(txt) {
+            var $tmp = $("<textarea>");
+            $("body").append($tmp);
+            $tmp.val(txt).select();
+            document.execCommand("copy");
+            $tmp.remove();
+        }
+
+        // Клик на скопировать ссылку
+        $(".js-copy-text").click(function(){
+            let txt = $(this).data('promocode');
+            copy_in_buffer(txt);
+
+            const $element = $('.js-copied');
+
+            $element.addClass('show');
+            setTimeout(function(){
+                $element.removeClass('show').addClass('hide');
+                setTimeout(function(){
+                    $element.removeClass('hide');
+                },280)
+            },2000);
+        });
+    })();
+
+    // Увеличиваем число tiket (делаем анимацию)
+    (function () {
+        function animateCounter(element, min, max, stepDelay) {
+            let i = min;
+            let timer = setInterval(function(){
+                element.text(i+"X");
+                if(i === max){ clearInterval(timer); }
+                i++;
+            }, stepDelay);
+        }
+
+        animateCounter($('.js-ticket-1'), 0, 75, 30);
+        animateCounter($('.js-ticket-2'), 0, 10, 50);
+    })();
+
     //////////////////////////////////////////////////////////////////////////////////////
 
     
+
 });
