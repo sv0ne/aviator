@@ -13,8 +13,12 @@ $(document).ready(function () {
 
 	@@include('_popup.js');
 
-    // Изменить язык
-    $(".js-change-language").click(function(){
+    // Форма в попапе "Language"
+    $(".js-form-item").click(function(e){
+        e.preventDefault();
+        let value = $(this).data('value');
+        $(this).closest('.js-form').find('.js-form-value').val(value);
+        $(this).closest('.js-form').submit();
         close_popup();
     });
 

@@ -1,22 +1,52 @@
 /////////////////// Скрипты для попапов ///////////////////////////
 
 var popup = $(".popup");
-var lastOpen = false;
+var lastOpenedPopupID = null;
 
 // Показать попапы при клике
 $(document).on("click", ".js-popup-opener", function(e){
 	e.preventDefault();
 	if($(this).hasClass('disabled')){return false;}
-	openPopup($(this).data('popup-id'));
+	const triggerRect = this.getBoundingClientRect();
+	openPopup($(this).data('popup-id'), triggerRect, $(this).data('add-class'));
 });
 
 // Открыть попап
-function openPopup(popupID) {
-	if(lastOpen !== popupID){
-		if(lastOpen !== false){close_popup();}
-		lastOpen = popupID;
-		$('#'+popupID).addClass('isOpen');
-		//bodyLock();
+function openPopup(popupID, triggerRect, additionalClass) {
+	if(lastOpenedPopupID !== popupID){
+		if(lastOpenedPopupID !== null){close_popup();}
+		lastOpenedPopupID = popupID;
+
+		let additionalClassName = "";
+
+		if(w > BREAKPOINT_md3){
+			additionalClassName = additionalClass === undefined ? "" : " "+additionalClass;
+			
+			// Определить тип попапа (Плавающий | floating) или (Центрированый | centered)
+			let type = $('#'+popupID).data('type');
+			if(type == 'centered'){
+				bodyLock();
+			}else{
+				let modalRect = $('#'+popupID)[0].getBoundingClientRect();
+
+				let top = 0, left = 0;
+				if(popupID === "language"){
+					top = additionalClass === undefined ? triggerRect.top + triggerRect.height + 8 
+						: document.documentElement.scrollTop + triggerRect.top - modalRect.height - 8;
+					left = triggerRect.left + triggerRect.width - 360;
+				}
+
+				$('#'+popupID).css({
+					'top': top+"px",
+					'left': left+"px"
+				});
+			}
+		}else{
+			$(".js-popupOverlay").addClass('active');
+			bodyLock();
+		}
+
+		$('#'+popupID).addClass('isOpen'+additionalClassName);
 	}else{
 		close_popup();
 	}
@@ -26,7 +56,7 @@ function openPopup(popupID) {
 $(document).on(isMobile ? "touchend" : "mousedown", function (e) {
 	var popupTarget = $(".js-popup-opener").has(e.target).length;
 	// Если (клик вне попапа && попап имеет класс isOpen)
-    if (popup.has(e.target).length === 0 && popup.hasClass('isOpen') && popupTarget === 0){
+    if (popup.has(e.target).length === 0 && popup.hasClass('isOpen') && popupTarget === 0 && $(e.target).hasClass('js-popup-opener') === false){
 	    close_popup();
 	}
 });
@@ -50,9 +80,10 @@ function bodyUnLock() {
 
 // Закрыть popup
 function close_popup() {
-	$(".popup").removeClass('isOpen');
+	$(".popup").removeClass('isOpen mod2');
+	$(".js-popupOverlay").removeClass('active');
 	bodyUnLock();
-	lastOpen = false;
+	lastOpenedPopupID = null;
 }
 
 // Закрыть попапа при нажатии на кнопки "Close"

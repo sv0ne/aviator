@@ -1,15 +1,21 @@
 .popup{
-	width: 100%;
+	width: 360px;
 	position: fixed;
-	z-index: -1;
-	top: 0;
-	left: 0;
+	z-index: 0;
 	opacity: 0;
 	visibility: hidden;
+	@media (max-width:#{$md3}px) {
+		bottom: 0;
+		width: 100%;
+		transform: translateY(100%);
+	}
 	&.isOpen{
 		opacity: 1;
 		visibility: visible;
-		z-index: 1000;
+		z-index: 60;
+		@media (max-width:#{$md3}px) {
+			animation: showModal 0.15s forwards 0s linear;
+		}
 	}
 	&__body {
 		width: 360px;
@@ -17,6 +23,9 @@
 		border-radius: 12px;
 		background-color: $black;
 		box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
+		@media (max-width:#{$md3}px) {
+			width: 100%;
+		}
 	}
 	&__header{
 		display: flex;
@@ -27,13 +36,19 @@
 	}
 	&__content{
 		padding: 0 16px 16px 16px;
+		max-height: 65vh;
+		overflow-y: auto;
+		@media (max-width:#{$md3}px) {
+			max-height: 75vh;
+		}
 	}
 }
 
 ////////// Стили для каждого попапа отдельно ////////////
 
 #language {
-	width: 360px;
-	top: 65px;
-	left: 5px;
+	&.mod2{
+		z-index: 29;
+		position: absolute;
+	}
 }

@@ -14,6 +14,8 @@ img/sprite/icons-sprite.svg#menu
 img/sprite/icons-sprite.svg#search
 img/sprite/icons-sprite.svg#selected
 img/sprite/icons-sprite.svg#telegram
+img/sprite/icons-sprite.svg#verified
+img/sprite/icons-sprite.svg#x
 img/sprite/countries-flags-sprite.svg#abkhazia
 img/sprite/countries-flags-sprite.svg#afghanistan
 img/sprite/countries-flags-sprite.svg#aland-islands

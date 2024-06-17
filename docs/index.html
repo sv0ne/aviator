@@ -42,7 +42,7 @@
 						<svg class="w-24 ml-8"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
 					</button>
 					<div class="popover-popup mod-left">
-						<div class="popover-popup__body whereToPlayList">
+						<div class="popover-popup__body scroll-styled whereToPlayList">
 							<a href="/update-page/#4rabet" class="whereToPlayList__item">
 								<span class="whereToPlayList__img">
 									<img src="img/4rabet.svg" loading="lazy" width="93" height="16" alt="">
@@ -536,7 +536,8 @@
 
 	<!-- Список попапов -->
 	<div>
-		<div class="popup" id="language">
+		<div class="modal__bgOverlay js-popupOverlay"></div>
+		<div class="popup" id="language" data-type="floating">
 			<div class="popup__body">
 				<div class="popup__header">
 					<p class="text-medium">Select a language</p>
@@ -544,10 +545,11 @@
 						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close"/></svg>
 					</button>
 				</div>
-				<div class="popup__content nlc-mb-16">
+				<form method="post" action="test.php" class="popup__content scroll-styled nlc-mb-16 js-form">
+					<input type="hidden" class="js-form-value" name="language" value="">
 					<p class="bold">Suggested languages</p>
 					<div class="brad-8 o-h">
-						<button class="btn-2 js-change-language">
+						<button class="btn-2 js-form-item" data-value="united-kingdom">
 							<span class="f-aic">
 								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#united-kingdom"/></svg>
 								<span class="d-flex fdc aifs">
@@ -557,7 +559,7 @@
 							</span>
 							<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#selected"/></svg>
 						</button>
-						<button class="btn-2 js-change-language">
+						<button class="btn-2 js-form-item" data-value="france">
 							<span class="f-aic">
 								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#france"/></svg>
 								<span class="d-flex fdc aifs">
@@ -566,7 +568,7 @@
 								</span>
 							</span>
 						</button>
-						<button class="btn-2 js-change-language">
+						<button class="btn-2 js-form-item" data-value="russia">
 							<span class="f-aic">
 								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#russia"/></svg>
 								<span class="d-flex fdc aifs">
@@ -578,7 +580,7 @@
 					</div>
 					<p class="bold">All languages</p>
 					<div class="brad-8 o-h">
-						<button class="btn-2 js-change-language">
+						<button class="btn-2 js-form-item" data-value="azerbaijan">
 							<span class="f-aic">
 								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#azerbaijan"/></svg>
 								<span class="d-flex fdc aifs">
@@ -587,7 +589,7 @@
 								</span>
 							</span>
 						</button>
-						<button class="btn-2 js-change-language">
+						<button class="btn-2 js-form-item" data-value="bangladesh">
 							<span class="f-aic">
 								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#bangladesh"/></svg>
 								<span class="d-flex fdc aifs">
@@ -596,7 +598,7 @@
 								</span>
 							</span>
 						</button>
-						<button class="btn-2 js-change-language">
+						<button class="btn-2 js-form-item" data-value="china">
 							<span class="f-aic">
 								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#china"/></svg>
 								<span class="d-flex fdc aifs">
@@ -605,7 +607,79 @@
 								</span>
 							</span>
 						</button>
-						<button class="btn-2 js-change-language">
+						<button class="btn-2 js-form-item" data-value="germany">
+							<span class="f-aic">
+								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#germany"/></svg>
+								<span class="d-flex fdc aifs">
+									<span>Deutsch</span>
+									<span class="text-small gray">German</span>
+								</span>
+							</span>
+						</button>
+						<button class="btn-2 js-form-item" data-value="azerbaijan">
+							<span class="f-aic">
+								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#azerbaijan"/></svg>
+								<span class="d-flex fdc aifs">
+									<span>Azərbaycan dili</span>
+									<span class="text-small gray">Azeri</span>
+								</span>
+							</span>
+						</button>
+						<button class="btn-2 js-form-item" data-value="bangladesh">
+							<span class="f-aic">
+								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#bangladesh"/></svg>
+								<span class="d-flex fdc aifs">
+									<span>বাংলা</span>
+									<span class="text-small gray">Bengali</span>
+								</span>
+							</span>
+						</button>
+						<button class="btn-2 js-form-item" data-value="china">
+							<span class="f-aic">
+								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#china"/></svg>
+								<span class="d-flex fdc aifs">
+									<span>中文</span>
+									<span class="text-small gray">Chinese</span>
+								</span>
+							</span>
+						</button>
+						<button class="btn-2 js-form-item" data-value="germany">
+							<span class="f-aic">
+								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#germany"/></svg>
+								<span class="d-flex fdc aifs">
+									<span>Deutsch</span>
+									<span class="text-small gray">German</span>
+								</span>
+							</span>
+						</button>
+						<button class="btn-2 js-form-item" data-value="azerbaijan">
+							<span class="f-aic">
+								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#azerbaijan"/></svg>
+								<span class="d-flex fdc aifs">
+									<span>Azərbaycan dili</span>
+									<span class="text-small gray">Azeri</span>
+								</span>
+							</span>
+						</button>
+						<button class="btn-2 js-form-item" data-value="bangladesh">
+							<span class="f-aic">
+								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#bangladesh"/></svg>
+								<span class="d-flex fdc aifs">
+									<span>বাংলা</span>
+									<span class="text-small gray">Bengali</span>
+								</span>
+							</span>
+						</button>
+						<button class="btn-2 js-form-item" data-value="china">
+							<span class="f-aic">
+								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#china"/></svg>
+								<span class="d-flex fdc aifs">
+									<span>中文</span>
+									<span class="text-small gray">Chinese</span>
+								</span>
+							</span>
+						</button>
+						<button class="btn-2 js-form-item" data-value="germany">
 							<span class="f-aic">
 								<svg class="w-24 mr-8"><use xlink:href="img/sprite/countries-flags-sprite.svg#germany"/></svg>
 								<span class="d-flex fdc aifs">
@@ -615,7 +689,7 @@
 							</span>
 						</button>
 					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -627,7 +701,7 @@
 					<img src="img/logo.svg" width="94" height="24" alt="">
 					<svg class="w-16 ml-4"><use xlink:href="img/sprite/countries-flags-sprite.svg#armenia"/></svg>
 				</a>
-				<button class="btn-dropdown btn-dropdown_filled js-popup-opener" data-popup-id="language">
+				<button class="btn-dropdown btn-dropdown_filled js-popup-opener" data-popup-id="language" data-add-class="mod2">
 					<span>EN</span>
 					<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#arrow"/></svg>
 					<svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#united-kingdom"/></svg>

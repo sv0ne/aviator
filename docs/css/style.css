@@ -47,7 +47,6 @@ body {
   margin: 0;
   padding: 0;
   min-width: 320px;
-  position: relative;
   width: 100%;
   color: #000;
 }
@@ -562,11 +561,9 @@ video {
 }
 
 .popup {
-  width: 100%;
+  width: 360px;
   position: fixed;
-  z-index: -1;
-  top: 0;
-  left: 0;
+  z-index: 0;
   opacity: 0;
   visibility: hidden;
 }
@@ -574,7 +571,7 @@ video {
 .popup.isOpen {
   opacity: 1;
   visibility: visible;
-  z-index: 1000;
+  z-index: 60;
 }
 
 .popup__body {
@@ -601,12 +598,13 @@ video {
 
 .popup__content {
   padding: 0 16px 16px 16px;
+  max-height: 65vh;
+  overflow-y: auto;
 }
 
-#language {
-  width: 360px;
-  top: 65px;
-  left: 5px;
+#language.mod2 {
+  z-index: 29;
+  position: absolute;
 }
 
 .btn {
@@ -1020,6 +1018,10 @@ video {
 
 .searchField.active .searchField__open {
   display: none;
+}
+
+.scroll-styled {
+  -webkit-overflow-scrolling: touch;
 }
 
 .logo {
@@ -1869,6 +1871,8 @@ video {
     -webkit-box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
             box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
     width: 360px;
+    max-height: 75vh;
+    overflow-y: auto;
   }
 
   .popover-popup {
@@ -1896,6 +1900,30 @@ video {
 
   .modal__header {
     display: none;
+  }
+
+  .scroll-styled {
+    /* ползунок скроллбара */
+    scrollbar-color: #232325 #2E2E30;
+    /* «цвет ползунка» «цвет полосы скроллбара» */
+    scrollbar-width: thin;
+  }
+
+  .scroll-styled ::-webkit-scrollbar {
+    width: 12px;
+    /* ширина для вертикального скролла */
+    height: 12px;
+    /* высота для горизонтального скролла */
+    background-color: #fff;
+  }
+
+  .scroll-styled ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+
+  .scroll-styled ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   .header__menuBtn {
@@ -2153,6 +2181,27 @@ position sticky у блока .stickyBlock */
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
+  }
+
+  .popup {
+    bottom: 0;
+    width: 100%;
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+
+  .popup.isOpen {
+    -webkit-animation: showModal 0.15s forwards 0s linear;
+            animation: showModal 0.15s forwards 0s linear;
+  }
+
+  .popup__body {
+    width: 100%;
+  }
+
+  .popup__content {
+    max-height: 75vh;
   }
 
   .btn {
