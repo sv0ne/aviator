@@ -292,8 +292,12 @@ $(document).on("click", ".js-popup-closer", function(e){
         animateCounter($('.js-ticket-2'), 0, 10, 50);
     })();
 
+    // Открыть полностью отзыв
+    $('.js-reviews-btn').click(function(){
+        $(this).closest('.js-reviews').addClass('active');
+    });
+
     //////////////////////////////////////////////////////////////////////////////////////
 
-    
 
 });

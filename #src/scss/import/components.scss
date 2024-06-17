@@ -340,6 +340,9 @@
     @media (max-width:#{$md3}px) {
         left: 16px;
     }
+    &_white{
+        background: #fff;
+    }
 }
 
 .label-2{
@@ -350,6 +353,12 @@
     color: $black;
     font-weight: 700;
     @extend .text-small;
+}
+
+.label-3{
+    background-color: rgba(51, 51, 51, 0.7);
+    padding: 4px;
+    border-radius: 8px;
 }
 
 //////////////////////// Поля input ///////////////////////
