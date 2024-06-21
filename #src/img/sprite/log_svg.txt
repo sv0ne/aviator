@@ -2,6 +2,7 @@ img/sprite/icons-sprite.svg#android-green
 img/sprite/icons-sprite.svg#android
 img/sprite/icons-sprite.svg#apple
 img/sprite/icons-sprite.svg#arrow
+img/sprite/icons-sprite.svg#checks_24
 img/sprite/icons-sprite.svg#chevron
 img/sprite/icons-sprite.svg#close-fill
 img/sprite/icons-sprite.svg#close
@@ -11,6 +12,7 @@ img/sprite/icons-sprite.svg#gift
 img/sprite/icons-sprite.svg#information
 img/sprite/icons-sprite.svg#instagram
 img/sprite/icons-sprite.svg#menu
+img/sprite/icons-sprite.svg#pin
 img/sprite/icons-sprite.svg#search
 img/sprite/icons-sprite.svg#selected
 img/sprite/icons-sprite.svg#telegram

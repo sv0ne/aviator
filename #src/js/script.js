@@ -11,7 +11,201 @@ $(document).ready(function () {
 	const BREAKPOINT_552 = 551.98;
 	const BREAKPOINT_md4 = 479.98;
 
-	@@include('_popup.js');
+    $(window).scroll(function() {
+        let scrollTop = $(this).scrollTop();
+        scrollForWelcomeBonus(scrollTop);
+        scrollForContentNav(scrollTop);
+        scrollForNavigation(scrollTop);
+    });
+
+	@@include('_popup.js')
+	@@include('_scroll.js')
+
+/** ======================================================================== */
+/** =========== Прокрутка вверх / Плашка бонуса / Кнопка бонуса ============ */
+
+    let showBonuse = "box"; // btn | box
+    // Обработчик события прокрутки
+    
+    function scrollForWelcomeBonus(scrollTop){
+        // Показать/Скрыть кнопку прокрутки "Вверх"
+        if (scrollTop > 500) {
+            $('.js-btnScrollToTop').show();
+        } else {
+            $('.js-btnScrollToTop').hide();
+        }
+
+        // Показать/Скрыть блок бонуса
+        if (scrollTop > 1000) {
+            if(showBonuse === "box"){
+                $('.js-welcomeBonus').show();
+                $('.js-btnScrollToTop').addClass('hasBoxWelcomeBonus');
+            }else{
+                $('.js-btnBonus').show();
+            }
+            
+        } else {
+            $('.js-welcomeBonus').hide();
+            $('.js-btnScrollToTop').removeClass('hasBoxWelcomeBonus');
+            $('.js-btnBonus').hide();
+        }
+    }
+
+    // Закрыть плашку бонуса показать кнопку
+    $('.js-btnWelcomeBonusClose').click(function(){
+        $('.js-welcomeBonus').hide();
+        $('.js-btnScrollToTop').removeClass('hasBoxWelcomeBonus');
+        $('.js-btnBonus').show();
+        showBonuse = "btn";
+    });
+
+    // Закрыть кнопку бонуса показать плашку
+    $('.js-btnBonus').click(function(){
+        $('.js-btnBonus').hide();
+        $('.js-welcomeBonus').show();
+        $('.js-btnScrollToTop').addClass('hasBoxWelcomeBonus');
+        showBonuse = "box";
+    });
+
+    // Прокрутить вверх
+    $('.js-btnScrollToTop').click(function() {
+        $('html, body').animate({ scrollTop: 0 }, 'smooth');
+        return false;
+    });
+
+/** ======================================================================== */
+/** ============================= Блок Content ============================= */
+
+    let isOpenContentNav = true;
+    let isHideContentNavOnScroll = false;
+    // При прокрутке скрываем блок contentNav__list
+    function scrollForContentNav(scrollTop){
+        if(isHideContentNavOnScroll === false){
+            isHideContentNavOnScroll = true;
+            isOpenContentNav = false;
+            $('.js-contentNav .contentNav__header svg').removeClass('rotate-180');
+            $('.js-contentNav .contentNav__list').slideUp(150);
+        }
+    }
+
+    // Открыть/закрыть список contentNav
+    $('.js-contentNav .contentNav__header').click(function(){
+        if(isOpenContentNav === true){
+            $('.js-contentNav .contentNav__header svg').removeClass('rotate-180');
+            $('.js-contentNav .contentNav__list').slideUp(150);
+            isOpenContentNav = false;
+        }else{
+            $('.js-contentNav .contentNav__header svg').addClass('rotate-180');
+            $('.js-contentNav .contentNav__list').slideDown(150);
+            isOpenContentNav = true;
+        }
+    });
+
+/** ======================================================================== */
+/** ========================= Блок скролл-навигации ======================== */
+
+    // Получить id-шники элементов в scroll анимации
+    function getIdsNavElem(){
+        let ids = [];
+        $('.js-navigation-scroll .scroll__item').each(function(){
+            let id = $(this).find('a').attr('href');
+            ids.push(id);
+        });
+        return ids;
+    }
+    
+    // Получить offsetTop для каждого элемента
+    function getOffsetTopByIds(ids){
+        let offsets = [];
+        for(let i = 0; i < ids.length; i++){
+            let offsetTop = $(ids[i])[0] && $(ids[i])[0].offsetTop;
+
+            offsets.push(offsetTop === undefined ? offsetTop : offsetTop - 75);
+        }
+        return offsets;
+    }
+
+    // Определить индекс последней проскроленной якорной ссылки
+    function findLastIndexLessThan(arr, num) {
+        let result = -1;
+        for(let i = 0; i < arr.length; i++){
+            if(arr[i] === undefined){continue;}
+            if(num >= arr[i]){
+                result = i;
+            }else{
+                break;
+            }
+        }
+        return result;
+    }
+
+    // Устанавливаем активный элемент скролл-навигации и скролим до него
+    function detectActiveNavLink(index) {
+        $('.js-navigation-scroll .scroll__item').removeClass('active');
+        let offsetLeft = 0;
+
+        if(index !== -1){
+            let elemLink = $('.js-navigation-scroll .scroll__item').eq(index);
+            elemLink.addClass('active');
+            offsetLeft = elemLink[0].offsetLeft - 8;
+        }
+
+        $('.js-navigation-scroll').stop().animate({scrollLeft: offsetLeft}, 300);
+    }
+
+    let isShowNavigation = true;
+    let idsNavigationAnchor; // ID-шники ссылок
+    let isActiveScrollNavigation = false;
+    let $contentNav = $('.js-contentNav');
+    let indexMemo = -1;
+    // При скролле определяем индекс активной ссылки в скролл-навигации
+    function scrollForNavigation(scrollTop){
+        // Прекращаем выполнение функции если блока скролл-навигации вообще нет
+        if($contentNav[0] === undefined || !isShowNavigation){ return; } 
+        
+        // Показать/скрыть блок скролл-навигации
+        if(scrollTop > $contentNav[0].offsetTop && !isActiveScrollNavigation){
+            $('.js-navigation').addClass('active');
+            isActiveScrollNavigation = true;
+            idsNavigationAnchor = getIdsNavElem();
+        }else if(scrollTop <= $contentNav[0].offsetTop && isActiveScrollNavigation){
+            $('.js-navigation').removeClass('active');
+            isActiveScrollNavigation = false;
+        }
+
+        // Если скролл-навигация активна, вычисляем активные ссылки
+        if(isActiveScrollNavigation){
+            let offsets = getOffsetTopByIds(idsNavigationAnchor);
+            let index = findLastIndexLessThan(offsets, scrollTop);
+            if(index !== indexMemo){
+                indexMemo = index;
+                detectActiveNavLink(index);
+            }
+        }
+    }
+    scrollForNavigation($(window).scrollTop());
+
+    // Скрываем блок скролл-навигации при клике на unpin
+    $('.js-navigation-btn').click(function(){
+        $('.js-navigation').removeClass('active');
+        isShowNavigation = false;
+        isActiveScrollNavigation = false;
+    });
+
+    // Прокрутка при клике на якорную ссылку внутри scroll-навигации
+    $('a[href^="#"]').on('click', function(event) {
+        event.preventDefault();
+      
+        const targetId = $(this).attr('href');
+        const topHeight = isActiveScrollNavigation ? 55 : 0;
+      
+        $('html, body').animate({
+          scrollTop: $(targetId).offset().top - topHeight
+        }, 500);
+    });
+
+/** ======================================================================== */
+/** ============ Прочее, несвязанные скрипты, каждый для разного =========== */
 
     // Форма в попапе "Language"
     $(".js-form-item").click(function(e){
@@ -94,59 +288,6 @@ $(document).ready(function () {
         $(".js-boxInfo-casinos").fadeToggle(200);
     });
 
-    // Прокрутка вверх / Плашка бонуса / Кнопка бонуса
-    (function () {
-        let showBonuse = "box"; // btn | box
-        // Обработчик события прокрутки
-        $(window).scroll(function() {
-            let scrollTop = $(this).scrollTop();
-
-            // Показать/Скрыть кнопку прокрутки "Вверх"
-            if (scrollTop > 500) {
-                $('.js-btnScrollToTop').show();
-            } else {
-                $('.js-btnScrollToTop').hide();
-            }
-
-            // Показать/Скрыть блок бонуса
-            if (scrollTop > 1000) {
-                if(showBonuse === "box"){
-                    $('.js-welcomeBonus').show();
-                    $('.js-btnScrollToTop').addClass('hasBoxWelcomeBonus');
-                }else{
-                    $('.js-btnBonus').show();
-                }
-                
-            } else {
-                $('.js-welcomeBonus').hide();
-                $('.js-btnScrollToTop').removeClass('hasBoxWelcomeBonus');
-                $('.js-btnBonus').hide();
-            }
-        });
-
-        // Закрыть плашку бонуса показать кнопку
-        $('.js-btnWelcomeBonusClose').click(function(){
-            $('.js-welcomeBonus').hide();
-            $('.js-btnScrollToTop').removeClass('hasBoxWelcomeBonus');
-            $('.js-btnBonus').show();
-            showBonuse = "btn";
-        });
-
-        // Закрыть кнопку бонуса показать плашку
-        $('.js-btnBonus').click(function(){
-            $('.js-btnBonus').hide();
-            $('.js-welcomeBonus').show();
-            $('.js-btnScrollToTop').addClass('hasBoxWelcomeBonus');
-            showBonuse = "box";
-        });
-
-        // Прокрутить вверх
-        $('.js-btnScrollToTop').click(function() {
-            $('html, body').animate({ scrollTop: 0 }, 'smooth');
-            return false;
-        });
-    })();
-
     // Для блока "CERTIFICATES" определить позицию выводимой всплывашки
     if(w > BREAKPOINT_md3){
         $('.certificates__item').mouseenter(function(){
@@ -205,7 +346,7 @@ $(document).ready(function () {
         $(this).closest('.js-reviews').addClass('active');
     });
 
-    //////////////////////////////////////////////////////////////////////////////////////
+/** ======================================================================== */
 
 
 });

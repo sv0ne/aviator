@@ -1,0 +1,94 @@
+.scrollBlock{
+	padding-top: 72px;
+	&__body{
+		background-color: $white;
+	}
+}
+
+.scroll {
+	padding: 0px 0px 1px 0px;
+	position: relative;
+	overflow-y: hidden;
+	::-webkit-scrollbar { /* chrome based */
+	    width: 0;  /* ширина scrollbar'a */
+		height: 0;
+	    background: transparent;  /* опционально */
+	}
+    -ms-overflow-style: none;  /* IE 10+ */
+    scrollbar-width: none; /* Firefox */
+	&__body {
+		overflow-x: scroll;
+		overflow-y: hidden;
+		@media (max-width:#{$md3}px) {
+			width: auto;
+		}
+		//margin: 0 16px;
+	}
+	&__scroll {
+		display: inline-flex;
+		padding: 8px 8px; 
+	}
+	&__item {
+		margin: 0 8px;
+		background-color: rgba(255, 255, 255, 0.05);
+		border-radius: 8px;
+		a{
+			white-space: nowrap;
+			display: inline-block;
+			padding: 4px 12px;
+			font-size: 13px;
+  			line-height: 16px;
+			font-weight: 700;
+		}
+		&:hover{
+			background-color: rgba(255, 255, 255, 0.10);
+		}
+		&:first-child{margin-left: 0;}
+		&:last-child{margin-right: 0;}
+		&.active{
+			background-color: #fff;
+			color: $black;
+		}
+	}
+	&__button{
+		position: absolute;
+		top: calc(50% - 22px);
+		padding: 8px;
+		display: none;
+		left: 16px;
+		z-index: 10;
+		background-color: $white;
+		border: 2px solid #ccc;
+		border-radius: 99px;
+		box-shadow: 0px 0px 8px rgba(14, 21, 33, 0.15);
+		&.btn-prev{transform: rotate(180deg);}
+		&.btn-next{
+			left: auto;
+			right: 16px;
+		}
+		&.open{
+			display: flex;
+		}
+	}
+	&__overlayArea{
+		position: absolute;
+		z-index: 5;
+		top: 0px;
+		bottom: 0px;
+		left: 0px;
+		width: 40px;
+		pointer-events: none;
+		background: linear-gradient(270deg, rgba(35, 35, 37, 0) 0%, rgba(35, 35, 37, 0.9) 50%, #232325 100%);
+		opacity: 0;
+		transition: all 0.5s ease 0s;
+		&_right{
+			left: auto;
+			right: 0px;
+			background: linear-gradient(90deg, rgba(35, 35, 37, 0) 0%, rgba(35, 35, 37, 0.9) 50%, #232325 100%);
+		}
+		&.open{
+			opacity: 1;
+			transition: all 0.5s ease 0s;
+		}
+	}
+}
