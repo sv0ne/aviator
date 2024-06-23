@@ -555,63 +555,25 @@ $(".scroll").each(function(){new ScrollElement($(this));});
         $(this).closest('.js-reviews').addClass('active');
     });
 
+    // Если это пк то подгружаем баннера через 11 сек. вместе с их js и css файлами
+    if(w > BREAKPOINT_md3){
+        setTimeout(function () {
+            function addCSS(href) {
+                const link = $('<link>', {rel: 'stylesheet', type: 'text/css', href: href});
+                $('head').append(link);
+            }
+            
+            function addJS(src) {
+                const script = $('<script>', {type: 'text/javascript', src: src});
+                $('head').append(script);
+            }
+
+            $("#ajax-content").load(bannersAjax.html);
+            addCSS(bannersAjax.css);
+            addJS(bannersAjax.js);
+        }, 11000);
+    }
+
 /** ======================================================================== */
 
-    let currentSlide = 0, banersTimer;
-    const $slider = $('.baners__slider');
-    const totalSlides = $('.baners__slider img').length;
-    const $slides = $('.baners__timelane .baners__progressBarBox .baners__progressBar');
-
-    let mlMemo = 0;
-    // Показать слайд по индексу
-    function showSlide(index) {
-        if (index >= totalSlides) {
-            currentSlide = 0;
-        } else if (index < 0) {
-            currentSlide = totalSlides - 1;
-        } else {
-            currentSlide = index;
-        }
-
-        const ml = new Date().getTime();
-        console.log(ml-mlMemo, "index", currentSlide);
-        mlMemo = ml;
-
-        $slider.css('transform', `translateX(-${currentSlide * 320}px)`);
-        
-        $slides.each(function(idx){
-            let elem = $(this);
-            if(currentSlide > idx){
-                elem.removeClass('animate');
-                setTimeout(function () { elem.addClass('active'); }, 15);
-            }else if(currentSlide == idx){
-                elem.removeClass('active');
-                setTimeout(function () { elem.addClass('animate'); }, 15);
-            }else{
-                elem.removeClass('animate active');
-            }
-        });
-    }
-
-    // Следующий слайд
-    function nextSlide() {
-        clearTimeout(banersTimer);
-        showSlide(currentSlide + 1);
-        banersTimer = setTimeout(nextSlide, 5000);
-    }
-
-    // Предыдущий слайд
-    function prevSlide() {
-        clearTimeout(banersTimer);
-        showSlide(currentSlide - 1);
-        banersTimer = setTimeout(nextSlide, 5000);
-    }
-
-    // Пнопки переключения слайдера
-    $('.baners__btn.baners__btn_next').click(nextSlide);
-    $('.baners__btn.baners__btn_prev').click(prevSlide);
-
-    // Запуск слайдера и автоматической прокрутки
-    showSlide(currentSlide);
-    banersTimer = setTimeout(nextSlide, 5000);
 });
