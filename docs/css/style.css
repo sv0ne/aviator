@@ -1320,6 +1320,8 @@ video {
           justify-content: space-between;
   padding: 8px;
   width: 100%;
+  position: relative;
+  z-index: 30;
   background-color: rgb(35, 35, 37);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -1869,6 +1871,109 @@ video {
   position: absolute;
   top: calc(50% - 20px);
   right: 40px;
+}
+
+.baners {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 28;
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  width: 320px;
+  height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.baners__slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.baners__slider img {
+  width: 100%;
+  height: 100%;
+}
+
+.baners__btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  top: 36px;
+  left: 16px;
+  z-index: 2;
+  border-radius: 99px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgb(255, 255, 255);
+}
+
+.baners__btn_next {
+  left: 72px;
+}
+
+.baners__btn_close {
+  left: auto;
+  right: 16px;
+}
+
+.baners__btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.baners__timelane {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 3;
+  gap: 4px;
+}
+
+.baners__progressBarBox {
+  border-radius: 99px;
+  display: inline-block;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.baners__progressBar {
+  width: 0%;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.baners__progressBar.animate {
+  -webkit-transition: width 5s linear;
+  transition: width 5s linear;
+  width: 100%;
+}
+
+.baners__progressBar.active {
+  width: 100%;
 }
 
 .footer {

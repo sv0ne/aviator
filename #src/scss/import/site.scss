@@ -4,6 +4,8 @@
     justify-content: space-between;
     padding: 8px;
     width: 100%;
+    position: relative;
+    z-index: 30;
     background-color: $black;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     @media (max-width:1310px) {
@@ -695,6 +697,86 @@
     @media (max-width:#{$md3}px) {
         font-size: 13px;
         line-height: 16px;
+    }
+}
+
+///////////////////////////////////////////////////////////
+
+.baners {
+    display: flex;
+    z-index: 28;
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    width: 320px;
+    height: 320px;
+    border-radius: 16px;
+    overflow: hidden;
+    &__slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+        height: 100%;
+        transform: translateX(0%);
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__btn{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        top: 36px;
+        left: 16px;
+        z-index: 2;
+        border-radius: 99px;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: $white;
+        &_next{
+            left: 72px;
+        }
+        &_close{
+            left: auto;
+            right: 16px;
+        }
+        &:hover{
+            background-color: rgba(255, 255, 255, 0.10);
+        }
+    }
+    &__timelane{
+        position: absolute;
+        display: flex;
+        top: 16px;
+        left: 16px;
+        right: 16px;
+        z-index: 3;
+        gap: 4px;
+    }
+    &__progressBarBox{
+        border-radius: 99px;
+        display: inline-block;
+        height: 4px;
+        background-color: rgba(255, 255, 255, 0.3);
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+    }
+    &__progressBar{
+        width: 0%;
+        height: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        &.animate{
+            transition: width 5s linear;
+            width: 100%;
+        }
+        &.active{
+            width: 100%;
+        }
     }
 }
 
