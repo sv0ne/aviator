@@ -42,6 +42,21 @@
 			max-height: 75vh;
 		}
 	}
+	&_centered{
+		@media (min-width:#{$md3}px) {
+			width: 540px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			.popup__body{
+				width: 540px;
+				padding: 16px;
+			}
+			.popup__content{
+				padding: 16px;
+			}
+		}
+	}
 }
 
 ////////// Стили для каждого попапа отдельно ////////////
@@ -50,5 +65,11 @@
 	&.mod2{
 		z-index: 29;
 		position: absolute;
+	}
+}
+
+#problem_1{
+	.popup__content{
+		padding: 0;
 	}
 }

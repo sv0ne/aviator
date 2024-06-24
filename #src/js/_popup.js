@@ -26,6 +26,7 @@ function openPopup(popupID, triggerRect, additionalClass) {
 			// Определить тип попапа (Плавающий | floating) или (Центрированый | centered)
 			let type = $('#'+popupID).data('type');
 			if(type == 'centered'){
+				$(".js-popupOverlay").addClass('active');
 				bodyLock();
 			}else{
 				let modalRect = $('#'+popupID)[0].getBoundingClientRect();

@@ -618,6 +618,10 @@ video {
   position: absolute;
 }
 
+#problem_1 .popup__content {
+  padding: 0;
+}
+
 .scrollBlock {
   padding-top: 72px;
 }
@@ -881,6 +885,60 @@ video {
   background: rgba(52, 199, 89, 0.7);
 }
 
+.btn-4 {
+  border-radius: 8px;
+  padding: 16px;
+  width: 100%;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+  color: rgb(255, 255, 255);
+}
+
+.btn-4:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.btn-4__img {
+  height: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
+}
+
+.btn-4__img img {
+  height: 100%;
+}
+
+.btn-5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.3);
+  fill: rgba(255, 255, 255, 0.3);
+  background-color: transparent;
+}
+
+.btn-5:hover {
+  color: rgb(255, 255, 255);
+  fill: rgb(255, 255, 255);
+}
+
 .btnDemo {
   text-decoration: underline;
   -webkit-text-decoration-style: dashed;
@@ -1017,7 +1075,15 @@ video {
   position: relative;
 }
 
-.modal__bgOverlay {
+.modal__header {
+  position: sticky;
+  top: 0;
+  background-color: #232325;
+  z-index: 2;
+  padding: 16px 0;
+}
+
+.bgOverlay {
   display: none;
   position: fixed;
   width: 100%;
@@ -1030,16 +1096,8 @@ video {
           backdrop-filter: blur(5px);
 }
 
-.modal__bgOverlay.active {
+.bgOverlay.active {
   display: block;
-}
-
-.modal__header {
-  position: sticky;
-  top: 0;
-  background-color: #232325;
-  z-index: 2;
-  padding: 16px 0;
 }
 
 @-webkit-keyframes showModal {
@@ -1136,6 +1194,12 @@ video {
   border-radius: 8px;
 }
 
+.label-4 {
+  background-color: rgb(52, 199, 89);
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
 .searchField {
   position: relative;
   height: 40px;
@@ -1201,8 +1265,102 @@ video {
   display: none;
 }
 
+.inputRadio input[type=radio] {
+  visibility: hidden;
+  display: none;
+}
+
+.inputRadio input[type=radio] + label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 16px;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  padding-left: 56px;
+}
+
+.inputRadio input[type=radio] + label:after,
+.inputRadio input[type=radio] + label:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.inputRadio input[type=radio] + label:after {
+  top: calc(50% - 12px);
+  left: 16px;
+  width: 24px;
+  height: 24px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.inputRadio input[type=radio] + label:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.inputRadio input[type=radio]:checked + label:after {
+  border-color: rgb(63, 105, 255);
+}
+
+.inputRadio input[type=radio]:checked + label:before {
+  z-index: 2;
+  top: calc(50% - 6px);
+  left: 22px;
+  width: 12px;
+  height: 12px;
+  background-color: rgb(63, 105, 255);
+}
+
+.inputCheckbox > * {
+  cursor: pointer;
+}
+
+.inputCheckbox input[type=checkbox] {
+  visibility: hidden;
+  display: none;
+}
+
+.inputCheckbox input[type=checkbox] + label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.inputCheckbox input[type=checkbox] + label span {
+  padding-left: 8px;
+}
+
+.inputCheckbox input[type=checkbox] + label .st-1 {
+  fill: #ccc;
+}
+
+.inputCheckbox input[type=checkbox] + label .st-2 {
+  visibility: hidden;
+}
+
+.inputCheckbox input[type=checkbox]:checked + label .st-1 {
+  visibility: hidden;
+}
+
+.inputCheckbox input[type=checkbox]:checked + label .st-2 {
+  visibility: visible;
+  fill: red;
+}
+
 .scroll-styled {
   -webkit-overflow-scrolling: touch;
+}
+
+.js-popup-opener {
+  cursor: pointer;
 }
 
 .logo {
@@ -1380,38 +1538,6 @@ video {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-.whereToPlayList__item {
-  border-radius: 8px;
-  padding: 16px;
-  width: 100%;
-  background-color: transparent;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: rgb(255, 255, 255);
-}
-
-.whereToPlayList__item:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-.whereToPlayList__img {
-  height: 24px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100px;
-          flex: 0 0 100px;
-  margin-right: 16px;
-}
-
 .firstScreen__boby {
   overflow: hidden;
   border-radius: 16px;
@@ -1573,6 +1699,9 @@ video {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   gap: 32px;
 }
 
@@ -1590,6 +1719,16 @@ video {
           box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
   border-radius: 16px;
   padding: 16px;
+}
+
+.videoContainer {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  background: #ccc;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .navigation {
@@ -2221,6 +2360,24 @@ video {
     display: none !important;
   }
 
+  .popup_centered {
+    width: 540px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+
+  .popup_centered .popup__body {
+    width: 540px;
+    padding: 16px;
+  }
+
+  .popup_centered .popup__content {
+    padding: 16px;
+  }
+
   .btn-dropdown.mod-download-app svg {
     display: none;
   }
@@ -2253,10 +2410,6 @@ video {
     transition: 0s ease 0.15s;
     opacity: 1;
     visibility: visible;
-  }
-
-  .modal__bgOverlay {
-    display: none !important;
   }
 
   .modal__header {
@@ -2569,6 +2722,17 @@ position sticky у блока .stickyBlock */
     padding: 8px 16px;
   }
 
+  .btn-4 {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0;
+  }
+
+  .btn-4__img {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33%;
+            flex: 0 0 33%;
+  }
+
   .popover {
     border-radius: 8px;
     overflow: hidden;
@@ -2699,17 +2863,6 @@ position sticky у блока .stickyBlock */
   .moreList li a {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 0px;
-  }
-
-  .whereToPlayList__item {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 0;
-  }
-
-  .whereToPlayList__img {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 33%;
-            flex: 0 0 33%;
   }
 
   .firstScreen__text {

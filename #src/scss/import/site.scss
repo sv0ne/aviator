@@ -108,35 +108,6 @@
     }
 }
 
-.whereToPlayList{
-    &__item{
-        border-radius: 8px;
-        padding: 16px;
-        width: 100%;
-        background-color: transparent;
-        display: flex;
-        align-items: center;
-        color: $white;
-        &:hover{
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-        @media (max-width:#{$md3}px) {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 0;
-        }
-    }
-    &__img{
-        height: 24px;
-        display: flex;
-        align-items: center;
-        flex: 0 0 100px;
-        margin-right: 16px;
-        @media (max-width:#{$md3}px) {
-            flex: 0 0 33%;
-        }
-    }
-}
-
 ///////////////////////////////////////////////////////////
 
 .firstScreen{
@@ -361,6 +332,7 @@
 
 .topFive {
     display: flex;
+    align-items: flex-start;
     gap: 32px;
     &__content {
         flex: 1;
@@ -371,6 +343,16 @@
         border-radius: 16px;
         padding: 16px;
     }
+}
+
+.videoContainer{
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    background: #ccc;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
 }
 
 ///////////////////////////////////////////////////////////

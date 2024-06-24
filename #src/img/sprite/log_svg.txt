@@ -2,6 +2,8 @@ img/sprite/icons-sprite.svg#android-green
 img/sprite/icons-sprite.svg#android
 img/sprite/icons-sprite.svg#apple
 img/sprite/icons-sprite.svg#arrow
+img/sprite/icons-sprite.svg#attention
+img/sprite/icons-sprite.svg#back
 img/sprite/icons-sprite.svg#checks_24
 img/sprite/icons-sprite.svg#chevron
 img/sprite/icons-sprite.svg#chevron_white
@@ -9,6 +11,7 @@ img/sprite/icons-sprite.svg#close-fill
 img/sprite/icons-sprite.svg#close
 img/sprite/icons-sprite.svg#copy
 img/sprite/icons-sprite.svg#download
+img/sprite/icons-sprite.svg#fullscreen
 img/sprite/icons-sprite.svg#gift
 img/sprite/icons-sprite.svg#information
 img/sprite/icons-sprite.svg#instagram
