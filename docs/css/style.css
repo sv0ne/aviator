@@ -1,13 +1,5 @@
 @charset "UTF-8";
 
-@font-face {
-  font-family: "IntegralCF";
-  font-display: swap;
-  src: url("../fonts/IntegralCF-Regular.woff") format("woff"), url("../fonts/IntegralCF-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
 /*Обнуление*/
 
 * {
@@ -1768,9 +1760,6 @@ ol.list li:before,
 
 .textBanner__t2 span {
   display: inline-block;
-  -webkit-transform: translateY(-7px);
-      -ms-transform: translateY(-7px);
-          transform: translateY(-7px);
 }
 
 .textBanner__t3 {
@@ -1787,9 +1776,6 @@ ol.list li:before,
 
 .textBanner__t3 span {
   display: inline-block;
-  -webkit-transform: translateY(-5px);
-      -ms-transform: translateY(-5px);
-          transform: translateY(-5px);
 }
 
 .textBanner__money {
@@ -1827,9 +1813,6 @@ ol.list li:before,
   z-index: 2;
   font-size: 32px;
   line-height: 39px;
-  -webkit-transform: translateY(-4px);
-      -ms-transform: translateY(-4px);
-          transform: translateY(-4px);
 }
 
 .ticket_1 {
@@ -2465,11 +2448,6 @@ ol.list li:before,
           transform: translateY(-2px);
 }
 
-.ff-integralCF {
-  font-family: "IntegralCF";
-  font-weight: 400;
-}
-
 .text-extra-large {
   font-size: 64px;
   line-height: 77px;
@@ -2528,6 +2506,10 @@ ol.list li:before,
 
 .leter-sp {
   letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.tt-u {
   text-transform: uppercase;
 }
 
@@ -3318,22 +3300,10 @@ position sticky у блока .stickyBlock */
     padding: 4px 16px;
   }
 
-  .textBanner__t2 span {
-    -webkit-transform: translateY(-2px);
-        -ms-transform: translateY(-2px);
-            transform: translateY(-2px);
-  }
-
   .textBanner__t3 {
     font-size: 20px;
     line-height: 24px;
     padding: 4px 16px;
-  }
-
-  .textBanner__t3 span {
-    -webkit-transform: translateY(-1px);
-        -ms-transform: translateY(-1px);
-            transform: translateY(-1px);
   }
 
   .textBanner__money {
@@ -3348,12 +3318,6 @@ position sticky у блока .stickyBlock */
     top: -46px;
     width: 60px;
     height: 60px;
-  }
-
-  .ticket__num {
-    -webkit-transform: translateY(-2px);
-        -ms-transform: translateY(-2px);
-            transform: translateY(-2px);
   }
 
   .ticket_1 {
