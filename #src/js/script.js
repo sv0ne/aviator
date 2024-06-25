@@ -466,6 +466,15 @@ $(document).ready(function () {
         }, 11000);
     }
 
+    // При клике на Play free запускаем iframe
+    $('.js-play-iframe').click(function(){
+        let src = $(this).data('iframe-src');
+        $('.js-iframe-control').addClass('dn');
+        $('.js-iframe-body').removeClass('dn');
+        $('.js-iframe-body').append('<iframe src="'+src+'" width="776" height="437" scrolling="none" frameborder="0" id="gameIframe"></iframe>');
+    });
+
 /** ======================================================================== */
 
+    
 });

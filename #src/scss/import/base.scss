@@ -172,10 +172,15 @@ img, video{
 	}
 }
 
+.z-2{z-index: 2;}
+.z-3{z-index: 3;}
+
 //////////////// COLOR, FILL, BACKGROUND //////////////////
 
 .white{color: $white;}
 .gray{color: $gray;}
+
+.bg-black-05{background-color: rgba(30, 30, 30, 0.5);}
 
 ///////////////////////// FLEX ////////////////////////////
 

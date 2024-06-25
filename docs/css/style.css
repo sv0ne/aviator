@@ -367,12 +367,24 @@ video {
           transform: rotate(180deg);
 }
 
+.z-2 {
+  z-index: 2;
+}
+
+.z-3 {
+  z-index: 3;
+}
+
 .white {
   color: rgb(255, 255, 255);
 }
 
 .gray {
   color: rgba(255, 255, 255, 0.3);
+}
+
+.bg-black-05 {
+  background-color: rgba(30, 30, 30, 0.5);
 }
 
 .d-flex {
