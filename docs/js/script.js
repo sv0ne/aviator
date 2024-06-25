@@ -40,6 +40,8 @@ function openPopup(popupID, triggerRect, additionalClass) {
 
 		let additionalClassName = "";
 
+		if(popupID == "problem"){initProblemPopup();}
+
 		if(w > BREAKPOINT_md3){
 			additionalClassName = additionalClass === undefined ? "" : " "+additionalClass;
 			
@@ -412,6 +414,107 @@ $(".scroll").each(function(){new ScrollElement($(this));});
         $('html, body').animate({
           scrollTop: $(targetId).offset().top - topHeight
         }, 500);
+    });
+
+/** ======================================================================== */
+/** ======================= Обработка проблем с видео ====================== */
+
+    // Валидный ли email
+    function isValidEmail (value) {
+        if(value === ""){return true;}
+        if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(value) === false){return "wrongEmail";}
+        return true;
+    }
+
+    // Отправка данных формы на сервер
+    function sendFormProblem() {
+        const form = $('.js-problem-form')[0];
+        const formData = new FormData(form);
+        const endpoint = $('.js-problem-form').attr('action');
+       
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+
+        fetch(endpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+    }
+
+    let stepProblem = 0;
+    // Вызывается при инициализации попапа
+    function initProblemPopup() {
+        stepProblem = 0;
+        setStepProblem(stepProblem);
+        $('.js-problem-form .js-problem-next').removeClass('dn');
+        $('.js-problem-form .js-popup-closer').addClass('dn');
+    }
+
+    // Менять контент попапа в зависимости от шага
+    function setStepProblem(step){
+        $('.js-problem-form .problem-step').each(function(index){
+            $(this).toggleClass('dn', index !== stepProblem);
+        });
+        if(step === 2){
+            sendFormProblem();
+            $('.js-problem-form .js-problem-next').addClass('dn');
+            $('.js-problem-form .js-popup-closer').removeClass('dn');
+        }
+    }
+
+    // Выбираем одну из проблем
+    $('.js-problem-form input[type=radio]').click(function(){
+        $('.js-problem-next').removeClass('disabled');
+        if($(this).hasClass('js-problem-other')){
+            $('.js-problem-textarea').toggleClass('dn');
+        }else{
+            $('.js-problem-textarea').addClass('dn');
+        }
+    });
+
+    // Переходим на следующий этап
+    $('.js-problem-next').click(function(){
+        stepProblem = stepProblem + 1;
+        setStepProblem(stepProblem);
+        $('.js-problem-next').addClass('disabled');
+    });
+
+    // Проверяем поле input
+    $('.js-problem-form input.inputText').on('input change', function(){
+        let value = $(this).val();
+        $('.js-problem-next').toggleClass('disabled', isValidEmail(value) !== true);
+    });
+
+/** ======================================================================== */
+/** ============= Коментарии: Оставить/ответить на комментарий ============= */
+
+    // Ответить на комментарий
+    $('.js-btn-reply').click(function(){
+        let id = $(this).data('user-id');
+        let name = $(this).closest('.comment').find('.js-comment-name').text();
+
+        $('.js-leaveComment_text-default').addClass('dn');
+        $('.js-leaveComment_btn-cancel').removeClass('dn');
+        $('.js-leaveComment_text-reply span').text(name);
+        $('.js-leaveComment-user-id').val(id);
+        $('.js-leaveComment_text-reply').removeClass('dn');
+
+        $('html, body').animate({
+            scrollTop: $('.js-form-leaveComment').offset().top - (isActiveScrollNavigation ? 55 : 0)
+        }, 500);
+    });
+
+    // Отменить ответ на комментарий
+    $('.js-leaveComment_btn-cancel').click(function(){
+        $('.js-leaveComment_text-default').removeClass('dn');
+        $('.js-leaveComment_btn-cancel').addClass('dn');
+        $('.js-leaveComment-user-id').val('');
+        $('.js-leaveComment_text-reply').addClass('dn');
     });
 
 /** ======================================================================== */

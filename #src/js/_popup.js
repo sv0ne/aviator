@@ -20,6 +20,8 @@ function openPopup(popupID, triggerRect, additionalClass) {
 
 		let additionalClassName = "";
 
+		if(popupID == "problem"){initProblemPopup();}
+
 		if(w > BREAKPOINT_md3){
 			additionalClassName = additionalClass === undefined ? "" : " "+additionalClass;
 			

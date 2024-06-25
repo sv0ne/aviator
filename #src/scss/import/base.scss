@@ -84,6 +84,12 @@ img, video{
 	}
 }
 
+.min-md3-p-16{
+	@media (min-width:#{$md3}px) {
+		padding: 16px;
+	}
+}
+
 .nlc-mb-8{
 	> *:not(:last-child){
 		margin-bottom: 8px;
@@ -93,6 +99,12 @@ img, video{
 .nlc-mb-16{
 	> *:not(:last-child):not(.not-nlc){
 		margin-bottom: 16px;
+	}
+}
+
+.nlc-mb-32{
+	> *:not(:last-child):not(.not-nlc){
+		margin-bottom: 32px;
 	}
 }
 
@@ -176,6 +188,13 @@ img, video{
 .gap-8{gap: 8px;}
 .gap-16{gap: 16px;}
 .gap-32{gap: 32px;}
+
+.gap-32-md3-8{
+    gap: 32px;
+    @media (max-width:#{$md3}px) {
+        gap: 8px;
+    }
+}
 
 .order-1{order: 1;}
 .order-2{order: 2;}

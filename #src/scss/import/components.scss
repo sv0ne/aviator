@@ -87,6 +87,10 @@
             background: rgba(52, 199, 89, 0.7);
         }
     }
+    &.disabled{
+        opacity: 0.5;
+        pointer-events: none;
+    }
 }
 
 .btn-4{
@@ -129,6 +133,15 @@
     &:hover{
         color: $white;
         fill: $white;
+    }
+}
+
+.btn-6{
+    font-weight: 700;
+    color: $white;
+    background-color: transparent;
+    &:hover{
+        text-decoration: underline;
     }
 }
 
@@ -220,14 +233,14 @@
     position: relative;
     &:hover{
         .tooltip__body{
-            bottom: 24px;
-            right: 0;
             transition: 0s ease 0.15s;
             opacity: 1;
             visibility: visible;
         }
     }
     &__body{
+        bottom: 24px;
+        right: 0;
         opacity: 0;
         visibility: hidden;
         position: absolute;
@@ -508,6 +521,16 @@
     }
 }
 
+.inputText{
+    padding: 8px;
+    border-radius: 8px;
+    background-color: transparent;
+    color: $white;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    resize: none;
+}
+
 .inputRadio{
 	input[type="radio"]{
 		visibility: hidden;
@@ -516,11 +539,10 @@
 	input[type="radio"] + label{
 		display: flex;
 		align-items: center;
-        padding: 16px;
+        padding: 19px 16px 19px 56px;
 		border-radius: 8px;
 		position: relative;
 		cursor: pointer;
-		padding-left: 56px;
 		&:after, &:before{
 			content: "";
 			position: absolute;
@@ -534,7 +556,9 @@
 			border: 2px solid $gray;
 		}
         &:hover{
-            background-color: rgba(255, 255, 255, 0.05);
+            @media (min-width:#{$md3}px) {
+                background-color: rgba(255, 255, 255, 0.05);
+            }
         }
 	}
 	input[type="radio"]:checked + label{
@@ -575,6 +599,74 @@
 	}
 }
 
+///////////////////// breadcrumbs //////////////////////////
+
+.breadcrumbs {
+	&__link {
+		&:not(:first-child){
+			padding-left: 24px;
+			position: relative;
+			&:before{
+				position: absolute;
+				content: "";
+				top: calc(50% - 8px);
+				left: 4px;
+				width: 16px;
+				height: 16px;
+				background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.3 8.03291C9.9 8.43291 9.9 9.03291 10.3 9.43291L13.6 12.7329L10.3 16.0329C9.9 16.4329 9.9 17.0329 10.3 17.4329C10.7 17.8329 11.3 17.8329 11.7 17.4329L15.7 13.4329C15.9 13.2329 16 13.0329 16 12.7329C16 12.4329 15.9 12.2329 15.7 12.0329L11.7 8.03291C11.3 7.63291 10.7 7.63291 10.3 8.03291Z' fill='white' fill-opacity='0.3'/%3E%3C/svg%3E%0A");
+                background-position: 50% 50%;
+			}
+		}
+        &:not(:last-child){
+            color: $gray;
+        }
+	}
+}
+
+/////////////////////////// Списки ///////////////////////////////
+
+ul.list, .styledContent ul{
+	> li:not(:last-child){
+		margin-bottom: 16px;
+	}
+	li{
+		&:before{
+			content: "";
+			display: inline-block;
+			margin: 8px 8px 0 32px;
+			top: 8px;
+			left: 16px;
+			width: 8px;
+			height: 8px;
+			background: linear-gradient(90deg, #FFF173 0%, #FFB800 100%);
+			border-radius: 99px;
+            @media (max-width:#{$md3}px) {
+                margin: 8px 8px 0 16px;
+            }
+		}
+	}
+}
+
+ol.list, .styledContent ol{
+	> li:not(:last-child){
+		margin-bottom: 16px;
+	}
+	counter-reset: myCounter;
+	li{
+		padding-left: 32px;
+		display: flex;
+		&:before{
+			content: counter(myCounter)".";
+			counter-increment: myCounter;
+			padding-right: 8px;
+			@extend .bold;
+		}
+        @media (max-width:#{$md3}px) {
+            padding-left: 16px;
+        }
+	}
+}
+
 /////////////////// Стилизация скроллбара /////////////////////
 
 .scroll-styled{
@@ -603,10 +695,6 @@
 }
 
 ////////////////////////// Прочее /////////////////////////
-
-.js-popup-opener{
-    cursor: pointer;
-}
 
 .logo{
     display: flex;
@@ -659,10 +747,109 @@
     100%{bottom: -56px;}
 }
 
-.content-styled{
-    h2{
-        @extend .text-big;
+.table-auto-scroll{
+    overflow-x: auto;
+}
+
+.quoteWarning{
+    @extend .nlc-mb-16;
+    padding: 32px 32px 32px 112px;
+    border-radius: 16px;
+    background: linear-gradient(90deg, rgba(255, 241, 115, 0.05) 0%, rgba(255, 184, 0, 0.05) 100%);
+    position: relative;
+    &:before{
+        content: "";
+        position: absolute;
+        top: 32px;
+        left: 32px;
+        width: 48px;
+        height: 48px;
+        background-image: url("data:image/svg+xml,%3Csvg width='48' height='49' viewBox='0 0 48 49' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M37 38.7329H11C9.344 38.7329 8 37.3889 8 35.7329C8 35.1609 8.16 34.6269 8.438 34.1729L21.804 12.0209C22.236 11.2529 23.058 10.7329 24 10.7329C25.04 10.7329 25.932 11.3649 26.316 12.2649L39.552 34.1549C39.836 34.6129 40 35.1549 40 35.7329C40 37.3889 38.656 38.7329 37 38.7329ZM26 32.7329C26 31.6289 25.104 30.7329 24 30.7329C22.896 30.7329 22 31.6289 22 32.7329C22 33.8369 22.896 34.7329 24 34.7329C25.104 34.7329 26 33.8369 26 32.7329ZM26 20.7329C26 19.6289 25.104 18.7329 24 18.7329C22.896 18.7329 22 19.6289 22 20.7329V26.7329C22 27.8369 22.896 28.7329 24 28.7329C25.104 28.7329 26 27.8369 26 26.7329V20.7329Z' fill='url(%23paint0_linear_597_3954)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_597_3954' x1='8' y1='24.7329' x2='40' y2='24.7329' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FFF173'/%3E%3Cstop offset='1' stop-color='%23FFB800'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
     }
+    @media (max-width:#{$md3}px) {
+        padding: 80px 16px 16px 16px;
+        &:before{
+            top: 16px;
+            left: 16px;
+        }
+    }
+}
+
+.quote{
+    @extend .nlc-mb-32;
+    padding: 32px 112px;
+    position: relative;
+    &:before, &:after{
+        content: "";
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        background-image: url("data:image/svg+xml,%3Csvg width='48' height='49' viewBox='0 0 48 49' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 0.73291L21.8 9.26624V48.7329L9 40.1996V0.73291Z' fill='white'/%3E%3Cpath d='M26.0667 0.73291L38.8667 9.26624V48.7329L26.0667 40.1996V0.73291Z' fill='white'/%3E%3C/svg%3E%0A");
+    }
+    &:before{
+        top: 0;
+        left: 32px;
+    }
+    &:after{
+        bottom: 0;
+        right: 32px;
+    }
+    @media (max-width:#{$md3}px) {
+        padding: 56px 16px;
+        > *:not(:last-child):not(.not-nlc){
+            margin-bottom: 16px;
+        }
+        &:before, &:after{
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 0.750977L10.9 5.01764V24.751L4.5 20.4843V0.750977Z' fill='white'/%3E%3Cpath d='M13.0333 0.750977L19.4333 5.01764V24.751L13.0333 20.4843V0.750977Z' fill='white'/%3E%3C/svg%3E%0A");
+            width: 24px;
+            height: 24px;
+        }
+        &:before{
+            left: 16px;
+        }
+        &:after{
+            right: 16px;
+        }
+    }
+}
+
+.styledContent{
+	h1{
+		@extend .text-big;
+	}
+    h2{
+		@extend .text-medium;
+	}
+	h3{
+		@extend .bold;
+	}
+    h4{
+        @extend .text-small;
+		@extend .bold;
+	}
+    h5, h6{
+        @extend .text-micro;
+		@extend .bold;
+	}
+	table{
+		border-collapse: collapse;
+        width: 100%;
+		td, th{
+            padding: 16px;
+			border: 1px solid rgba(255, 255, 255, 0.05);
+            @media (max-width:#{$md3}px) {
+                padding: 8px;
+            }
+		}
+        th{
+            background-color: #2E2E30;
+            text-align: left;
+        }
+	}
+	a:not([class]) {
+        display: inline-block;
+		text-decoration: underline;
+	}
 }
 
 ///////////////////////////////////////////////////////////
