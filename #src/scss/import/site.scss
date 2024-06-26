@@ -314,6 +314,21 @@
             transform: scale(0.5) rotate(24deg);
         }
     }
+    &_3{
+        width: 93px;
+        height:39px;
+        top: 0px;
+        left: -70px;
+        transform: rotate(24deg);
+        .ticket__num{
+            font-size: 26px;
+            line-height: 31px;
+        }
+        @media (max-width:#{$md3}px) {
+            left: -50px;
+            transform: scale(0.6) rotate(24deg);
+        }
+    }
 }
 
 ///////////////////////////////////////////////////////////
@@ -341,6 +356,67 @@
     position: relative;
     border-radius: 16px;
     overflow: hidden;
+    &_adaptive{
+        @media (max-width:#{$md3}px) {
+            padding-bottom: 177.78%;
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////
+
+.bigLabel{
+    font-size: 64px;
+    line-height: 77px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 16px 40px;
+    margin-bottom: -8px;
+    position: relative;
+    border-radius: 99px;
+    background: linear-gradient(93.51deg, #EF6C0D 3.79%, #F15B25 106.13%);
+    transform: rotate(-2deg);
+    @media (max-width:#{$md3}px) {
+        font-size: 28px;
+        line-height: 34px;
+    }
+    &_mod{
+        background: linear-gradient(93.51deg, #0095FF 3.79%, #0855C4 106.13%);
+        transform: rotate(2deg);
+    }
+    &__img{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        @media (max-width:#{$md3}px) {
+            width: 64px;
+            height: 64px;
+        }
+        &_1{
+            right: -60px;
+            bottom: -4px;
+            @media (max-width:#{$md3}px) {
+                right: -34px;
+                bottom: 0px;
+            }
+        }
+        &_2{
+            right: -60px;
+            bottom: 18px;
+            @media (max-width:#{$md3}px) {
+                right: -30px;
+                bottom: 12px;
+            }
+        }
+        &_3{
+            left: -60px;
+            bottom: 18px;
+            @media (max-width:#{$md3}px) {
+                left: -25px;
+                bottom: 3px;
+            }
+        }
+    }
 }
 
 ///////////////////////////////////////////////////////////

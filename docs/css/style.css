@@ -1852,6 +1852,21 @@ ol.list li:before,
   line-height: 31px;
 }
 
+.ticket_3 {
+  width: 93px;
+  height: 39px;
+  top: 0px;
+  left: -70px;
+  -webkit-transform: rotate(24deg);
+      -ms-transform: rotate(24deg);
+          transform: rotate(24deg);
+}
+
+.ticket_3 .ticket__num {
+  font-size: 26px;
+  line-height: 31px;
+}
+
 .topFive {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1886,6 +1901,49 @@ ol.list li:before,
   position: relative;
   border-radius: 16px;
   overflow: hidden;
+}
+
+.bigLabel {
+  font-size: 64px;
+  line-height: 77px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  margin-bottom: -8px;
+  position: relative;
+  border-radius: 99px;
+  background: linear-gradient(93.51deg, #EF6C0D 3.79%, #F15B25 106.13%);
+  -webkit-transform: rotate(-2deg);
+      -ms-transform: rotate(-2deg);
+          transform: rotate(-2deg);
+}
+
+.bigLabel_mod {
+  background: linear-gradient(93.51deg, #0095FF 3.79%, #0855C4 106.13%);
+  -webkit-transform: rotate(2deg);
+      -ms-transform: rotate(2deg);
+          transform: rotate(2deg);
+}
+
+.bigLabel__img {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+.bigLabel__img_1 {
+  right: -60px;
+  bottom: -4px;
+}
+
+.bigLabel__img_2 {
+  right: -60px;
+  bottom: 18px;
+}
+
+.bigLabel__img_3 {
+  left: -60px;
+  bottom: 18px;
 }
 
 .navigation {
@@ -2526,8 +2584,8 @@ ol.list li:before,
 }
 
 .lg-1 {
-  background: -webkit-gradient(linear, left top, left bottom, from(#FF808A), to(#FF3344));
-  background: linear-gradient(180deg, #FF808A 0%, #FF3344 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#1AD7FF), to(#00A5E6));
+  background: linear-gradient(180deg, #1AD7FF 0%, #00A5E6 100%);
 }
 
 .lg-2 {
@@ -3124,6 +3182,42 @@ position sticky у блока .stickyBlock */
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+  }
+
+  .ticket_3 {
+    left: -50px;
+    -webkit-transform: scale(0.6) rotate(24deg);
+        -ms-transform: scale(0.6) rotate(24deg);
+            transform: scale(0.6) rotate(24deg);
+  }
+
+  .videoContainer_adaptive {
+    padding-bottom: 177.78%;
+  }
+
+  .bigLabel {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .bigLabel__img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .bigLabel__img_1 {
+    right: -34px;
+    bottom: 0px;
+  }
+
+  .bigLabel__img_2 {
+    right: -30px;
+    bottom: 12px;
+  }
+
+  .bigLabel__img_3 {
+    left: -25px;
+    bottom: 3px;
   }
 
   .contentNav__header {

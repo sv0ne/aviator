@@ -16,6 +16,8 @@ $(document).ready(function () {
         scrollForWelcomeBonus(scrollTop);
         scrollForContentNav(scrollTop);
         scrollForNavigation(scrollTop);
+        scrollForTicket3(scrollTop);
+        scrollForIframe(scrollTop);
     });
 
 	@@include('_popup.js')
@@ -428,19 +430,17 @@ $(document).ready(function () {
     })();
 
     // Увеличиваем число tiket (делаем анимацию)
-    (function () {
-        function animateCounter(element, min, max, stepDelay) {
-            let i = min;
-            let timer = setInterval(function(){
-                element.text(i+"X");
-                if(i === max){ clearInterval(timer); }
-                i++;
-            }, stepDelay);
-        }
-
-        animateCounter($('.js-ticket-1'), 0, 75, 30);
-        animateCounter($('.js-ticket-2'), 0, 10, 50);
-    })();
+    function animateCounter(element, min, max, stepDelay) {
+        let i = min;
+        let timer = setInterval(function(){
+            element.text(i+"X");
+            if(i === max){ clearInterval(timer); }
+            i++;
+        }, stepDelay);
+    }
+    animateCounter($('.js-ticket-1'), 0, 75, 30);
+    animateCounter($('.js-ticket-2'), 0, 10, 50);
+    
 
     // Открыть полностью отзыв
     $('.js-reviews-btn').click(function(){
@@ -468,13 +468,43 @@ $(document).ready(function () {
 
     // При клике на Play free запускаем iframe
     $('.js-play-iframe').click(function(){
-        let src = $(this).data('iframe-src');
         $('.js-iframe-control').addClass('dn');
+        let iframe = $('.js-iframe-body').find('iframe');
+        iframe.attr('src', iframe.data('src'));
         $('.js-iframe-body').removeClass('dn');
-        $('.js-iframe-body').append('<iframe src="'+src+'" width="776" height="437" scrolling="none" frameborder="0" id="gameIframe"></iframe>');
     });
+
+    let isAnimatedTicket_3 = false;
+    let $ticketAnchor = $('.js-ticket-anchor')
+    // При доскроле до элемента .js-ticket-3 анимируем его
+    function scrollForTicket3(scrollTop){
+        if(isAnimatedTicket_3){ return }
+        if(scrollTop > $ticketAnchor[0].offsetTop - h + 150){
+            animateCounter($('.js-ticket-3'), 0, 10, 50);
+            isAnimatedTicket_3 = true;
+        }
+    }
+
+    let iframesVideo = $('.js-iframe-start-on-screen');
+    // Запускаем видео в iframe при докрутке до него
+    function scrollForIframe(scrollTop){
+        iframesVideo.each(function() {
+            if (scrollTop > $(this).offset().top - h) {
+                // Вставляем ссылку в src
+                let iframe = $(this).find('iframe');
+                if(w > BREAKPOINT_md3){
+                    iframe.attr('src', iframe.data('src-pc'));
+                }else{
+                    iframe.attr('src', iframe.data('src-mobile'));
+                }
+                
+                // Удаляем из массива текущий элемент
+                iframesVideo = iframesVideo.not(this);
+            }
+        });
+    }
 
 /** ======================================================================== */
 
-    
 });
+
