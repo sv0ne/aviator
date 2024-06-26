@@ -163,6 +163,12 @@ img, video{
 .span-block{display: block;}
 .tt-u{text-transform: uppercase;}
 
+.child-img-h-16{
+	> img {
+		height: 16px;
+	}
+}
+
 .rotate-270{transform: rotate(270deg);}
 .rotate-180{transform: rotate(180deg);}
 

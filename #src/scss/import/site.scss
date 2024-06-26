@@ -538,6 +538,7 @@
 ///////////////////////////////////////////////////////////
 
 .bookmaker{
+    overflow: hidden;
     &__body{
         position: relative;
         background-color: rgba(51, 51, 51, 0.7);
@@ -562,6 +563,9 @@
             gap: 32px;
             align-items: stretch;
         }
+    }
+    &__logo{
+        height: 64px;
     }
     &__col{
         padding: 32px 32px 8px 32px;
