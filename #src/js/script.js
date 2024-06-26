@@ -472,9 +472,15 @@ $(document).ready(function () {
                 $('head').append(script);
             }
 
-            $("#ajax-content").load(bannersAjax.html);
-            addCSS(bannersAjax.css);
-            addJS(bannersAjax.js);
+            $("#ajax-content").load(bannersAjax.html, function(response, status, xhr) {
+                if (status == "success") {
+                    addCSS(bannersAjax.css);
+                    addJS(bannersAjax.js);
+                    console.log("AjAX контент успешно загружен!");
+                } else if (status == "error") {
+                    console.log("Произошла ошибка: " + xhr.status + " " + xhr.statusText);
+                }
+            });
         }, 11000);
     }
 
