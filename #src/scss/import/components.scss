@@ -63,29 +63,25 @@
     border-radius: 8px;
     text-align: center;
     display: inline-block;
+    transition: transform 0.15s ease;
     @media (max-width:#{$md4}px) {
         padding: 8px 16px;
     }
     &_black{
         background: rgba(35, 35, 37, 1);
         color: $white;
-        &:hover{
-            background: rgba(35, 35, 37, 0.7);
-        }
     }
     &_white{
         background: rgba(255, 255, 255, 1);
         color: $black;
-        &:hover{
-            background: rgba(255, 255, 255, 0.7);
-        }
     }
     &_green{
         background: rgba(52, 199, 89, 1);
         color: $white;
-        &:hover{
-            background: rgba(52, 199, 89, 0.7);
-        }
+    }
+    &:hover:not(.disabled){
+        transition: transform 0.15s ease;
+        transform: scale(1.08) translateZ(0) perspective(1px);
     }
     &.disabled{
         opacity: 0.5;
@@ -700,6 +696,9 @@ ol.list, .styledContent ol{
     display: flex;
     padding: 8px;
     align-items: flex-start;
+    img{
+        height: 24px;
+    }
 }
 
 .promocode{

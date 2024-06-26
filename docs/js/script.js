@@ -297,7 +297,7 @@ $(".scroll").each(function(){new ScrollElement($(this));});
         if(isHideContentNavOnScroll === false){
             isHideContentNavOnScroll = true;
             isOpenContentNav = false;
-            $('.js-contentNav .contentNav__header svg').removeClass('rotate-180');
+            $('.js-contentNav .contentNav__header').addClass('isHide');
             $('.js-contentNav .contentNav__list').slideUp(150);
         }
     }
@@ -305,11 +305,11 @@ $(".scroll").each(function(){new ScrollElement($(this));});
     // Открыть/закрыть список contentNav
     $('.js-contentNav .contentNav__header').click(function(){
         if(isOpenContentNav === true){
-            $('.js-contentNav .contentNav__header svg').removeClass('rotate-180');
+            $('.js-contentNav .contentNav__header').addClass('isHide');
             $('.js-contentNav .contentNav__list').slideUp(150);
             isOpenContentNav = false;
         }else{
-            $('.js-contentNav .contentNav__header svg').addClass('rotate-180');
+            $('.js-contentNav .contentNav__header').removeClass('isHide');
             $('.js-contentNav .contentNav__list').slideDown(150);
             isOpenContentNav = true;
         }
@@ -533,15 +533,27 @@ $(".scroll").each(function(){new ScrollElement($(this));});
 
     // Управление полем поиска
     (function() {
+        let isOpenSearchField = false;
         // Открыть поле поиска
         $(".js-searchField .searchField__open").click(function(){
             $(".js-searchField").addClass("active");
             $(".js-searchField input").focus();
+            isOpenSearchField = true;
         });
 
         // Закрыть поле поиска
         $(".js-searchField .searchField__close").click(function(){
             $(".js-searchField").removeClass("active");
+            isOpenSearchField = false;
+        });
+
+        let $searchField = $('.js-searchField');
+        // При клике вне поле поиска, закрываем поле
+        $(document).on('click', function(event) {
+            if (isOpenSearchField && !$searchField.is(event.target) && $searchField.has(event.target).length === 0) {
+                $searchField.removeClass("active");
+                isOpenSearchField = false;
+            }
         });
     })();
 
@@ -715,6 +727,21 @@ $(".scroll").each(function(){new ScrollElement($(this));});
             }
         });
     }
+
+    // При клике на кнопку, делаем блок во весь экран
+    $('.js-btn-fullscreen').on('click', function() {
+        var element = $('.js-fullscreen-box')[0]; // Получаем DOM-элемент
+
+        if (element.requestFullscreen) {
+            element.requestFullscreen();
+        } else if (element.mozRequestFullScreen) { // Firefox
+            element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullscreen) { // Chrome, Safari и Opera
+            element.webkitRequestFullscreen();
+        } else if (element.msRequestFullscreen) { // IE/Edge
+            element.msRequestFullscreen();
+        }
+    });
 
 /** ======================================================================== */
 

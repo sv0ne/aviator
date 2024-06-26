@@ -6,6 +6,7 @@ body{
 	line-height: 120%;
 	color: $white;
 	background: $black;
+	overflow-x: hidden;
 	a{
 		color: inherit;
 		&:hover{
