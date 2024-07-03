@@ -2050,6 +2050,12 @@ ol.list li:before,
   position: relative;
   border-radius: 16px;
   overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.videoContainer_scrollFix {
+  background: rgba(255, 255, 255, 0);
+  z-index: 10;
 }
 
 .bigLabel {
