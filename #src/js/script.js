@@ -456,7 +456,7 @@ $(document).ready(function () {
 
     // Открыть полностью отзыв
     $('.js-reviews-btn').click(function(){
-        $(this).closest('.js-reviews').addClass('active');
+        $(this).closest('.js-reviews').toggleClass('active');
     });
 
     // Если это пк то подгружаем баннера через 11 сек. вместе с их js и css файлами
@@ -496,7 +496,7 @@ $(document).ready(function () {
     let $ticketAnchor = $('.js-ticket-anchor')
     // При доскроле до элемента .js-ticket-3 анимируем его
     function scrollForTicket3(scrollTop){
-        if(isAnimatedTicket_3){ return }
+        if(isAnimatedTicket_3 || !$ticketAnchor[0]){ return }
         if(scrollTop > $ticketAnchor[0].offsetTop - h + 150){
             animateCounter($('.js-ticket-3'), 0, 10, 50);
             isAnimatedTicket_3 = true;

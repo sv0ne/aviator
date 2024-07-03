@@ -223,6 +223,44 @@
     @extend .f-jcc-aic;
 }
 
+.linkSocial{
+    background-color: rgba(35, 35, 37, 1);
+    border-radius: 8px;
+    padding: 4px;
+    display: inline-block;
+    &_instagram{
+        background: linear-gradient(262.93deg, #7E2BF4 0%, #ED146E 50%, #FFC90C 100%);
+    }
+    &_facebook{
+        background: rgba(8, 102, 255, 1);
+    }
+    &_linkedin{
+        background: rgba(10, 102, 194, 1);
+    }
+}
+
+.link-default{
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.child-link-default{
+    a:hover{
+        text-decoration: underline;
+    }
+}
+
+///////////////////////// Таблицы /////////////////////////
+
+.table-2{
+    th{
+        @media (min-width:530px) {
+            width: 230px;
+        }
+    }
+}
+
 /////////////// Ховер подсказки (маленькие) ///////////////
 
 .tooltip{
@@ -386,6 +424,15 @@
     background-color: rgba(255, 255, 255, 0.05);
 }
 
+.card-2{
+    padding: 32px;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.05);
+    @media (max-width:#{$md3}px) {
+        padding: 16px;
+    }
+}
+
 .cardApp{
     padding: 16px;
     display: flex;
@@ -421,6 +468,9 @@
     }
     &_white{
         background: #fff;
+    }
+    &_pos-static{
+        position: static;
     }
 }
 
@@ -464,10 +514,8 @@
             border-radius: 8px;
             width: 328px;
             height: 40px;
-            outline: none;
             background-color: $black;
             padding: 8px 36px;
-            color: $white;
         }
         &:before{
             content: "";
@@ -520,11 +568,8 @@
 .inputText{
     padding: 8px;
     border-radius: 8px;
-    background-color: transparent;
-    color: $white;
     width: 100%;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    resize: none;
 }
 
 .inputRadio{
@@ -663,6 +708,52 @@ ol.list, .styledContent ol{
 	}
 }
 
+.listComparison{
+    li{
+        display: flex;
+        align-items: center;
+        gap: 16px;
+		&:before{
+			content: "";
+			width: 24px;
+			height: 24px;
+            flex: 0 0 24px;
+			background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 4.90625C16.415 4.90625 20 8.49125 20 12.9062C20 17.3212 16.415 20.9062 12 20.9062C7.585 20.9062 4 17.3212 4 12.9062C4 8.49125 7.585 4.90625 12 4.90625ZM8.41211 11.8562C7.85982 11.8562 7.41211 12.3039 7.41211 12.8562C7.41266 13.4081 7.86021 13.8552 8.41211 13.8552H10.9512V16.3922L10.9502 16.3932C10.9502 16.9455 11.3979 17.3932 11.9502 17.3932C12.5021 17.3926 12.9492 16.9451 12.9492 16.3932V13.8552H15.4881C16.04 13.8546 16.4871 13.4071 16.4871 12.8552C16.486 12.3037 16.0386 11.8572 15.4871 11.8572H12.9492V9.31719C12.9486 8.76529 12.5011 8.31819 11.9492 8.31819C11.3977 8.31929 10.9512 8.76668 10.9512 9.31819V11.8572H8.41311L8.41211 11.8562Z' fill='%2334C759'/%3E%3C/svg%3E");
+		}
+        &:not(:last-child){
+            margin-bottom: 16px;
+        }
+	}
+    &_negative li:before{
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M20 12.9062C20 8.49125 16.415 4.90625 12 4.90625C7.585 4.90625 4 8.49125 4 12.9062C4 17.3212 7.585 20.9062 12 20.9062C16.415 20.9062 20 17.3212 20 12.9062ZM7.41211 12.8562C7.41211 12.3039 7.85982 11.8562 8.41211 11.8562L8.41311 11.8572H15.4871C16.0386 11.8572 16.486 12.3037 16.4871 12.8552C16.4871 13.4071 16.04 13.8546 15.4881 13.8552H8.41211C7.86021 13.8552 7.41266 13.4081 7.41211 12.8562Z' fill='white' fill-opacity='0.3'/%3E%3C/svg%3E");
+    }
+}
+
+.tagsList{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    @media (max-width:#{$md3}px) {
+        gap: 16px;
+    }
+    li{
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 16px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        &:before{
+            content: "";
+            width: 8px;
+            height: 8px;
+            flex: 0 0 8px;
+            background-color: rgba(52, 199, 89, 1);
+            border-radius: 99px;
+        }
+    }
+}
+
 /////////////////// Стилизация скроллбара /////////////////////
 
 .scroll-styled{
@@ -717,9 +808,9 @@ ol.list, .styledContent ol{
 
 .copied{
 	position: fixed;
-	bottom: -56px;
+	bottom: 16px;
 	left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 130%);
 	background-color: $black;
 	color: $white;
 	padding: 16px;
@@ -736,14 +827,14 @@ ol.list, .styledContent ol{
 }
 
 @keyframes showMsg {
-    from{bottom: -56px;}
-    to{bottom: 16px;}
+    from{transform: translate(-50%, 130%);}
+    to{transform: translate(-50%, 0%);}
 }
 
 @keyframes hideMsg {
-    0%{bottom: 16px;}
-    30%{bottom: 24px;}
-    100%{bottom: -56px;}
+    0%{transform: translate(-50%, 0%);}
+    30%{transform: translate(-50%, -30%);}
+    100%{transform: translate(-50%, 130%);}
 }
 
 .table-auto-scroll{
@@ -829,21 +920,6 @@ ol.list, .styledContent ol{
     h5, h6{
         @extend .text-micro;
 		@extend .bold;
-	}
-	table{
-		border-collapse: collapse;
-        width: 100%;
-		td, th{
-            padding: 16px;
-			border: 1px solid rgba(255, 255, 255, 0.05);
-            @media (max-width:#{$md3}px) {
-                padding: 8px;
-            }
-		}
-        th{
-            background-color: #2E2E30;
-            text-align: left;
-        }
 	}
 	a:not([class]) {
         display: inline-block;

@@ -39,6 +39,30 @@ img, video{
 	object-fit: cover;
 }
 
+input[type="text"], input[type="email"], textarea{
+	outline: none;
+	color: $white;
+	font-size: 16px;
+	background-color: transparent;
+	resize: none;
+}
+
+table{
+	border-collapse: collapse;
+	width: 100%;
+	td, th{
+		padding: 16px;
+		border: 1px solid rgba(255, 255, 255, 0.05);
+		@media (max-width:#{$md3}px) {
+			padding: 8px;
+		}
+	}
+	th{
+		background-color: #2E2E30;
+		text-align: left;
+	}
+}
+
 ///////////////////// MARGIN-PADDING //////////////////////
 
 .m-4{margin: 4px;}
@@ -129,6 +153,11 @@ img, video{
 	white-space: nowrap;
 }
 
+.multicolumn-text {
+	column-count: 3;
+	column-gap: 16px;
+}
+
 .has-links{
 	a:hover{
 		text-decoration: underline;
@@ -159,7 +188,9 @@ img, video{
 .o-h{overflow: hidden;}
 .ws-n{white-space: nowrap;}
 .w-100{width: 100%;}
+.h-auto{height: auto;}
 .wh-100{width: 100%; height: 100%;}
+.min-w-0{min-width: 0;}
 .brad-8{border-radius: 8px;}
 .span-block{display: block;}
 .tt-u{text-transform: uppercase;}
@@ -278,6 +309,12 @@ img, video{
 	}
 	@media (max-width:#{$md3}px) {
 	    flex: 0 0 100%;
+	}
+}
+
+.md3-aifs{
+	@media (max-width:#{$md3}px) {
+		align-items: flex-start;
 	}
 }
 

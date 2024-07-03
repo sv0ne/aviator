@@ -660,8 +660,17 @@
             }
         }
         &.active{
+            padding-bottom: 54px;
             .reviews__btn{
-                display: none;
+                .state-less{
+                    display: block;
+                }
+                .state-more{
+                    display: none;
+                }
+                svg{
+                    transform: rotate(180deg);
+                }
             }
             .reviews__overlay{
                 display: none;
@@ -710,9 +719,71 @@
         align-items: center;
         gap: 8px;
         color: $white;
+        .state-less{
+            display: none;
+        }
         &:hover{
             color: rgba(255, 255, 255, 0.7);
         }
+    }
+}
+
+///////////////////////////////////////////////////////////
+
+.authorCard{
+    &__body{
+        padding: 32px;
+        border-radius: 16px;
+        background: linear-gradient(105.95deg, #008E4A 22.23%, #A5EF5B 77.77%);
+        display: flex;
+        gap: 16px;
+        > * {
+            flex: 1;
+        }
+        @media (max-width:#{$md3}px) {
+            flex-direction: column;
+            padding: 16px;
+        }
+    }
+    &__image{
+        border-radius: 99px;
+        width: 128px;
+        height: 128px;
+        overflow: hidden;
+    }
+}
+
+///////////////////////////////////////////////////////////
+
+.blogContent{
+    display: grid;
+    gap: 32px;
+    align-items: start;
+    @media (min-width:#{$md2}px) {
+        grid-template-columns: 1fr 360px;
+    }
+}
+
+///////////////////////////////////////////////////////////
+
+.comparison{
+    display: grid;
+    gap: 32px;
+    @media (min-width:#{$md3}px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    &__card{
+        background: rgba(255, 255, 255, 0.05);
+        padding: 16px;
+        border-radius: 16px;
+        position: relative;
+    }
+    &__icon{
+        position: absolute;
+        right: 32px;
+        top: 32px;
+        width: 72px;
+        height: 72px;
     }
 }
 
@@ -917,10 +988,7 @@
             flex: 1;
             border-radius: 8px 0px 0px 8px;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            background-color: transparent;
-            outline: none;
             padding: 8px;
-            color: $white;
         }
         button{
             @extend .text-small;
