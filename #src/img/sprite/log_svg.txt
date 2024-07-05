@@ -4,6 +4,8 @@ img/sprite/icons-sprite.svg#apple
 img/sprite/icons-sprite.svg#arrow
 img/sprite/icons-sprite.svg#attention
 img/sprite/icons-sprite.svg#back
+img/sprite/icons-sprite.svg#checkbox-active
+img/sprite/icons-sprite.svg#checkbox
 img/sprite/icons-sprite.svg#checks_24
 img/sprite/icons-sprite.svg#chevron
 img/sprite/icons-sprite.svg#chevron_white

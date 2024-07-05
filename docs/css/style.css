@@ -256,6 +256,10 @@ table th {
   margin-left: 16px;
 }
 
+.mb-24 {
+  margin-bottom: 24px;
+}
+
 .m-32 {
   margin: 32px;
 }
@@ -681,7 +685,6 @@ table th {
 }
 
 #language.mod2 {
-  z-index: 29;
   position: absolute;
 }
 
@@ -825,25 +828,16 @@ table th {
   text-align: center;
   font-weight: 700;
   padding: 12px 24px;
-  -webkit-transition: -webkit-transform 0.15s ease;
-  transition: -webkit-transform 0.15s ease;
-  transition: transform 0.15s ease;
-  transition: transform 0.15s ease, -webkit-transform 0.15s ease;
-}
-
-.btn:hover {
-  -webkit-transition: -webkit-transform 0.15s ease;
-  transition: -webkit-transform 0.15s ease;
-  transition: transform 0.15s ease;
-  transition: transform 0.15s ease, -webkit-transform 0.15s ease;
-  -webkit-transform: scale(1.08) translateZ(0) perspective(1px);
-          transform: scale(1.08) translateZ(0) perspective(1px);
 }
 
 .btn_blue {
   background: rgb(63, 105, 255);
   -webkit-box-shadow: 0px 8px 50px 0px rgb(63, 105, 255);
           box-shadow: 0px 8px 50px 0px rgb(63, 105, 255);
+}
+
+.btn_blue:hover {
+  background: rgb(41, 88, 255);
 }
 
 .btn_green {
@@ -867,6 +861,10 @@ table th {
   background: rgba(255, 255, 255, 0.3);
   -webkit-animation: btnLine 2s linear 0s infinite;
           animation: btnLine 2s linear 0s infinite;
+}
+
+.btn_green:hover {
+  background: rgb(41, 158, 71);
 }
 
 @-webkit-keyframes btnLine {
@@ -923,10 +921,6 @@ table th {
   border-radius: 8px;
   text-align: center;
   display: inline-block;
-  -webkit-transition: -webkit-transform 0.15s ease;
-  transition: -webkit-transform 0.15s ease;
-  transition: transform 0.15s ease;
-  transition: transform 0.15s ease, -webkit-transform 0.15s ease;
 }
 
 .btn-3_black {
@@ -934,9 +928,17 @@ table th {
   color: rgb(255, 255, 255);
 }
 
+.btn-3_black:hover:not(.disabled) {
+  background: rgb(57, 57, 59);
+}
+
 .btn-3_white {
   background: rgb(255, 255, 255);
   color: rgb(35, 35, 37);
+}
+
+.btn-3_white:hover:not(.disabled) {
+  background-color: rgb(211, 211, 211);
 }
 
 .btn-3_green {
@@ -944,13 +946,8 @@ table th {
   color: rgb(255, 255, 255);
 }
 
-.btn-3:hover:not(.disabled) {
-  -webkit-transition: -webkit-transform 0.15s ease;
-  transition: -webkit-transform 0.15s ease;
-  transition: transform 0.15s ease;
-  transition: transform 0.15s ease, -webkit-transform 0.15s ease;
-  -webkit-transform: scale(1.08) translateZ(0) perspective(1px);
-          transform: scale(1.08) translateZ(0) perspective(1px);
+.btn-3_green:hover:not(.disabled) {
+  background-color: rgb(41, 158, 71);
 }
 
 .btn-3.disabled {
@@ -992,6 +989,9 @@ table th {
 
 .btn-4__img img {
   height: 100%;
+  max-width: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .btn-5 {
@@ -1143,6 +1143,14 @@ table th {
   background: rgb(10, 102, 194);
 }
 
+.linkSocial_gray {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.linkSocial_gray:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .link-default:hover {
   text-decoration: underline;
 }
@@ -1256,6 +1264,7 @@ table th {
       -ms-flex-align: center;
           align-items: center;
   border-radius: 8px;
+  position: relative;
   gap: 8px;
 }
 
@@ -1305,12 +1314,6 @@ table th {
   display: inline-block;
   color: rgb(35, 35, 37);
   font-weight: 700;
-}
-
-.label-3 {
-  background-color: rgba(51, 51, 51, 0.7);
-  padding: 4px;
-  border-radius: 8px;
 }
 
 .label-4 {
@@ -1448,30 +1451,25 @@ table th {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .inputCheckbox input[type=checkbox] + label span {
   padding-left: 8px;
 }
 
-.inputCheckbox input[type=checkbox] + label .st-1 {
-  fill: #ccc;
-}
-
-.inputCheckbox input[type=checkbox] + label .st-2 {
+.inputCheckbox input[type=checkbox] + label .state-2 {
   visibility: hidden;
 }
 
-.inputCheckbox input[type=checkbox]:checked + label .st-1 {
+.inputCheckbox input[type=checkbox]:checked + label .state-1 {
   visibility: hidden;
 }
 
-.inputCheckbox input[type=checkbox]:checked + label .st-2 {
+.inputCheckbox input[type=checkbox]:checked + label .state-2 {
   visibility: visible;
-  fill: red;
 }
 
 .breadcrumbs__link:not(:first-child) {
@@ -1494,18 +1492,37 @@ table th {
   color: rgba(255, 255, 255, 0.3);
 }
 
-ul.list > li:not(:last-child),
-.styledContent ul > li:not(:last-child) {
+ul.list li,
+.styledContent ul li,
+ol.list li,
+.styledContent ol li {
+  padding-left: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+ul.list li:not(:last-child),
+.styledContent ul li:not(:last-child),
+ol.list li:not(:last-child),
+.styledContent ol li:not(:last-child) {
   margin-bottom: 16px;
+}
+
+ul.list li,
+.styledContent ul li {
+  gap: 16px;
 }
 
 ul.list li:before,
 .styledContent ul li:before {
   content: "";
-  display: inline-block;
-  margin: 8px 8px 0 32px;
-  top: 8px;
-  left: 16px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 8px;
+          flex: 0 0 8px;
   width: 8px;
   height: 8px;
   background: -webkit-gradient(linear, left top, right top, from(#FFF173), to(#FFB800));
@@ -1518,24 +1535,15 @@ ol.list,
   counter-reset: myCounter;
 }
 
-ol.list > li:not(:last-child),
-.styledContent ol > li:not(:last-child) {
-  margin-bottom: 16px;
-}
-
 ol.list li,
 .styledContent ol li {
-  padding-left: 32px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  gap: 12px;
 }
 
 ol.list li:before,
 .styledContent ol li:before {
   content: counter(myCounter) ".";
   counter-increment: myCounter;
-  padding-right: 8px;
 }
 
 .listComparison li {
@@ -1764,6 +1772,10 @@ ol.list li:before,
 .quote:after {
   bottom: 0;
   right: 32px;
+}
+
+.styledContent p {
+  line-height: 170%;
 }
 
 .styledContent a:not([class]) {
@@ -2254,6 +2266,9 @@ ol.list li:before,
 
 .bookmaker__logo {
   height: 64px;
+  max-width: 220px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .bookmaker__col {
@@ -3008,10 +3023,8 @@ ol.list li:before,
   .blogContent {
     grid-template-columns: 1fr 360px;
   }
-}
 
-@media (min-width: 1413px) {
-  .welcomeBonus {
+  .fixedBottomBox {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     bottom: 16px;
   }
@@ -3031,6 +3044,10 @@ ol.list li:before,
 
   .btnScrollToTop {
     right: 16px;
+  }
+
+  .btnScrollToTop.hasBoxWelcomeBonus {
+    bottom: 166px;
   }
 
   .welcomeBonus__btn {
@@ -3150,6 +3167,10 @@ ol.list li:before,
     -webkit-transform: scale(0.6) rotate(24deg);
         -ms-transform: scale(0.6) rotate(24deg);
             transform: scale(0.6) rotate(24deg);
+  }
+
+  .btnScrollToTop.hasBoxWelcomeBonus {
+    bottom: 150px;
   }
 
   .boxInfo {
@@ -3349,11 +3370,8 @@ position sticky у блока .stickyBlock */
     display: none;
   }
 
-  ul.list li:before,
-  .styledContent ul li:before {
-    margin: 8px 8px 0 16px;
-  }
-
+  ul.list li,
+  .styledContent ul li,
   ol.list li,
   .styledContent ol li {
     padding-left: 16px;
@@ -3763,6 +3781,12 @@ position sticky у блока .stickyBlock */
 @media (max-width: 479.98px) {
   .btn-3 {
     padding: 8px 16px;
+  }
+
+  .tagsList li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
   }
 
   .reviews__card {

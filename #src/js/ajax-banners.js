@@ -66,6 +66,7 @@ let isShowSlider = false;
 // Показать слайдер
 function showSlider(){
     if(isShowSlider === true) { return; }
+    $("#ajax-content").removeClass('dn');
     $('.baners').addClass('active');
     showSlide(0);
     banersTimer = setTimeout(nextSlide, 5000);

@@ -696,13 +696,37 @@ $(".scroll").each(function(){new ScrollElement($(this));});
         }, 11000);
     }
 
-    // При клике на Play free запускаем iframe
-    $('.js-play-iframe').click(function(){
-        $('.js-iframe-control').addClass('dn');
-        let iframe = $('.js-iframe-body').find('iframe');
-        iframe.attr('src', iframe.data('src'));
-        $('.js-iframe-body').removeClass('dn');
-    });
+    // Кнопки 'Play free' и 'Demo' запускающие игру в блоке js-playFree-container
+    (function () {
+        // При клике на Play free запускаем iframe
+        $('.js-playFree-btn').click(function(){
+            $('.js-playFree-control').addClass('dn');
+            let iframe = $('.js-playFree-body').find('iframe');
+            iframe.attr('src', iframe.data('src'));
+            $('.js-playFree-body').removeClass('dn');
+        });
+
+        // При клике на кнопку "Play free" которая находится вне блока, делаем прокрут до блока и запускаем его
+        $('.js-playFree-btn-outside').click(goToPlayFreeContainer);
+
+        // Определяем позицию блока js-playFree-container и прокручиваем до него
+        function goToPlayFreeContainer() {
+            let offsetTop = $('.js-playFree-container')[0].offsetTop;
+            $('html, body').animate({
+                scrollTop: offsetTop-200
+            }, 500);
+            $('.js-playFree-btn').click();
+        }
+
+        // Если у кнопки js-btnDemo пустой href, она делает прокрут до блока js-playFree-container в противном случае переходит по ссылке
+        $('.js-btnDemo').click(function(e){
+            let href = $(this).attr('href');
+            if(href === ''){
+                e.preventDefault();
+                goToPlayFreeContainer();
+            }
+        });
+    })();
 
     let isAnimatedTicket_3 = false;
     let $ticketAnchor = $('.js-ticket-anchor')
@@ -749,6 +773,21 @@ $(".scroll").each(function(){new ScrollElement($(this));});
         }
     });
 
+    // Актуальный год в футере
+    (function(){
+        let now = new Date;
+        let year = now.getFullYear();
+        $('.js-current-year').text(year);
+    })();
+
+    // Если это страница казино, подсветить доступные страны
+    let globalMap = $('.js-map-global-availability');
+    if(globalMap.length === 1){
+        countryAvailability.forEach(function (id) {
+            globalMap.find('#country-'+id).attr('fill', '#34C759');
+        });
+    }
+    
 /** ======================================================================== */
 
 });

@@ -113,34 +113,36 @@
                     <div class="popover-popup__body nlc-mb-16">
                         <p class="bold max-md3-dn">Install the app and get bonuses</p>
                         <p class="bold min-md3-dn">Live bonuses</p>
-                        <a href="/test-main" class="cardApp cardApp_blue">
+                        <div class="cardApp cardApp_blue">
                             <div class="flex-1">
                                 <img src="img/1win.svg" alt="">
                                 <p class="text-small mt-4">Install the app and get 100$ bonuses</p>
                             </div>
-                            <object class="f-aic gap-8">
-                                <a href="" class="link-2">
-                                    <svg width="20.5" height="24"><use xlink:href="img/sprite/icons-sprite.svg#apple"/></svg>
-                                </a>
-                                <a href="" class="link-2">
-                                    <svg width="28" height="24"><use xlink:href="img/sprite/icons-sprite.svg#android"/></svg>
-                                </a>
-                            </object>
-                        </a>
-                        <a href="/test-main" class="cardApp cardApp_gradient">
-                            <div class="flex-1">
-                                <img src="img/mostbet.svg" alt="">
-                                <p class="text-small mt-4">Install the app and get 250FS + 100% first deposit bonuses</p>
-                            </div>
-                            <object class="f-aic gap-8">
+                            <div class="f-aic gap-8 pos-r z-3">
                                 <a href="/test-1" class="link-2">
                                     <svg width="20.5" height="24"><use xlink:href="img/sprite/icons-sprite.svg#apple"/></svg>
                                 </a>
                                 <a href="/test-2" class="link-2">
                                     <svg width="28" height="24"><use xlink:href="img/sprite/icons-sprite.svg#android"/></svg>
                                 </a>
-                            </object>
-                        </a>
+                            </div>
+                            <a href="/test-bg" class="posa z-2"></a>
+                        </div>
+                        <div class="cardApp cardApp_gradient">
+                            <div class="flex-1">
+                                <img src="img/mostbet.svg" alt="">
+                                <p class="text-small mt-4">Install the app and get 250FS + 100% first deposit bonuses</p>
+                            </div>
+                            <div class="f-aic gap-8 pos-r z-3">
+                                <a href="/test-1" class="link-2">
+                                    <svg width="20.5" height="24"><use xlink:href="img/sprite/icons-sprite.svg#apple"/></svg>
+                                </a>
+                                <a href="/test-2" class="link-2">
+                                    <svg width="28" height="24"><use xlink:href="img/sprite/icons-sprite.svg#android"/></svg>
+                                </a>
+                            </div>
+                            <a href="/test-bg" class="posa z-2"></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -154,7 +156,8 @@
                 <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#arrow"/></svg>
                 <svg class="w-24"><use xlink:href="img/sprite/countries-flags-sprite.svg#united-kingdom"/></svg>
             </button>
-            <a href="#" class="btnDemo">Demo</a>
+            <!-- Если у кнопки js-btnDemo пустой href, она делает прокрут до блока js-playFree-container в противном случае переходит по ссылке -->
+            <a href="" target="_blank" class="btnDemo js-btnDemo">Demo</a>
         </div>
     </div>
     <div class="header__buttons">

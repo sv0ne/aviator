@@ -586,6 +586,8 @@
     }
     &__logo{
         height: 64px;
+        max-width: 220px;
+        object-fit: contain;
     }
     &__col{
         padding: 32px 32px 8px 32px;
@@ -822,6 +824,12 @@
     }
     &.hasBoxWelcomeBonus{
         bottom: 146px;
+        @media (max-width:1413px) {
+            bottom: 166px;
+        }
+        @media (max-width:#{$md2}px) {
+            bottom: 150px;
+        }
         @media (max-width:#{$md3}px) {
             bottom: 124px;
         }
@@ -839,15 +847,15 @@
     display: none;
     background-color: #2F2F2F;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+    @media (min-width:#{$md2}px) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        bottom: 16px;
+    }
 }
 
 .welcomeBonus {
     position: sticky;
     z-index: 32;
-    @media (min-width:1413px) {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        bottom: 16px;
-    }
     &__boby {
         padding: 24px 16px;
         position: relative;
