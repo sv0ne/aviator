@@ -6,10 +6,18 @@
     position: fixed;
     bottom: 16px;
     left: 16px;
-    width: 320px;
-    height: 320px;
-    border-radius: 16px;
-    overflow: hidden;
+    padding: 16px;
+    background-color: rgba(35, 35, 37, 1);
+    box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 32px;
+    &__body{
+        width: 320px;
+        height: 320px;
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        position: relative;
+    }
     &__slider {
         display: flex;
         transition: transform 0.5s ease-in-out;
@@ -19,29 +27,6 @@
         img{
             width: 100%;
             height: 100%;
-        }
-    }
-    &__btn{
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        padding: 8px;
-        top: 36px;
-        left: 16px;
-        z-index: 2;
-        border-radius: 99px;
-        backdrop-filter: blur(32px);
-        background-color: rgba(255, 255, 255, 0.05);
-        color: #fff;
-        &_next{
-            left: 72px;
-        }
-        &_close{
-            left: auto;
-            right: 16px;
-        }
-        &:hover{
-            background-color: rgba(255, 255, 255, 0.10);
         }
     }
     &__timelane{
@@ -83,6 +68,6 @@
         }
     }
     &.active{
-        display: flex;
+        display: block;
     }
 }

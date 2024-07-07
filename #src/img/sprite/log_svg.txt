@@ -7,10 +7,9 @@ img/sprite/icons-sprite.svg#back
 img/sprite/icons-sprite.svg#checkbox-active
 img/sprite/icons-sprite.svg#checkbox
 img/sprite/icons-sprite.svg#checks_24
+img/sprite/icons-sprite.svg#chevron-big
 img/sprite/icons-sprite.svg#chevron
-img/sprite/icons-sprite.svg#chevron_white
 img/sprite/icons-sprite.svg#close-fill
-img/sprite/icons-sprite.svg#close-white
 img/sprite/icons-sprite.svg#close
 img/sprite/icons-sprite.svg#copy
 img/sprite/icons-sprite.svg#download

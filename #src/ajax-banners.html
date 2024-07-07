@@ -1,21 +1,27 @@
 <!-- Банера -->
 <div class="baners">
-    <div class="baners__timelane"></div>
-    <button class="baners__btn baners__btn_prev">
-        <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#chevron_white"/></svg>
-    </button>
-      <button class="baners__btn baners__btn_next">
-        <svg class="w-24 rotate-180"><use xlink:href="img/sprite/icons-sprite.svg#chevron_white"/></svg>
-    </button>
-    <button class="baners__btn baners__btn_close">
-        <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close-white"/></svg>
-    </button>
-    <a href="" class="baners__slider">
-        <img src="img/banners/01.png" alt="">
-        <img src="img/banners/02.png" alt="">
-        <img src="img/banners/03.png" alt="">
-        <img src="img/banners/04.png" alt="">
-        <img src="img/banners/05.png" alt="">
-        <img src="img/banners/06.png" alt="">
-    </a>
+    <div class="d-flex mb-8">
+        <div class="f-aic gap-16 flex-1">
+            <button class="btn-round js-baners-prev">
+                <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#chevron-big"/></svg>
+            </button>
+            <button class="btn-round js-baners-next">
+                <svg class="w-24 rotate-180"><use xlink:href="img/sprite/icons-sprite.svg#chevron-big"/></svg>
+            </button>
+        </div>
+        <button class="btn-round js-baners-close">
+            <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close"/></svg>
+        </button>
+    </div>
+    <div class="baners__body">
+        <div class="baners__timelane"></div>
+        <a href="" class="baners__slider">
+            <img src="img/banners/01.png" alt="">
+            <img src="img/banners/02.png" alt="">
+            <img src="img/banners/03.png" alt="">
+            <img src="img/banners/04.png" alt="">
+            <img src="img/banners/05.png" alt="">
+            <img src="img/banners/06.png" alt="">
+        </a>
+    </div>
 </div>

@@ -59,8 +59,8 @@ function prevSlide() {
 }
 
 // Пнопки переключения слайдера
-$('.baners__btn.baners__btn_next').click(nextSlide);
-$('.baners__btn.baners__btn_prev').click(prevSlide);
+$('.js-baners-next').click(nextSlide);
+$('.js-baners-prev').click(prevSlide);
 
 let isShowSlider = false;
 // Показать слайдер
@@ -81,7 +81,7 @@ function hideSlider(){
 }
 
 // Закрыть слайдер
-$('.baners__btn.baners__btn_close').click(function(){
+$('.js-baners-close').click(function(){
     hideSlider();
     sessionStorage.setItem('banersHide', 'true');
 });
