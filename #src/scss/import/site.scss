@@ -1033,7 +1033,7 @@
                         display: inline;
                         margin-left: 16px;
                     }
-                    svg{
+                    svg, img{
                         mix-blend-mode: normal;
                     }
                 }
@@ -1044,6 +1044,7 @@
                     color: $black;
                     text-align: center;
                     font-weight: bold;
+                    display: inline-block;
                 }
                 .modal__header{
                     display: flex;
@@ -1062,7 +1063,7 @@
             cursor: pointer;
             position: relative;
             &:hover{
-                svg{
+                svg, img{
                     mix-blend-mode: normal;
                 }
                 span{
@@ -1073,7 +1074,7 @@
                     visibility: visible;
                 }
             }
-            svg{
+            svg, img{
                 mix-blend-mode: luminosity;
             }
             span{
@@ -1095,7 +1096,7 @@
             }
         }
         @media (max-width:#{$md3}px) {
-            svg{
+            svg, img{
                 mix-blend-mode: luminosity;
             }
             span{
