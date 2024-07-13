@@ -1011,14 +1011,14 @@ table th {
       -ms-flex-align: center;
           align-items: center;
   gap: 8px;
-  color: rgba(255, 255, 255, 0.3);
-  fill: rgba(255, 255, 255, 0.3);
+  color: rgb(255, 255, 255);
+  fill: rgb(255, 255, 255);
   background-color: transparent;
 }
 
 .btn-5:hover {
-  color: rgb(255, 255, 255);
-  fill: rgb(255, 255, 255);
+  color: rgba(255, 255, 255, 0.3);
+  fill: rgba(255, 255, 255, 0.3);
 }
 
 .btn-6 {
@@ -1482,17 +1482,17 @@ table th {
 }
 
 .breadcrumbs__link:not(:first-child) {
-  padding-left: 24px;
+  padding-left: 40px;
   position: relative;
 }
 
 .breadcrumbs__link:not(:first-child):before {
   position: absolute;
   content: "";
-  top: calc(50% - 8px);
-  left: 4px;
-  width: 16px;
-  height: 16px;
+  top: calc(50% - 12px);
+  left: 8px;
+  width: 24px;
+  height: 24px;
   background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.3 8.03291C9.9 8.43291 9.9 9.03291 10.3 9.43291L13.6 12.7329L10.3 16.0329C9.9 16.4329 9.9 17.0329 10.3 17.4329C10.7 17.8329 11.3 17.8329 11.7 17.4329L15.7 13.4329C15.9 13.2329 16 13.0329 16 12.7329C16 12.4329 15.9 12.2329 15.7 12.0329L11.7 8.03291C11.3 7.63291 10.7 7.63291 10.3 8.03291Z' fill='white' fill-opacity='0.3'/%3E%3C/svg%3E%0A");
   background-position: 50% 50%;
 }
@@ -2817,8 +2817,7 @@ ol.list li:before,
 .label,
 .label-2,
 .styledContent h4,
-.subscribe__input button,
-.social {
+.subscribe__input button {
   font-size: 13px;
   line-height: 16px;
 }
@@ -3279,6 +3278,10 @@ position sticky у блока .stickyBlock */
   }
 
   .btn {
+    padding: 8px 16px;
+  }
+
+  .btn-3 {
     padding: 8px 16px;
   }
 
@@ -3793,10 +3796,6 @@ position sticky у блока .stickyBlock */
 }
 
 @media (max-width: 479.98px) {
-  .btn-3 {
-    padding: 8px 16px;
-  }
-
   .tagsList li {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
