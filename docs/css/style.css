@@ -840,21 +840,22 @@ table th {
 }
 
 .btn_blue {
-  background: rgb(63, 105, 255);
-  -webkit-box-shadow: 0px 8px 50px 0px rgb(63, 105, 255);
-          box-shadow: 0px 8px 50px 0px rgb(63, 105, 255);
+  background: rgb(255, 255, 255);
+  color: rgb(35, 35, 37);
 }
 
 .btn_blue:hover {
-  background: rgb(41, 88, 255);
+  background-color: rgb(211, 211, 211);
 }
 
 .btn_green {
-  background: rgb(52, 199, 89);
-  -webkit-box-shadow: 0px 8px 50px 0px rgb(42, 128, 71);
-          box-shadow: 0px 8px 50px 0px rgb(42, 128, 71);
+  background: -webkit-gradient(linear, left top, right top, from(#FFF173), to(#FFB800));
+  background: linear-gradient(90deg, #FFF173 0%, #FFB800 100%);
+  -webkit-box-shadow: 0px 8px 50px 0px rgba(255, 212, 0, 0.5);
+          box-shadow: 0px 8px 50px 0px rgba(255, 212, 0, 0.5);
   position: relative;
   overflow: hidden;
+  color: rgb(35, 35, 37);
 }
 
 .btn_green:after {
@@ -873,7 +874,7 @@ table th {
 }
 
 .btn_green:hover {
-  background: rgb(41, 158, 71);
+  background: #FFB800;
 }
 
 @-webkit-keyframes btnLine {
@@ -951,12 +952,13 @@ table th {
 }
 
 .btn-3_green {
-  background: rgb(52, 199, 89);
-  color: rgb(255, 255, 255);
+  background: -webkit-gradient(linear, left top, right top, from(#FFF173), to(#FFB800));
+  background: linear-gradient(90deg, #FFF173 0%, #FFB800 100%);
+  color: rgb(35, 35, 37);
 }
 
 .btn-3_green:hover:not(.disabled) {
-  background-color: rgb(41, 158, 71);
+  background: #FFB800;
 }
 
 .btn-3.disabled {
@@ -1297,8 +1299,7 @@ table th {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: -webkit-gradient(linear, left top, right top, from(#FFF173), to(#FFB800));
-  background: linear-gradient(90deg, #FFF173 0%, #FFB800 100%);
+  background: #fff;
   color: rgb(35, 35, 37);
   font-weight: 700;
 }
@@ -1306,10 +1307,6 @@ table th {
 .label img {
   display: inline-block;
   margin-right: 10px;
-}
-
-.label_white {
-  background: #fff;
 }
 
 .label_pos-static {
