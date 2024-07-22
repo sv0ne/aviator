@@ -1478,6 +1478,10 @@ table th {
   visibility: visible;
 }
 
+.breadcrumbs {
+  margin: -4px auto;
+}
+
 .breadcrumbs__link {
   padding: 4px 0;
 }

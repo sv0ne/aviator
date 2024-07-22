@@ -648,6 +648,7 @@
 ///////////////////// breadcrumbs //////////////////////////
 
 .breadcrumbs {
+    margin: -4px auto;
 	&__link {
         padding: 4px 0;
 		&:not(:first-child){
