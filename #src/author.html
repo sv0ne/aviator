@@ -4,6 +4,7 @@
 <!-- role="dialog" -->
 <body> 
 	@@include('blocks/header.html')
+    <!-- breadcrumbs -->
     <nav class="breadcrumbs container p-16">
         <ul class="d-flex fww" itemscope itemtype="https://schema.org/BreadcrumbList">
             <li class="breadcrumbs__link" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -21,7 +22,8 @@
         </ul>
     </nav>
 
-    <div class="authorCard container p-16">
+    <!-- Карточка автора -->
+    <section class="authorCard container p-16">
         <div class="authorCard__body">
             <div class="f-aic fww gap-16">
                 <div class="authorCard__image">
@@ -66,9 +68,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="blogContent container p-16">
+    <!-- Сео-текст -->
+    <section class="blogContent container p-16">
         <div class="styledContent nlc-mb-32 min-w-0">
             <div>
                 <p class="text-big">Стилі для базових елементів</p>
@@ -138,24 +141,29 @@
                 </table>
             </div>
         </div>
-        <div class="card-2 d-flex fdc gap-16 child-link-default">
-            <div class="text-big">Last posts by Leah Shepherd</div>
-            <a href="">500% Welcome Bonus for New Players: Get 685,000 NGN</a>
-            <a href="">SABDC – The South African Book Development Council</a>
-            <a href="">Complete South African Online Casinos List in 2024</a>
-            <a href="">Punt Casino Login & Sign-Up Guide in 2024</a>
+        <div class="card-2">
+            <div class="text-big mb-16">Last posts by Leah Shepherd</div>
+            <nav class="d-flex fdc gap-16 child-link-default">
+                <a href="">500% Welcome Bonus for New Players: Get 685,000 NGN</a>
+                <a href="">SABDC – The South African Book Development Council</a>
+                <a href="">Complete South African Online Casinos List in 2024</a>
+                <a href="">Punt Casino Login & Sign-Up Guide in 2024</a>
+            </nav>
         </div>
-    </div>
+    </section>
     
-    <div class="container p-16 mb-24">
-        <div class="card-2 d-flex fdc gap-16 child-link-default">
-            <div class="text-big">Publications of the author on other sites</div>
-            <a href="">500% Welcome Bonus for New Players: Get 685,000 NGN</a>
-            <a href="">SABDC – The South African Book Development Council</a>
-            <a href="">Complete South African Online Casinos List in 2024</a>
-            <a href="">Punt Casino Login & Sign-Up Guide in 2024</a>
+    <!-- Ссылки -->
+    <section class="container p-16 mb-24">
+        <div class="card-2">
+            <div class="text-big mb-16">Publications of the author on other sites</div>
+            <nav class="d-flex fdc gap-16 child-link-default">
+                <a href="">500% Welcome Bonus for New Players: Get 685,000 NGN</a>
+                <a href="">SABDC – The South African Book Development Council</a>
+                <a href="">Complete South African Online Casinos List in 2024</a>
+                <a href="">Punt Casino Login & Sign-Up Guide in 2024</a>
+            </nav>
         </div>
-    </div>
+    </section>
 
     <!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
 	@@include('blocks/common-blocks.html')

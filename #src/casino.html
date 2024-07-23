@@ -4,6 +4,7 @@
 <!-- role="dialog" -->
 <body> 
 	@@include('blocks/header.html')
+    <!-- breadcrumbs -->
     <nav class="breadcrumbs container p-16">
         <ul class="d-flex fww" itemscope itemtype="https://schema.org/BreadcrumbList">
             <li class="breadcrumbs__link" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -28,10 +29,10 @@
     </nav>
 
     <!-- Заголовок страницы -->
-    <p class="container p-16 text-big">1win casino review</p>
+    <section class="container p-16 text-big">1win casino review</section>
 
     <!-- bookmaker 1win -->
-	<div class="bookmaker">
+	<article class="bookmaker">
 		<div class="container p-16">
 			<div class="bookmaker__body">
 				<div class="label">
@@ -109,17 +110,19 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</article>
 
     <!-- Теги -->
-    <ul class="container p-16 tagsList">
-        <li>1718+ casino games</li>
-        <li>Offers Mobile Games</li>
-        <li>Offers VIP Program & Dedicated VIP Manager</li>
-    </ul>
+    <section>
+        <ul class="container p-16 tagsList">
+            <li>1718+ casino games</li>
+            <li>Offers Mobile Games</li>
+            <li>Offers VIP Program & Dedicated VIP Manager</li>
+        </ul>
+    </section>
 
     <!-- Таблица -->
-    <div class="container p-16">
+    <section class="container p-16">
         <table class="table-2">
             <tr>
                 <th>Withdrawal limits</th>
@@ -146,19 +149,19 @@
                 <td>English, Spanish</td>
             </tr>
         </table>
-    </div>
+    </section>
 
     <!-- Карта мира, доступность -->
-    <div class="container p-16">
+    <section class="container p-16">
         <div class="f-jcsb-aic mb-32">
             <p class="text-big">Global availability</p>
             <button class="btn-6 regular js-popup-opener" data-popup-id="availableCountries">Show list</button>
         </div>
         @@include('blocks/world-map-svg.html')
-    </div>
+    </section>
 
     <!-- Сравнение -->
-    <div class="container p-16 comparison mb-24">
+    <section class="container p-16 comparison mb-24">
         <div class="comparison__card">
             <img class="comparison__icon" src="img/plus.svg" alt="">
             <p class="text-small bold mb-16">Positives</p>
@@ -180,7 +183,7 @@
                 <li>Live chat support is not available 24/7</li>
             </ul>
         </div>
-    </div>
+    </section>
 
     <!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
 	@@include('blocks/common-blocks.html')

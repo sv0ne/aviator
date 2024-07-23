@@ -53,7 +53,7 @@
                     <svg class="w-24 ml-8"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
                 </button>
                 <div class="popover-popup mod-left">
-                    <div class="popover-popup__body scroll-styled">
+                    <nav class="popover-popup__body scroll-styled">
                         <a href="/update-page/#4rabet" class="btn-4">
                             <span class="btn-4__img">
                                 <img src="img/4rabet.svg" loading="lazy" alt="">
@@ -108,7 +108,7 @@
                             </span>
                             <span class="bold">1XBet</span>
                         </a>
-                    </div>
+                    </nav>
                 </div>
             </div>
             <a href="/download-app" class="btn-dropdown mod-download-app order-3">
@@ -121,11 +121,11 @@
                     <svg class="w-24 ml-8"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
                 </button>
                 <div class="popover-popup">
-                    <ul class="moreList popover-popup__body">
-                        <li><a href="/about-us">About us</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/contacts">Contacts</a></li>
-                    </ul>
+                    <nav class="moreList popover-popup__body">
+                        <a href="/about-us">About us</a>
+                        <a href="/blog">Blog</a>
+                        <a href="/contacts">Contacts</a>
+                    </nav>
                 </div>
             </div>
             <div class="popover liveBonuses order-2">
@@ -189,6 +189,7 @@
         <a href="" class="btn btn_green">Play Aviator</a>
     </div>
 </header>
+    <!-- breadcrumbs -->
     <nav class="breadcrumbs container p-16">
         <ul class="d-flex fww" itemscope itemtype="https://schema.org/BreadcrumbList">
             <li class="breadcrumbs__link" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -213,10 +214,10 @@
     </nav>
 
     <!-- Заголовок страницы -->
-    <p class="container p-16 text-big">1win casino review</p>
+    <section class="container p-16 text-big">1win casino review</section>
 
     <!-- bookmaker 1win -->
-	<div class="bookmaker">
+	<article class="bookmaker">
 		<div class="container p-16">
 			<div class="bookmaker__body">
 				<div class="label">
@@ -294,17 +295,19 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</article>
 
     <!-- Теги -->
-    <ul class="container p-16 tagsList">
-        <li>1718+ casino games</li>
-        <li>Offers Mobile Games</li>
-        <li>Offers VIP Program & Dedicated VIP Manager</li>
-    </ul>
+    <section>
+        <ul class="container p-16 tagsList">
+            <li>1718+ casino games</li>
+            <li>Offers Mobile Games</li>
+            <li>Offers VIP Program & Dedicated VIP Manager</li>
+        </ul>
+    </section>
 
     <!-- Таблица -->
-    <div class="container p-16">
+    <section class="container p-16">
         <table class="table-2">
             <tr>
                 <th>Withdrawal limits</th>
@@ -331,10 +334,10 @@
                 <td>English, Spanish</td>
             </tr>
         </table>
-    </div>
+    </section>
 
     <!-- Карта мира, доступность -->
-    <div class="container p-16">
+    <section class="container p-16">
         <div class="f-jcsb-aic mb-32">
             <p class="text-big">Global availability</p>
             <button class="btn-6 regular js-popup-opener" data-popup-id="availableCountries">Show list</button>
@@ -2012,10 +2015,10 @@
 	C440.7,222.4,441.1,222.9,441.4,223.4z"/>
 </svg>
 
-    </div>
+    </section>
 
     <!-- Сравнение -->
-    <div class="container p-16 comparison mb-24">
+    <section class="container p-16 comparison mb-24">
         <div class="comparison__card">
             <img class="comparison__icon" src="img/plus.svg" alt="">
             <p class="text-small bold mb-16">Positives</p>
@@ -2037,21 +2040,25 @@
                 <li>Live chat support is not available 24/7</li>
             </ul>
         </div>
-    </div>
+    </section>
 
     <!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
 	<!-- Кнопка прокрутки вверх -->
-<button type="button" class="btn-round btn-round_white btnScrollToTop js-btnScrollToTop">
-    <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#download"/></svg>
-</button>
+<aside>
+    <button type="button" class="btn-round btn-round_white btnScrollToTop js-btnScrollToTop">
+        <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#download"/></svg>
+    </button>
+</aside>
 
 <!-- Круглая кнопка бонуса -->
-<button type="button" class="btn-round btnBonus js-btnBonus">
-    <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#gift"/></svg>
-</button>
+<aside>
+    <button type="button" class="btn-round btnBonus js-btnBonus">
+        <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#gift"/></svg>
+    </button>
+</aside>
 
 <!-- Welcome bonus -->
-<div class="welcomeBonus fixedBottomBox js-welcomeBonus">
+<aside class="welcomeBonus fixedBottomBox js-welcomeBonus">
     <div class="container f-jcsb-aic welcomeBonus__boby">
         <div class="label">Best Casino with Aviator game</div>
         <img class="max-md3-dn" src="img/1win_2.svg" width="140" height="64" loading="lazy" alt="">
@@ -2065,13 +2072,13 @@
     <button class="welcomeBonus__btn btn-round js-btnWelcomeBonusClose">
         <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close"/></svg>
     </button>
-</div>
+</aside>
 
 <!-- В этот блок подгружается AJAX-сонтент, а именно банера -->
-<div id="ajax-content" class="dn"></div>
+<aside id="ajax-content" class="dn"></aside>
 
 <!-- Cookie -->
-<div class="cookie fixedBottomBox">
+<aside class="cookie fixedBottomBox">
     <div class="container p-16 f-jcsb-aic cookie__body">
         <p>We use cookies to improve your experience on our website</p>
         <div class="f-aic gap-16">
@@ -2081,13 +2088,13 @@
             <button class="btn-3 btn-3_black js-btn-cookie">Agree</button>
         </div>
     </div>
-</div>
+</aside>
 
 <!-- Плашка скопированно -->
-<div class="copied js-copied">Promocode has been copied to clipboard</div>
+<aside class="copied js-copied">Promocode has been copied to clipboard</aside>
 
 <!-- Список попапов -->
-<div>
+<aside>
     <div class="bgOverlay js-popupOverlay"></div>
     <div class="popup" id="language" data-type="floating">
         <div class="popup__body">
@@ -2567,7 +2574,7 @@
             </form>
         </div>
     </div>
-</div>
+</aside>
 	<footer class="footer o-h">
     <div class="container footer__body nlc-mb-16">
         <div class="f-jcsb-aic">
@@ -2598,7 +2605,7 @@
                         <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
                     </button>
                 </p>
-                <div class="boxInfo__grid boxInfo__grid_3col">
+                <nav class="boxInfo__grid boxInfo__grid_3col">
                     <a href="">Sitemap</a>
                     <a href="">About us</a>
                     <a href="">Responsible Gambling</a>
@@ -2607,11 +2614,11 @@
                     <a href="">Bonuses</a>
                     <a href="">Privacy Policy</a>
                     <a href="">Blog</a>
-                </div>
+                </nav>
             </div>
             <div class="boxInfo__col js-boxInfo-casinos">
                 <p class="gray mb-16 leter-sp">Top online casinos</p>
-                <div class="boxInfo__grid boxInfo__grid_3col">
+                <nav class="boxInfo__grid boxInfo__grid_3col">
                     <a href="">4RaBet</a>
                     <a href="">MostBet</a>
                     <a href="">Odds96</a>
@@ -2620,7 +2627,7 @@
                     <a href="">1XBet</a>
                     <a href="">Parimatch</a>
                     <a href="">Becric</a>
-                </div>
+                </nav>
             </div>
         </div>
         <div class="boxLinksApp">
