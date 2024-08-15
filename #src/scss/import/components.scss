@@ -676,47 +676,6 @@
 
 /////////////////////////// Списки ///////////////////////////////
 
-// Общее для двух списков
-ul.list, .styledContent ul, ol.list, .styledContent ol{
-    li{
-		padding-left: 32px;
-        display: flex;
-        align-items: center;
-        @media (max-width:#{$md3}px) {
-            padding-left: 16px;
-        }
-        &:not(:last-child){
-            margin-bottom: 16px;
-        }
-	}
-}
-
-ul.list, .styledContent ul{
-	li{
-        gap: 16px;
-		&:before{
-			content: "";
-            flex: 0 0 8px;
-			width: 8px;
-			height: 8px;
-			background: linear-gradient(90deg, #FFF173 0%, #FFB800 100%);
-			border-radius: 99px;
-		}
-	}
-}
-
-ol.list, .styledContent ol{
-	counter-reset: myCounter;
-	li{
-        gap: 12px;
-		&:before{
-			content: counter(myCounter)".";
-			counter-increment: myCounter;
-			@extend .bold;
-		}
-	}
-}
-
 .listComparison{
     li{
         display: flex;
@@ -916,29 +875,106 @@ ol.list, .styledContent ol{
 }
 
 .styledContent{
-    p{
+    --space-bottom: 32px;
+    padding: 0 16px;
+    > p{
         line-height: 170%;
+        margin-bottom: var(--space-bottom);
     }
-	h1{
+	> h1{
 		@extend .text-big;
+        margin-bottom: var(--space-bottom);
 	}
-    h2{
+    > h2{
 		@extend .text-medium;
+        margin-bottom: var(--space-bottom);
 	}
-	h3{
+	> h3{
 		@extend .bold;
+        margin-bottom: var(--space-bottom);
 	}
-    h4{
+    > h4{
         @extend .text-small;
 		@extend .bold;
+        margin-bottom: var(--space-bottom);
 	}
-    h5, h6{
+    > h5, h6{
         @extend .text-micro;
 		@extend .bold;
+        margin-bottom: var(--space-bottom);
 	}
-	a:not([class]) {
+	> a:not([class]) {
         display: inline-block;
 		text-decoration: underline;
+	}
+    > a{
+        margin-bottom: var(--space-bottom);
+    }
+
+    .p-40-md3-16, .firstScreen.p-16{
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    > ul, > ol {
+        margin-bottom: var(--space-bottom);
+    }
+
+    .quoteWarning{
+        margin-bottom: var(--space-bottom);
+    }
+
+    .quoteWarning p{
+        line-height: 170%;
+    }
+
+    .quote{
+        margin-bottom: var(--space-bottom);
+    }
+
+    .table-auto-scroll{
+        margin-bottom: var(--space-bottom);
+    }
+}
+
+// Общее для двух списков
+ul.list, .styledContent > ul, ol.list, .styledContent > ol{
+    li{
+		padding-left: 32px;
+        display: flex;
+        align-items: center;
+        @media (max-width:#{$md3}px) {
+            padding-left: 16px;
+        }
+        &:not(:last-child){
+            margin-bottom: 16px;
+        }
+	}
+}
+
+ul.list, .styledContent > ul{
+	li{
+        gap: 16px;
+		&:before{
+			content: "";
+            flex: 0 0 8px;
+			width: 8px;
+			height: 8px;
+			background: linear-gradient(90deg, #FFF173 0%, #FFB800 100%);
+			border-radius: 99px;
+		}
+	}
+}
+
+ol.list, .styledContent > ol{
+	counter-reset: myCounter;
+	li{
+        gap: 12px;
+		&:before{
+			content: counter(myCounter)".";
+			counter-increment: myCounter;
+			@extend .bold;
+		}
 	}
 }
 
