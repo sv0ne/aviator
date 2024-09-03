@@ -977,6 +977,9 @@
         flex-direction: column;
         gap: 16px;
         flex: 0 1 280px;
+        .linkApp{
+            flex: 1;
+        }
         @media (max-width:#{$md3}px) {
             flex-direction: row;
             flex: 1;
@@ -1109,6 +1112,7 @@
 .socials{
     display: flex;
     gap: 16px;
+    flex-wrap: wrap;
     @media (max-width:#{$md3}px) {
         flex-direction: column;
     }
@@ -1119,7 +1123,10 @@
             flex: 1;
         }
         &_1{
-            flex: 0 1 66%;
+            flex: 10;
+            .card-1{
+                min-width: 220px;
+            }
             @media (max-width:#{$md4}px) {
                 flex-direction: column;
             }
@@ -1127,6 +1134,9 @@
         &_2{
             flex: 1;
             align-items: center;
+            @media (max-width:#{$md3}px) {
+                flex-wrap: wrap;
+            }
         }
     }
 }
@@ -1151,13 +1161,24 @@
 }
 
 .social{
-    font-weight: 700;
     border-radius: 8px;
-    padding: 12px;
-    gap: 8px;
+    padding: 8px 4px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 1 1 40px;
+    width: 40px;
+    height: 40px;
+    @media (max-width:#{$md3}px) {
+        flex: 1;
+        min-width: 40px;
+    }
+    &_black{
+        background: rgba(0, 0, 0, 1);
+    }
+    &_white{
+        background: $white;
+    }
     &_tg{
         background: linear-gradient(180deg, #2AABEE 0%, #229ED9 99.21%);
     }

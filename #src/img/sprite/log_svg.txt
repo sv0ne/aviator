@@ -13,6 +13,7 @@ img/sprite/icons-sprite.svg#close-fill
 img/sprite/icons-sprite.svg#close
 img/sprite/icons-sprite.svg#copy
 img/sprite/icons-sprite.svg#download
+img/sprite/icons-sprite.svg#facebook_2
 img/sprite/icons-sprite.svg#fullscreen
 img/sprite/icons-sprite.svg#gift
 img/sprite/icons-sprite.svg#information
@@ -24,6 +25,7 @@ img/sprite/icons-sprite.svg#selected
 img/sprite/icons-sprite.svg#telegram
 img/sprite/icons-sprite.svg#verified
 img/sprite/icons-sprite.svg#x
+img/sprite/icons-sprite.svg#youtube
 img/sprite/socials-sprite.svg#blog
 img/sprite/socials-sprite.svg#email
 img/sprite/socials-sprite.svg#facebook

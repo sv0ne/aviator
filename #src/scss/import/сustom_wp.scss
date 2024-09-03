@@ -1,0 +1,50 @@
+/////////////////// Форма подписки ////////////////////
+.subscribe .wpcf7 .subscribe__input input{
+    border-radius: 8px;
+}
+
+.subscribe .wpcf7 .subscribe__input >  p{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.subscribe .wpcf7-submit{
+    margin-top: 16px;
+    padding: 12px 24px;
+    font-weight: 700;
+    border-radius: 8px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.subscribe .wpcf7-not-valid-tip{
+    margin-top: 8px;
+}
+
+.subscribe .wpcf7-spinner{
+    display: none !important;
+}
+
+.subscribe .wpcf7-form-control-wrap{
+    width: 100%;
+}
+
+.subscribe .wpcf7-form-control-wrap input{
+    width: 100%;
+}
+
+.subscribe .wpcf7-response-output{
+    margin: 16px 0 0 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    color: #dc3232;
+}
+
+.subscribe .wpcf7{
+    width: 100%;
+}
+
+///////////////////////////////////////////////////////////
