@@ -5,23 +5,26 @@
 
 .subscribe .wpcf7 .subscribe__input >  p{
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
     width: 100%;
 }
 
-.subscribe .wpcf7-submit{
-    margin-top: 16px;
-    padding: 12px 24px;
-    font-weight: 700;
-    border-radius: 8px;
-    text-align: center;
-    display: inline-block;
-    cursor: pointer;
+.subscribe input + .wpcf7-not-valid-tip{
+    position: absolute;
+    top: 0px;
+    transform: translateY(-100%);
+    margin-top: -8px;
+    color: white;
+    background-color: #232325;
+    box-shadow: 0 8px 48px 0 rgba(0, 0, 0, .5);
+    padding: 16px;
+    border-radius: 12px;
 }
 
-.subscribe .wpcf7-not-valid-tip{
-    margin-top: 8px;
+.subscribe .wpcf7-submit{
+    border-radius: 0 8px 8px 0;
+    height: 34px;
+    cursor: pointer;
 }
 
 .subscribe .wpcf7-spinner{
@@ -37,10 +40,7 @@
 }
 
 .subscribe .wpcf7-response-output{
-    margin: 16px 0 0 0 !important;
-    padding: 0 !important;
-    border: none !important;
-    color: #dc3232;
+    display: none !important;
 }
 
 .subscribe .wpcf7{

@@ -575,6 +575,11 @@ $(document).ready(function () {
             globalMap.find('#country-'+id).attr('fill', '#34C759');
         });
     }
+
+    // При клике, закрываем ошибки input полей выводимые попапами
+    $(document).on('click', function(event) {
+        $('.subscribe .wpcf7-not-valid-tip').remove();
+    });
     
 /** ======================================================================== */
 
