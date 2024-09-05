@@ -1,4 +1,12 @@
 /////////////////// Форма подписки ////////////////////прпр
+.subscribe{
+    position: relative;
+}
+
+.subscribe .wpcf7 .subscribe__input input {
+    border-radius: 8px;
+}
+
 .subscribe .wpcf7 .subscribe__input >  p{
     display: flex;
     align-items: flex-start;
@@ -11,7 +19,7 @@
     transform: translateY(-100%);
     margin-top: -8px;
     color: white;
-    background-color: #232325;
+    background-color: rgba(255, 59, 48, 1);
     box-shadow: 0 8px 48px 0 rgba(0, 0, 0, .5);
     padding: 16px;
     border-radius: 12px;
@@ -19,7 +27,8 @@
 
 .subscribe .wpcf7-submit{
     border-radius: 0 8px 8px 0;
-    height: 34px;
+    padding: 12px 24px;
+    font-weight: 700;
     cursor: pointer;
 }
 
@@ -29,14 +38,30 @@
 
 .subscribe .wpcf7-form-control-wrap{
     width: 100%;
+    padding-right: 16px;
 }
 
 .subscribe .wpcf7-form-control-wrap input{
-    width: 100%;
+    min-width: 160px;
+    padding: 11px 8px;
+}
+
+.subscribe .wpcf7-form-control-wrap input.wpcf7-not-valid{
+    border-color: rgba(255, 59, 48, 0.3);
+    color: rgba(255, 59, 48, 1);
 }
 
 .subscribe .wpcf7-response-output{
-    display: none !important;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    left: 16px;
+    transform: translateY(-100%);
+    margin: 0 !important;
+    padding: 16px !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    background: rgba(35, 35, 37, 1);
+    border-radius: 12px;
 }
 
 .subscribe .wpcf7{

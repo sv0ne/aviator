@@ -431,7 +431,7 @@
 
 ///////////////////////////////////////////////////////////
 
-.navigation{
+.navigationScroll{
     position: fixed;
 	top: 0;
 	left: 0;
@@ -1169,21 +1169,10 @@
     flex: 1 1 40px;
     width: 40px;
     height: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
     @media (max-width:#{$md3}px) {
         flex: 1;
         min-width: 40px;
-    }
-    &_black{
-        background: rgba(0, 0, 0, 1);
-    }
-    &_white{
-        background: $white;
-    }
-    &_tg{
-        background: linear-gradient(180deg, #2AABEE 0%, #229ED9 99.21%);
-    }
-    &_insta{
-        background: linear-gradient(262.93deg, #7E2BF4 0%, #ED146E 50%, #FFC90C 100%);
     }
 }
 

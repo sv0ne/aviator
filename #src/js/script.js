@@ -579,6 +579,7 @@ $(document).ready(function () {
     // При клике, закрываем ошибки input полей выводимые попапами
     $(document).on('click', function(event) {
         $('.subscribe .wpcf7-not-valid-tip').remove();
+        $('.subscribe .wpcf7-form-control-wrap input').removeClass('wpcf7-not-valid');
     });
     
 /** ======================================================================== */
