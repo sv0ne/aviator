@@ -1,4 +1,4 @@
-/////////////////// Форма подписки ////////////////////прпр
+/////////////////// Форма подписки ////////////////////
 .subscribe{
     position: relative;
 }
@@ -67,5 +67,35 @@
 .subscribe .wpcf7{
     width: 100%;
 }
+
+///////////////////// Поиск /////////////////////////////
+
+.search.search-results article.status-publish .entry-title{
+    margin-bottom: 16px;
+  }
+  
+  .search.search-results article.status-publish .entry-title a{
+    font-size: 18px;
+    color: #0E83E1;
+  }
+  
+  .search.search-results article.status-publish .entry-summary > *:not(:last-child){
+    margin-bottom: 16px;
+  }
+  
+  .navigation.posts-navigation .nav-links{
+    position: relative;
+    height: 50px;
+    padding: 16px 0;
+  }
+  
+  .nav-previous a, .nav-next a{
+    text-decoration: underline;
+    position: absolute;
+  }
+  
+  .nav-next a{
+    right: 0;
+  }
 
 ///////////////////////////////////////////////////////////
