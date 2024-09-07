@@ -150,10 +150,12 @@
 }
 
 .btnDemo{
-    text-decoration: underline;
-    text-decoration-style: dashed;
-    text-underline-offset: 4px;
     font-weight: 700;
+    &[href=""], &:not([href]){
+        text-decoration: underline;
+        text-decoration-style: dashed;
+        text-underline-offset: 4px;
+    }
 }
 
 .btn-dropdown{
