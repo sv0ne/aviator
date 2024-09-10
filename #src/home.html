@@ -722,7 +722,7 @@
 		<!-- Отзывы -->
 		<section class="reviews">
 			<div class="reviews__body container p-40-md3-16">
-				<div class="reviews__card js-reviews" id="author">
+				<div class="reviews__card js-reviews-card" id="author">
 					<div class="label">Author</div>
 					<div class="reviews__author">
 						<div class="reviews__image">
@@ -730,18 +730,21 @@
 						</div>
 						<div class="reviews__name">
 							<div class="f-aic">
-								<p class="text-medium">Leah Shepherd</p>
+								<a href="" class="reviews__link text-medium">Leah Shepherd</a>
 								<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#verified" fill="#1D9BF0"/></svg>
 							</div>
 							<p class="text-small">Author at in-aviator-game.in</p>
 							<p class="text-small"><span class="gray">Experience:</span> 7 years</p>
 						</div>
-						<a href="https://x.com/LeahShephe4404/" class="linkSocial linkSocial_gray">
-							<svg class="w-24" role="img" aria-label="twitter"><use xlink:href="img/sprite/socials-sprite.svg#x"/></svg>
-						</a>
 					</div>
-					<div class="reviews__text">
-						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae sit officia dolore. Quam pariatur, natus reprehenderit minus voluptas in cum nihil deleniti, cupiditate explicabo doloremque accusantium fugit sunt dolorum blanditiis. Itaque sunt expedita ducimus aliquam est. Minus rerum mollitia magnam tempore nisi fugit amet assumenda architecto! Velit, ea ipsam minima ab reprehenderit aspernatur sapiente voluptatibus optio at, enim placeat libero? Voluptates maiores doloribus esse voluptate distinctio, possimus quisquam voluptatum perspiciatis dolor unde, necessitatibus error sed aut. Alias maiores eligendi tenetur molestiae, corrupti molestias. Totam necessitatibus suscipit eius autem itaque eum alias iusto error quia quisquam excepturi, quis deleniti nam ducimus? Minus necessitatibus impedit, esse cumque exercitationem aliquam. Beatae ab a neque, optio dolores non, doloremque quisquam eligendi labore ut dicta. Dolorum nisi fuga nemo amet fugiat, enim explicabo aliquid quisquam maxime odit ipsum deleniti tempore error! Error et similique ipsa dolorem odio eligendi libero quod assumenda dolorum? Quis, harum. Ab a consectetur quaerat animi, sed sint fugiat fuga suscipit dolor libero cupiditate. Harum veniam saepe, debitis repellat aliquam perspiciatis officia minima fuga, nam vel, optio rem blanditiis fugiat deleniti. Beatae eius ipsum, ut quae ipsa consequatur culpa debitis nostrum exercitationem, deleniti recusandae? Porro nulla provident reprehenderit? Quo, at! Explicabo, reiciendis.</p>
+					<div class="reviews__socials f-aic fww">
+						<!-- Если социалок нет, оставляем просто пустой блок -->
+					</div>
+					<div class="reviews__textContainer">
+						<div class="reviews__text nlc-mb-8">
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing sedear.</p>
+							<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae sit officia dolore. Quam pariatur, natus reprehenderit minus voluptas in cum nihil deleniti, cupiditate explicabo doloremque accusantium fugit sunt dolorum blanditiis. Itaque sunt expedita ducimus aliquam est. Minus rerum mollitia magnam tempore nisi fugit amet assumenda architecto! Velit, ea ipsam minima ab reprehenderit aspernatur sapiente voluptatibus optio at, enim placeat libero? Voluptates maiores doloribus esse voluptate distinctio, possimus quisquam voluptatum perspiciatis dolor unde, necessitatibus error sed aut. Alias maiores eligendi tenetur molestiae, corrupti molestias. Totam necessitatibus suscipit eius autem itaque eum alias iusto error quia quisquam excepturi, quis deleniti nam ducimus? Minus necessitatibus impedit, esse cumque exercitationem aliquam. Beatae ab a neque, optio dolores non, doloremque quisquam eligendi labore ut dicta. Dolorum nisi fuga nemo amet fugiat, enim explicabo aliquid quisquam maxime odit ipsum deleniti tempore error! Error et similique ipsa dolorem odio eligendi libero quod assumenda dolorum? Quis, harum. Ab a consectetur quaerat animi, sed sint fugiat fuga suscipit dolor libero cupiditate. Harum veniam saepe, debitis repellat aliquam perspiciatis officia minima fuga, nam vel, optio rem blanditiis fugiat deleniti. Beatae eius ipsum, ut quae ipsa consequatur culpa debitis nostrum exercitationem, deleniti recusandae? Porro nulla provident reprehenderit? Quo, at! Explicabo, reiciendis.</p>
+						</div>
 					</div>
 					<div class="reviews__overlay"></div>
 					<button class="reviews__btn js-reviews-btn">
@@ -750,7 +753,7 @@
 						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
 					</button>
 				</div>
-				<div class="reviews__card js-reviews" id="editor">
+				<div class="reviews__card js-reviews-card" id="editor">
 					<div class="label">Editor</div>
 					<div class="reviews__author">
 						<div class="reviews__image">
@@ -758,14 +761,43 @@
 						</div>
 						<div class="reviews__name">
 							<div class="f-aic">
-								<p class="text-medium">Banele Nkuna</p>
+								<a href="" class="reviews__link text-medium">Banele Nkuna</a>
 							</div>
 							<p class="text-small">Author at in-aviator-game.in</p>
 							<p class="text-small"><span class="gray">Experience:</span> 3 years</p>
 						</div>
 					</div>
-					<div class="reviews__text">
-						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae sit officia dolore. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni aut sunt aliquam, sed porro tenetur sapiente dolorem fugiat laborum, quo id error ipsum perspiciatis eaque nemo cum esse non odit architecto obcaecati harum! Cum, omnis delectus! Earum exercitationem corporis debitis quas pariatur, blanditiis doloremque laborum vero possimus nesciunt itaque asperiores!</p>
+					<div class="reviews__socials f-aic fww">
+						<a href="" class="linkSocial" aria-label="murkrack">
+							<svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#murkrack"/></svg>
+						</a>
+						<a href="" class="linkSocial" aria-label="wiki">
+							<svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#wiki"/></svg>
+						</a>
+						<a href="" class="linkSocial" aria-label="email">
+							<svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#email"/></svg>
+						</a>
+						<a href="" class="linkSocial" aria-label="blog">
+							<svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#blog"/></svg>
+						</a>
+						<a href="" class="linkSocial linkSocial_instagram" aria-label="instagram">
+							<svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#instagram"/></svg>
+						</a>
+						<a href="" class="linkSocial linkSocial_facebook" aria-label="facebook">
+							<svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#facebook"/></svg>
+						</a>
+						<a href="" class="linkSocial linkSocial_linkedin" aria-label="linkedin">
+							<svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#linkedin"/></svg>
+						</a>
+						<a href="" class="linkSocial" aria-label="twitter">
+							<svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#x"/></svg>
+						</a>
+					</div>
+					<div class="reviews__textContainer">
+						<div class="reviews__text nlc-mb-8">
+							<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae sit officia dolore. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni aut sunt aliquam, sed porro tenetur sapiente dolorem fugiat laborum, quo id error ipsum perspiciatis eaque nemo cum esse non odit architecto obcaecati harum! Cum, omnis delectus! Earum exercitationem corporis debitis quas pariatur, blanditiis doloremque laborum vero possimus nesciunt itaque asperiores!</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus temporibus esse ipsa fuga, in expedita aspernatur ratione numquam dicta asperiores tempora ab harum.</p>
+						</div>
 					</div>
 					<div class="reviews__overlay"></div>
 					<button class="reviews__btn js-reviews-btn">

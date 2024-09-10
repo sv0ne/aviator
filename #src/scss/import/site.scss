@@ -648,6 +648,17 @@
             grid-template-columns: 1fr;
         }
     }
+    &__link{
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    &__socials{
+        margin: 0 -8px;
+        > a{
+            margin: 16px 8px 0 8px;
+        }
+    }
     &__card {
         background-color: rgba(51, 51, 51, 0.7);
         border: 1px solid rgba(255, 255, 255, 0.05);
@@ -655,19 +666,15 @@
         padding: 32px;
         border-radius: 16px;
         position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
         @media (max-width:#{$md4}px) {
             padding: 16px;
         }
-        &:not(.active){
-            .reviews__text{
-                overflow: hidden;
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 4;
-            }
-        }
         &.active{
             padding-bottom: 54px;
+            height: auto !important;
             .reviews__btn{
                 .state-less{
                     display: block;
@@ -682,7 +689,15 @@
             .reviews__overlay{
                 display: none;
             }
+            .reviews__textContainer{
+                flex: 1;
+            }
         }
+    }
+    &__textContainer{
+        margin-top: 16px;
+        flex: 1 0 75px;
+        overflow: hidden;    
     }
     &__name{
         display: flex;
@@ -697,12 +712,9 @@
     }
     &__author{
         display: grid;
-        grid-template-columns: 64px 1fr 32px;
+        grid-template-columns: 64px 1fr;
         align-items: start;
         gap: 16px;
-    }
-    &__text{
-        margin-top: 16px;
     }
     &__overlay{
         position: absolute;

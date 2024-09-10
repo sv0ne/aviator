@@ -453,11 +453,28 @@ $(document).ready(function () {
     animateCounter($('.js-ticket-1'), 0, 75, 30);
     animateCounter($('.js-ticket-2'), 0, 10, 50);
     
+    // Блок отзывов овтора и релактора
+    (function () {
+        // Открыть полностью отзыв
+        $('.js-reviews-btn').click(function(){
+            $(this).closest('.js-reviews-card').toggleClass('active');
+        });
 
-    // Открыть полностью отзыв
-    $('.js-reviews-btn').click(function(){
-        $(this).closest('.js-reviews').toggleClass('active');
-    });
+        setTimeout(() => {
+            $('.js-reviews-card').each(function(){
+                // Выставляем фиксированную высоту для блоков чтоб они не прыгали когда другие раскрываются
+                $(this).css({height: $(this).outerHeight()+"px"})
+                
+                // Если и так мало текст в блоке то скрываем кнопку Показать/Скрыть текст
+                let h1 = $(this).find('.reviews__textContainer').outerHeight();
+                let h2 = $(this).find('.reviews__text').outerHeight();
+                if(h2 < h1){
+                    $(this).find('.reviews__overlay').addClass('dn');
+                    $(this).find('.reviews__btn').addClass('dn');
+                }
+            });
+        }, 1000);
+    })();
 
     // Если это пк то подгружаем баннера через 11 сек. вместе с их js и css файлами
     if(w > BREAKPOINT_md3){
