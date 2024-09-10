@@ -475,9 +475,9 @@ $(document).ready(function () {
             });
         }, 1000);
     })();
-
+    
     // Если это пк то подгружаем баннера через 11 сек. вместе с их js и css файлами
-    if(w > BREAKPOINT_md3){
+    if(w > BREAKPOINT_md3 && $("#ajax-content").length > 0){
         setTimeout(function () {
             function addCSS(href) {
                 const link = $('<link>', {rel: 'stylesheet', type: 'text/css', href: href});
@@ -598,6 +598,20 @@ $(document).ready(function () {
         $('.subscribe .wpcf7-not-valid-tip').remove();
         $('.subscribe .wpcf7-form-control-wrap input').removeClass('wpcf7-not-valid');
     });
+
+    // Редирект через время
+    (function () {
+        let $redirectTimer = $('.js-redirect-timer');
+        let time = parseFloat($redirectTimer.data('time'));
+        let REDIRECT_INTERVAL = setInterval(() => {
+            time = time - 1;
+            $redirectTimer.text(time);
+            if(time === 0){
+                clearInterval(REDIRECT_INTERVAL);
+                window.location.href = $redirectTimer.data('url');
+            }
+        }, 1000);
+    })();
     
 /** ======================================================================== */
 
