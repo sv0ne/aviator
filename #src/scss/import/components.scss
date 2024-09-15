@@ -469,13 +469,14 @@
     position: absolute;
     left: 32px;
     top: -13px;
-    padding: 4px 12px;
-    border-radius: 8px;
     display: flex;
     align-items: center;
-    background: #fff;
-    color: $black;
+    background: $black;
+    color: $white;
+    padding: 4px 12px;
+    border-radius: 8px;
     font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     @extend .text-small;
     img{
         display: inline-block;
@@ -490,12 +491,13 @@
 }
 
 .label-2{
-    background-color: rgba(255, 255, 255, 1);
+    display: inline-block;
+    background-color: $black;
+    color: $white;
     padding: 4px 12px;
     border-radius: 8px;
-    display: inline-block;
-    color: $black;
     font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     @extend .text-small;
 }
 
