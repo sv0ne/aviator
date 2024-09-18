@@ -1227,6 +1227,11 @@
     &__image{
         flex: 0 0 100px;
     }
+    &__flag{
+        width: 48px;
+        height: 24px;
+        transform: translateY(6px);
+    }
 }
 
 ///////////////////////////////////////////////////////////
