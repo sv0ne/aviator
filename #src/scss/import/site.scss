@@ -514,6 +514,46 @@
     }
 }
 
+/////////////////////////// FAQ ///////////////////////////
+
+.dropdown{
+	&__item{
+		position: relative;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+		&.active{
+			.dropdown__btn{
+				transform: rotate(0deg);
+				transition: all 0.15s ease 0s;
+			}
+		}
+        @media (min-width:#{$md3}px) {
+            padding: 16px;
+        }
+	}
+	&__head{
+		display: flex;
+		align-items: center;
+        gap: 8px;
+		padding: 16px;
+		cursor: pointer;
+		p{margin-right: 8px;}
+	}
+	&__body{
+		padding: 0 16px 16px 16px;
+	}
+    &__btn{
+        transition: all 0.15s ease 0s;
+        transform: rotate(180deg);
+        background-color: transparent;
+        width: 24px;
+        height: 24px;
+        flex: 0 0 24px;
+        display: inline-block;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.3 14.4329C7.7 14.8329 8.3 14.8329 8.7 14.4329L12 11.1329L15.3 14.4329C15.7 14.8329 16.3 14.8329 16.7 14.4329C17.1 14.0329 17.1 13.4329 16.7 13.0329L12.7 9.03291C12.5 8.83291 12.3 8.73291 12 8.73291C11.7 8.73291 11.5 8.83291 11.3 9.03291L7.3 13.0329C6.9 13.4329 6.9 14.0329 7.3 14.4329Z' fill='white' fill-opacity='0.3'/%3E%3C/svg%3E");  
+    }
+}
+
 ///////////////////////////////////////////////////////////
 
 .comment{
