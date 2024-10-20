@@ -19,8 +19,8 @@
     transform: translateY(-100%);
     margin-top: -8px;
     color: white;
-    background-color: rgba(255, 59, 48, 1);
-    box-shadow: 0 8px 48px 0 rgba(0, 0, 0, .5);
+    background-color: var(--color-form-error);
+    box-shadow: 0 8px 48px 0 rgba(0, 0, 0, .5); /* immutable */
     padding: 16px;
     border-radius: 12px;
 }
@@ -48,8 +48,8 @@
 }
 
 .subscribe .wpcf7-form-control-wrap input.wpcf7-not-valid{
-    border-color: rgba(255, 59, 48, 0.3);
-    color: rgba(255, 59, 48, 1);
+    border-color: var(--color-form-border);
+    color: var(--color-form-error);
 }
 
 .subscribe .wpcf7-response-output{
@@ -61,7 +61,7 @@
     margin: 0 !important;
     padding: 16px !important;
     border: 1px solid rgba(255, 255, 255, 0.05) !important;
-    background: rgba(35, 35, 37, 1);
+    background: var(--color-bg);
     border-radius: 12px;
     color: white !important;
 }
@@ -132,19 +132,19 @@
 }
 
 .wpcf7-form-control-wrap .wpcf7-not-valid{
-  border-color: rgba(255, 59, 48, 0.3);
+  border-color: var(--color-form-border);
 }
 
 .wpcf7-form-control-wrap .wpcf7-not-valid-tip{
   margin-top: 8px;
-  color: rgba(255, 59, 48, 1);
+  color: var(--color-form-error);
 }
 
 .wpcf7-response-output{
   margin: 16px 0 0 0 !important;
   padding: 0 !important;
   border: none !important;
-  color: rgba(255, 59, 48, 1);
+  color: var(--color-form-error);
 }
 
 .wpcf7-form > p > .wpcf7-form-control-wrap:first-of-type{

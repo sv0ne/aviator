@@ -1,2 +1,12 @@
 .lg-1{background: linear-gradient(180deg, #1AD7FF 0%, #00A5E6 100%);}
 .lg-2{background: linear-gradient(180deg, #FFE37E 0%, #F0BC00 100%);}
+
+.test-box{
+    width: auto;
+    padding: 8px;
+    border: 2px dashed yellowgreen;
+    &_light{
+        background-color: #fff;
+        border-color: red;
+    }
+}

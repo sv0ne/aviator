@@ -21,8 +21,8 @@
 		width: 360px;
 		position: relative;
 		border-radius: 12px;
-		background-color: $black;
-		box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
+		background-color: var(--color-bg);
+		box-shadow: var(--shadow);
 		@media (max-width:#{$md3}px) {
 			width: 100%;
 		}
@@ -32,7 +32,6 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 16px;
-		//border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 	}
 	&__content{
 		padding: 0 16px 16px 16px;

@@ -1,25 +1,36 @@
 /////////////////////////// Кнопки ////////////////////////
 
-.btn{
-    font-weight: normal;
-    border-radius: 8px;
+@mixin btn(){
+    display: inline-block;
     text-align: center;
     font-weight: 700;
+    border-radius: 8px;
     padding: 12px 24px;
-    display: inline-block;
+    @media (max-width:#{$md3}px) {
+        padding: 8px 16px;
+    }
+    &.disabled{
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}
+
+.btn{
+    @include btn();
     &_blue{
-        background: $white;
-        color: $black;
+        background: var(--bg-btn-secondary);
+        color: var(--color-btn-secondary);
+        border: var(--border-btn-secondary);
         &:hover{
-            background-color: rgba(211, 211, 211, 1);
+            background-color: var(--bg-btn-secondary-hover);
         }
     }
     &_green{
-        background: linear-gradient(90deg, #FFF173 0%, #FFB800 100%);
-        box-shadow: 0px 8px 50px 0px rgba(255, 212, 0, 0.5);
+        background: var(--color-brand);
+        color: var(--color-btn-primary);
+        box-shadow: 0px 8px 50px 0px rgba(255, 212, 0, 0.5); /* immutable */
         position: relative;
         overflow: hidden;
-        color: $black;
         &:after{
             content: "";
             position: absolute;
@@ -28,15 +39,37 @@
             width: 15px;
             height: 80px;
             transform: rotate(45deg);
-            background: rgba(255, 255, 255, 0.3);
+            background: var(--color-gray);
             animation: btnLine 2s linear 0s infinite;
         }
         &:hover{
-            background: #FFB800;
+            background: var(--color-brand-hover);
         }
     }
-    @media (max-width:#{$md3}px) {
-        padding: 8px 16px;
+}
+
+.btn-3{
+    @include btn();
+    &_white{
+        background: var(--color-opposite);
+        color: var(--color-bg);
+        &:hover:not(.disabled){
+            background-color: var(--bg-btn-secondary-hover);
+        }
+    }
+    &_green{
+        background: var(--color-brand);
+        color: var(--color-bg);
+        &:hover:not(.disabled){
+            background: var(--color-brand-hover);
+        }
+    }
+    &_black{
+        background: var(--color-bg);
+        color: var(--color-opposite);
+        &:hover:not(.disabled){
+            background: var(--color-bg-hover);
+        }
     }
 }
 
@@ -53,46 +86,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: $white;
-    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--color-opposite);
+    background-color: var(--color-light);
     &:hover{
-        background-color: rgba(255, 255, 255, 0.10);
-    }
-}
-
-.btn-3{
-    padding: 12px 24px;
-    font-weight: 700;
-    border-radius: 8px;
-    text-align: center;
-    display: inline-block;
-    @media (max-width:#{$md3}px) {
-        padding: 8px 16px;
-    }
-    &_black{
-        background: rgba(35, 35, 37, 1);
-        color: $white;
-        &:hover:not(.disabled){
-            background: rgba(57, 57, 59, 1);
-        }
-    }
-    &_white{
-        background: rgba(255, 255, 255, 1);
-        color: $black;
-        &:hover:not(.disabled){
-            background-color: rgba(211, 211, 211, 1);
-        }
-    }
-    &_green{
-        background: linear-gradient(90deg, #FFF173 0%, #FFB800 100%);
-        color: $black;
-        &:hover:not(.disabled){
-            background: #FFB800;
-        }
-    }
-    &.disabled{
-        opacity: 0.5;
-        pointer-events: none;
+        background-color: var(--color-light-hover);
     }
 }
 
@@ -104,12 +101,12 @@
     display: flex;
     align-items: center;
     gap: 16px;
-    color: $white;
+    color: var(--color-opposite);
     &:hover{
-        background-color: rgba(255, 255, 255, 0.05);
+        background-color: var(--color-light);
     }
     @media (max-width:#{$md3}px) {
-        background-color: rgba(255, 255, 255, 0.05);
+        background-color: var(--color-light);
         border-radius: 0;
     }
     &__img{
@@ -132,18 +129,18 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    color: $white;
-    fill: $white;
+    color: var(--color-opposite);
+    fill: var(--color-opposite);
     background-color: transparent;
     &:hover{
-        color: $gray;
-        fill: $gray;
+        color: var(--color-gray);
+        fill: var(--color-gray);
     }
 }
 
 .btn-6{
     font-weight: 700;
-    color: $white;
+    color: var(--color-opposite);
     background-color: transparent;
     &:hover{
         text-decoration: underline;
@@ -161,7 +158,7 @@
 
 .btn-dropdown{
     background-color: transparent;
-    color: $white;
+    color: var(--color-opposite);
     display: flex;
     white-space: nowrap;
     align-items: center;
@@ -169,13 +166,13 @@
     padding: 8px 16px;
     border-radius: 8px;
     &:hover{
-        background-color: rgba(255, 255, 255, 0.05);
+        background-color: var(--color-light);
     }
     &_filled{
         padding: 8px;
-        background: rgba(255, 255, 255, 0.05);
+        background: var(--color-light);
         &:hover{
-            background-color: rgba(255, 255, 255, 0.10);
+            background-color: var(--color-light-hover);
         }
     }
     &.mod-download-app{
@@ -191,9 +188,9 @@
     @extend .btn-dropdown_filled;
     border-radius: 99px;
     &_white{
-        background-color: #fff;
+        background-color: var(--color-opposite);
         &:hover{
-            background-color: #D3D3D3;
+            background-color: var(--bg-btn-secondary-hover);
         }
     }
 }
@@ -205,11 +202,11 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--color-light);
     border-radius: 8px;
     padding: 16px 8px 16px 16px;
     &:hover{
-        background-color: rgba(255, 255, 255, 0.10);
+        background-color: var(--color-light-hover);
     }
     &_windows{
         height: 100%;
@@ -226,7 +223,7 @@
 }
 
 .link-2{
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--color-light);
     border-radius: 8px;
     width: 48px;
     height: 48px;
@@ -235,7 +232,7 @@
 }
 
 .linkSocial{
-    background-color: rgba(35, 35, 37, 1);
+    background-color: var(--color-bg);
     border-radius: 8px;
     padding: 4px;
     display: inline-block;
@@ -243,15 +240,15 @@
         background: linear-gradient(262.93deg, #7E2BF4 0%, #ED146E 50%, #FFC90C 100%);
     }
     &_facebook{
-        background: rgba(8, 102, 255, 1);
+        background: rgba(8, 102, 255, 1); /* immutable */
     }
     &_linkedin{
-        background: rgba(10, 102, 194, 1);
+        background: rgba(10, 102, 194, 1); /* immutable */
     }
     &_gray{
-        background-color: rgba(255, 255, 255, 0.05);
+        background-color: var(--color-light);
         &:hover{
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: var(--color-light-hover);
         }
     }
 }
@@ -299,8 +296,8 @@
         padding-bottom: 8px;
     }
     &__content{
-        background-color: rgba(35, 35, 37, 1);
-        box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
+        background-color: var(--color-bg);
+        box-shadow: var(--shadow);
         padding: 16px;
         border-radius: 12px;
         width: 200px;
@@ -315,8 +312,8 @@
         &-popup__body{
             border-radius: 12px;
             padding: 16px;
-            background-color: $black;
-            box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
+            background-color: var(--color-bg);
+            box-shadow: var(--shadow);
             width: 360px;
             max-height: 75vh;
             overflow-y: auto;
@@ -335,7 +332,7 @@
         }
         &:hover{
             > .popover-trigger{
-                background-color: rgba(255, 255, 255, 0.05);
+                background-color: var(--color-light);
             }
             > .popover-popup{
                 transition: 0s ease 0.15s;
@@ -355,7 +352,7 @@
         }
         .popover-popup__body{
             > * {
-                border-top: 1px solid rgba(18, 18, 20, 0.3);
+                border-top: 1px solid var(--color-bg);
             }
         }
         &.active{
@@ -384,7 +381,7 @@
                 max-height: 75vh;
                 overflow-y: auto;
                 z-index: 55;
-                background-color: rgba(35, 35, 37, 1);
+                background-color: var(--color-bg);
                 padding: 0px 16px 16px 16px;
                 border-radius: 12px 12px 0 0;
                 > *:not(:last-child):not(.modal__header){
@@ -392,7 +389,7 @@
                 }
             }
             .btn-dropdown{
-                background-color: rgba(255, 255, 255, 0.05);
+                background-color: var(--color-light);
                 width: 100%;
                 justify-content: space-between;
                 padding: 16px;
@@ -403,7 +400,7 @@
     &__header{
         position: sticky;
         top: 0;
-        background-color: #232325;
+        background-color: var(--color-bg);
         z-index: 2;
         padding: 16px 0;
         @media (min-width:#{$md3}px) {
@@ -420,7 +417,7 @@
     top: 0;
     left: 0;
     z-index: 52;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* immutable */
     backdrop-filter: blur(5px);
     &.active{
         display: block;
@@ -435,16 +432,16 @@
 ////////////////// Карточки, контейнеры ///////////////////
 
 .card-1{
-    border-radius: 8px;
     padding: 16px;
+    border-radius: 8px;
+    background-color: var(--color-light);
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.05);
 }
 
 .card-2{
     padding: 32px;
     border-radius: 16px;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--color-light);
     @media (max-width:#{$md3}px) {
         padding: 16px;
     }
@@ -471,12 +468,12 @@
     top: -13px;
     display: flex;
     align-items: center;
-    background: $black;
-    color: $white;
+    background: var(--color-bg);
+    color: var(--color-opposite);
     padding: 4px 12px;
     border-radius: 8px;
     font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--color-gray);
     @extend .text-small;
     img{
         display: inline-block;
@@ -492,17 +489,17 @@
 
 .label-2{
     display: inline-block;
-    background-color: $black;
-    color: $white;
+    background-color: var(--color-bg);
+    color: var(--color-opposite);
     padding: 4px 12px;
     border-radius: 8px;
     font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--color-gray);
     @extend .text-small;
 }
 
 .label-4{
-    background-color: rgba(52, 199, 89, 1);
+    background-color: var(--color-note);
     padding: 8px 16px;
     border-radius: 8px;
 }
@@ -521,11 +518,11 @@
         right: 0;
         top: 0;
         input{
-            border: 2px solid rgba(63, 105, 255, 0.3);
+            border: 2px solid var(--color-search-border);
             border-radius: 8px;
             width: 328px;
             height: 40px;
-            background-color: $black;
+            background-color: var(--color-bg);
             padding: 8px 36px;
         }
         &:before{
@@ -535,7 +532,7 @@
             left: -40px;
             width: 40px;
             height: 40px;
-            background: linear-gradient(90deg, rgba(35, 35, 37, 0) 0%, rgba(35, 35, 37, 0.9) 50%, #232325 100%);
+            background: var(--color-search-before);
         }
     }
     &__icon{
@@ -555,7 +552,7 @@
             display: block;
             width: 100%;
             input{
-                border-color: rgba(255, 255, 255, 0.05);
+                border-color: var(--color-light);
                 width: 100%;
             }
         }
@@ -580,7 +577,7 @@
     padding: 8px;
     border-radius: 8px;
     width: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--color-light);
 }
 
 .inputRadio{
@@ -605,17 +602,17 @@
 			left: 16px;
 			width: 24px;
 			height: 24px;
-			border: 2px solid $gray;
+			border: 2px solid var(--color-gray);
 		}
         &:hover{
             @media (min-width:#{$md3}px) {
-                background-color: rgba(255, 255, 255, 0.05);
+                background-color: var(--color-light);
             }
         }
 	}
 	input[type="radio"]:checked + label{
 		&:after{
-			border-color: $blue;
+			border-color: var(--color-input-radio);
 		}
         &:before{
 			z-index: 2;
@@ -623,7 +620,7 @@
 			left: 22px;
 			width: 12px;
 			height: 12px;
-			background-color: $blue;
+			background-color: var(--color-input-radio);
 		}
 	}
 }
@@ -674,7 +671,7 @@
             font-weight: 700;
         }
         &:not(:last-child){
-            color: #cccccc;
+            color: var(--color-light-seo);
         }
 	}
 }
@@ -710,7 +707,7 @@
         gap: 16px;
     }
     li{
-        background-color: rgba(255, 255, 255, 0.05);
+        background-color: var(--color-light);
         padding: 16px;
         border-radius: 8px;
         display: flex;
@@ -721,7 +718,7 @@
             width: 8px;
             height: 8px;
             flex: 0 0 8px;
-            background-color: rgba(52, 199, 89, 1);
+            background-color: var(--color-note);
             border-radius: 99px;
         }
         @media (max-width:#{$md4}px) {
@@ -738,21 +735,21 @@
       ::-webkit-scrollbar {
         width: 12px; /* ширина для вертикального скролла */
         height: 12px; /* высота для горизонтального скролла */
-        background-color: #fff;
+        background-color: var(--color-opposite);
       }
   
       /* ползунок скроллбара */
       ::-webkit-scrollbar-thumb {
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: rgba(0, 0, 0, 0.2); /* immutable */
         border-radius: 4px;
       }
   
       ::-webkit-scrollbar-thumb:hover {
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.5); /* immutable */
       }
   
       // Для FireFox
-      scrollbar-color: #232325 #2E2E30; /* «цвет ползунка» «цвет полосы скроллбара» */
+      scrollbar-color: #232325 var(--color-light-hex); /* «цвет ползунка» «цвет полосы скроллбара» */
       scrollbar-width: thin;
     }
 }
@@ -773,12 +770,12 @@
     align-items: center;
     gap: 8px;
     cursor: pointer;
-    background-color: rgba(51, 51, 51, 0.7);
-    color: #cccccc;
+    background-color: var(--color-light);
+    color: var(--color-light-seo);
     padding: 4px 12px;
     border-radius: 8px;
     &:hover{
-        background-color: rgba(255, 255, 255, 0.10);
+        background-color: var(--color-light-hover);
     }
 }
 
@@ -787,13 +784,13 @@
 	bottom: 16px;
 	left: 50%;
     transform: translate(-50%, 130%);
-	background-color: $black;
-	color: $white;
+	background-color: var(--color-bg);
+	color: var(--color-opposite);
 	padding: 16px;
 	border-radius: 8px;
 	text-align: center;
 	z-index: 45;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--color-light);
     &.show{
         animation: showMsg 0.25s ease-in-out 0s forwards;
     }
@@ -977,7 +974,7 @@ ul.list, .styledContent > ul{
             flex: 0 0 8px;
 			width: 8px;
 			height: 8px;
-			background: linear-gradient(90deg, #FFF173 0%, #FFB800 100%);
+			background: var(--color-brand);
 			border-radius: 99px;
 		}
 	}

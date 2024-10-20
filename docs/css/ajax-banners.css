@@ -5,9 +5,9 @@
   bottom: 16px;
   left: 16px;
   padding: 16px;
-  background-color: rgb(35, 35, 37);
-  -webkit-box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
+  background-color: var(--color-bg);
+  -webkit-box-shadow: var(--shadow);
+          box-shadow: var(--shadow);
   border-radius: 32px;
 }
 
@@ -58,7 +58,7 @@
   border-radius: 99px;
   display: inline-block;
   height: 4px;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: var(--color-gray);
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -73,7 +73,7 @@
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #fff;
+  background-color: var(--color-opposite);
 }
 
 .baners__progressBar.active:after {

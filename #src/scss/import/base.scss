@@ -4,8 +4,8 @@ body{
 	font-family: $fontfamily;
 	font-size: 15px;
 	line-height: 120%;
-	color: $white;
-	background: $black;
+	color: var(--color-opposite);
+	background: var(--color-bg);
 	overflow-x: hidden;
 	a{
 		color: inherit;
@@ -50,7 +50,7 @@ img{
 
 input[type="text"], input[type="email"], textarea{
 	outline: none;
-	color: $white;
+	color: var(--color-opposite);
 	font-size: 16px;
 	background-color: transparent;
 	resize: none;
@@ -61,13 +61,13 @@ table{
 	width: 100%;
 	td, th{
 		padding: 16px;
-		border: 1px solid rgba(255, 255, 255, 0.05);
+		border: 1px solid var(--color-light);
 		@media (max-width:#{$md3}px) {
 			padding: 8px;
 		}
 	}
 	th{
-		background-color: #2E2E30;
+		background-color: var(--color-light-hex);
 		text-align: left;
 	}
 }
@@ -227,10 +227,10 @@ table{
 
 //////////////// COLOR, FILL, BACKGROUND //////////////////
 
-.white{color: $white;}
-.gray{color: $gray;}
+.white{color: var(--color-opposite);}
+.gray{color: var(--color-gray);}
 
-.bg-black-05{background-color: rgba(30, 30, 30, 0.5);}
+.bg-black-05{background-color: var(--bg-video-overlay);}
 
 ///////////////////////// FLEX ////////////////////////////
 
