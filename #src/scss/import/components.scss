@@ -1,6 +1,6 @@
 /////////////////////////// Кнопки ////////////////////////
 
-@mixin btn(){
+.btn{
     display: inline-block;
     text-align: center;
     font-weight: 700;
@@ -13,11 +13,14 @@
         opacity: 0.5;
         pointer-events: none;
     }
-}
-
-.btn{
-    @include btn();
-    &_blue{
+    &_primary{
+        background: var(--color-brand);
+        color: var(--color-btn-primary);
+        &:hover{
+            background: var(--color-brand-hover);
+        }
+    }
+    &_secondary{
         background: var(--bg-btn-secondary);
         color: var(--color-btn-secondary);
         border: var(--border-btn-secondary);
@@ -25,10 +28,15 @@
             background-color: var(--bg-btn-secondary-hover);
         }
     }
-    &_green{
-        background: var(--color-brand);
-        color: var(--color-btn-primary);
-        box-shadow: 0px 8px 50px 0px rgba(255, 212, 0, 0.5); /* immutable */
+    &_info{
+        background: var(--bg-btn-info);
+        color: var(--color-btn-info);
+        &:hover:not(.disabled){
+            background: var(--bg-btn-info-hover);
+        }
+    }
+    &_animated{
+        box-shadow: var(--shadow-btn-primary);
         position: relative;
         overflow: hidden;
         &:after{
@@ -41,34 +49,6 @@
             transform: rotate(45deg);
             background: var(--color-gray);
             animation: btnLine 2s linear 0s infinite;
-        }
-        &:hover{
-            background: var(--color-brand-hover);
-        }
-    }
-}
-
-.btn-3{
-    @include btn();
-    &_white{
-        background: var(--color-opposite);
-        color: var(--color-bg);
-        &:hover:not(.disabled){
-            background-color: var(--bg-btn-secondary-hover);
-        }
-    }
-    &_green{
-        background: var(--color-brand);
-        color: var(--color-bg);
-        &:hover:not(.disabled){
-            background: var(--color-brand-hover);
-        }
-    }
-    &_black{
-        background: var(--color-bg);
-        color: var(--color-opposite);
-        &:hover:not(.disabled){
-            background: var(--color-bg-hover);
         }
     }
 }

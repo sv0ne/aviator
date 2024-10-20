@@ -97,8 +97,7 @@
     padding: 16px 0;
   }
   .nav-previous a, .nav-next a{
-    @extend .btn;
-    @extend .btn_blue;
+    @extend .btn, .btn_secondary;
     position: absolute;
     text-decoration: none;
   }
@@ -115,7 +114,7 @@
 
 .wpcf7-form-control.wpcf7-submit{
   width: fit-content;
-  @extend .btn-3, .btn-3_white;
+  @extend .btn, .btn_secondary;
 }
 
 .wpcf7-form > p{
