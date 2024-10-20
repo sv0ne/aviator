@@ -6,7 +6,7 @@
 
 // ====================== Переменные ======================
 
-$theme: 1;
+$theme: 0;
 
 @if $theme == 0 {
 	:root {
@@ -14,6 +14,7 @@ $theme: 1;
 		--color-bg-hover: rgba(57, 57, 59, 1);
 		--color-opposite: #ffffff;
 		--color-opposite-hover: rgba(255, 255, 255, 0.7);
+		--color-opposite-hex-hover: #D3D3D3;
 
 		--color-brand: linear-gradient(90deg, #FFF173 0%, #FFB800 100%);
 		--color-brand-hover: #FFB800;
@@ -41,12 +42,12 @@ $theme: 1;
 		--color-btn-info: #ffffff;
 		--bg-btn-info: rgba(35, 35, 37, 1);
 		--bg-btn-info-hover: rgba(57, 57, 59, 1);
+		--border-btn-info: none;
 
 		--color-note: rgba(52, 199, 89, 1);
 
 		--color-input-radio: rgba(63, 105, 255, 1);
 		--color-search-border: rgba(63, 105, 255, 0.3);
-		--color-search-before: linear-gradient(90deg, rgba(35, 35, 37, 0) 0%, rgba(35, 35, 37, 1) 50%, #232325 100%);
 
 		--color-form-border: rgba(255, 59, 48, 0.3);
 		--color-form-error: rgba(255, 59, 48, 1);
@@ -56,6 +57,8 @@ $theme: 1;
 		--br-small: 8px;
 		--br-large: 16px;
 		--shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
+		--shadow-2-start-rgb: 35, 35, 37;
+		--shadow-2-end-hex: #232325;
 	}
 } @else if $theme == 1 {
 	:root {
@@ -63,13 +66,14 @@ $theme: 1;
 		--color-bg-hover: rgba(57, 57, 59, 1);
 		--color-opposite: #ffffff;
 		--color-opposite-hover: rgba(255, 255, 255, 0.7);
+		--color-opposite-hex-hover: #D3D3D3;
 	
 		--color-brand: #ff2400;
 		--color-brand-hover: #c94632;
 	
 		--color-light: #1b1f28;
 		--color-light-hover: rgba(255, 255, 255, 0.1);
-		--color-light-hex: #2E2E30;
+		--color-light-hex: #1B1F28;
 		--color-light-hex-hover: #454547;
 	
 		--color-light-seo: #ccc;
@@ -88,14 +92,14 @@ $theme: 1;
 		--border-btn-secondary: 1px solid rgba(255, 36, 0, 1);
 
 		--color-btn-info: #ffffff;
-		--bg-btn-info: rgba(35, 35, 37, 1);
-		--bg-btn-info-hover: rgba(57, 57, 59, 1);
+		--bg-btn-info: transparent;
+		--bg-btn-info-hover: rgba(255, 36, 0, 0.1);
+		--border-btn-info: 1px solid rgba(255, 36, 0, 1);
 	
 		--color-note: rgba(52, 199, 89, 1);
 	
 		--color-input-radio: rgba(63, 105, 255, 1);
 		--color-search-border: rgba(63, 105, 255, 0.3);
-		--color-search-before: linear-gradient(90deg, rgba(35, 35, 37, 0) 0%, rgba(35, 35, 37, 1) 50%, #232325 100%);
 	
 		--color-form-border: rgba(255, 59, 48, 0.3);
 		--color-form-error: rgba(255, 59, 48, 1);
@@ -105,6 +109,8 @@ $theme: 1;
 		--br-small: 0.25rem;
 		--br-large: 1rem;
 		--shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
+		--shadow-2-start-rgb: 13,16,22;
+		--shadow-2-end-hex: #0d1016;
 	}
 }
 

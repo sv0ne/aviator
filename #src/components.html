@@ -3,8 +3,8 @@
 @@include('blocks/head.html')
 <!-- role="dialog" -->
 <body>
-    <div class="p-16 d-flex fdc aifs gap-16">
-        <p>Некоторые компоненты обернуты в блок с border-dashed это для того чтобы ограничить элемент по ширине, а так же изменения фона чтобы сам компонент был виден.</p>
+    <div class="p-16 d-flex fdc aifs gap-16" style="padding-top: 70px;">
+        <p>Сюда выведены все компоненты на которые влиют изменения css-переменных. Некоторые компоненты обернуты в блок с border-dashed это для того чтобы ограничить элемент по ширине, а так же изменения фона чтобы сам компонент был виден.</p>
         <div class="f-aic gap-16">
             <a href="" class="btn btn_primary">Primary</a>
             <a href="" class="btn btn_primary btn_animated">Primary animated</a>
@@ -84,8 +84,9 @@
             <li>Offers Mobile Games</li>
             <li>Offers VIP Program & Dedicated VIP Manager</li>
         </ul>
+        <p>Изменяя переменные --shadow-2-start-rgb, --shadow-2-end-hex меняется тень по бокам для scroll-навигации сверху, слева от поля search, внизу блока author. </p>
         <div class="f-aic">
-            <p>Просто текст чтоб увидеть как поле search ложится поверх текста</p>
+            <p>Для поля search меняем слева тень. Тень ложится поверх текста.</p>
             <div class="searchField__input" style="display: block; position: relative;">
                 <svg class="w-24 searchField__icon"><use xlink:href="img/sprite/icons-sprite.svg#search"></use></svg>
                 <input type="text" placeholder="Search by site">
@@ -94,23 +95,116 @@
                 </button>
             </div>
         </div>
-        <div class="test-box" style="width: 400px;">
-            <div class="videoContainer js-fullscreen-box js-playFree-container">
-                <div class="js-playFree-body posa dn z-3">
-                    <iframe class="posa" src="" data-src="https://aviator-demo.spribegaming.com/?currency=USD&amp;operator=demo&amp;jurisdiction=CW&amp;lang=EN&amp;return_url=https:%2F%2Fspribe.co%2Fgames&amp;user=52742&amp;token=VLvy2boDM7ANTyb09mb249HfEkf9rXXF" width="776" height="437" scrolling="none" frameborder="0" id="gameIframe" title="aviator-demo"></iframe>
-                </div>
-                <div class="posa js-playFree-control">
-                    <img src="img/iframe_placeholder.jpg" class="posa" loading="lazy" alt="">
-                    <div class="bg-black-05 z-2 posa f-jcc-aic fdc gap-16 max-md3-dn">
-                        <a href="https://rozetka.com.ua/ua/" target="_blank" class="btn btn_primary">Play for real</a>
-                        <button type="button" class="btn btn_info js-playFree-btn">Play free</button>
-                    </div>
-                    <div class="bg-black-05 z-2 posa f-jcc-aic fdc gap-16 min-md3-dn">
-                        <p>Sorry, demo is not available</p>
+        <div class="f-aic gap-16">
+            <div>
+                <p class="mb-4">Для блока video можно менять overlay</p>
+                <div class="test-box" style="width: 400px;">
+                    <div class="videoContainer js-fullscreen-box js-playFree-container">
+                        <div class="js-playFree-body posa dn z-3">
+                            <iframe class="posa" src="" data-src="https://aviator-demo.spribegaming.com/?currency=USD&amp;operator=demo&amp;jurisdiction=CW&amp;lang=EN&amp;return_url=https:%2F%2Fspribe.co%2Fgames&amp;user=52742&amp;token=VLvy2boDM7ANTyb09mb249HfEkf9rXXF" width="776" height="437" scrolling="none" frameborder="0" id="gameIframe" title="aviator-demo"></iframe>
+                        </div>
+                        <div class="posa js-playFree-control">
+                            <img src="img/iframe_placeholder.jpg" class="posa" loading="lazy" alt="">
+                            <div class="bg-black-05 z-2 posa f-jcc-aic fdc gap-16 max-md3-dn">
+                                <a href="https://rozetka.com.ua/ua/" target="_blank" class="btn btn_primary">Play for real</a>
+                                <button type="button" class="btn btn_info js-playFree-btn">Play free</button>
+                            </div>
+                            <div class="bg-black-05 z-2 posa f-jcc-aic fdc gap-16 min-md3-dn">
+                                <p>Sorry, demo is not available</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div>
+                <p class="mb-4">Для блока reviews внизу обрати внимание на тень.</p>
+                <div class="reviews__card js-reviews-card" id="author" style="height: 269px;">
+                    <div class="label">Author</div>
+                    <div class="reviews__author">
+                        <div class="reviews__image">
+                            <img class="wh-100" src="img//placeholder/jolie.jpg" loading="lazy" alt="">
+                        </div>
+                        <div class="reviews__name">
+                            <div class="f-aic">
+                                <a href="" class="reviews__link text-medium">Leah Shepherd</a>
+                                <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#verified" fill="#1D9BF0"></use></svg>
+                            </div>
+                            <p class="text-small">Author at in-aviator-game.in</p>
+                            <p class="text-small"><span class="gray">Experience:</span> 7 years</p>
+                        </div>
+                    </div>
+                    <div class="reviews__socials f-aic fww">
+                        <!-- Если социалок нет, оставляем просто пустой блок -->
+                    </div>
+                    <div class="reviews__textContainer">
+                        <div class="reviews__text nlc-mb-8">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing sedear.</p>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae sit officia dolore. Quam pariatur, natus reprehenderit minus voluptas in cum nihil deleniti, cupiditate explicabo doloremque accusantium fugit sunt dolorum blanditiis. Itaque sunt expedita ducimus aliquam est. Minus rerum mollitia magnam tempore nisi fugit amet assumenda architecto! Velit, ea ipsam minima ab reprehenderit aspernatur sapiente voluptatibus optio at, enim placeat libero? Voluptates maiores doloribus esse voluptate distinctio, possimus quisquam voluptatum perspiciatis dolor unde, necessitatibus error sed aut. Alias maiores eligendi tenetur molestiae, corrupti molestias. Totam necessitatibus suscipit eius autem itaque eum alias iusto error quia quisquam excepturi, quis deleniti nam ducimus? Minus necessitatibus impedit, esse cumque exercitationem aliquam. Beatae ab a neque, optio dolores non, doloremque quisquam eligendi labore ut dicta. Dolorum nisi fuga nemo amet fugiat, enim explicabo aliquid quisquam maxime odit ipsum deleniti tempore error! Error et similique ipsa dolorem odio eligendi libero quod assumenda dolorum? Quis, harum. Ab a consectetur quaerat animi, sed sint fugiat fuga suscipit dolor libero cupiditate. Harum veniam saepe, debitis repellat aliquam perspiciatis officia minima fuga, nam vel, optio rem blanditiis fugiat deleniti. Beatae eius ipsum, ut quae ipsa consequatur culpa debitis nostrum exercitationem, deleniti recusandae? Porro nulla provident reprehenderit? Quo, at! Explicabo, reiciendis.</p>
+                        </div>
+                    </div>
+                    <div class="reviews__overlay"></div>
+                    <button class="reviews__btn js-reviews-btn">
+                        <span class="bold state-more">See more</span>
+                        <span class="bold state-less">See less</span>
+                        <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#chevron"></use></svg>
+                    </button>
+                </div>
+            </div>
         </div>
+        <section class="navigationScroll active" style="z-index: 4000;">
+			<button class="navigationScroll__button">
+				<span>Content</span>
+				<svg class="w-24 ml-8"><use xlink:href="img/sprite/icons-sprite.svg#pin"/></svg>
+			</button>
+			<div class="scroll">
+				<div class="scroll__overlayArea overlayArea-prev open"></div>
+				<nav class="scroll__body">
+					<ul class="scroll__scroll">
+						<li class="scroll__item"><a href="#test-h2-1">New games</a></li>
+						<li class="scroll__item"><a href="#test-h2-2">Popular slots</a></li>
+						<li class="scroll__item"><a href="#test-h2-3">About 1win Betting Company</a></li>
+						<li class="scroll__item"><a href="#test-h2-4">Quick Registration on 1win</a></li>
+						<li class="scroll__item"><a href="#test-h2-5">Explore Available Promo Offers</a></li>
+						<li class="scroll__item"><a href="#test-h2-6">1win Login: Instruction</a></li>
+						<li class="scroll__item"><a href="#test-h2-7">500% Welcome Bonus for New Players: Get 685,000 NGN</a></li>
+						<li class="scroll__item"><a href="#test-h2-8">Simple Steps to Make Bets</a></li>
+						<li class="scroll__item"><a href="#test-h2-9">1win Sports Betting Line</a></li>
+						<li class="scroll__item"><a href="#test-h2-10">1win Live Betting</a></li>
+					</ul>
+				</nav>
+				<div class="scroll__overlayArea overlayArea-next scroll__overlayArea_right open"></div>
+			</div>
+		</section>
+        <p>Для некоторых блоков (welcome bonus, cookie, ...) background должен быть обязательно в hex так как эти блоки располагаются поверх других блоков и не долны иметь прозрачности. Переменная --color-light-hex: </p>
+        <!-- Welcome bonus -->
+        <aside class="welcomeBonus fixedBottomBox" style="display: block;">
+            <div class="container f-jcsb-aic welcomeBonus__boby">
+                <div class="label">Best Casino with Aviator game</div>
+                <img class="max-md3-dn" src="img/1win_2.svg" width="140" height="64" loading="lazy" alt="">
+                <img class="min-md3-dn" src="img/1win_mini.svg" width="40" height="40" loading="lazy" alt="">
+                <div class="md3-ta-c">
+                    <p class="bold mb-8 md3-text-small md3-m0">Welcome bonus</p>
+                    <p class="text-big md3-text-default">200% up to $530</p>
+                </div>
+                <a href="" class="btn btn_primary btn_animated">Claim bonus</a>
+            </div>
+            <button class="welcomeBonus__btn btn-round">
+                <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close"/></svg>
+            </button>
+        </aside>
+
+        <!-- Cookie -->
+        <aside class="cookie fixedBottomBox" style="display: block; position: sticky;">
+            <div class="container p-16 f-jcsb-aic cookie__body">
+                <p>We use cookies to improve your experience on our website</p>
+                <div class="f-aic gap-16">
+                    <a href="/privacy-policy" target="_blank">
+                        <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#information"/></svg>
+                    </a>
+                    <button class="btn btn_info">Agree</button>
+                </div>
+            </div>
+        </aside>
     </div>
 </body>
 </html>
