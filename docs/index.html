@@ -3,12 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="js/jquery-3.5.1.min.js"></script>
 	<title>Index page</title>
 </head>
 <style>
 	*{margin: 0; padding: 0; box-sizing: border-box;}
     body{background-color: #1F1F1F;}
-	div{padding: 200px 32px 32px 32px; width: 100%; display: flex; justify-content: center; align-items: center;}
+	div.wrap{padding: 200px 32px 32px 32px; width: 100%; display: flex; justify-content: center; align-items: center;}
 	ul{list-style: none;}
 	li{margin-bottom: 16px;color: #fff;}
 	a{text-transform: uppercase; text-decoration: none; font-size: 20px; color: #ccc;}
@@ -22,18 +23,92 @@
 		display: inline-block;
 	}
 	a:hover{text-decoration: underline;}
+	.inputRadio input[type=radio] {
+		visibility: hidden;
+		display: none;
+	}
+
+	.inputRadio input[type=radio] + label {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+			-ms-flex-align: center;
+				align-items: center;
+		padding: 9px 16px 9px 56px;
+		border-radius: 8px;
+		position: relative;
+		cursor: pointer;
+		color: #fff;
+	}
+
+	.inputRadio input[type=radio] + label:after,
+	.inputRadio input[type=radio] + label:before {
+		content: "";
+		position: absolute;
+		border-radius: 50%;
+	}
+
+	.inputRadio input[type=radio] + label:after {
+		top: calc(50% - 14px);
+		left: 16px;
+		width: 24px;
+		height: 24px;
+		border: 2px solid #ccc;
+	}
+
+	.inputRadio input[type=radio]:checked + label:after {
+		border-color: yellowgreen;
+	}
+
+	.inputRadio input[type=radio]:checked + label:before {
+		z-index: 2;
+		top: calc(50% - 6px);
+		left: 24px;
+		width: 12px;
+		height: 12px;
+		background-color: yellowgreen;
+	}
 </style>
 <body>
-	<div>
+	<div class="wrap">
 		<ul>
+			<div style="border: 2px dashed yellowgreen; padding: 8px; margin-bottom: 16px;">
+				<p style="color: #fff; font-size: 18px; margin-bottom: 8px;">Select theme</p>
+				<div class="inputRadio">
+					<input type="radio" id="radio-item-0" name="theme" value="local">
+					<label for="radio-item-0">Local theme</label>
+				</div>
+				<div class="inputRadio">
+					<input type="radio" id="radio-item-1" name="theme" value="default">
+					<label for="radio-item-1">Default</label>
+				</div>
+				<div class="inputRadio">
+					<input type="radio" id="radio-item-2" name="theme" value="pin-up">
+					<label for="radio-item-2">Pin-up</label>
+				</div>
+			</div>
+			<li>-----------------------------------------</li>
 			<li><a href="home.html">Home</a></li>
 			<li><a href="casino.html">Casino</a></li>
 			<li><a href="author.html">Author</a></li>
 			<li><a href="privacy-policy.html">Privacy Policy</a></li>
 			<li><a href="redirect.html">Redirect</a></li>
 			<li>-----------------------------------------</li>
+			<li><a href="home&casino.html">Home&Casino</a></li>
+			<li>-----------------------------------------</li>
 			<li><a href="components.html">COMPONENTS</a></li>
 		</ul>
 	</div>
+	<script>
+		$(document).ready(function () {
+			let theme = localStorage.getItem('aviator-theme') ? localStorage.getItem('aviator-theme') : "default";
+			$("input[name='theme'][value='" + theme + "']").prop('checked', true);
+
+			$('input[type=radio]').click(function(){
+				localStorage.setItem('aviator-theme', $(this).val());
+			});
+		});
+	</script>
 </body>
 </html>
