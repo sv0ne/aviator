@@ -9,6 +9,38 @@
         <p>После того как локальная тема вас полностью устраивает, зайдите в код элемента, скопируйте все переменные и отправьте фронтенд-разработчику со словами: "Это переменные для темы 'Название темы'". После этого можно опять менять переменные и создавать следующую тему. </p>
         <button class="js-save-style" style="padding: 8px;">Сохранить стили в локальную тему</button>
         <hr style="height: 1px; border-bottom: 2px dashed yellowgreen; width: 100%;">
+        <p class="text-big">Размеры шрифтов</p>
+        <div class="d-flex gap-32">
+            <div class="text-big">
+                <p>text-big</p>
+                <ul>
+                    <li>--fz-text-big</li>
+                    <li>--lh-text-big</li>
+                </ul>
+            </div>
+            <div class="text-medium">
+                <p>text-medium</p>
+                <ul>
+                    <li>--fz-text-medium</li>
+                    <li>--lh-text-medium</li>
+                </ul>
+            </div>
+            <div>
+                <p>text-default</p>
+                <ul>
+                    <li>--fz-text-default</li>
+                    <li>--lh-text-default</li>
+                </ul>
+            </div>
+            <div class="text-small">
+                <p>text-small</p>
+                <ul>
+                    <li>--fz-text-small</li>
+                    <li>--lh-text-small</li>
+                </ul>
+            </div>
+        </div>
+        <hr style="height: 1px; border-bottom: 2px dashed yellowgreen; width: 100%;">
         <div class="f-aic gap-16">
             <a href="" class="btn btn_primary">Primary</a>
             <a href="" class="btn btn_primary btn_animated">Primary animated</a>
@@ -66,12 +98,14 @@
                 <img class="w-24" src="img/countries-flags/united-kingdom.svg" alt="">
             </button>
         </div>
-        <div class="f-aic gap-8 test-box">
-            <svg class="w-16"><use xlink:href="img/sprite/icons-sprite.svg#cup" fill="red"/></svg>
-            <svg class="w-16"><use xlink:href="img/sprite/icons-sprite.svg#comment" fill="red"/></svg>
-            <svg class="w-16"><use xlink:href="img/sprite/icons-sprite.svg#time" fill="red"/></svg>
-            <svg class="w-16"><use xlink:href="img/sprite/icons-sprite.svg#one" fill="red"/></svg>
-            <svg class="w-16"><use xlink:href="img/sprite/icons-sprite.svg#phone" fill="red"/></svg>
+        <div class="f-aic gap-8 test-box test-fill">
+            <svg class="w-16 fill-brand"><use xlink:href="img/sprite/icons-sprite.svg#cup"/></svg>
+            <svg class="w-16 fill-brand"><use xlink:href="img/sprite/icons-sprite.svg#comment"/></svg>
+            <svg class="w-16 fill-brand"><use xlink:href="img/sprite/icons-sprite.svg#time"/></svg>
+            <svg class="w-16 fill-brand"><use xlink:href="img/sprite/icons-sprite.svg#one"/></svg>
+            <svg class="w-16 fill-brand"><use xlink:href="img/sprite/icons-sprite.svg#phone"/></svg>
+            <svg class="w-16 fill-brand"><use xlink:href="img/sprite/icons-sprite.svg#dollar"/></svg>
+            <svg class="w-16 fill-brand"><use xlink:href="img/sprite/icons-sprite.svg#card"/></svg>
         </div>
         <div class="card-1 mt-16" style="position: relative;">
             <div class="label">
@@ -84,9 +118,35 @@
             <span>Download app</span>
             <svg class="w-24 ml-8 rotate-270"><use xlink:href="img/sprite/icons-sprite.svg#chevron"></use></svg>
         </a>
-        <div class="inputRadio">
-            <input type="radio" id="radio-item-1" name="problem" value="brokenDemo" checked>
-            <label for="radio-item-1">Broken demo</label>
+        <div class="f-aic gap-16">
+            <div class="inputRadio">
+                <input type="radio" id="radio-item-1" name="problem" value="brokenDemo" checked>
+                <label for="radio-item-1">Example checked</label>
+            </div>
+            <div class="inputRadio">
+                <input type="radio" id="radio-item-2" name="problem" value="brokenDemo">
+                <label for="radio-item-2">Example</label>
+            </div>
+            <div class="inputCheckbox">
+				<input type="checkbox" name="checkbox-game-1" id="checkbox-game-1" checked>
+				<label for="checkbox-game-1">
+					<svg class="w-24">
+						<use xlink:href="img/sprite/icons-sprite.svg#checkbox" class="state-1"></use>
+						<use xlink:href="img/sprite/icons-sprite.svg#checkbox-active" class="state-2"></use>
+					</svg>
+					<span>Example checked</span>
+				</label>
+			</div>
+			<div class="inputCheckbox">
+				<input type="checkbox" name="checkbox-game-2" id="checkbox-game-2">
+				<label for="checkbox-game-2">
+					<svg class="w-24">
+						<use xlink:href="img/sprite/icons-sprite.svg#checkbox" class="state-1"></use>
+						<use xlink:href="img/sprite/icons-sprite.svg#checkbox-active" class="state-2"></use>
+					</svg>
+					<span>Example</span>
+				</label>
+			</div>
         </div>
         <div class="wpcf7-form-control-wrap">
             <div class="wpcf7-not-valid wpcf7-not-valid-tip p-8" style="border-width: 1px; border-style: solid; margin-top: 0;">
@@ -132,35 +192,69 @@
             </div>
             <div>
                 <p class="mb-4">Для блока reviews внизу обрати внимание на тень.</p>
-                <div class="reviews__card js-reviews-card" id="author" style="height: 269px;">
-                    <div class="label">Author</div>
-                    <div class="reviews__author">
-                        <div class="reviews__image">
-                            <img class="wh-100" src="img//placeholder/jolie.jpg" loading="lazy" alt="">
-                        </div>
-                        <div class="reviews__name">
-                            <div class="f-aic">
-                                <a href="" class="reviews__link text-medium">Leah Shepherd</a>
-                                <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#verified" fill="#1D9BF0"></use></svg>
-                            </div>
-                            <p class="text-small">Author at in-aviator-game.in</p>
-                            <p class="text-small"><span class="gray">Experience:</span> 7 years</p>
-                        </div>
-                    </div>
-                    <div class="reviews__socials f-aic fww">
-                        <!-- Если социалок нет, оставляем просто пустой блок -->
-                    </div>
-                    <div class="reviews__textContainer">
-                        <div class="reviews__text nlc-mb-8">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing sedear.</p>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae sit officia dolore. Quam pariatur, natus reprehenderit minus voluptas in cum nihil deleniti, cupiditate explicabo doloremque accusantium fugit sunt dolorum blanditiis. Itaque sunt expedita ducimus aliquam est. Minus rerum mollitia magnam tempore nisi fugit amet assumenda architecto! Velit, ea ipsam minima ab reprehenderit aspernatur sapiente voluptatibus optio at, enim placeat libero? Voluptates maiores doloribus esse voluptate distinctio, possimus quisquam voluptatum perspiciatis dolor unde, necessitatibus error sed aut. Alias maiores eligendi tenetur molestiae, corrupti molestias. Totam necessitatibus suscipit eius autem itaque eum alias iusto error quia quisquam excepturi, quis deleniti nam ducimus? Minus necessitatibus impedit, esse cumque exercitationem aliquam. Beatae ab a neque, optio dolores non, doloremque quisquam eligendi labore ut dicta. Dolorum nisi fuga nemo amet fugiat, enim explicabo aliquid quisquam maxime odit ipsum deleniti tempore error! Error et similique ipsa dolorem odio eligendi libero quod assumenda dolorum? Quis, harum. Ab a consectetur quaerat animi, sed sint fugiat fuga suscipit dolor libero cupiditate. Harum veniam saepe, debitis repellat aliquam perspiciatis officia minima fuga, nam vel, optio rem blanditiis fugiat deleniti. Beatae eius ipsum, ut quae ipsa consequatur culpa debitis nostrum exercitationem, deleniti recusandae? Porro nulla provident reprehenderit? Quo, at! Explicabo, reiciendis.</p>
-                        </div>
-                    </div>
-                    <div class="reviews__overlay"></div>
-                    <button class="reviews__btn js-reviews-btn">
-                        <span class="bold state-more">See more</span>
-                        <span class="bold state-less">See less</span>
-                        <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#chevron"></use></svg>
+                <div class="reviews__card js-reviews-card">
+					<div class="label">Editor</div>
+					<div class="reviews__author">
+						<div class="reviews__image">
+							<img class="wh-100" src="img//placeholder/pitt.jpg" loading="lazy" alt="">
+						</div>
+						<div class="reviews__name">
+							<div class="f-aic">
+								<a href="" class="reviews__link text-medium">Banele Nkuna</a>
+							</div>
+							<p class="text-small">Author at in-aviator-game.in</p>
+							<p class="text-small"><span class="gray">Experience:</span> 3 years</p>
+						</div>
+					</div>
+					<div class="reviews__socials f-aic fww">
+						<a href="" class="linkSocial" aria-label="murkrack">
+							<svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#murkrack"/></svg>
+						</a>
+						<a href="" class="linkSocial" aria-label="wiki">
+							<svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#wiki"/></svg>
+						</a>
+						<a href="" class="linkSocial" aria-label="email">
+							<svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#email"/></svg>
+						</a>
+						<a href="" class="linkSocial" aria-label="blog">
+							<svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#blog"/></svg>
+						</a>
+						<a href="" class="linkSocial linkSocial_instagram" aria-label="instagram">
+							<svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#instagram"/></svg>
+						</a>
+						<a href="" class="linkSocial linkSocial_facebook" aria-label="facebook">
+							<svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#facebook"/></svg>
+						</a>
+						<a href="" class="linkSocial linkSocial_linkedin" aria-label="linkedin">
+							<svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#linkedin"/></svg>
+						</a>
+						<a href="" class="linkSocial" aria-label="twitter">
+							<svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#x"/></svg>
+						</a>
+					</div>
+					<div class="reviews__textContainer">
+						<div class="reviews__text nlc-mb-8">
+							<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae sit officia dolore. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni aut sunt aliquam, sed porro tenetur sapiente dolorem fugiat laborum, quo id error ipsum perspiciatis eaque nemo cum esse non odit architecto obcaecati harum! Cum, omnis delectus! Earum exercitationem corporis debitis quas pariatur, blanditiis doloremque laborum vero possimus nesciunt itaque asperiores!</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus temporibus esse ipsa fuga, in expedita aspernatur ratione numquam dicta asperiores tempora ab harum.</p>
+						</div>
+					</div>
+					<div class="reviews__overlay"></div>
+					<button class="reviews__btn js-reviews-btn">
+						<span class="bold state-more">See more</span>
+						<span class="bold state-less">See less</span>
+						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
+					</button>
+				</div>
+            </div>
+        </div>
+        <div class="casinoInfo">
+            <div class="casinoInfo__body nlc-mb-16">
+                <p>border этого блока в переменной: --border-casino-info</p>
+                <p>background этого блока в переменной: --bg-casino-info</p>
+                <div class="d-flex fww gap-16">
+                    <button type="button" class="link-3">
+                        <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#checkmark"/></svg>
+                        <span>example</span>
                     </button>
                 </div>
             </div>

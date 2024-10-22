@@ -36,8 +36,8 @@
 			white-space: nowrap;
 			display: inline-block;
 			padding: 4px 12px;
-			font-size: 13px;
-  			line-height: 16px;
+			font-size: var(--fz-text-small);
+			line-height: var(--lh-text-small);
 			font-weight: 700;
 		}
 		&:hover{

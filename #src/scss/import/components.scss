@@ -4,7 +4,7 @@
     display: inline-block;
     text-align: center;
     font-weight: 700;
-    border-radius: 8px;
+    border-radius: var(--br-small);
     padding: 12px 24px;
     @media (max-width:#{$md3}px) {
         padding: 8px 16px;
@@ -145,7 +145,7 @@
     align-items: center;
     font-weight: 700;
     padding: 8px 16px;
-    border-radius: 8px;
+    border-radius: var(--br-small);
     &:hover{
         background-color: var(--color-light);
     }
@@ -184,7 +184,7 @@
     align-items: center;
     width: 100%;
     background-color: var(--color-light);
-    border-radius: 8px;
+    border-radius: var(--br-small);
     padding: 16px 8px 16px 16px;
     &:hover{
         background-color: var(--color-light-hover);
@@ -212,9 +212,22 @@
     @extend .f-jcc-aic;
 }
 
+.link-3{
+    background-color: var(--color-light);
+    border-radius: var(--br-small);
+    color: var(--color-opposite);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    &:hover{
+        background: var(--color-light-hover);
+    }
+}
+
 .linkSocial{
     background-color: var(--color-bg);
-    border-radius: 8px;
+    border-radius: var(--br-small);
     padding: 4px;
     display: inline-block;
     &_instagram{
@@ -311,7 +324,7 @@
                 }
             }
         }
-        &:hover{
+        &:hover, &.active{
             > .popover-trigger{
                 background-color: var(--color-light);
             }
@@ -340,6 +353,13 @@
             .btn-dropdown svg{
                 transition: 0.15s ease;
                 transform: rotate(180deg);
+            }
+        }
+    }
+    &-popup_mod-width-2{
+        @media (min-width:#{$md3}px) {
+            .popover-popup__body{
+                width: 532px;
             }
         }
     }
@@ -382,7 +402,7 @@
         position: sticky;
         top: 0;
         background-color: var(--color-bg);
-        z-index: 2;
+        z-index: 12;
         padding: 16px 0;
         @media (min-width:#{$md3}px) {
             display: none;
@@ -414,17 +434,63 @@
 
 .card-1{
     padding: 16px;
-    border-radius: 8px;
+    border-radius: var(--br-small);
     background-color: var(--color-light);
     height: 100%;
 }
 
 .card-2{
     padding: 32px;
-    border-radius: 16px;
+    border-radius: var(--br-large);
     background-color: var(--color-light);
     @media (max-width:#{$md3}px) {
         padding: 16px;
+    }
+}
+
+.containerGame {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 16px; /* зазор между элементами */
+    @media (max-width:#{$md3}px) {
+        grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+    }
+    &_col-2{
+        grid-template-columns: 1fr 1fr;
+        @media (max-width:#{$md3}px) {
+           display: flex;
+        }
+    }
+    &_col-3{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.cardGame{
+    @extend .nlc-mb-8;
+    flex: 1 0 156px;
+    display: block;
+    &__image{
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        padding-top: 76.81%;
+        overflow: hidden;
+        border-radius: var(--br-small);
+        img{
+            @extend .posa;
+        }
+    }
+    &:hover{
+        img{
+            transition: ease-in 0.1s;
+            transform: scale(1.05);
+        }
+    }
+    &_viewPortrait{
+        .cardGame__image{
+            padding-top: 123.07%;
+        }
     }
 }
 
@@ -452,7 +518,7 @@
     background: var(--color-bg);
     color: var(--color-opposite);
     padding: 4px 12px;
-    border-radius: 8px;
+    border-radius: var(--br-small);
     font-weight: 700;
     border: 1px solid var(--color-gray);
     @extend .text-small;
@@ -473,7 +539,7 @@
     background-color: var(--color-bg);
     color: var(--color-opposite);
     padding: 4px 12px;
-    border-radius: 8px;
+    border-radius: var(--br-small);
     font-weight: 700;
     border: 1px solid var(--color-gray);
     @extend .text-small;
@@ -482,7 +548,7 @@
 .label-4{
     background-color: var(--color-note);
     padding: 8px 16px;
-    border-radius: 8px;
+    border-radius: var(--br-small);
 }
 
 //////////////////////// Поля input ///////////////////////
@@ -499,6 +565,8 @@
         right: 0;
         top: 0;
         input{
+            position: relative;
+            z-index: 2;
             border: 2px solid var(--color-search-border);
             border-radius: 8px;
             width: 328px;
@@ -511,13 +579,14 @@
             position: absolute;
             top: 0;
             left: -40px;
-            width: 40px;
+            width: 60px;
             height: 40px;
             background: linear-gradient(90deg, rgba(var(--shadow-2-start-rgb), 0) 0%, rgba(var(--shadow-2-start-rgb), 1) 50%, var(--shadow-2-end-hex) 100%);
         }
     }
     &__icon{
         position: absolute;
+        z-index: 3;
         top: 8px;
         left: 8px;
     }
@@ -525,6 +594,7 @@
         background-color: transparent;
         outline: none;
         position: absolute;
+        z-index: 3;
         right: 8px;
         top: 8px;
     }
@@ -736,6 +806,13 @@
 }
 
 ////////////////////////// Прочее /////////////////////////
+
+.vertical-divider{
+    width: 1px;
+    flex: 0 0 1px;
+    height: 100%;
+    background-color: var(--color-opposite);
+}
 
 .logo{
     display: flex;

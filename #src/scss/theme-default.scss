@@ -8,6 +8,8 @@
     --color-brand: linear-gradient(90deg, #FFF173 0%, #FFB800 100%);
     --color-brand-hover: #FFB800;
 
+    --fill-icon-brand-hex: #FFB800;
+
     --color-light: rgba(255, 255, 255, 0.05);
     --color-light-hover: rgba(255, 255, 255, 0.1);
     --color-light-hex: #2E2E30;
@@ -35,6 +37,9 @@
 
     --color-note: rgba(52, 199, 89, 1);
 
+    --border-casino-info: linear-gradient(111.17deg, #FFB800 0%, rgba(255, 36, 0, 0) 100.01%);
+    --bg-casino-info: linear-gradient(160deg, rgba(255, 36, 0, 0) 40%, rgba(255, 212, 0, 0.8) 100%), #13171F;
+
     --color-input-radio: rgba(63, 105, 255, 1);
     --color-search-border: rgba(63, 105, 255, 0.3);
 
@@ -48,4 +53,13 @@
     --shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
     --shadow-2-start-rgb: 35, 35, 37;
     --shadow-2-end-hex: #232325;
+
+    --fz-text-default: 15px;
+    --lh-text-default: 18px;
+    --fz-text-big: 30px;
+    --lh-text-big: 36px;
+    --fz-text-medium: 20px;
+    --lh-text-medium: 24px;
+    --fz-text-small: 13px;
+    --lh-text-small: 16px;
 }

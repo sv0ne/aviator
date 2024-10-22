@@ -522,6 +522,14 @@ $(".scroll").each(function(){new ScrollElement($(this));});
 /** ======================================================================== */
 /** ============ Прочее, несвязанные скрипты, каждый для разного =========== */
 
+    // Превращает картинку data-bg-image в background-image
+    (function ibg(){ 
+        document.querySelectorAll('.js-ibg').forEach(function(element) {
+            const bgUrl = element.getAttribute('data-bg-image');
+            element.style.backgroundImage = `url(${bgUrl})`;
+        });
+    })();
+
     // Форма в попапе "Language"
     $(".js-form-item").click(function(e){
         e.preventDefault();

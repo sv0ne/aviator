@@ -2,8 +2,8 @@
 
 body{
 	font-family: $fontfamily;
-	font-size: 15px;
-	line-height: 120%;
+	font-size: var(--fz-text-default);
+	line-height: var(--lh-text-default);
 	color: var(--color-opposite);
 	background: var(--color-bg);
 	overflow-x: hidden;
@@ -230,6 +230,8 @@ table{
 .white{color: var(--color-opposite);}
 .gray{color: var(--color-gray);}
 
+.fill-brand{fill: var(--fill-icon-brand-hex);}
+
 .bg-black-05{background-color: var(--bg-video-overlay);}
 
 ///////////////////////// FLEX ////////////////////////////
@@ -240,6 +242,7 @@ table{
 .fdc{flex-direction: column;}
 .flex-1{flex: 1;}
 
+.gap-4{gap: 4px;}
 .gap-8{gap: 8px;}
 .gap-16{gap: 16px;}
 .gap-32{gap: 32px;}

@@ -9,20 +9,20 @@
 }
 
 .text-big{
-  font-size: 30px;
-  line-height: 36px;
+  font-size: var(--fz-text-big);
+	line-height: var(--lh-text-big);
   font-weight: bold;
 }
 
 .text-medium{
-  font-size: 20px;
-  line-height: 24px;
+  font-size: var(--fz-text-medium);
+	line-height: var(--lh-text-medium);
   font-weight: bold;
 }
 
 .text-small{
-  font-size: 13px;
-  line-height: 16px;
+  font-size: var(--fz-text-small);
+	line-height: var(--lh-text-small);
 }
 
 .text-upper{
@@ -39,6 +39,8 @@
   font-weight: bold;
 }
 
+.fw-900{font-weight: 900;}
+
 .regular{
   font-weight: normal;
 }
@@ -54,14 +56,14 @@
 
 .md3-text-small{
   @media (max-width:#{$md3}px) {
-    font-size: 13px;
-    line-height: 16px;
+    font-size: var(--fz-text-small);
+	  line-height: var(--lh-text-small);
   }
 }
 
 .md3-text-default{
   @media (max-width:#{$md3}px) {
-    font-size: 15px;
-    line-height: 18px;
+    font-size: var(--fz-text-default);
+	  line-height: var(--lh-text-default);
   }
 }

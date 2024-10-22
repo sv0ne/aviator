@@ -6,7 +6,8 @@
   --color-opposite-hex-hover: #D3D3D3;
   --color-brand: #ff2400;
   --color-brand-hover: #c94632;
-  --color-light: #1b1f28;
+  --fill-icon-brand-hex: #ff2400;
+  --color-light: rgba(255, 255, 255, 0.05);
   --color-light-hover: rgba(255, 255, 255, 0.1);
   --color-light-hex: #1B1F28;
   --color-light-hex-hover: #454547;
@@ -15,7 +16,7 @@
   --bg-btn-bonus: rgba(255, 36, 0, 1);
   --bg-btn-bonus-hover: rgba(255, 36, 0, 0.9);
   --color-btn-primary: #fff;
-  --shadow-btn-primary: 0px 8px 50px 0px rgba(255, 212, 0, 0.5);
+  --shadow-btn-primary: 0px 8px 50px 0px rgba(255, 36, 0, 0.5);
   --color-btn-secondary: #fff;
   --bg-btn-secondary: transparent;
   --bg-btn-secondary-hover: rgba(255, 36, 0, 0.1);
@@ -25,14 +26,24 @@
   --bg-btn-info-hover: rgba(255, 36, 0, 0.1);
   --border-btn-info: 1px solid rgba(255, 36, 0, 1);
   --color-note: rgba(52, 199, 89, 1);
+  --border-casino-info: linear-gradient(111.17deg, #FF2400 0%, rgba(255, 36, 0, 0) 100.01%);
+  --bg-casino-info: linear-gradient(160deg, rgba(255, 36, 0, 0) 40%, rgba(255, 36, 0, 0.8) 100%), #13171F;
   --color-input-radio: rgba(63, 105, 255, 1);
   --color-search-border: rgba(63, 105, 255, 0.3);
   --color-form-border: rgba(255, 59, 48, 0.3);
   --color-form-error: rgba(255, 59, 48, 1);
   --bg-video-overlay: rgba(30, 30, 30, 0.5);
-  --br-small: 0.25rem;
-  --br-large: 1rem;
+  --br-small: 4px;
+  --br-large: 16px;
   --shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
   --shadow-2-start-rgb: 13,16,22;
   --shadow-2-end-hex: #0d1016;
+  --fz-text-default: 16px;
+  --lh-text-default: 19px;
+  --fz-text-big: 26px;
+  --lh-text-big: 31px;
+  --fz-text-medium: 20px;
+  --lh-text-medium: 24px;
+  --fz-text-small: 12px;
+  --lh-text-small: 14.4px;
 }

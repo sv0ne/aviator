@@ -47,149 +47,270 @@
 </head>
 <!-- role="dialog" -->
 <body> 
-	<header class="header">
+	<header class="header header_v2">
     <div class="header__panel js-modalContainer">
-        <a href="/" class="header__logo logo">
+        <a href="/" class="header__logo logo gap-8">
+            <img src="img/pin-up-logo.svg" width="auto" height="24" alt="logo">
+            <div class="vertical-divider" style="height: 24px;"></div>
             <img src="img/logo.svg" width="116" height="24" alt="logo">
         </a>
         <div class="bgOverlay min-md3-dn js-modalOverlay"></div>
         <div class="header__menu modal__body js-modalBody">
-            <div class="modal__header f-jcsb-aic">
-                <p class="text-medium">Menu</p>
-                <button class="btn-round js-modalClose">
-                    <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close"/></svg>
-                </button>
-            </div>
-            <div class="searchField js-searchField order-5">
-                <button class="btn-round searchField__open" aria-label="search">
-                    <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#search"/></svg>
-                </button>
-                <div class="searchField__input">
-                    <svg class="w-24 searchField__icon"><use xlink:href="img/sprite/icons-sprite.svg#search"/></svg>
-                    <input type="text" placeholder="Search by site">
-                    <button class="searchField__close">
-                        <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close-fill"/></svg>
+            <div class="test-at">
+                <div class="modal__header f-jcsb-aic">
+                    <p class="text-medium">Menu</p>
+                    <button class="btn-round js-modalClose">
+                        <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close"/></svg>
                     </button>
                 </div>
-            </div>
-            <div class="popover js-dropdown-menu-mobile order-1">
-                <button class="btn-dropdown popover-trigger">
-                    <span>Where to play</span>
-                    <svg class="w-24 ml-8"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
-                </button>
-                <div class="popover-popup mod-left">
-                    <nav class="popover-popup__body scroll-styled">
-                        <a href="/update-page/#4rabet" class="btn-4">
-                            <span class="btn-4__img">
-                                <img src="img/4rabet.svg" loading="lazy" alt="">
-                            </span>
-                            <span class="bold">4RaBet</span>
-                        </a>
-                        <a href="/update-page/#1win" class="btn-4">
-                            <span class="btn-4__img">
-                                <img src="img/1win_2.svg" loading="lazy" alt="">
-                            </span>
-                            <span class="bold">1Win</span>
-                        </a>
-                        <a href="/update-page/#1win" class="btn-4">
-                            <span class="btn-4__img">
-                                <img src="img/parimatch.svg" loading="lazy" alt="">
-                            </span>
-                            <span class="bold">Parimatch</span>
-                        </a>
-                        <a href="/update-page/#1win" class="btn-4">
-                            <span class="btn-4__img">
-                                <img src="img/pinup.svg" loading="lazy" alt="">
-                            </span>
-                            <span class="bold">Pin-Up</span>
-                        </a>
-                        <a href="/update-page/#1win" class="btn-4">
-                            <span class="btn-4__img">
-                                <img src="img/mostbet.svg" loading="lazy" alt="">
-                            </span>
-                            <span class="bold">MostBet</span>
-                        </a>
-                        <a href="/update-page/#1win" class="btn-4">
-                            <span class="btn-4__img">
-                                <img src="img/dafabet.svg" loading="lazy" alt="">
-                            </span>
-                            <span class="bold">Dafabet</span>
-                        </a>
-                        <a href="/update-page/#1win" class="btn-4">
-                            <span class="btn-4__img">
-                                <img src="img/becric.svg" loading="lazy" alt="">
-                            </span>
-                            <span class="bold">Becric</span>
-                        </a>
-                        <a href="/update-page/#1win" class="btn-4">
-                            <span class="btn-4__img">
-                                <img src="img/odds96.svg" loading="lazy" alt="">
-                            </span>
-                            <span class="bold">Odds96</span>
-                        </a>
-                        <a href="/update-page/#1win" class="btn-4">
-                            <span class="btn-4__img">
-                                <img src="img/1xbet.svg" loading="lazy" alt="">
-                            </span>
-                            <span class="bold">1XBet</span>
-                        </a>
-                    </nav>
+                <div class="searchField js-searchField order-5 order-Search">
+                    <button class="btn-round searchField__open" aria-label="search">
+                        <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#search"/></svg>
+                    </button>
+                    <div class="searchField__input">
+                        <svg class="w-24 searchField__icon"><use xlink:href="img/sprite/icons-sprite.svg#search"/></svg>
+                        <input type="text" placeholder="Search by site">
+                        <button class="searchField__close">
+                            <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close-fill"/></svg>
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <a href="/download-app" class="btn-dropdown mod-download-app order-3">
-                <span>Download app</span>
-                <svg class="w-24 ml-8 rotate-270"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
-            </a>
-            <div class="popover js-dropdown-menu-mobile order-4">
-                <button class="btn-dropdown popover-trigger">
-                    <span>More</span>
-                    <svg class="w-24 ml-8"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
-                </button>
-                <div class="popover-popup">
-                    <nav class="moreList popover-popup__body">
-                        <a href="/about-us">About us</a>
-                        <a href="/blog">Blog</a>
-                        <a href="/contacts">Contacts</a>
-                    </nav>
+                <div class="popover menuModals js-dropdown-menu-mobile order-1">
+                    <button class="btn-dropdown popover-trigger">
+                        <span>Bonuses</span>
+                        <svg class="w-24 ml-8"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
+                    </button>
+                    <div class="popover-popup mod-left popover-popup_mod-width-2">
+                        <div class="popover-popup__body scroll-styled">
+                            <div class="bannerBonus mb-16">
+                                <div>
+                                    <p class="bold">Welcome bonus</p>
+                                    <p class="text-big fw-900 tt-u">200% up to $530 and more</p>
+                                </div>
+                                <img class="bannerBonus__image" src="img/gift.png" loading="lazy" alt="">
+                            </div>
+                            <div class="containerGame containerGame_col-3">
+                                <a href="" class="cardGame cardGame_viewPortrait">
+                                    <span class="cardGame__image">
+                                        <img src="img/bonuse/1.png" loading="lazy" alt="">
+                                    </span>
+                                    <span class="bold">1win Lucky Drive</span>
+                                </a>
+                                <a href="" class="cardGame cardGame_viewPortrait">
+                                    <span class="cardGame__image">
+                                        <img src="img/bonuse/2.png" loading="lazy" alt="">
+                                    </span>
+                                    <span class="bold">Free bet insurance to choose from for BLAST Premier: Fall Final 2024</span>
+                                </a>
+                                <a href="" class="cardGame cardGame_viewPortrait">
+                                    <span class="cardGame__image">
+                                        <img src="img/bonuse/3.png" loading="lazy" alt="">
+                                    </span>
+                                    <span class="bold">Quiz about BLAST Premier: Fall Final</span>
+                                </a>
+                                <a href="" class="cardGame cardGame_viewPortrait">
+                                    <span class="cardGame__image">
+                                        <img src="img/bonuse/2.png" loading="lazy" alt="">
+                                    </span>
+                                    <span class="bold">Lorem ipsum dolor sit.</span>
+                                </a>
+                                <a href="" class="cardGame cardGame_viewPortrait">
+                                    <span class="cardGame__image">
+                                        <img src="img/bonuse/3.png" loading="lazy" alt="">
+                                    </span>
+                                    <span class="bold">Lorem, ipsum.</span>
+                                </a>
+                                <a href="" class="cardGame cardGame_viewPortrait">
+                                    <span class="cardGame__image">
+                                        <img src="img/bonuse/1.png" loading="lazy" alt="">
+                                    </span>
+                                    <span class="bold">Lorem ipsum dolor sit.</span>
+                                </a>
+                            </div> 
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="popover liveBonuses order-2">
-                <button class="btn-dropdown popover-trigger">
-                    <span>Live bonuses</span>
-                    <svg class="w-24 ml-8"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
-                </button>
-                <div class="popover-popup">
-                    <div class="popover-popup__body nlc-mb-16">
-                        <p class="bold max-md3-dn">Install the app and get bonuses</p>
-                        <p class="bold min-md3-dn">Live bonuses</p>
-                        <a href="/link-example-1" class="cardApp cardApp_blue">
-                            <span class="flex-1">
-                                <img src="img/1win.svg" alt="">
-                                <span class="text-small mt-4 d-flex">Install the app and get 100$ bonuses</span>
-                            </span>
-                            <span class="f-aic gap-8">
-                                <span class="link-2">
-                                    <svg width="20.5" height="24"><use xlink:href="img/sprite/icons-sprite.svg#apple"/></svg>
-                                </span>
-                                <span class="link-2">
-                                    <svg width="28" height="24"><use xlink:href="img/sprite/icons-sprite.svg#android"/></svg>
-                                </span>
-                            </span>
-                        </a>
-                        <a href="/link-example-2" class="cardApp cardApp_gradient">
-                            <span class="flex-1">
-                                <img src="img/mostbet.svg" alt="">
-                                <span class="text-small mt-4 d-flex">Install the app and get 250FS + 100% first deposit bonuses</span>
-                            </span>
-                            <span class="f-aic gap-8">
-                                <span class="link-2">
-                                    <svg width="20.5" height="24"><use xlink:href="img/sprite/icons-sprite.svg#apple"/></svg>
-                                </span>
-                                <span class="link-2">
-                                    <svg width="28" height="24"><use xlink:href="img/sprite/icons-sprite.svg#android"/></svg>
-                                </span>
-                            </span>
-                        </a>
+                <a href="/download-app" class="btn-dropdown mod-download-app order-3 btn-downloadApp">
+                    <span>Download app</span>
+                    <svg class="w-24 ml-8 rotate-270"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
+                </a>
+                <div class="popover js-dropdown-menu-mobile order-4 btn-more">
+                    <button class="btn-dropdown popover-trigger">
+                        <span>More</span>
+                        <svg class="w-24 ml-8"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
+                    </button>
+                    <div class="popover-popup">
+                        <nav class="moreList popover-popup__body">
+                            <a href="/about-us">About us</a>
+                            <a href="/blog">Blog</a>
+                            <a href="/contacts">Contacts</a>
+                        </nav>
+                    </div>
+                </div>
+                <div class="popover menuModals order-2">
+                    <button class="btn-dropdown popover-trigger">
+                        <span>Other games</span>
+                        <svg class="w-24 ml-8"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
+                    </button>
+                    <div class="popover-popup popover-popup_mod-width-2">
+                        <div class="popover-popup__body"> 
+                            <div class="containerGame containerGame_col-3">
+                                <a href="" class="cardGame">
+                                    <span class="cardGame__image">
+                                        <img src="img/game/1.png" loading="lazy" alt="">
+                                    </span>
+                                    <span class="text-small f-aic gap-4">
+                                        <svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#spribe"/></svg>
+                                        <span>Spribe</span>
+                                    </span>
+                                    <span class="bold">Aviator</span>
+                                </a>
+                                <a href="" class="cardGame">
+                                    <span class="cardGame__image">
+                                        <img src="img/game/2.png" loading="lazy" alt="">
+                                    </span>
+                                    <span class="text-small f-aic gap-4">
+                                        <svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#spribe"/></svg>
+                                        <span>Spribe</span>
+                                    </span>
+                                    <span class="bold">Spaceman</span>
+                                </a>
+                                <a href="" class="cardGame">
+                                    <span class="cardGame__image">
+                                        <img src="img/game/3.png" loading="lazy" alt="">
+                                    </span>
+                                    <span class="text-small f-aic gap-4">
+                                        <svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#spribe"/></svg>
+                                        <span>Spribe</span>
+                                    </span>
+                                    <span class="bold">Crash Royale</span>
+                                </a>
+                                <a href="" class="cardGame">
+                                    <span class="cardGame__image">
+                                        <img src="img/game/5.png" loading="lazy" alt="">
+                                    </span>
+                                    <span class="text-small f-aic gap-4">
+                                        <svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#pin-up"/></svg>
+                                        <span>Pin-up</span>
+                                    </span>
+                                    <span class="bold">Crasher</span>
+                                </a>
+                                <a href="" class="cardGame">
+                                    <span class="cardGame__image">
+                                        <img src="img/game/5.png" loading="lazy" alt="">
+                                    </span>
+                                    <span class="text-small f-aic gap-4">
+                                        <svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#pin-up"/></svg>
+                                        <span>Pin-up</span>
+                                    </span>
+                                    <span class="bold">JetX</span>
+                                </a>
+                                <a href="" class="cardGame">
+                                    <span class="cardGame__image">
+                                        <img src="img/game/6.png" loading="lazy" alt="">
+                                    </span>
+                                    <span class="text-small f-aic gap-4">
+                                        <svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#pin-up"/></svg>
+                                        <span>Pin-up</span>
+                                    </span>
+                                    <span class="bold">JetX</span>
+                                </a>
+                                <a href="" class="cardGame">
+                                    <span class="cardGame__image">
+                                        <img src="img/game/7.png" loading="lazy" alt="">
+                                    </span>
+                                    <span class="text-small f-aic gap-4">
+                                        <svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#pin-up"/></svg>
+                                        <span>Pin-up</span>
+                                    </span>
+                                    <span class="bold">Crasher</span>
+                                </a>
+                                <a href="" class="cardGame">
+                                    <span class="cardGame__image">
+                                        <img src="img/game/8.png" loading="lazy" alt="">
+                                    </span>
+                                    <span class="text-small f-aic gap-4">
+                                        <svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#spribe"/></svg>
+                                        <span>Spribe</span>
+                                    </span>
+                                    <span class="bold">Spaceman</span>
+                                </a>
+                                <a href="" class="cardGame">
+                                    <span class="cardGame__image">
+                                        <img src="img/game/9.png" loading="lazy" alt="">
+                                    </span>
+                                    <span class="text-small f-aic gap-4">
+                                        <svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#spribe"/></svg>
+                                        <span>Spribe</span>
+                                    </span>
+                                    <span class="bold">Crash Royale</span>
+                                </a>
+                                <a href="" class="cardGame">
+                                    <span class="cardGame__image">
+                                        <img src="img/game/10.png" loading="lazy" alt="">
+                                    </span>
+                                    <span class="text-small f-aic gap-4">
+                                        <svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#spribe"/></svg>
+                                        <span>Spribe</span>
+                                    </span>
+                                    <span class="bold">Aviator</span>
+                                </a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="popover menuModals order-2 order-Payment">
+                    <button class="btn-dropdown popover-trigger">
+                        <span>Payment methods</span>
+                        <svg class="w-24 ml-8"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
+                    </button>
+                    <div class="popover-popup">
+                        <div class="popover-popup__body nlc-mb-32">
+                            <div class="nlc-mb-16">
+                                <p class="bold">Payment methods</p>
+                                <div class="f-aic gap-8">
+                                    <svg class="w-16 fill-brand"><use xlink:href="img/sprite/icons-sprite.svg#one"/></svg>
+                                    <p>Min. deposit</p>
+                                    <p class="bold">R1</p>
+                                </div>
+                                <div class="f-aic gap-8">
+                                    <svg class="w-16 fill-brand"><use xlink:href="img/sprite/icons-sprite.svg#time"/></svg>
+                                    <p>Payout speed</p>
+                                    <p class="bold">Instant-12 hours</p>
+                                </div>
+                                <div class="f-aic gap-8">
+                                    <svg class="w-16 fill-brand"><use xlink:href="img/sprite/icons-sprite.svg#card"/></svg>
+                                    <p>Withdrawal limits</p>
+                                    <p class="bold">Not Limited for EUR</p>
+                                </div>
+                                <div class="f-aic gap-8">
+                                    <svg class="w-16 fill-brand"><use xlink:href="img/sprite/icons-sprite.svg#card"/></svg>
+                                    <p>Currencies</p>
+                                    <p class="bold">ZAR</p>
+                                </div>
+                            </div>
+                            <div class="nlc-mb-16">
+                                <p class="bold">Deposit methods</p>
+                                <div class="d-flex fww gap-16 child-img-h-16">
+                                    <img src="img/partnerLogo/visa.svg" loading="lazy" alt="">
+                                    <img src="img/partnerLogo/mastercard.svg" loading="lazy" alt="">
+                                    <img src="img/partnerLogo/gpay.svg" loading="lazy" alt="">
+                                    <img src="img/partnerLogo/applepay.svg" loading="lazy" alt="">
+                                    <img src="img/partnerLogo/qiwi.svg" loading="lazy" alt="">
+                                    <img src="img/partnerLogo/bitcoin.svg" loading="lazy" alt="">
+                                    <img src="img/partnerLogo/etherium.svg" loading="lazy" alt="">
+                                    <img src="img/partnerLogo/tether.svg" loading="lazy" alt="">
+                                    <img src="img/partnerLogo/scrill.svg" loading="lazy" alt="">
+                                    <img src="img/partnerLogo/payeer.svg" loading="lazy" alt="">
+                                    <img src="img/partnerLogo/muchBetter.svg" loading="lazy" alt="">
+                                    <img src="img/partnerLogo/jcb.svg" loading="lazy" alt="">
+                                    <img src="img/partnerLogo/jcb.svg" loading="lazy" alt="">
+                                    <img src="img/partnerLogo/discover.svg" loading="lazy" alt="">
+                                    <img src="img/partnerLogo/interac.svg" loading="lazy" alt="">
+                                    <img src="img/partnerLogo/astropay.svg" loading="lazy" alt="">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -212,48 +333,34 @@
         <a href="" class="btn btn_primary btn_animated">Play Aviator</a>
     </div>
 </header>
-	
+<div class="firstscreen-bg js-ibg" data-bg-image="../img/pin-up-bg.jpg"></div>
 	<main class="styledContent container">
-	<!-- firstScreen -->
-		<section class="firstScreen container p-16">
-			<div class="firstScreen__boby">
-				<div class="firstScreen__text nlc-mb-16">
-					<p class="tt-u bold ta-c text-huge firstScreen__title">Ultimate Crash Betting Experience</p>
-					<div class="textBanner tt-u bold">
-						<p class="text-extra-large textBanner__t1">play</p>
-						<div class="pos-r">
-							<div class="ticket ticket_1">
-								<p class="ticket__num js-ticket-1"></p>
-								<img src="img/ticket.svg" class="posa" width="121" height="51" alt="">
-							</div>
-							<div class="ticket ticket_2">
-								<p class="ticket__num js-ticket-2"></p>
-								<img src="img/ticket.svg" class="posa" width="121" height="51" alt="">
-							</div>
-							<div class="text-extra-large textBanner__t2">
-								<span>Aviator game</span>
-								<img src="img/coin.svg" class="textBanner__coin" width="86" height="86" alt="">
-							</div>
+		<!-- firstScreen -->
+		<div class="casinoInfo casinoInfo_firstscreen">
+			<div class="casinoInfo__body">
+				<div class="casinoInfo__row">
+					<div class="casinoInfo__text nlc-mb-32">
+						<div class="textBanner tt-u bold">
+							<p class="text-extra-large textBanner__t5">play</p>
+							<p class="bigLabel bigLabel_mod_v2 bigLabel_mod_v2_2">Aviator game</p>
+							<p class="textBanner__t4 ws-n">in Pin Up Casino Online</p>
 						</div>
-						<p class="text-huge textBanner__t3">
-							<span>for real money</span>
-							<img src="img/money.svg" class="textBanner__money" width="115" height="115" alt="">
-						</p>
+						<h1 class="text-big">Aviator Game (h1)</h1>
+						<p>Aviator is a popular crash game for real money in India in 2024. Developed by Spribe, this online casino game is simple to play: place a bet and withdraw it before the red plane flies away. The longer the plane stays in the air, the higher the multiplier on your winnings. This is why the game is called Aviator.(&lt;p&gt;)</p>
+						<div class="d-flex gap-16 casinoInfo__buttons">
+							<a href="" class="btn btn_secondary">Download App</a>
+							<a href="" class="btn btn_primary">Play Aviator</a>
+						</div>
 					</div>
-					<p class="bold">Play Aviator Game Online Real Money (h2)</p>
-					<h1 class="text-big">Aviator Game (h1)</h1>
-					<p>Aviator is a popular crash game for real money in India in 2024. Developed by Spribe, this online casino game is simple to play: place a bet and withdraw it before the red plane flies away. The longer the plane stays in the air, the higher the multiplier on your winnings. This is why the game is called Aviator.</p>
-					<p>The RTP is around 97%, making it highly possible to win ₹1,00,000.</p>
-					<div class="f-aic gap-16 firstScreen__buttons">
-						<button class="btn btn_info js-playFree-btn-outside">Play free</button>
-						<a href="" class="btn btn_secondary">Play for real money</a>
+					<div class="casinoInfo__image">
+						<div class="casinoInfo__imageWrap">
+							<img class="posa max-md3-dn" src="img/pin-up-firstscreen-desktop.png" width="584" height="584" loading="lazy" alt="">
+							<img class="posa min-md3-dn" src="img/pin-up-firstscreen-mobile.png" width="584" height="584" loading="lazy" alt="">
+						</div>
 					</div>
-				</div>
-				<div class="firstScreen__image">
-					<img src="img/girls/Rwanda.webp" width="400" height="670" loading="lazy" alt="">
 				</div>
 			</div>
-		</section>
+		</div>
 
 		<!-- Content navigation -->
 		<section class="container p-40-md3-16">
@@ -306,13 +413,9 @@
 		<article class="topFive container p-40-md3-16">
 			<div class="topFive__content nlc-mb-16">
 				<div class="f-aic jcfe gap-16">
-					<button class="btn-5 js-popup-opener max-md3-dn" data-popup-id="problem">
-						<span>Problem?</span>
-						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#attention"/></svg>
-					</button>
-					<button class="btn-5 max-md3-dn js-btn-fullscreen">
-						<span>Fullscreen</span>
-						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#fullscreen"/></svg>
+					<button class="btn-5 js-popup-opener" data-popup-id="howToPlay">
+						<span>How to play</span>
+						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#question"/></svg>
 					</button>
 				</div>
 				<div class="videoContainer js-fullscreen-box js-playFree-container">
@@ -332,65 +435,122 @@
 				</div>
 				<a href="" class="btn btn_primary w-100">Play for real money with 200% bonus</a>
 			</div>
-			<div class="topFive__list max-md3-dn">
-				<p class="text-big mb-16">Top 5 casinos</p>
-				<a href="/update-page/#1win" class="btn-4">
-					<span class="btn-4__img">
-						<img src="img/1win_2.svg" loading="lazy" alt="">
-					</span>
-					<span class="bold flex-1">100% up to $530</span>
-					<span class="label-4">
-						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#back"/></svg>
-					</span>
-				</a>
-				<a href="/update-page/#4rabet" class="btn-4">
-					<span class="btn-4__img">
-						<img src="img/4rabet.svg" loading="lazy" alt="">
-					</span>
-					<span class="bold flex-1">120% up to $600 + 25 FS + 100 gifts</span>
-					<span class="label-4">
-						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#back"/></svg>
-					</span>
-				</a>
-				<a href="/update-page/#1win" class="btn-4">
-					<span class="btn-4__img">
-						<img src="img/parimatch.svg" loading="lazy" alt="">
-					</span>
-					<span class="bold flex-1">100% up to $530</span>
-					<span class="label-4">
-						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#back"/></svg>
-					</span>
-				</a>
-				<a href="/update-page/#1win" class="btn-4">
-					<span class="btn-4__img">
-						<img src="img/pinup.svg" loading="lazy" alt="">
-					</span>
-					<span class="bold flex-1">100% up to $530</span>
-					<span class="label-4">
-						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#back"/></svg>
-					</span>
-				</a>
-				<a href="/update-page/#1win" class="btn-4">
-					<span class="btn-4__img">
-						<img src="img/mostbet.svg" loading="lazy" alt="">
-					</span>
-					<span class="bold flex-1">80 Free Spins</span>
-					<span class="label-4">
-						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#back"/></svg>
-					</span>
-				</a>
+			<div class="topFive__list">
+				<p class="text-big mb-16 tt-u">Similar to Aviator</p>
+				<div class="topFive__gamesWrap pos-r">
+					<div class="topFive__games posa scroll-styled">
+						<div class="containerGame containerGame_col-2">
+							<a href="" class="cardGame">
+								<span class="cardGame__image">
+									<img src="img/game/1.png" loading="lazy" alt="">
+								</span>
+								<span class="text-small f-aic gap-4">
+									<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#spribe"/></svg>
+									<span>Spribe</span>
+								</span>
+								<span class="bold">Aviator</span>
+							</a>
+							<a href="" class="cardGame">
+								<span class="cardGame__image">
+									<img src="img/game/2.png" loading="lazy" alt="">
+								</span>
+								<span class="text-small f-aic gap-4">
+									<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#spribe"/></svg>
+									<span>Spribe</span>
+								</span>
+								<span class="bold">Spaceman</span>
+							</a>
+							<a href="" class="cardGame">
+								<span class="cardGame__image">
+									<img src="img/game/3.png" loading="lazy" alt="">
+								</span>
+								<span class="text-small f-aic gap-4">
+									<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#spribe"/></svg>
+									<span>Spribe</span>
+								</span>
+								<span class="bold">Crash Royale</span>
+							</a>
+							<a href="" class="cardGame">
+								<span class="cardGame__image">
+									<img src="img/game/5.png" loading="lazy" alt="">
+								</span>
+								<span class="text-small f-aic gap-4">
+									<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#pin-up"/></svg>
+									<span>Pin-up</span>
+								</span>
+								<span class="bold">Crasher</span>
+							</a>
+							<a href="" class="cardGame">
+								<span class="cardGame__image">
+									<img src="img/game/5.png" loading="lazy" alt="">
+								</span>
+								<span class="text-small f-aic gap-4">
+									<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#pin-up"/></svg>
+									<span>Pin-up</span>
+								</span>
+								<span class="bold">JetX</span>
+							</a>
+							<a href="" class="cardGame">
+								<span class="cardGame__image">
+									<img src="img/game/6.png" loading="lazy" alt="">
+								</span>
+								<span class="text-small f-aic gap-4">
+									<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#pin-up"/></svg>
+									<span>Pin-up</span>
+								</span>
+								<span class="bold">JetX</span>
+							</a>
+							<a href="" class="cardGame">
+								<span class="cardGame__image">
+									<img src="img/game/7.png" loading="lazy" alt="">
+								</span>
+								<span class="text-small f-aic gap-4">
+									<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#pin-up"/></svg>
+									<span>Pin-up</span>
+								</span>
+								<span class="bold">Crasher</span>
+							</a>
+							<a href="" class="cardGame">
+								<span class="cardGame__image">
+									<img src="img/game/8.png" loading="lazy" alt="">
+								</span>
+								<span class="text-small f-aic gap-4">
+									<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#spribe"/></svg>
+									<span>Spribe</span>
+								</span>
+								<span class="bold">Spaceman</span>
+							</a>
+							<a href="" class="cardGame">
+								<span class="cardGame__image">
+									<img src="img/game/9.png" loading="lazy" alt="">
+								</span>
+								<span class="text-small f-aic gap-4">
+									<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#spribe"/></svg>
+									<span>Spribe</span>
+								</span>
+								<span class="bold">Crash Royale</span>
+							</a>
+							<a href="" class="cardGame">
+								<span class="cardGame__image">
+									<img src="img/game/10.png" loading="lazy" alt="">
+								</span>
+								<span class="text-small f-aic gap-4">
+									<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#spribe"/></svg>
+									<span>Spribe</span>
+								</span>
+								<span class="bold">Aviator</span>
+							</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</article>
 
 		<!-- Видео-презентация №1 -->
 		<section class="container p-40-md3-16">
 			<div class="d-flex jcc js-ticket-anchor">
-				<div class="bigLabel">
-					<div class="ticket ticket_3">
-						<p class="ticket__num js-ticket-3">1X</p>
-						<img src="img/ticket.svg" class="posa" alt="">
-					</div>
-					<img src="img/money.svg" width="100" height="100" loading="lazy" class="bigLabel__img bigLabel__img_1" alt="">
+				<div class="bigLabel bigLabel_mod_v2 bigLabel_mod_v2_1">
+					<img src="img/betToMoney.png" width="295" height="100" loading="lazy" class="bigLabel__img bigLabel__img_5" alt="">
 					<span>How to play</span>
 				</div>
 			</div>
@@ -403,9 +563,8 @@
 		<!-- Видео-презентация №2 -->
 		<section class="container p-40-md3-16">
 			<div class="d-flex jcc">
-				<div class="bigLabel bigLabel_mod">
-					<img src="img/check_shield.svg" width="100" height="100" loading="lazy" class="bigLabel__img bigLabel__img_3" alt="">
-					<img src="img/thumbs_up.svg" width="100" height="100" loading="lazy" class="bigLabel__img bigLabel__img_2" alt="">
+				<div class="bigLabel bigLabel_mod_v2">
+					<img src="img/planer.png" width="207" height="100" loading="lazy" class="bigLabel__img bigLabel__img_4" alt="">
 					<span>The Integrity</span>
 				</div>
 			</div>
@@ -575,6 +734,145 @@
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto ullam nisi reprehenderit.</p>
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, porro veniam cumque eligendi eaque praesentium necessitatibus minus nemo. Doloremque pariatur magnam maxime id inventore totam eum quaerat placeat minus aliquam.</p>
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+		<!-- All games -->
+		<section class="container p-40-md3-16">
+			<p class="text-big mb-32">All these games are presented at [Name] casino</p>
+			<div class="f-aic gap-32 fww mb-32">
+				<div class="inputCheckbox">
+					<input type="checkbox" name="checkbox-game-1" id="checkbox-game-1">
+					<label for="checkbox-game-1">
+						<svg class="w-24">
+							<use xlink:href="img/sprite/icons-sprite.svg#checkbox" class="state-1"></use>
+							<use xlink:href="img/sprite/icons-sprite.svg#checkbox-active" class="state-2"></use>
+						</svg>
+						<span>Made by Spribe</span>
+					</label>
+				</div>
+				<div class="inputCheckbox">
+					<input type="checkbox" name="checkbox-game-2" id="checkbox-game-2">
+					<label for="checkbox-game-2">
+						<svg class="w-24">
+							<use xlink:href="img/sprite/icons-sprite.svg#checkbox" class="state-1"></use>
+							<use xlink:href="img/sprite/icons-sprite.svg#checkbox-active" class="state-2"></use>
+						</svg>
+						<span>Provably fair technology</span>
+					</label>
+				</div>
+				<div class="inputCheckbox">
+					<input type="checkbox" name="checkbox-game-3" id="checkbox-game-3" checked>
+					<label for="checkbox-game-3">
+						<svg class="w-24">
+							<use xlink:href="img/sprite/icons-sprite.svg#checkbox" class="state-1"></use>
+							<use xlink:href="img/sprite/icons-sprite.svg#checkbox-active" class="state-2"></use>
+						</svg>
+						<span>RTP≥97%</span>
+					</label>
+				</div>
+			</div>
+			<div class="containerGame">
+				<a href="" class="cardGame">
+					<span class="cardGame__image">
+						<img src="img/game/1.png" loading="lazy" alt="">
+					</span>
+					<span class="text-small f-aic gap-4">
+						<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#spribe"/></svg>
+						<span>Spribe</span>
+					</span>
+					<span class="bold">Aviator</span>
+				</a>
+				<a href="" class="cardGame">
+					<span class="cardGame__image">
+						<img src="img/game/2.png" loading="lazy" alt="">
+					</span>
+					<span class="text-small f-aic gap-4">
+						<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#spribe"/></svg>
+						<span>Spribe</span>
+					</span>
+					<span class="bold">Spaceman</span>
+				</a>
+				<a href="" class="cardGame">
+					<span class="cardGame__image">
+						<img src="img/game/3.png" loading="lazy" alt="">
+					</span>
+					<span class="text-small f-aic gap-4">
+						<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#spribe"/></svg>
+						<span>Spribe</span>
+					</span>
+					<span class="bold">Crash Royale</span>
+				</a>
+				<a href="" class="cardGame">
+					<span class="cardGame__image">
+						<img src="img/game/5.png" loading="lazy" alt="">
+					</span>
+					<span class="text-small f-aic gap-4">
+						<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#pin-up"/></svg>
+						<span>Pin-up</span>
+					</span>
+					<span class="bold">Crasher</span>
+				</a>
+				<a href="" class="cardGame">
+					<span class="cardGame__image">
+						<img src="img/game/5.png" loading="lazy" alt="">
+					</span>
+					<span class="text-small f-aic gap-4">
+						<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#pin-up"/></svg>
+						<span>Pin-up</span>
+					</span>
+					<span class="bold">JetX</span>
+				</a>
+				<a href="" class="cardGame">
+					<span class="cardGame__image">
+						<img src="img/game/6.png" loading="lazy" alt="">
+					</span>
+					<span class="text-small f-aic gap-4">
+						<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#pin-up"/></svg>
+						<span>Pin-up</span>
+					</span>
+					<span class="bold">JetX</span>
+				</a>
+				<a href="" class="cardGame">
+					<span class="cardGame__image">
+						<img src="img/game/7.png" loading="lazy" alt="">
+					</span>
+					<span class="text-small f-aic gap-4">
+						<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#pin-up"/></svg>
+						<span>Pin-up</span>
+					</span>
+					<span class="bold">Crasher</span>
+				</a>
+				<a href="" class="cardGame">
+					<span class="cardGame__image">
+						<img src="img/game/8.png" loading="lazy" alt="">
+					</span>
+					<span class="text-small f-aic gap-4">
+						<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#spribe"/></svg>
+						<span>Spribe</span>
+					</span>
+					<span class="bold">Spaceman</span>
+				</a>
+				<a href="" class="cardGame">
+					<span class="cardGame__image">
+						<img src="img/game/9.png" loading="lazy" alt="">
+					</span>
+					<span class="text-small f-aic gap-4">
+						<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#spribe"/></svg>
+						<span>Spribe</span>
+					</span>
+					<span class="bold">Crash Royale</span>
+				</a>
+				<a href="" class="cardGame">
+					<span class="cardGame__image">
+						<img src="img/game/10.png" loading="lazy" alt="">
+					</span>
+					<span class="text-small f-aic gap-4">
+						<svg class="w-16"><use xlink:href="img/sprite/casino-logo-sprite.svg#spribe"/></svg>
+						<span>Spribe</span>
+					</span>
+					<span class="bold">Aviator</span>
+				</a>
+			</div>
+		</section>
 
 		<!-- FAQ -->
 		<section class="container p-40-md3-16" itemscope itemtype="https://schema.org/FAQPage">
@@ -1272,6 +1570,35 @@
             </form>
         </div>
     </div>
+    <div class="popup popup_centered" id="howToPlay" data-type="centered">
+        <div class="popup__body">
+            <div class="popup__header">
+                <p class="text-medium">How to play</p>
+                <button class="btn-round js-popup-closer">
+                    <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close"/></svg>
+                </button>
+            </div>
+            <div class="popup__content scroll-styled nlc-mb-16 p-16">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod iure culpa voluptates ea est magni sint doloribus inventore minus quis.</p>
+                <img src="img/game/3.png" class="w-100" loading="lazy" alt="">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero, at! Facere, hic!</p>
+            </div>
+        </div>
+    </div>
+    <div class="popup popup_centered" id="licensesAndInfo" data-type="centered">
+        <div class="popup__body">
+            <div class="popup__header">
+                <p class="text-medium">[casino name] Licenses & Legal information</p>
+                <button class="btn-round js-popup-closer">
+                    <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close"/></svg>
+                </button>
+            </div>
+            <div class="popup__content scroll-styled nlc-mb-16 p-16">
+                <p>The website is operated by Carletta N.V., registration number is 142346, business address Dr. Henri Fergusonweg 1, Curacao, license number OGL/2024/580/0570 issued by Curacao Gaming Control Board since 01/Jul/2024.</p>
+                <p>B.W.I Black-Wood Limited is a company registered and established under laws of Cyprus, with registered address Panagioti Toumazou, 37 Episkopi, 4620, Limassol, Cyprus and Carletta Limited is a company registered and established under laws of Cyprus, with registered address Riga Feraiou, 7-9 Lizantia Court, Office 310, Agioi Omologites, 1087, Nicosia, Cyprus are the payment agents of a parent company Carletta N.V.</p>
+            </div>
+        </div>
+    </div>
     <div class="popup popup_centered" id="advertisingDisclaimer" data-type="centered">
         <div class="popup__body">
             <div class="popup__header">
@@ -1597,9 +1924,11 @@
     </div>
 </aside>
 	<footer class="footer o-h">
-    <div class="container footer__body nlc-mb-16">
+    <div class="container footer__body nlc-mb-32">
         <div class="f-jcsb-aic">
-            <a href="/" class="logo p-0">
+            <a href="/" class="logo gap-8">
+                <img src="img/pin-up-logo.svg" width="auto" height="24" alt="logo">
+                <div class="vertical-divider" style="height: 24px;"></div>
                 <img src="img/logo.svg" width="116" height="24" alt="logo">
             </a>
             <button class="btn-dropdown btn-dropdown_filled js-popup-opener" data-popup-id="language" data-add-class="mod2">
@@ -1608,7 +1937,7 @@
                 <img class="w-24" src="img/countries-flags/united-kingdom.svg" loading="lazy" alt="">
             </button>
         </div>
-        <div class="boxInfo has-links">
+        <div class="boxInfo boxInfo_mod_v2 has-links">
             <div class="boxInfo__col">
                 <p class="bold mb-16">24/7 support</p>
                 <div class="boxInfo__grid boxInfo__grid_2col">
@@ -1619,12 +1948,8 @@
                 </div>
             </div>
             <div class="boxInfo__col">
-                <p class="gray mb-16 leter-sp f-jcsb-aic">
+                <p class="gray mb-16 leter-sp text-small f-jcsb-aic">
                     <span>Information</span>
-                    <button class="boxInfo__btn js-boxInfo-btn">
-                        <span>ALL</span>
-                        <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
-                    </button>
                 </p>
                 <nav class="boxInfo__grid boxInfo__grid_3col">
                     <a href="">Sitemap</a>
@@ -1637,170 +1962,7 @@
                     <a href="">Blog</a>
                 </nav>
             </div>
-            <div class="boxInfo__col js-boxInfo-casinos">
-                <p class="gray mb-16 leter-sp">Top online casinos</p>
-                <nav class="boxInfo__grid boxInfo__grid_3col">
-                    <a href="">4RaBet</a>
-                    <a href="">MostBet</a>
-                    <a href="">Odds96</a>
-                    <a href="">1Win</a>
-                    <a href="">Dafabet</a>
-                    <a href="">1XBet</a>
-                    <a href="">Parimatch</a>
-                    <a href="">Becric</a>
-                </nav>
-            </div>
-        </div>
-        <div class="boxLinksApp">
-            <div class="boxLinksApp__subscribe">
-                <div class="card-1 subscribe">
-                    <div class="mb-16">
-                        <p class="bold">Let’s keep in touch</p>
-                        <p>Subscribe to get an emails with bonuses and tips.</p>
-                    </div>
-                    <div class="subscribe__input">
-                        <input type="text" placeholder="Your email">
-                        <button type="submit">Subscribe</button>
-                    </div>
-                </div>
-            </div>
-            <div class="boxLinksApp__mobile">
-                <a href="" class="linkApp">
-                    <span class="f-aic">
-                        <svg width="18" height="24"><use xlink:href="img/sprite/icons-sprite.svg#apple"/></svg>
-                        <span class="d-flex aifs fdc ml-8">
-                            <span class="gray">App for</span>
-                            <span class="bold">iOS</span>
-                        </span>
-                    </span>
-                    <svg class="w-24 rotate-270"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
-                </a>
-                <a href="" class="linkApp">
-                    <span class="f-aic">
-                        <svg width="28" height="24"><use xlink:href="img/sprite/icons-sprite.svg#android-green"/></svg>
-                        <span class="d-flex aifs fdc ml-8">
-                            <span class="gray">App for</span>
-                            <span class="bold">Android</span>
-                        </span>
-                    </span>
-                    <svg class="w-24 rotate-270"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
-                </a>
-            </div>
-            <div class="boxLinksApp__windows">
-                <a href="" class="linkApp linkApp_windows">
-                    <span class="f-aic linkApp__mod">
-                        <img src="img/windows.svg" loading="lazy" width="25" height="25" alt="">
-                        <span class="d-flex aifs fdc ml-8">
-                            <span class="gray">Application for</span>
-                            <span class="bold">Windows</span>
-                        </span>
-                    </span>
-                    <svg class="w-24 rotate-270"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
-                </a>
-            </div>
-        </div>
-        <div class="js-modalContainer">
-            <p class="leter-sp gray mb-16">Developer Licenses & Certificates</p>
-            <div class="bgOverlay min-md3-dn js-modalOverlay"></div>
-            <div class="certificates__list modal__body js-modalOpener js-modalBody">
-                <div class="modal__header f-jcsb-aic">
-                    <p class="text-medium">Developer Licenses & Certificates</p>
-                    <button class="btn-round js-modalClose">
-                        <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close"/></svg>
-                    </button>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/malta.svg" loading="lazy" alt="">
-                    <span>Malta Gaming Authority</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/canada.svg" loading="lazy" alt="">
-                    <span>Alcohol and Gaming Commission of Ontario</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/switzerland.svg" loading="lazy" alt="">
-                    <span>Swiss Gambling Supervisory Authority (Gespa)</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/gibraltar.svg" loading="lazy" alt="">
-                    <span>Gibraltar Gaming Commission</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/romania.svg" loading="lazy" alt="">
-                    <span>Romania National Gambling Office</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/croatia.svg" loading="lazy" alt="">
-                    <span>MINISTARSTVO FINANCIJA Porezna uprava</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/italy.svg" loading="lazy" alt="">
-                    <span>Autonoma dei Monopoli di Stato</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/bulgaria.svg" loading="lazy" alt="">
-                    <span>State Gambling Commission</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/serbia.svg" loading="lazy" alt="">
-                    <span>Ministry of Finance Gaming Authority</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/colombia.svg" loading="lazy" alt="">
-                    <span>Colijuegos</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/sweden.svg" loading="lazy" alt="">
-                    <span>Spelinspektionen</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/south-africa.svg" loading="lazy" alt="">
-                    <span>Western Cape Gambling and Racing Board</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/georgia.svg" loading="lazy" alt="">
-                    <span>Ministry of Finance of Georgia</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/greece.svg" loading="lazy" alt="">
-                    <span>Hellenic Gaming Commission</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/latvia.svg" loading="lazy" alt="">
-                    <span>Lotteries and Gambling Supervisory Inspection</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/lithuania.svg" loading="lazy" alt="">
-                    <span>Gaming Control Authority</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/netherlands.svg" loading="lazy" alt="">
-                    <span>Kansspelautoriteit</span>
-                </div>
-                <a class="certificates__licenses md3-text-default link-default" href="">All Licenses & Certificates</a>
-            </div>
-        </div>
-        <div class="socials">
-            <div class="socials__row socials__row_1">
-                <div>
-                    <div class="card-1 f-aic gap-16">
-                        <img width="40" height="24" src="img/aws.svg" loading="lazy" alt="">
-                        <p>All games from developer Spribe are hosted on Amazon Web Services</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="card-1 ufcPartner">
-                        <div>
-                            <img width="120" height="16" src="img/ufc-aviator.svg" alt="">
-                            <p class="bold mt-8">Official partner of UFC</p>
-                        </div>
-                        <div class="ufcPartner__img">
-                            <img class="socials__ufc_img" src="img/red-mma-gloves.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="socials__row socials__row_2">
+            <div class="boxInfo__col f-aic gap-16">
                 <a href="" class="social">
                     <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#telegram"/></svg>
                 </a>
@@ -1815,23 +1977,169 @@
                 </a>
             </div>
         </div>
-        <div class="f-jcsb-aic fww gap-16 md2-jcfs child-img-h-16">
-            <img src="img/partnerLogo/visa.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/mastercard.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/gpay.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/applepay.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/qiwi.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/bitcoin.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/etherium.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/tether.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/scrill.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/payeer.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/muchBetter.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/jcb.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/jcb.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/discover.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/interac.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/astropay.svg" loading="lazy" alt="">
+        <div class="casinoInfo">
+            <div class="casinoInfo__body nlc-mb-16">
+                <div class="f-aic gap-16">
+                    <a href="/" class="logo p-0">
+                        <img src="img/pin-up-logo.svg" width="auto" height="24" alt="logo">
+                    </a>
+                    <p class="text-medium">casino in [Country]</p>
+                </div>
+                <div class="casinoInfo__links d-flex gap-16 fww">
+                    <div>
+                        <p class="leter-sp gray mb-16 text-small">Social networks with Bonuses</p>
+                        <div class="d-flex fww gap-16">
+                            <a href="" class="link-3">
+                                <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#instagram-24"/></svg>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="" class="link-3">
+                                <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#telegram"/></svg>
+                                <span>TG channel</span>
+                            </a>
+                            <a href="" class="link-3">
+                                <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#facebook_2"/></svg>
+                                <span>Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="leter-sp gray mb-16 text-small">24/7 support</p>
+                        <div class="d-flex fww gap-16">
+                            <a href="" class="link-3">
+                                <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#telegram"/></svg>
+                                <span>TG group</span>
+                            </a>
+                            <a href="" class="link-3">
+                                <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#chat"/></svg>
+                                <span>Chat-online</span>
+                            </a>
+                            <a href="" class="link-3">
+                                <span>+1 234 567 89 01</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex fww gap-16">
+                    <button type="button" class="link-3 js-popup-opener" data-popup-id="licensesAndInfo">
+                        <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#checkmark"/></svg>
+                        <span>[casino name] Licenses & Legal information</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="nlc-mb-16">
+            <div class="f-aic gap-16">
+                <p class="text-medium">Aviator game by</p>
+                <img src="img/symbols.svg" width="58" height="24" loading="lazy" alt="">
+            </div>
+            <div class="js-modalContainer">
+                <p class="leter-sp text-small gray mb-16">Developer Licenses & Certificates</p>
+                <div class="bgOverlay min-md3-dn js-modalOverlay"></div>
+                <div class="certificates__list modal__body js-modalOpener js-modalBody">
+                    <div class="modal__header f-jcsb-aic">
+                        <p class="text-medium">Developer Licenses & Certificates</p>
+                        <button class="btn-round js-modalClose">
+                            <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close"/></svg>
+                        </button>
+                    </div>
+                    <div class="certificates__item">
+                        <img class="w-24" src="img/countries-flags/malta.svg" loading="lazy" alt="">
+                        <span>Malta Gaming Authority</span>
+                    </div>
+                    <div class="certificates__item">
+                        <img class="w-24" src="img/countries-flags/canada.svg" loading="lazy" alt="">
+                        <span>Alcohol and Gaming Commission of Ontario</span>
+                    </div>
+                    <div class="certificates__item">
+                        <img class="w-24" src="img/countries-flags/switzerland.svg" loading="lazy" alt="">
+                        <span>Swiss Gambling Supervisory Authority (Gespa)</span>
+                    </div>
+                    <div class="certificates__item">
+                        <img class="w-24" src="img/countries-flags/gibraltar.svg" loading="lazy" alt="">
+                        <span>Gibraltar Gaming Commission</span>
+                    </div>
+                    <div class="certificates__item">
+                        <img class="w-24" src="img/countries-flags/romania.svg" loading="lazy" alt="">
+                        <span>Romania National Gambling Office</span>
+                    </div>
+                    <div class="certificates__item">
+                        <img class="w-24" src="img/countries-flags/croatia.svg" loading="lazy" alt="">
+                        <span>MINISTARSTVO FINANCIJA Porezna uprava</span>
+                    </div>
+                    <div class="certificates__item">
+                        <img class="w-24" src="img/countries-flags/italy.svg" loading="lazy" alt="">
+                        <span>Autonoma dei Monopoli di Stato</span>
+                    </div>
+                    <div class="certificates__item">
+                        <img class="w-24" src="img/countries-flags/bulgaria.svg" loading="lazy" alt="">
+                        <span>State Gambling Commission</span>
+                    </div>
+                    <div class="certificates__item">
+                        <img class="w-24" src="img/countries-flags/serbia.svg" loading="lazy" alt="">
+                        <span>Ministry of Finance Gaming Authority</span>
+                    </div>
+                    <div class="certificates__item">
+                        <img class="w-24" src="img/countries-flags/colombia.svg" loading="lazy" alt="">
+                        <span>Colijuegos</span>
+                    </div>
+                    <div class="certificates__item">
+                        <img class="w-24" src="img/countries-flags/sweden.svg" loading="lazy" alt="">
+                        <span>Spelinspektionen</span>
+                    </div>
+                    <div class="certificates__item">
+                        <img class="w-24" src="img/countries-flags/south-africa.svg" loading="lazy" alt="">
+                        <span>Western Cape Gambling and Racing Board</span>
+                    </div>
+                    <div class="certificates__item">
+                        <img class="w-24" src="img/countries-flags/georgia.svg" loading="lazy" alt="">
+                        <span>Ministry of Finance of Georgia</span>
+                    </div>
+                    <div class="certificates__item">
+                        <img class="w-24" src="img/countries-flags/greece.svg" loading="lazy" alt="">
+                        <span>Hellenic Gaming Commission</span>
+                    </div>
+                    <div class="certificates__item">
+                        <img class="w-24" src="img/countries-flags/latvia.svg" loading="lazy" alt="">
+                        <span>Lotteries and Gambling Supervisory Inspection</span>
+                    </div>
+                    <div class="certificates__item">
+                        <img class="w-24" src="img/countries-flags/lithuania.svg" loading="lazy" alt="">
+                        <span>Gaming Control Authority</span>
+                    </div>
+                    <div class="certificates__item">
+                        <img class="w-24" src="img/countries-flags/netherlands.svg" loading="lazy" alt="">
+                        <span>Kansspelautoriteit</span>
+                    </div>
+                    <a class="certificates__licenses md3-text-default link-default" href="">All Licenses & Certificates</a>
+                </div>
+            </div>
+            <div class="socials">
+                <div class="socials__row socials__row_1">
+                    <div>
+                        <div class="card-1 f-aic gap-16">
+                            <img width="40" height="24" src="img/aws.svg" loading="lazy" alt="">
+                            <p>All games from developer Spribe are hosted on Amazon Web Services</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card-1 ufcPartner">
+                            <div>
+                                <img width="120" height="16" src="img/ufc-aviator.svg" loading="lazy" alt="">
+                                <p class="bold mt-8">Official partner of UFC</p>
+                            </div>
+                            <div class="ufcPartner__img">
+                                <img class="socials__ufc_img" src="img/red-mma-gloves.png" loading="lazy" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="socials__row socials__row_2">
+                    <div class="card-1 f-jcc-aic fdc fairTechnology">
+                        <img width="152" height="36" src="img/technology.svg" loading="lazy" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="f-aic jcfs fww gap-16 gray">
             <p>18+</p>

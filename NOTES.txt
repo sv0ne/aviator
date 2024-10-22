@@ -4,3 +4,7 @@
 "btn-3 btn-3_green" -> "btn btn_primary"
 "btn-3 btn-3_white" -> "btn btn_secondary"
 "btn-3 btn-3_black" -> "btn btn_info"
+
+
+
+svg иконки в блоке bookmaker
