@@ -336,7 +336,7 @@
         }
     }
     @media (max-width:#{$md3}px) {
-        border-radius: 8px;
+        border-radius: var(--br-small);
         overflow: hidden;
         .popover-popup{
             display: none;

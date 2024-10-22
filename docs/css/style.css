@@ -3975,7 +3975,7 @@ position sticky у блока .stickyBlock */
   }
 
   .popover {
-    border-radius: 8px;
+    border-radius: var(--br-small);
     overflow: hidden;
   }
 
@@ -4158,11 +4158,11 @@ position sticky у блока .stickyBlock */
     border-top: none;
   }
 
-  .menuModals {
+  .popoverContentMobile {
     border-radius: 0px;
   }
 
-  .menuModals .btn-dropdown {
+  .popoverContentMobile .btn-dropdown {
     display: block;
     background: transparent;
     text-align: left;
@@ -4173,48 +4173,27 @@ position sticky у блока .stickyBlock */
     font-weight: 700;
   }
 
-  .menuModals .btn-dropdown svg {
+  .popoverContentMobile .btn-dropdown svg {
     display: none;
   }
 
-  .menuModals .popover-popup {
+  .popoverContentMobile .popover-popup {
     display: block;
   }
 
-  .menuModals .popover-popup__body > * {
+  .popoverContentMobile .popover-popup__body > * {
     border-top: none;
   }
 
-  .btn-downloadApp {
-    -webkit-box-ordinal-group: 9;
-        -ms-flex-order: 8;
-            order: 8;
-  }
-
-  .test-at {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    gap: 16px;
-  }
-
-  .test-at .searchField {
+  .headerItem_btnLanguage {
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 40px;
-            flex: 0 0 40px;
-    -webkit-box-ordinal-group: 11;
-        -ms-flex-order: 10;
-            order: 10;
+        -ms-flex: 0;
+            flex: 0;
+    padding: 16px;
   }
 
-  .test-at .order-Payment {
-    -webkit-box-ordinal-group: 21;
-        -ms-flex-order: 20;
-            order: 20;
+  .headerItem_btnDownloadApp {
+    margin-top: 32px;
   }
 
   .moreList a {

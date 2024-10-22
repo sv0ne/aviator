@@ -102,7 +102,7 @@
     }
 }
 
-.menuModals{
+.popoverContentMobile{
     @media (max-width:#{$md3}px) {
         border-radius: 0px;
         .btn-dropdown{
@@ -129,24 +129,16 @@
     }
 }
 
-.btn-downloadApp{
+.headerItem_btnLanguage{
     @media (max-width:#{$md3}px) {
-        order: 8;
+        flex: 0;
+        padding: 16px;
     }
 }
 
-.test-at{
+.headerItem_btnDownloadApp{
     @media (max-width:#{$md3}px) {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        .searchField{
-            flex: 0 0 40px;
-            order: 10;
-        }
-        .order-Payment{
-            order: 20
-        }
+        margin-top: 32px;
     }
 }
 
