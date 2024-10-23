@@ -8,3 +8,11 @@
 
 
 svg иконки в блоке bookmaker
+сделать чтобы работали старые стили кнопок. Лучше чтоб Саша прошелся и заменил классы
+проверить как ведя себя старый сайт с новыми стилями
+с local theme порешать
+
+Возможно заменить в блоках bookmaker
+<img src="img/icon-16/cup.svg" width="16" height="16" loading="lazy" alt="">
+на
+<svg class="w-16 fill-brand"><use xlink:href="img/sprite/icons-sprite.svg#cup"/></svg>

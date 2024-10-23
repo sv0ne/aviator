@@ -8,10 +8,6 @@
     z-index: 40;
     //background-color: var(--color-bg);
     border-bottom: 1px solid var(--color-light);
-    @media (max-width:1580px) {
-        flex-direction: column-reverse;
-        align-items: stretch;
-    }
     @media (max-width:#{$md3}px) {
         flex-direction: column;
     }
@@ -46,20 +42,10 @@
         gap: 16px;
         display: flex;
         padding: 8px;
-        @media (max-width:1580px) {
-            justify-content: flex-end;
-        }
         @media (max-width:#{$md3}px) {
             > * {
                 flex: 1;
             }
-        }
-    }
-    &__logo{
-        @media (max-width:1580px) and (min-width:#{$md3}px) {
-            position: absolute;
-            top: 16px;
-            left: 8px;
         }
     }
     &__menuBtn{
@@ -72,12 +58,50 @@
             padding: 8px;
         }
     }
+    &:not(.header_v2){
+        @media (max-width:1310px) {
+            flex-direction: column-reverse;
+            align-items: stretch;
+            .header__buttons{
+                justify-content: flex-end;
+            }
+        }
+        
+        @media (max-width:1310px) and (min-width:#{$md3}px) {
+            .header__logo{
+                position: absolute;
+                top: 16px;
+                left: 8px;
+            }
+        }
+    }
     &_v2{
+        @media (max-width:1580px) {
+            flex-direction: column-reverse;
+            align-items: stretch;
+            .header__buttons{
+                justify-content: flex-end;
+            }
+        }
+        @media (max-width:1580px) and (min-width:#{$md3}px) {
+            .header__logo{
+                position: absolute;
+                top: 16px;
+                left: 8px;
+            }
+        }
         .header__menu{
             padding: 8px 0px;
             gap: 0;
+            .btn-dropdown{
+                @media (max-width:820px) and (min-width:#{$md3}px) {
+                    padding-right: 0; 
+                }
+            }
         }
         .searchField__input:before{
+            height: 32px;
+            top: 4px;
             filter: blur(5px);
         }
     }
@@ -129,16 +153,34 @@
     }
 }
 
+.headerItem_btnBonuses{
+    @media (max-width:#{$md3}px) {
+        .btn-dropdown{
+            padding-top: 0 !important;
+        }
+    }
+}
+
 .headerItem_btnLanguage{
     @media (max-width:#{$md3}px) {
         flex: 0;
-        padding: 16px;
+        padding: 8px !important;
     }
 }
 
 .headerItem_btnDownloadApp{
+    @media (max-width:1024px) and (min-width:#{$md3}px) {
+        display: none;
+    }
     @media (max-width:#{$md3}px) {
         margin-top: 32px;
+    }
+}
+
+.headerItem_btnDownloadAppInMore{
+    display: none !important;
+    @media (max-width:1024px) and (min-width:#{$md3}px) {
+        display: block !important;
     }
 }
 

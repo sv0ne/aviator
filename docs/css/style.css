@@ -2032,8 +2032,14 @@ ol.list li:before,
 }
 
 .header_v2 .searchField__input:before {
+  height: 32px;
+  top: 4px;
   -webkit-filter: blur(5px);
           filter: blur(5px);
+}
+
+.headerItem_btnDownloadAppInMore {
+  display: none !important;
 }
 
 .moreList a {
@@ -3696,7 +3702,7 @@ ol.list li:before,
 }
 
 @media (max-width: 1580px) {
-  .header {
+  .header_v2 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
@@ -3706,7 +3712,7 @@ ol.list li:before,
             align-items: stretch;
   }
 
-  .header__buttons {
+  .header_v2 .header__buttons {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
@@ -3744,6 +3750,24 @@ ol.list li:before,
 
   .welcomeBonus__btn:hover {
     background-color: var(--color-light-hex-hover);
+  }
+}
+
+@media (max-width: 1310px) {
+  .header:not(.header_v2) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+
+  .header:not(.header_v2) .header__buttons {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 
@@ -4185,11 +4209,15 @@ position sticky у блока .stickyBlock */
     border-top: none;
   }
 
+  .headerItem_btnBonuses .btn-dropdown {
+    padding-top: 0 !important;
+  }
+
   .headerItem_btnLanguage {
     -webkit-box-flex: 0;
         -ms-flex: 0;
             flex: 0;
-    padding: 16px;
+    padding: 8px !important;
   }
 
   .headerItem_btnDownloadApp {
@@ -4675,11 +4703,35 @@ position sticky у блока .stickyBlock */
   }
 }
 
-@media (max-width: 1580px) and (min-width: 767.98px) {
-  .header__logo {
+@media (max-width: 1310px) and (min-width: 767.98px) {
+  .header:not(.header_v2) .header__logo {
     position: absolute;
     top: 16px;
     left: 8px;
+  }
+}
+
+@media (max-width: 1580px) and (min-width: 767.98px) {
+  .header_v2 .header__logo {
+    position: absolute;
+    top: 16px;
+    left: 8px;
+  }
+}
+
+@media (max-width: 820px) and (min-width: 767.98px) {
+  .header_v2 .header__menu .btn-dropdown {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 767.98px) {
+  .headerItem_btnDownloadApp {
+    display: none;
+  }
+
+  .headerItem_btnDownloadAppInMore {
+    display: block !important;
   }
 }
 
