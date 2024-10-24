@@ -756,7 +756,7 @@ table th {
 .scroll__item {
   margin: 0 8px;
   background-color: var(--color-light);
-  border-radius: 8px;
+  border-radius: var(--br-small);
 }
 
 .scroll__item a {
