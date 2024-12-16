@@ -5,14 +5,7 @@
 "btn-3 btn-3_white" -> "btn btn_secondary"
 "btn-3 btn-3_black" -> "btn btn_info"
 
-
-
-svg иконки в блоке bookmaker
-сделать чтобы работали старые стили кнопок. Лучше чтоб Саша прошелся и заменил классы
-проверить как ведя себя старый сайт с новыми стилями
-с local theme порешать
-
-Возможно заменить в блоках bookmaker
+Заменить иконки в блоках bookmaker с такого формата
 <img src="img/icon-16/cup.svg" width="16" height="16" loading="lazy" alt="">
-на
+на такой
 <svg class="w-16 fill-brand"><use xlink:href="img/sprite/icons-sprite.svg#cup"/></svg>
