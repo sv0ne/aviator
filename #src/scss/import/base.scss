@@ -74,6 +74,8 @@ table{
 
 ///////////////////// MARGIN-PADDING //////////////////////
 
+.mt-2{margin-top: 2px;}
+
 .m-4{margin: 4px;}
 .mt-4{margin-top: 4px;}
 .mr-4{margin-right: 4px;}
@@ -218,6 +220,12 @@ table{
 
 .md3-w-100{
 	@media (max-width:#{$md3}px) {
+		width: 100%;
+	}
+}
+
+.md4-w-100{
+	@media (max-width:#{$md4}px) {
 		width: 100%;
 	}
 }

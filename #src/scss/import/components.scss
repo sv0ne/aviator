@@ -52,6 +52,16 @@
             animation: btnLine 2s linear 0s infinite;
         }
     }
+    @if($theme == 'light'){
+        &_outline{
+            border: 1px solid rgba(255, 255, 255, 1);
+            background: transparent;
+            color: #fff;
+            &:hover{
+                background: rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
 }
 
 @keyframes btnLine {
@@ -89,9 +99,22 @@
     &:hover{
         background-color: var(--color-light);
     }
-    @media (max-width:#{$md3}px) {
-        background-color: var(--color-light);
-        border-radius: 0;
+    @if($theme == 'default' or $theme == 'pin-up'){
+        @media (max-width:#{$md3}px) {
+            background-color: var(--color-light);
+            border-radius: 0;
+        }
+    }
+    @if($theme == 'light'){
+        @media (max-width:#{$md3}px) {
+            padding: 8px 0;
+            &:hover{
+                background-color: transparent;
+            }
+            &:last-child{
+                padding-bottom: 0;
+            }
+        }
     }
     &__img{
         height: 24px;
@@ -106,6 +129,17 @@
         @media (max-width:#{$md3}px) {
             flex: 0 0 33%;
         }
+        @if($theme == 'light'){
+            background-color: var(--color-opposite);
+            padding: 8px;
+            border-radius: 8px;
+            height: 48px;
+            width: 100px;
+            img{
+                max-width: 84px;
+                margin: 0 auto;
+            }
+        }
     }
 }
 
@@ -113,12 +147,33 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    color: var(--color-opposite);
-    fill: var(--color-opposite);
-    background-color: transparent;
-    &:hover{
-        color: var(--color-gray);
-        fill: var(--color-gray);
+    @if($theme == 'light'){
+        background-color: rgba(255, 255, 255, 0.3);
+        color: var(--color-bg);
+        border-radius: 8px;
+        padding: 8px;
+        fill: var(--color-bg);
+        &:hover{
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        @media (max-width:860px) {
+            background-color: transparent;
+            &:hover{
+                color: rgba(255, 255, 255, 0.8);
+                fill: rgba(255, 255, 255, 0.8);
+                background-color: transparent;
+            }
+            padding: 0;
+            margin: -8px -8px 0 0;
+        }
+    } @else {
+        color: var(--color-opposite);
+        fill: var(--color-opposite);
+        background-color: transparent;
+        &:hover{
+            color: var(--color-gray);
+            fill: var(--color-gray);
+        }
     }
 }
 
@@ -519,6 +574,9 @@
     &_gradient{
         background: linear-gradient(85.83deg, #004DB8 1.14%, #F14624 100%);
     }
+    @if($theme == 'light'){
+        color: var(--color-bg);
+    }
 }
 
 .label{
@@ -558,9 +616,14 @@
 }
 
 .label-4{
-    background-color: var(--color-note);
     padding: 8px 16px;
     border-radius: var(--br-small);
+    @if($theme == 'light'){
+        background-color: var(--color-opposite);
+        padding: 12px;
+    } @else {
+        background-color: rgba(52, 199, 89, 1);
+    }
 }
 
 //////////////////////// Поля input ///////////////////////
@@ -601,6 +664,9 @@
         z-index: 3;
         top: 8px;
         left: 8px;
+        use{
+            fill: var(--fill-icon-primary);
+        }
     }
     &__close{
         background-color: transparent;
@@ -609,9 +675,6 @@
         z-index: 3;
         right: 8px;
         top: 8px;
-        svg use{
-            fill: var(--fill-icon-primary);
-        }
     }
     @media (max-width:#{$md3}px) {
         &__input{
@@ -793,7 +856,7 @@
             width: 8px;
             height: 8px;
             flex: 0 0 8px;
-            background-color: var(--color-note);
+            background-color: rgba(52, 199, 89, 1);
             border-radius: 99px;
         }
         @media (max-width:#{$md4}px) {
@@ -845,6 +908,21 @@
     img{
         height: 24px;
     }
+}
+
+@if($theme == 'light'){
+    .logoText{
+        height: 11px;
+        padding: 0 6px;
+        transform: skew(-20deg);
+    
+        background-color: #E50539;
+        font-size: 10px;
+        line-height: 12px;
+        font-weight: 700;
+        font-style: italic;
+        color: white;
+    } 
 }
 
 .promocode{

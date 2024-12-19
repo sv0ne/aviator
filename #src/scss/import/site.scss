@@ -504,6 +504,40 @@
 
 ///////////////////////////////////////////////////////////
 
+@if $theme == "light" {
+    .howToPlay{
+        display: grid;
+        grid-template-columns: 50% auto;
+        gap: 32px;
+        align-items: center;
+        margin-bottom: 40px;
+        @media (max-width:#{$md3}px) {
+            margin-bottom: 16px;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        &__title{
+            font-size: 48px;
+            line-height: 58px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        &__btn{
+            padding: 24px 48px;
+            border-radius: 16px;
+            font-size: 20px;
+            line-height: 24px;
+            font-weight: 900;
+            text-transform: uppercase;
+            @media (max-width:#{$md3}px) {
+                padding: 16px 24px;
+            }
+        }
+    }
+}
+
+///////////////////////////////////////////////////////////
+
 .topFive {
     display: flex;
     gap: 32px;
@@ -534,6 +568,23 @@
         overflow: auto;
         @media (max-width:#{$md3}px) {
             position: static;
+        }
+    }
+    @if $theme == "light" {
+        &__msg{
+            color: var(--color-bg);
+        }
+    }
+}
+
+@if $theme == "light" {
+    .topFiveScrollType{
+        position: static;
+        .containerGame{
+            grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+            &_col-2{
+                display: flex;
+            }
         }
     }
 }
@@ -1142,10 +1193,10 @@
     &.hasBoxWelcomeBonus{
         bottom: 146px;
         @media (max-width:1413px) {
-            bottom: 166px;
+            bottom: if($theme == "light", 195px, 166px);
         }
         @media (max-width:#{$md2}px) {
-            bottom: 150px;
+            bottom: if($theme == "light", 195px, 150px);
         }
         @media (max-width:#{$md3}px) {
             bottom: 124px;
@@ -1176,23 +1227,52 @@
 .welcomeBonus {
     position: sticky;
     z-index: 32;
+    @if $theme == "light" {
+        border: none !important;
+        background-color: transparent;
+    }
     &__boby {
         padding: 24px 16px;
         position: relative;
+        @if $theme == "light" {
+            background-color: #fff;
+            box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
+            border-radius: 12px 12px 0px 0px;
+        }
     }
     &__btn{
         position: absolute;
-        top: calc(50% - 20px);
-        right: 40px;
-        @media (max-width:1413px) {
-            background-color: var(--color-light-hex);
-            right: 16px;
+        @if $theme == "default" or $theme == "pin-up"{
+            right: 40px;
+            top: calc(50% - 20px);
+            @media (max-width:1413px) {
+                background-color: var(--color-light-hex);
+                right: 16px;
+                top: -20px;
+                border: 1px solid transparent;
+                border-top-color: var(--color-light);
+                padding: 7px;
+                &:hover{
+                    background-color: var(--color-light-hex-hover);
+                }
+            }
+        }
+        @if $theme == "light" {
             top: -20px;
-            border: 1px solid transparent;
-            border-top-color: var(--color-light);
-            padding: 7px;
-            &:hover{
-                background-color: var(--color-light-hex-hover);
+            right: 16px;
+        }
+    }
+    @if $theme == "light" {
+        &__wrap{
+            @media (min-width:#{$md3}px) {
+                background-color: var(--color-opposite);
+                color: var(--color-bg);
+                padding: 16px 24px;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                gap: 8px;
             }
         }
     }
@@ -1200,6 +1280,11 @@
 ///////////////////////////////////////////////////////////
 
 .cookie{
+    @if $theme == "light" {
+        border: none;
+        background-color: #fff;
+        box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
+    }
     &__body{
         @media (max-width:#{$md3}px) {
             padding: 8px 16px;
@@ -1208,6 +1293,9 @@
     @media (max-width:#{$md3}px) {
         font-size: var(--fz-text-small);
 	    line-height: var(--lh-text-small);
+    }
+    svg use {
+        fill: var(--fill-icon-primary);
     }
 }
 

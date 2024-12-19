@@ -29,7 +29,6 @@
   --bg-btn-info: rgba(35, 35, 37, 1);
   --bg-btn-info-hover: rgba(57, 57, 59, 1);
   --border-btn-info: none;
-  --color-note: rgba(52, 199, 89, 1);
   --border-casino-info: linear-gradient(111.17deg, #FFB800 0%, rgba(255, 36, 0, 0) 100.01%);
   --bg-casino-info: linear-gradient(160deg, rgba(255, 36, 0, 0) 40%, rgba(255, 212, 0, 0.8) 100%), #13171F;
   --color-input-radio: rgba(63, 105, 255, 1);
@@ -254,6 +253,10 @@ table th {
 table th {
   background-color: #E9E9EA;
   text-align: left;
+}
+
+.mt-2 {
+  margin-top: 2px;
 }
 
 .m-4 {
@@ -973,6 +976,16 @@ table th {
           animation: btnLine 2s linear 0s infinite;
 }
 
+.btn_outline {
+  border: 1px solid rgb(255, 255, 255);
+  background: transparent;
+  color: #fff;
+}
+
+.btn_outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 @-webkit-keyframes btnLine {
   0% {
     left: -75px;
@@ -1055,6 +1068,11 @@ table th {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 100px;
           flex: 0 0 100px;
+  background-color: var(--color-opposite);
+  padding: 8px;
+  border-radius: 8px;
+  height: 48px;
+  width: 100px;
 }
 
 .btn-4__img img {
@@ -1062,6 +1080,11 @@ table th {
   max-width: 100px;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.btn-4__img img {
+  max-width: 84px;
+  margin: 0 auto;
 }
 
 .btn-5 {
@@ -1072,14 +1095,15 @@ table th {
       -ms-flex-align: center;
           align-items: center;
   gap: 8px;
-  color: var(--color-opposite);
-  fill: var(--color-opposite);
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: var(--color-bg);
+  border-radius: 8px;
+  padding: 8px;
+  fill: var(--color-bg);
 }
 
 .btn-5:hover {
-  color: var(--color-gray);
-  fill: var(--color-gray);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .btn-6 {
@@ -1413,6 +1437,7 @@ table th {
   border-radius: 8px;
   position: relative;
   gap: 8px;
+  color: var(--color-bg);
 }
 
 .cardApp_blue {
@@ -1461,9 +1486,10 @@ table th {
 }
 
 .label-4 {
-  background-color: var(--color-note);
   padding: 8px 16px;
   border-radius: var(--br-small);
+  background-color: var(--color-opposite);
+  padding: 12px;
 }
 
 .searchField {
@@ -1516,6 +1542,10 @@ table th {
   left: 8px;
 }
 
+.searchField__icon use {
+  fill: var(--fill-icon-primary);
+}
+
 .searchField__close {
   background-color: transparent;
   outline: none;
@@ -1523,10 +1553,6 @@ table th {
   z-index: 3;
   right: 8px;
   top: 8px;
-}
-
-.searchField__close svg use {
-  fill: var(--fill-icon-primary);
 }
 
 .searchField.active .searchField__input {
@@ -1727,7 +1753,7 @@ table th {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 8px;
           flex: 0 0 8px;
-  background-color: var(--color-note);
+  background-color: rgb(52, 199, 89);
   border-radius: 99px;
 }
 
@@ -1756,6 +1782,20 @@ table th {
 
 .logo img {
   height: 24px;
+}
+
+.logoText {
+  height: 11px;
+  padding: 0 6px;
+  -webkit-transform: skew(-20deg);
+      -ms-transform: skew(-20deg);
+          transform: skew(-20deg);
+  background-color: #E50539;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 700;
+  font-style: italic;
+  color: white;
 }
 
 .promocode {
@@ -2334,6 +2374,32 @@ ol.list li:before,
   line-height: 31px;
 }
 
+.howToPlay {
+  display: grid;
+  grid-template-columns: 50% auto;
+  gap: 32px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+
+.howToPlay__title {
+  font-size: 48px;
+  line-height: 58px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.howToPlay__btn {
+  padding: 24px 48px;
+  border-radius: 16px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 .topFive {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2378,6 +2444,24 @@ ol.list li:before,
 
 .topFive__games {
   overflow: auto;
+}
+
+.topFive__msg {
+  color: var(--color-bg);
+}
+
+.topFiveScrollType {
+  position: static;
+}
+
+.topFiveScrollType .containerGame {
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+}
+
+.topFiveScrollType .containerGame_col-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .videoContainer {
@@ -2984,17 +3068,34 @@ ol.list li:before,
 .welcomeBonus {
   position: sticky;
   z-index: 32;
+  border: none !important;
+  background-color: transparent;
 }
 
 .welcomeBonus__boby {
   padding: 24px 16px;
   position: relative;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 12px 12px 0px 0px;
 }
 
 .welcomeBonus__btn {
   position: absolute;
-  top: calc(50% - 20px);
-  right: 40px;
+  top: -20px;
+  right: 16px;
+}
+
+.cookie {
+  border: none;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
+}
+
+.cookie svg use {
+  fill: var(--fill-icon-primary);
 }
 
 .footer {
@@ -3674,6 +3775,24 @@ ol.list li:before,
     grid-template-columns: 1fr 1fr;
   }
 
+  .welcomeBonus__wrap {
+    background-color: var(--color-opposite);
+    color: var(--color-bg);
+    padding: 16px 24px;
+    border-radius: 8px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 8px;
+  }
+
   .boxInfo__btn {
     display: none;
   }
@@ -3780,20 +3899,7 @@ ol.list li:before,
   }
 
   .btnScrollToTop.hasBoxWelcomeBonus {
-    bottom: 166px;
-  }
-
-  .welcomeBonus__btn {
-    background-color: var(--color-light-hex);
-    right: 16px;
-    top: -20px;
-    border: 1px solid transparent;
-    border-top-color: var(--color-light);
-    padding: 7px;
-  }
-
-  .welcomeBonus__btn:hover {
-    background-color: var(--color-light-hex-hover);
+    bottom: 195px;
   }
 }
 
@@ -3896,7 +4002,7 @@ ol.list li:before,
   }
 
   .btnScrollToTop.hasBoxWelcomeBonus {
-    bottom: 150px;
+    bottom: 195px;
   }
 
   .boxInfo {
@@ -3909,6 +4015,20 @@ ol.list li:before,
 
   .boxInfo_mod_v2 .boxInfo__col:nth-child(1) {
     grid-column: auto;
+  }
+}
+
+@media (max-width: 860px) {
+  .btn-5 {
+    background-color: transparent;
+    padding: 0;
+    margin: -8px -8px 0 0;
+  }
+
+  .btn-5:hover {
+    color: rgba(255, 255, 255, 0.8);
+    fill: rgba(255, 255, 255, 0.8);
+    background-color: transparent;
   }
 }
 
@@ -4005,8 +4125,15 @@ position sticky у блока .stickyBlock */
   }
 
   .btn-4 {
-    background-color: var(--color-light);
-    border-radius: 0;
+    padding: 8px 0;
+  }
+
+  .btn-4:hover {
+    background-color: transparent;
+  }
+
+  .btn-4:last-child {
+    padding-bottom: 0;
   }
 
   .btn-4__img {
@@ -4259,6 +4386,21 @@ position sticky у блока .stickyBlock */
     -webkit-transform: scale(0.6) rotate(24deg);
         -ms-transform: scale(0.6) rotate(24deg);
             transform: scale(0.6) rotate(24deg);
+  }
+
+  .howToPlay {
+    margin-bottom: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+
+  .howToPlay__btn {
+    padding: 16px 24px;
   }
 
   .topFive {
@@ -4604,6 +4746,10 @@ position sticky у блока .stickyBlock */
 }
 
 @media (max-width: 479.98px) {
+  .md4-w-100 {
+    width: 100%;
+  }
+
   .tagsList li {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;

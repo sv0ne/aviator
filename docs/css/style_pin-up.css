@@ -29,7 +29,6 @@
   --bg-btn-info: transparent;
   --bg-btn-info-hover: rgba(255, 36, 0, 0.1);
   --border-btn-info: 1px solid rgba(255, 36, 0, 1);
-  --color-note: rgba(52, 199, 89, 1);
   --border-casino-info: linear-gradient(111.17deg, #FF2400 0%, rgba(255, 36, 0, 0) 100.01%);
   --bg-casino-info: linear-gradient(160deg, rgba(255, 36, 0, 0) 40%, rgba(255, 36, 0, 0.8) 100%), #13171F;
   --color-input-radio: rgba(63, 105, 255, 1);
@@ -254,6 +253,10 @@ table th {
 table th {
   background-color: var(--color-light-hex);
   text-align: left;
+}
+
+.mt-2 {
+  margin-top: 2px;
 }
 
 .m-4 {
@@ -1456,9 +1459,9 @@ table th {
 }
 
 .label-4 {
-  background-color: var(--color-note);
   padding: 8px 16px;
   border-radius: var(--br-small);
+  background-color: rgb(52, 199, 89);
 }
 
 .searchField {
@@ -1511,6 +1514,10 @@ table th {
   left: 8px;
 }
 
+.searchField__icon use {
+  fill: var(--fill-icon-primary);
+}
+
 .searchField__close {
   background-color: transparent;
   outline: none;
@@ -1518,10 +1525,6 @@ table th {
   z-index: 3;
   right: 8px;
   top: 8px;
-}
-
-.searchField__close svg use {
-  fill: var(--fill-icon-primary);
 }
 
 .searchField.active .searchField__input {
@@ -1722,7 +1725,7 @@ table th {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 8px;
           flex: 0 0 8px;
-  background-color: var(--color-note);
+  background-color: rgb(52, 199, 89);
   border-radius: 99px;
 }
 
@@ -2963,8 +2966,12 @@ ol.list li:before,
 
 .welcomeBonus__btn {
   position: absolute;
-  top: calc(50% - 20px);
   right: 40px;
+  top: calc(50% - 20px);
+}
+
+.cookie svg use {
+  fill: var(--fill-icon-primary);
 }
 
 .footer {
@@ -4681,6 +4688,10 @@ position sticky у блока .stickyBlock */
 }
 
 @media (max-width: 479.98px) {
+  .md4-w-100 {
+    width: 100%;
+  }
+
   .tagsList li {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;

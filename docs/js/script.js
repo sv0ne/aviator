@@ -725,10 +725,10 @@ $(".scroll").each(function(){new ScrollElement($(this));});
     (function () {
         // При клике на Play free запускаем iframe
         $('.js-playFree-btn').click(function(){
-            $('.js-playFree-control').addClass('dn');
-            let iframe = $('.js-playFree-body').find('iframe');
+            $(this).closest('.js-playFree-container').find('.js-playFree-control').addClass('dn');
+            let iframe = $(this).closest('.js-playFree-container').find('.js-playFree-body iframe');
             iframe.attr('src', iframe.data('src'));
-            $('.js-playFree-body').removeClass('dn');
+            $(this).closest('.js-playFree-container').find('.js-playFree-body').removeClass('dn');
         });
 
         // При клике на кнопку "Play free" которая находится вне блока, делаем прокрут до блока и запускаем его
@@ -740,7 +740,7 @@ $(".scroll").each(function(){new ScrollElement($(this));});
             $('html, body').animate({
                 scrollTop: offsetTop-200
             }, 500);
-            $('.js-playFree-btn').click();
+            $('.js-playFree-btn').eq(0).click();
         }
 
         // Если у кнопки js-btnDemo пустой href, она делает прокрут до блока js-playFree-container в противном случае переходит по ссылке
