@@ -51,6 +51,10 @@
 			if (isGithub){
 				$('.header__logo').attr('href', 'https://sv0ne.github.io/aviator/');
 			}
+
+			// Добавляем в body класс с названием темы
+			let theme = localStorage.getItem('aviator-theme');
+			document.body.classList.add('theme-'+theme);
 		});
 	</script>
 	<script src="js/script.js"></script>
@@ -1393,6 +1397,7 @@
         <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#gift"/></svg>
     </button>
 </aside>
+
 
 <!-- Welcome bonus -->
 <aside class="welcomeBonus fixedBottomBox js-welcomeBonus">

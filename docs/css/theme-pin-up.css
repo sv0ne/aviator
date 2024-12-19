@@ -6,6 +6,8 @@
   --color-opposite-hex-hover: #D3D3D3;
   --color-brand: #ff2400;
   --color-brand-hover: #c94632;
+  --fill-icon-primary: #6C6C6E;
+  --fill-icon-secondary: #6C6C6E;
   --fill-icon-brand-hex: #ff2400;
   --color-light: rgba(255, 255, 255, 0.05);
   --color-light-hover: rgba(255, 255, 255, 0.1);

@@ -204,6 +204,10 @@ table th {
   text-align: left;
 }
 
+.theme-light table th {
+  background-color: #E9E9EA;
+}
+
 .m-4 {
   margin: 4px;
 }
@@ -969,6 +973,14 @@ table th {
   background-color: var(--color-light-hover);
 }
 
+.btn-2 svg use {
+  fill: white;
+}
+
+.theme-light .btn-2 svg use {
+  fill: #232325;
+}
+
 .btn-4 {
   border-radius: 8px;
   padding: 16px;
@@ -1082,12 +1094,24 @@ table th {
   border-radius: 99px;
 }
 
+.btn-round svg use {
+  fill: var(--fill-icon-secondary);
+}
+
 .btn-round_white {
   background-color: var(--color-opposite);
 }
 
 .btn-round_white:hover {
   background-color: var(--color-opposite-hex-hover);
+}
+
+.theme-light .btn-round:not(.btnBonus) {
+  background: var(--color-brand);
+}
+
+.theme-light .btn-round:not(.btnBonus):hover {
+  background: var(--color-brand-hover);
 }
 
 .linkApp {
@@ -1460,12 +1484,20 @@ table th {
   top: 8px;
 }
 
+.searchField__close svg use {
+  fill: var(--fill-icon-primary);
+}
+
 .searchField.active .searchField__input {
   display: block;
 }
 
 .searchField.active .searchField__open {
   display: none;
+}
+
+.searchField.active svg use {
+  fill: var(--fill-icon-primary);
 }
 
 .inputText,
@@ -1545,6 +1577,10 @@ table th {
   padding-left: 8px;
 }
 
+.inputCheckbox input[type=checkbox] + label svg use {
+  fill: #626262;
+}
+
 .inputCheckbox input[type=checkbox] + label .state-2 {
   visibility: hidden;
 }
@@ -1555,6 +1591,14 @@ table th {
 
 .inputCheckbox input[type=checkbox]:checked + label .state-2 {
   visibility: visible;
+}
+
+.inputCheckbox input[type=checkbox]:checked + label svg use {
+  fill: #fff;
+}
+
+.theme-light .inputCheckbox input[type=checkbox]:checked + label svg use {
+  fill: var(--fill-icon-primary);
 }
 
 .breadcrumbs {
@@ -1577,7 +1621,7 @@ table th {
   left: 8px;
   width: 24px;
   height: 24px;
-  background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.3 8.03291C9.9 8.43291 9.9 9.03291 10.3 9.43291L13.6 12.7329L10.3 16.0329C9.9 16.4329 9.9 17.0329 10.3 17.4329C10.7 17.8329 11.3 17.8329 11.7 17.4329L15.7 13.4329C15.9 13.2329 16 13.0329 16 12.7329C16 12.4329 15.9 12.2329 15.7 12.0329L11.7 8.03291C11.3 7.63291 10.7 7.63291 10.3 8.03291Z' fill='white' fill-opacity='0.3'/%3E%3C/svg%3E%0A");
+  background-image: url("../img/css-bg-image/chevron_down_1.svg");
   background-position: 50% 50%;
 }
 
@@ -1587,6 +1631,14 @@ table th {
 
 .breadcrumbs__link:not(:last-child) {
   color: var(--color-light-seo);
+}
+
+.theme-light .breadcrumbs__link:not(:first-child):before {
+  background-image: url("../img/css-bg-image/chevron_down.svg");
+}
+
+.theme-light .breadcrumbs__link:last-child {
+  font-weight: 400;
 }
 
 .listComparison li {
@@ -1606,7 +1658,7 @@ table th {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 24px;
           flex: 0 0 24px;
-  background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 4.90625C16.415 4.90625 20 8.49125 20 12.9062C20 17.3212 16.415 20.9062 12 20.9062C7.585 20.9062 4 17.3212 4 12.9062C4 8.49125 7.585 4.90625 12 4.90625ZM8.41211 11.8562C7.85982 11.8562 7.41211 12.3039 7.41211 12.8562C7.41266 13.4081 7.86021 13.8552 8.41211 13.8552H10.9512V16.3922L10.9502 16.3932C10.9502 16.9455 11.3979 17.3932 11.9502 17.3932C12.5021 17.3926 12.9492 16.9451 12.9492 16.3932V13.8552H15.4881C16.04 13.8546 16.4871 13.4071 16.4871 12.8552C16.486 12.3037 16.0386 11.8572 15.4871 11.8572H12.9492V9.31719C12.9486 8.76529 12.5011 8.31819 11.9492 8.31819C11.3977 8.31929 10.9512 8.76668 10.9512 9.31819V11.8572H8.41311L8.41211 11.8562Z' fill='%2334C759'/%3E%3C/svg%3E");
+  background-image: url("../img/css-bg-image/plus_green.svg");
 }
 
 .listComparison li:not(:last-child) {
@@ -1614,7 +1666,7 @@ table th {
 }
 
 .listComparison_negative li:before {
-  background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M20 12.9062C20 8.49125 16.415 4.90625 12 4.90625C7.585 4.90625 4 8.49125 4 12.9062C4 17.3212 7.585 20.9062 12 20.9062C16.415 20.9062 20 17.3212 20 12.9062ZM7.41211 12.8562C7.41211 12.3039 7.85982 11.8562 8.41211 11.8562L8.41311 11.8572H15.4871C16.0386 11.8572 16.486 12.3037 16.4871 12.8552C16.4871 13.4071 16.04 13.8546 15.4881 13.8552H8.41211C7.86021 13.8552 7.41266 13.4081 7.41211 12.8562Z' fill='white' fill-opacity='0.3'/%3E%3C/svg%3E");
+  background-image: url("../img/css-bg-image/minus_gray.svg");
 }
 
 .tagsList {
@@ -1799,7 +1851,7 @@ table th {
   left: 32px;
   width: 48px;
   height: 48px;
-  background-image: url("data:image/svg+xml,%3Csvg width='48' height='49' viewBox='0 0 48 49' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M37 38.7329H11C9.344 38.7329 8 37.3889 8 35.7329C8 35.1609 8.16 34.6269 8.438 34.1729L21.804 12.0209C22.236 11.2529 23.058 10.7329 24 10.7329C25.04 10.7329 25.932 11.3649 26.316 12.2649L39.552 34.1549C39.836 34.6129 40 35.1549 40 35.7329C40 37.3889 38.656 38.7329 37 38.7329ZM26 32.7329C26 31.6289 25.104 30.7329 24 30.7329C22.896 30.7329 22 31.6289 22 32.7329C22 33.8369 22.896 34.7329 24 34.7329C25.104 34.7329 26 33.8369 26 32.7329ZM26 20.7329C26 19.6289 25.104 18.7329 24 18.7329C22.896 18.7329 22 19.6289 22 20.7329V26.7329C22 27.8369 22.896 28.7329 24 28.7329C25.104 28.7329 26 27.8369 26 26.7329V20.7329Z' fill='url(%23paint0_linear_597_3954)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_597_3954' x1='8' y1='24.7329' x2='40' y2='24.7329' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FFF173'/%3E%3Cstop offset='1' stop-color='%23FFB800'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+  background-image: url("../img/css-bg-image/attention_1.svg");
 }
 
 .quoteWarning.mod-info {
@@ -1820,7 +1872,18 @@ table th {
 .quoteWarning.mod-info:before {
   top: 16px;
   left: 16px;
-  background-image: url("data:image/svg+xml,%3Csvg width='48' height='49' viewBox='0 0 48 49' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M24 7.6767C32.83 7.6767 40 14.8467 40 23.6767C40 32.5067 32.83 39.6767 24 39.6767C15.17 39.6767 8 32.5067 8 23.6767C8 14.8467 15.17 7.6767 24 7.6767ZM26.6625 31.6767C27.7625 31.6767 28.6545 30.7847 28.6545 29.6847C28.6545 28.5847 27.7625 27.6907 26.6625 27.6907H25.9965V21.1907C25.9965 20.3047 25.5185 19.6767 24.6365 19.6767C24.6305 19.6767 21.3665 19.6767 21.3665 19.6767C20.2585 19.6767 19.3565 20.5767 19.3565 21.6867C19.3565 22.7967 20.2585 23.6967 21.3665 23.6967H21.9905V27.6907H21.3085C20.2085 27.6907 19.3145 28.5847 19.3145 29.6847C19.3145 30.7847 20.2085 31.6767 21.3085 31.6767H26.6625ZM24.0004 12.9927C25.4824 12.9927 26.6844 14.1947 26.6844 15.6767C26.6844 17.1587 25.4824 18.3607 24.0004 18.3607C22.5184 18.3607 21.3164 17.1587 21.3164 15.6767C21.3164 14.1947 22.5184 12.9927 24.0004 12.9927Z' fill='url(%23paint0_linear_1175_5255)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_1175_5255' x1='8' y1='23.6767' x2='40' y2='23.6767' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FFF173'/%3E%3Cstop offset='1' stop-color='%23FFB800'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+  background-image: url("../img/css-bg-image/info.svg");
+}
+
+.theme-light .quoteWarning {
+  background: -webkit-gradient(linear, left top, right top, from(#FFF173), to(#FFB800));
+  background: linear-gradient(90deg, #FFF173 0%, #FFB800 100%);
+}
+
+.theme-light .quoteWarning:before {
+  width: 32px;
+  height: 28px;
+  background-image: url("../img/css-bg-image/attention.svg");
 }
 
 .quote {
@@ -1834,7 +1897,7 @@ table th {
   position: absolute;
   width: 48px;
   height: 48px;
-  background-image: url("data:image/svg+xml,%3Csvg width='48' height='49' viewBox='0 0 48 49' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 0.73291L21.8 9.26624V48.7329L9 40.1996V0.73291Z' fill='white'/%3E%3Cpath d='M26.0667 0.73291L38.8667 9.26624V48.7329L26.0667 40.1996V0.73291Z' fill='white'/%3E%3C/svg%3E%0A");
+  background-image: url("../img/css-bg-image/quote_white.svg");
 }
 
 .quote:before {
@@ -1845,6 +1908,11 @@ table th {
 .quote:after {
   bottom: 0;
   right: 32px;
+}
+
+.theme-light .quote:before,
+.theme-light .quote:after {
+  background-image: url("../img/css-bg-image/quote.svg");
 }
 
 .styledContent {
@@ -2007,6 +2075,10 @@ ol.list li:before,
   gap: 16px;
 }
 
+.header__menu .btn-dropdown svg use {
+  fill: var(--fill-icon-primary);
+}
+
 .header__nav {
   padding: 8px 8px 8px 16px;
   display: -webkit-box;
@@ -2036,6 +2108,10 @@ ol.list li:before,
   top: 4px;
   -webkit-filter: blur(5px);
           filter: blur(5px);
+}
+
+.theme-light .header__nav .btn-dropdown {
+  padding: 8px;
 }
 
 .headerItem_btnDownloadAppInMore {
@@ -2477,6 +2553,7 @@ ol.list li:before,
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
+  fill: var(--fill-icon-primary);
 }
 
 .contentNav__header.isHide {
@@ -2524,6 +2601,16 @@ ol.list li:before,
   text-decoration: underline;
 }
 
+.theme-light .contentNav {
+  background-color: #fff;
+  -webkit-box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
+}
+
+.theme-light .contentNav__list li::before {
+  font-weight: 700;
+}
+
 .dropdown__item {
   position: relative;
   background-color: var(--color-light);
@@ -2531,9 +2618,9 @@ ol.list li:before,
 }
 
 .dropdown__item.active .dropdown__btn {
-  -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
   -webkit-transition: all 0.15s ease 0s;
   transition: all 0.15s ease 0s;
 }
@@ -2561,9 +2648,9 @@ ol.list li:before,
 .dropdown__btn {
   -webkit-transition: all 0.15s ease 0s;
   transition: all 0.15s ease 0s;
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
   background-color: transparent;
   width: 24px;
   height: 24px;
@@ -2571,7 +2658,17 @@ ol.list li:before,
       -ms-flex: 0 0 24px;
           flex: 0 0 24px;
   display: inline-block;
-  background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.3 14.4329C7.7 14.8329 8.3 14.8329 8.7 14.4329L12 11.1329L15.3 14.4329C15.7 14.8329 16.3 14.8329 16.7 14.4329C17.1 14.0329 17.1 13.4329 16.7 13.0329L12.7 9.03291C12.5 8.83291 12.3 8.73291 12 8.73291C11.7 8.73291 11.5 8.83291 11.3 9.03291L7.3 13.0329C6.9 13.4329 6.9 14.0329 7.3 14.4329Z' fill='white' fill-opacity='0.3'/%3E%3C/svg%3E");
+  background-image: url("../img/css-bg-image/chevron_down_1.svg");
+}
+
+.theme-light .dropdown__item {
+  background-color: #fff;
+  -webkit-box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
+}
+
+.theme-light .dropdown__btn {
+  background-image: url("../img/css-bg-image/chevron_down.svg");
 }
 
 .comment {
@@ -2601,6 +2698,10 @@ ol.list li:before,
 
 .comment_reply {
   margin: 16px 0 0 56px;
+}
+
+.theme-light .comment__image {
+  background-color: #E9E9E9;
 }
 
 .bookmaker {
@@ -2663,6 +2764,25 @@ ol.list li:before,
 
 .bookmaker__footer {
   padding: 16px 32px 32px 32px;
+}
+
+.theme-light .bookmaker__body {
+  background-color: rgb(35, 35, 37);
+  color: #fff;
+}
+
+.theme-light .bookmaker .promocode {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.theme-light .bookmaker .promocode:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-light .bookmaker .label {
+  background-color: var(--color-opposite);
+  color: var(--color-bg);
+  border-color: #fff;
 }
 
 .reviews__body {
@@ -2807,6 +2927,15 @@ ol.list li:before,
   color: var(--color-opposite-hover);
 }
 
+.theme-light .reviews__body {
+  margin-bottom: 40px;
+  grid-template-columns: 1fr;
+}
+
+.theme-light .reviews__card {
+  background-color: #fff;
+}
+
 .authorCard__body {
   padding: 32px;
   border-radius: 16px;
@@ -2881,6 +3010,14 @@ ol.list li:before,
 
 .btnScrollToTop.hasBoxWelcomeBonus {
   bottom: 146px;
+}
+
+.btnScrollToTop svg use {
+  fill: #232325;
+}
+
+.theme-light .btnScrollToTop svg use {
+  fill: white;
 }
 
 .fixedBottomBox {
@@ -3043,6 +3180,10 @@ ol.list li:before,
   -webkit-box-flex: 0;
       -ms-flex: 0 1 280px;
           flex: 0 1 280px;
+}
+
+.boxLinksApp .linkApp > svg use {
+  fill: var(--fill-icon-primary);
 }
 
 .subscribe {
@@ -4119,7 +4260,7 @@ position sticky у блока .stickyBlock */
 
   .quote:before,
   .quote:after {
-    background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 0.750977L10.9 5.01764V24.751L4.5 20.4843V0.750977Z' fill='white'/%3E%3Cpath d='M13.0333 0.750977L19.4333 5.01764V24.751L13.0333 20.4843V0.750977Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-image: url("../img/css-bg-image/quote_white_min.svg");
     width: 24px;
     height: 24px;
   }
@@ -4130,6 +4271,11 @@ position sticky у блока .stickyBlock */
 
   .quote:after {
     right: 16px;
+  }
+
+  .theme-light .quote:before,
+  .theme-light .quote:after {
+    background-image: url("../img/css-bg-image/quote_min.svg");
   }
 
   ul.list li,

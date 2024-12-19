@@ -9,3 +9,5 @@
 <img src="img/icon-16/cup.svg" width="16" height="16" loading="lazy" alt="">
 на такой
 <svg class="w-16 fill-brand"><use xlink:href="img/sprite/icons-sprite.svg#cup"/></svg>
+
+в body добавлять класс theme-название темы

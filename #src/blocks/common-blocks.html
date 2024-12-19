@@ -12,6 +12,7 @@
     </button>
 </aside>
 
+@@if(theme === "default" || theme === "pin-up"){
 <!-- Welcome bonus -->
 <aside class="welcomeBonus fixedBottomBox js-welcomeBonus">
     <div class="container f-jcsb-aic welcomeBonus__boby">
@@ -28,7 +29,7 @@
         <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close"/></svg>
     </button>
 </aside>
-
+}
 <!-- В этот блок подгружается AJAX-сонтент, а именно банера -->
 <aside id="ajax-content" class="dn"></aside>
 

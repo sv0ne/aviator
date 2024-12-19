@@ -51,6 +51,10 @@
 			if (isGithub){
 				$('.header__logo').attr('href', 'https://sv0ne.github.io/aviator/');
 			}
+
+			// Добавляем в body класс с названием темы
+			let theme = localStorage.getItem('aviator-theme');
+			document.body.classList.add('theme-'+theme);
 		});
 	</script>
 	<script src="js/script.js"></script>

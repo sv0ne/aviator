@@ -923,7 +923,9 @@
 	</main>
 	
 	<!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
-	@@include('blocks/common-blocks.html')
+	@@include('blocks/common-blocks.html', {
+		"theme": "default"
+	})
 	@@include('blocks/footer_v2.html')
 	@@include('blocks/common-scripts.html')
 </body>
