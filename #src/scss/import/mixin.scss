@@ -20,3 +20,11 @@
 	$maxWidth: $maxWidth - 320;
 	line-height: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
 }
+
+@function if($condition, $if-value, $else-value) {
+    @if ($condition == true) {
+        @return $if-value;
+    } @else {
+        @return $else-value;
+    }
+}

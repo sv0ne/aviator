@@ -1,30 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-@@include('blocks/head.html')
-<!-- role="dialog" -->
-<body> 
-	@@include('blocks/header.html')
+<!-- breadcrumbs -->
+<nav class="breadcrumbs container p-16">
+    <ul class="d-flex fww" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li class="breadcrumbs__link" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/" itemprop="item">
+                <span itemprop="name">Online Casino South Africa</span>
+                <meta itemprop="position" content="0">
+            </a>
+        </li>
+        <li class="breadcrumbs__link" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/razdel/" itemprop="item">
+                <span itemprop="name">Leah Shepherd</span>
+                <meta itemprop="position" content="1">
+            </a>
+        </li>
+    </ul>
+</nav>
 
-    <!-- breadcrumbs -->
-    <nav class="breadcrumbs container p-16">
-        <ul class="d-flex fww" itemscope itemtype="https://schema.org/BreadcrumbList">
-            <li class="breadcrumbs__link" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <a href="/" itemprop="item">
-                    <span itemprop="name">Online Casino South Africa</span>
-                    <meta itemprop="position" content="0">
+<!-- Карточка автора -->
+<section class="authorCard container p-16">
+    <div class="authorCard__body">
+        <div class="f-aic fww gap-16">
+            <div class="authorCard__image">
+                <img class="wh-100" src="img/placeholder/jolie.jpg" alt="">
+            </div>
+            <div class="nlc-mb-8">
+                <div class="d-flex aifs">
+                    <p class="text-big">Leah Shepherd</p>
+                    <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#verified" fill="white"/></svg>
+                </div>
+                <p>Author at in-aviator-game.in</p>
+                <p>Experience: <span class="bold">7 years</span></p>
+            </div>
+        </div>
+        <div class="d-flex fdc jcsb aife gap-16 md3-aifs">
+            <div class="label label_pos-static">Author</div>
+            <div class="f-aic gap-16 fww">
+                <a href="" class="linkSocial" aria-label="murkrack">
+                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#murkrack"/></svg>
                 </a>
-            </li>
-            <li class="breadcrumbs__link" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <a href="/razdel/" itemprop="item">
-                    <span itemprop="name">Leah Shepherd</span>
-                    <meta itemprop="position" content="1">
+                <a href="" class="linkSocial" aria-label="wiki">
+                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#wiki"/></svg>
                 </a>
-            </li>
-        </ul>
-    </nav>
+                <a href="" class="linkSocial" aria-label="email">
+                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#email"/></svg>
+                </a>
+                <a href="" class="linkSocial" aria-label="blog">
+                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#blog"/></svg>
+                </a>
+                <a href="" class="linkSocial linkSocial_instagram" aria-label="instagram">
+                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#instagram"/></svg>
+                </a>
+                <a href="" class="linkSocial linkSocial_facebook" aria-label="facebook">
+                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#facebook"/></svg>
+                </a>
+                <a href="" class="linkSocial linkSocial_linkedin" aria-label="linkedin">
+                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#linkedin"/></svg>
+                </a>
+                <a href="" class="linkSocial" aria-label="twitter">
+                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#x"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- Cтатичная страница -->
-    <section class="styledContent nlc-mb-32 container p-16 mb-24">
+<!-- Сео-текст -->
+<section class="blogContent container p-16">
+    <div class="styledContent nlc-mb-32 min-w-0">
         <div>
             <p class="text-big">Стилі для базових елементів</p>
             <p>Елементи мають бути обернуті в загальний блок з класом `styledContent`.</p>
@@ -92,13 +134,27 @@
                 </tr>
             </table>
         </div>
-    </section>
+    </div>
+    <div class="card-2">
+        <div class="text-big mb-16">Last posts by Leah Shepherd</div>
+        <nav class="d-flex fdc gap-16 child-link-default">
+            <a href="">500% Welcome Bonus for New Players: Get 685,000 NGN</a>
+            <a href="">SABDC – The South African Book Development Council</a>
+            <a href="">Complete South African Online Casinos List in 2024</a>
+            <a href="">Punt Casino Login & Sign-Up Guide in 2024</a>
+        </nav>
+    </div>
+</section>
 
-	<!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
-	@@include('blocks/common-blocks.html', {
-		"theme": "default"
-	})
-	@@include('blocks/footer.html')
-	@@include('blocks/common-scripts.html')
-</body>
-</html>
+<!-- Ссылки -->
+<section class="container p-16 mb-24">
+    <div class="card-2">
+        <div class="text-big mb-16">Publications of the author on other sites</div>
+        <nav class="d-flex fdc gap-16 child-link-default">
+            <a href="">500% Welcome Bonus for New Players: Get 685,000 NGN</a>
+            <a href="">SABDC – The South African Book Development Council</a>
+            <a href="">Complete South African Online Casinos List in 2024</a>
+            <a href="">Punt Casino Login & Sign-Up Guide in 2024</a>
+        </nav>
+    </div>
+</section>

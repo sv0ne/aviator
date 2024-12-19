@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-@@include('blocks/head.html')
+@@include('blocks/head.html', {
+	"theme": "pin-up"
+})
 <!-- role="dialog" -->
 <body> 
-	@@include('blocks/header_v2.html')
+	@@include('blocks/headers/header_pin-up.html')
 	<main class="styledContent container">
 		<!-- firstScreen -->
 		<div class="casinoInfo casinoInfo_firstscreen">
@@ -926,7 +928,7 @@
 	@@include('blocks/common-blocks.html', {
 		"theme": "default"
 	})
-	@@include('blocks/footer_v2.html')
+	@@include('blocks/footers/footer_pin-up.html')
 	@@include('blocks/common-scripts.html')
 </body>
 </html>

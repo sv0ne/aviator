@@ -15,48 +15,8 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
 	<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-	<script defer>
-		/** ВНИМАНИЕ!!! Этого скрипта не должно быть на проде. Вместо него должен 
-		 * сразу подключаться нужный css файл темы, вот так например:
-		 * <link rel="stylesheet" href="css/theme-default.css">
-		 * */
-
-		let theme = localStorage.getItem('aviator-theme');
-		const link = document.createElement('link');
-		link.rel = 'stylesheet';
-		link.href = `css/theme-${theme === "local" || theme === null ? "default" : theme}.css`;
-		document.head.appendChild(link);
-		
-		if(theme === "local"){
-			let themeLocal = localStorage.getItem('aviator-theme-local');
-			if(!themeLocal){
-				alert("Сначала сохраните тему на странице COMPONENTS");
-			}else{
-				let cssVariables = JSON.parse(themeLocal);
-				for (const variable in cssVariables) {
-					const value = cssVariables[variable];
-					document.documentElement.style.setProperty(variable, value);
-				}
-			}
-		}
-	</script>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style_@@theme.css">
 	<script src="js/jquery-3.5.1.min.js"></script>
-	<script>
-		/** ВНИМАНИЕ!!! Этого скрипта не должно быть на проде. Он для удобства 
-		 * навигации на github-pages. */ 
-		$(document).ready(function () {
-			let href = window.location.href;
-			let isGithub = href.includes("sv0ne.github.io/aviator");
-			if (isGithub){
-				$('.header__logo').attr('href', 'https://sv0ne.github.io/aviator/');
-			}
-
-			// Добавляем в body класс с названием темы
-			let theme = localStorage.getItem('aviator-theme');
-			document.body.classList.add('theme-'+theme);
-		});
-	</script>
 	<script src="js/script.js"></script>
 	<title>Online Casino Aviator in South Africa [2024] - CasinoHEX</title>
 </head>

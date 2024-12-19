@@ -34,6 +34,13 @@
         display: flex;
         align-items: center;
         gap: 16px;
+
+        @if($theme == 'light'){
+            .btn-dropdown{
+                padding: 8px;
+            }
+        }
+
         @media (max-width:#{$md3}px) {
             flex: 1;
             padding: 8px;
@@ -108,10 +115,6 @@
             filter: blur(5px);
         }
     }
-}
-
-.theme-light .header__nav .btn-dropdown{
-    padding: 8px;
 }
 
 ////////// Попапы в header-е
@@ -246,65 +249,67 @@
 
 ///////////////////////////////////////////////////////////
 
-.firstScreen{
-    @media (min-width:#{$md3}px) {
-        padding-bottom: 40px;
-    }
-    &__boby{
-        overflow: hidden;
-        border-radius: 16px;
-        background: linear-gradient(132.87deg, #008E4A 0%, #A5EF5B 100%);
-        display: flex;
-    }
-    &__text{
-        flex: 0 0 66.5%;
-        padding: 64px 0 64px 64px;
-        @media (max-width:1030px) {
-            flex: 0 0 70%;
+@if $theme == "default" {
+    .firstScreen{
+        @media (min-width:#{$md3}px) {
+            padding-bottom: 40px;
         }
-        @media (max-width:#{$md2}px) {
-            padding: 32px 0 32px 32px;
+        &__boby{
+            overflow: hidden;
+            border-radius: 16px;
+            background: linear-gradient(132.87deg, #008E4A 0%, #A5EF5B 100%);
+            display: flex;
         }
-        @media (max-width:#{$md3}px) {
-            padding: 32px;
-            flex: 1;
-        }
-    }
-    &__image{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: flex-end;
-        @media (max-width:#{$md2}px) {
-            img{
-                height: auto;
-                width: 300px;
+        &__text{
+            flex: 0 0 66.5%;
+            padding: 64px 0 64px 64px;
+            @media (max-width:1030px) {
+                flex: 0 0 70%;
             }
-        }
-        @media (max-width:#{$md3}px) {
-            display: none;
-        }
-    }
-    &__title{
-        @media (max-width:#{$md3}px) {
-            font-size: 32px;
-            line-height: 36px;
-        }
-        @media (max-width:600px) {
-            font-size: var(--fz-text-default);
-	        line-height: var(--lh-text-default);
-        }
-    }
-    &__buttons{
-        @media (max-width:#{$md3}px) {
-            > * {
+            @media (max-width:#{$md2}px) {
+                padding: 32px 0 32px 32px;
+            }
+            @media (max-width:#{$md3}px) {
+                padding: 32px;
                 flex: 1;
             }
         }
-        @media (max-width:600px) {
+        &__image{
+            display: flex;
             flex-direction: column;
-            > * {
-                width: 100%;
+            align-items: flex-end;
+            justify-content: flex-end;
+            @media (max-width:#{$md2}px) {
+                img{
+                    height: auto;
+                    width: 300px;
+                }
+            }
+            @media (max-width:#{$md3}px) {
+                display: none;
+            }
+        }
+        &__title{
+            @media (max-width:#{$md3}px) {
+                font-size: 32px;
+                line-height: 36px;
+            }
+            @media (max-width:600px) {
+                font-size: var(--fz-text-default);
+                line-height: var(--lh-text-default);
+            }
+        }
+        &__buttons{
+            @media (max-width:#{$md3}px) {
+                > * {
+                    flex: 1;
+                }
+            }
+            @media (max-width:600px) {
+                flex-direction: column;
+                > * {
+                    width: 100%;
+                }
             }
         }
     }
@@ -690,7 +695,10 @@
 ///////////////////////////////////////////////////////////
 
 .contentNav{
-    background-color: var(--color-light);
+    background-color: if($theme == "light", #fff, var(--color-light));
+    @if $theme == 'light' {
+        box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
+    }
     border-radius: var(--br-large);
     overflow: hidden;
     &__header{
@@ -733,20 +741,13 @@
                 text-align: center;
                 background: var(--color-light);
                 content: counter(myCounter);
+                @if $theme == 'light' {
+                    font-weight: 700;
+                }
             }
             a:hover{
                 text-decoration: underline;
             }
-        }
-    }
-}
-
-.theme-light .contentNav{
-    background-color: #fff;
-    box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
-    &__list{
-        li::before{
-            font-weight: 700;
         }
     }
 }
@@ -756,7 +757,10 @@
 .dropdown{
 	&__item{
 		position: relative;
-        background-color: var(--color-light);
+        background-color: if($theme == "light", #fff, var(--color-light));
+        @if $theme == "light" {
+            box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
+        }
         border-radius: var(--br-large);
 		&.active{
 			.dropdown__btn{
@@ -787,17 +791,7 @@
         height: 24px;
         flex: 0 0 24px;
         display: inline-block;
-        background-image: url("../img/css-bg-image/chevron_down_1.svg");  
-    }
-}
-
-.theme-light .dropdown{
-    &__item{
-        background-color: #fff;
-        box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
-    }
-    &__btn{
-        background-image: url("../img/css-bg-image/chevron_down.svg");
+        background-image: url(if($theme == "light", "../img/css-bg-image/chevron_down.svg", "../img/css-bg-image/chevron_down_1.svg"));  
     }
 }
 
@@ -815,7 +809,7 @@
         height: 40px;
         border-radius: 99px;
         overflow: hidden;
-        background-color: var(--color-light-hex);
+        background-color: if($theme == "light", #E9E9E9, var(--color-light-hex));
         text-transform: uppercase;
         text-align: center;
         font-size: 26px;
@@ -842,17 +836,29 @@
     }
 }
 
-.theme-light .comment__image{
-    background-color: #E9E9E9;
-}
-
 ///////////////////////////////////////////////////////////
 
 .bookmaker{
     overflow: hidden;
     &__body{
         position: relative;
-        background-color: var(--color-light);
+        @if $theme == "light" {
+            background-color: rgba(35, 35, 37, 1);
+            color: #fff;
+            .promocode{
+                background-color: rgba(255, 255, 255, 0.05);
+                &:hover{
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+            }
+            .label{
+                background-color: var(--color-opposite);
+                color: var(--color-bg);
+                border-color: #fff;
+            }
+        } @else {
+            background-color: var(--color-light);
+        }
         border-radius: var(--br-large);
         @media (max-width:550px) {
             padding: 32px 16px;
@@ -927,30 +933,17 @@
     }
 }
 
-.theme-light .bookmaker{
-    &__body{
-        background-color: rgba(35, 35, 37, 1);
-        color: #fff;
-    }
-    .promocode{
-        background-color: rgba(255, 255, 255, 0.05);
-        &:hover{
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-    }
-    .label{
-        background-color: var(--color-opposite);
-        color: var(--color-bg);
-        border-color: #fff;
-    }
-}
-
 ///////////////////////////////////////////////////////////
 
 .reviews {
     &__body {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        @if $theme == "light" {
+            grid-template-columns: 1fr;
+            margin-bottom: 40px;
+        } @else {
+            grid-template-columns: 1fr 1fr;
+        }
         align-items: start;
         gap: 32px;
         @media (max-width:#{$md3}px) {
@@ -969,7 +962,7 @@
         }
     }
     &__card {
-        background-color: var(--color-light);
+        background-color: if($theme == "light", #fff, var(--color-light));
         border: 1px solid var(--color-light);
         position: relative;
         padding: 32px;
@@ -1050,19 +1043,12 @@
         .state-less{
             display: none;
         }
+        svg use{
+            fill: var(--fill-icon-primary);
+        }
         &:hover{
             color: var(--color-opposite-hover);
         }
-    }
-}
-
-.theme-light .reviews{
-    &__body{
-        margin-bottom: 40px;
-        grid-template-columns: 1fr;
-    }
-    &__card{
-        background-color: #fff;
     }
 }
 
@@ -1166,12 +1152,8 @@
         }
     }
     svg use{
-        fill: #232325;
+        fill: if($theme == "light", white, #232325);
     }
-}
-
-.theme-light .btnScrollToTop svg use{
-    fill: white;
 }
 
 ///////////////////////////////////////////////////////////
@@ -1314,87 +1296,89 @@
     }
 }
 
-.casinoInfo{
-    background: var(--border-casino-info);
-    padding: 1px;
-    border-radius: var(--br-large);
-    &__body{
+@if $theme == "pin-up" {
+    .casinoInfo{
+        background: var(--border-casino-info);
+        padding: 1px;
         border-radius: var(--br-large);
-        padding: 32px;
-        background: var(--bg-casino-info);
-        @media (max-width:#{$md3}px) {
-            padding: 16px;
-        }
-        @media (max-width:615px) {
-            .link-3{
-                flex: 0 0 100%;
-                justify-content: center;
+        &__body{
+            border-radius: var(--br-large);
+            padding: 32px;
+            background: var(--bg-casino-info);
+            @media (max-width:#{$md3}px) {
+                padding: 16px;
+            }
+            @media (max-width:615px) {
+                .link-3{
+                    flex: 0 0 100%;
+                    justify-content: center;
+                }
             }
         }
-    }
-    &__links{
-        @media (max-width:615px) {
-            flex-direction: column; 
+        &__links{
+            @media (max-width:615px) {
+                flex-direction: column; 
+            }
         }
-    }
-    &__row{
-        display: grid;
-        grid-template-columns: 53% 1fr;
-        gap: 32px;
-        @media (max-width:#{$md2}px) {
-            display: flex;
-            flex-direction: column-reverse;
+        &__row{
+            display: grid;
+            grid-template-columns: 53% 1fr;
+            gap: 32px;
+            @media (max-width:#{$md2}px) {
+                display: flex;
+                flex-direction: column-reverse;
+            }
         }
-    }
-    &__text{
-        position: relative;
-        z-index: 5;
-    }
-    &__image{
-        position: relative;
-    }
-    &__imageWrap{
-        @media (max-width:#{$md3}px) {
-            width: 100%;
-            padding-top: 100%;
-            top: 0;
-            transform: none;
+        &__text{
+            position: relative;
+            z-index: 5;
         }
-        @media (min-width:#{$md2}px) {
-            position: absolute;
-            width: 584px;
-            height: 584px;
-            top: 50%;
-            transform: translate(0px, -50%);
-            left: 0;
-            z-index: 3;
+        &__image{
+            position: relative;
         }
-        @media (min-width:#{$md2}px) and (max-width:#{$mw}px) {
-            transform: translate(-100px, -50%);
-        }
-        img{
-            @media (min-width:#{$md3}px) and (max-width:#{$md2}px) {
-                position: static;
+        &__imageWrap{
+            @media (max-width:#{$md3}px) {
                 width: 100%;
+                padding-top: 100%;
+                top: 0;
+                transform: none;
+            }
+            @media (min-width:#{$md2}px) {
+                position: absolute;
+                width: 584px;
+                height: 584px;
+                top: 50%;
+                transform: translate(0px, -50%);
+                left: 0;
+                z-index: 3;
+            }
+            @media (min-width:#{$md2}px) and (max-width:#{$mw}px) {
+                transform: translate(-100px, -50%);
+            }
+            img{
+                @media (min-width:#{$md3}px) and (max-width:#{$md2}px) {
+                    position: static;
+                    width: 100%;
+                }
             }
         }
-    }
-    &__buttons{
-        @media (max-width:#{$md3}px) {
-            display: flex;
-            flex-direction: column;
+        &__buttons{
+            @media (max-width:#{$md3}px) {
+                display: flex;
+                flex-direction: column;
+            }
         }
-    }
-    &_firstscreen{
-        margin: 16px 0 40px 0;
-        @media (max-width:#{$md3}px) {
-            margin-bottom: 16px;
-        }
-        @media (max-width:#{$md3}px) {
-            background: transparent;
-            .casinoInfo__body{
+        &_firstscreen{
+            margin: 16px 0 40px 0;
+            @media (max-width:#{$md3}px) {
+                margin-bottom: 16px;
+            }
+            @media (max-width:#{$md3}px) {
                 background: transparent;
-                padding: 0;
+                .casinoInfo__body{
+                    background: transparent;
+                    padding: 0;
+                }
             }
         }
     }

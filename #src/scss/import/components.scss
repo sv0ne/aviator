@@ -73,11 +73,8 @@
         background-color: var(--color-light-hover);
     }
     svg use{
-        fill: white;
+        fill: if($theme == 'light', #232325, white);
     }
-}
-.theme-light .btn-2 svg use{
-    fill: #232325;
 }
 
 .btn-4{
@@ -177,18 +174,17 @@
     svg use{
         fill: var(--fill-icon-secondary);
     }
+    @if($theme == 'light'){
+        background: var(--color-brand);
+        &:hover{
+            background: var(--color-brand-hover);
+        }
+    }
     &_white{
         background-color: var(--color-opposite);
         &:hover{
             background-color: var(--color-opposite-hex-hover);
         }
-    }
-}
-
-.theme-light .btn-round:not(.btnBonus){
-    background: var(--color-brand);
-    &:hover{
-        background: var(--color-brand-hover);
     }
 }
 
@@ -721,13 +717,9 @@
 		.state-1{visibility: hidden;}
 		.state-2{visibility: visible;}
         svg use{
-            fill: #fff;
+            fill: if($theme == "light", var(--fill-icon-primary), #fff);
         }
 	}
-}
-
-.theme-light .inputCheckbox input[type="checkbox"]:checked + label svg use{
-    fill: var(--fill-icon-primary);
 }
 
 ///////////////////// breadcrumbs //////////////////////////
@@ -746,30 +738,17 @@
 				left: 8px;
 				width: 24px;
 				height: 24px;
-				background-image: url("../img/css-bg-image/chevron_down_1.svg");
+				background-image:  url(if($theme == "light", "../img/css-bg-image/chevron_down.svg", "../img/css-bg-image/chevron_down_1.svg"));
                 background-position: 50% 50%;
 			}
 		}
         &:last-child{
-            font-weight: 700;
+            font-weight: if($theme == "light", 400, 700);
         }
         &:not(:last-child){
             color: var(--color-light-seo);
         }
 	}
-}
-
-.theme-light .breadcrumbs{
-    &__link {
-        &:not(:first-child){
-            &:before{
-                background-image: url("../img/css-bg-image/chevron_down.svg");
-            }
-        }
-        &:last-child{
-            font-weight: 400;
-        }
-    }
 }
 
 /////////////////////////// Списки ///////////////////////////////
@@ -921,16 +900,21 @@
     @extend .nlc-mb-16;
     padding: 32px 32px 32px 112px;
     border-radius: 16px;
-    background: linear-gradient(90deg, rgba(255, 241, 115, 0.05) 0%, rgba(255, 184, 0, 0.05) 100%);
+    background: if($theme == "light", linear-gradient(90deg, #FFF173 0%, #FFB800 100%), linear-gradient(90deg, rgba(255, 241, 115, 0.05) 0%, rgba(255, 184, 0, 0.05) 100%));
     position: relative;
     &:before{
         content: "";
         position: absolute;
         top: 32px;
         left: 32px;
-        width: 48px;
-        height: 48px;
-        background-image: url("../img/css-bg-image/attention_1.svg");
+        @if($theme == 'light'){
+            width: 32px;
+            height: 28px;
+        } @else {
+            width: 48px;
+            height: 48px;
+        }
+        background-image: url(if($theme == "light", "../img/css-bg-image/attention.svg", "../img/css-bg-image/attention_1.svg"));
     }
     @media (max-width:#{$md3}px) {
         padding: 80px 16px 16px 16px;
@@ -953,15 +937,6 @@
     }
 }
 
-.theme-light .quoteWarning{
-    background: linear-gradient(90deg, #FFF173 0%, #FFB800 100%);
-    &:before{
-        width: 32px;
-        height: 28px;
-        background-image: url("../img/css-bg-image/attention.svg");
-    }
-}
-
 .quote{
     @extend .nlc-mb-32;
     padding: 32px 112px;
@@ -971,7 +946,7 @@
         position: absolute;
         width: 48px;
         height: 48px;
-        background-image: url("../img/css-bg-image/quote_white.svg");
+        background-image: url(if($theme == "light", "../img/css-bg-image/quote.svg", "../img/css-bg-image/quote_white.svg"));
     }
     &:before{
         top: 0;
@@ -987,7 +962,7 @@
             margin-bottom: 16px;
         }
         &:before, &:after{
-            background-image: url("../img/css-bg-image/quote_white_min.svg");
+            background-image: url(if($theme == "light", "../img/css-bg-image/quote_min.svg", "../img/css-bg-image/quote_white_min.svg"));
             width: 24px;
             height: 24px;
         }
@@ -996,17 +971,6 @@
         }
         &:after{
             right: 16px;
-        }
-    }
-}
-
-.theme-light .quote{
-    &:before, &:after{
-        background-image: url("../img/css-bg-image/quote.svg");
-    }
-    @media (max-width:#{$md3}px) {
-        &:before, &:after{
-            background-image: url("../img/css-bg-image/quote_min.svg");
         }
     }
 }

@@ -67,14 +67,8 @@ table{
 		}
 	}
 	th{
-		background-color: var(--color-light-hex);
+		background-color: if($theme == "light", #E9E9EA, var(--color-light-hex));
 		text-align: left;
-	}
-}
-
-.theme-light{
-	table th{
-		background-color: #E9E9EA;
 	}
 }
 

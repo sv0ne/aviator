@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-@@include('blocks/head.html')
+@@include('blocks/head.html', {
+	"theme": "default"
+})
 <!-- role="dialog" -->
 <body> 
-	@@include('blocks/header.html')
+	@@include('blocks/headers/header_default.html')
 	
 	<main class="styledContent container">
 	<!-- firstScreen -->
@@ -750,7 +752,7 @@
 	@@include('blocks/common-blocks.html', {
 		"theme": "pin-up"
 	})
-	@@include('blocks/footer.html')
+	@@include('blocks/footers/footer_default.html')
 	@@include('blocks/common-scripts.html')
 </body>
 </html>

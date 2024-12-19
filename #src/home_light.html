@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-@@include('blocks/head.html')
+@@include('blocks/head.html', {
+	"theme": "light"
+})
 <!-- role="dialog" -->
 <body> 
-	@@include('blocks/header_light.html')
+	@@include('blocks/headers/header_light.html')
 	
 	<main class="styledContent container">
 		<!-- Content navigation -->
@@ -383,7 +385,7 @@
 	@@include('blocks/common-blocks.html', {
 		"theme": "light"
 	})
-	@@include('blocks/footer_light.html')
+	@@include('blocks/footers/footer_light.html')
 	@@include('blocks/common-scripts.html')
 </body>
 </html>

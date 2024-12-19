@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('blocks/head.html', {
+    "theme": "light"
+})
+<!-- role="dialog" -->
+<body> 
+	@@include('blocks/headers/header_light.html')
+    
+    @@include('blocks/author.html')
+
+    <!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
+	@@include('blocks/common-blocks.html', {
+		"theme": "light"
+	})
+	@@include('blocks/footers/footer_light.html')
+	@@include('blocks/common-scripts.html')
+</body>
+</html>

@@ -15,48 +15,8 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
 	<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-	<script defer>
-		/** ВНИМАНИЕ!!! Этого скрипта не должно быть на проде. Вместо него должен 
-		 * сразу подключаться нужный css файл темы, вот так например:
-		 * <link rel="stylesheet" href="css/theme-default.css">
-		 * */
-
-		let theme = localStorage.getItem('aviator-theme');
-		const link = document.createElement('link');
-		link.rel = 'stylesheet';
-		link.href = `css/theme-${theme === "local" || theme === null ? "default" : theme}.css`;
-		document.head.appendChild(link);
-		
-		if(theme === "local"){
-			let themeLocal = localStorage.getItem('aviator-theme-local');
-			if(!themeLocal){
-				alert("Сначала сохраните тему на странице COMPONENTS");
-			}else{
-				let cssVariables = JSON.parse(themeLocal);
-				for (const variable in cssVariables) {
-					const value = cssVariables[variable];
-					document.documentElement.style.setProperty(variable, value);
-				}
-			}
-		}
-	</script>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style_light.css">
 	<script src="js/jquery-3.5.1.min.js"></script>
-	<script>
-		/** ВНИМАНИЕ!!! Этого скрипта не должно быть на проде. Он для удобства 
-		 * навигации на github-pages. */ 
-		$(document).ready(function () {
-			let href = window.location.href;
-			let isGithub = href.includes("sv0ne.github.io/aviator");
-			if (isGithub){
-				$('.header__logo').attr('href', 'https://sv0ne.github.io/aviator/');
-			}
-
-			// Добавляем в body класс с названием темы
-			let theme = localStorage.getItem('aviator-theme');
-			document.body.classList.add('theme-'+theme);
-		});
-	</script>
 	<script src="js/script.js"></script>
 	<title>Online Casino Aviator in South Africa [2024] - CasinoHEX</title>
 </head>
@@ -213,180 +173,179 @@
             <button class="btn-round header__menuBtn js-modalOpener" aria-label="menu">
                 <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#menu"/></svg>
             </button>
-            <button class="btn-dropdown btn-dropdown_filled js-popup-opener" data-popup-id="language">
-                <span>EN</span>
-                <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#arrow"/></svg>
-                <img class="w-24" src="img/countries-flags/united-kingdom.svg" alt="">
+            <button class="btn-dropdown js-popup-opener" data-popup-id="language">
+                <span>En</span>
+                <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
             </button>
             <!-- Если у кнопки js-btnDemo пустой href, она делает прокрут до блока js-playFree-container в противном случае переходит по ссылке -->
             <a href="" target="_blank" class="btnDemo js-btnDemo">Demo</a>
         </div>
     </div>
     <div class="header__buttons">
-        <a href="" class="btn btn_secondary">Download App</a>
         <a href="" class="btn btn_primary btn_animated">Play Aviator</a>
     </div>
 </header>
-    <!-- breadcrumbs -->
-    <nav class="breadcrumbs container p-16">
-        <ul class="d-flex fww" itemscope itemtype="https://schema.org/BreadcrumbList">
-            <li class="breadcrumbs__link" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <a href="/" itemprop="item">
-                    <span itemprop="name">Online Casino South Africa</span>
-                    <meta itemprop="position" content="0">
-                </a>
-            </li>
-            <li class="breadcrumbs__link" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <a href="/razdel/" itemprop="item">
-                    <span itemprop="name">Leah Shepherd</span>
-                    <meta itemprop="position" content="1">
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Карточка автора -->
-    <section class="authorCard container p-16">
-        <div class="authorCard__body">
-            <div class="f-aic fww gap-16">
-                <div class="authorCard__image">
-                    <img class="wh-100" src="img/placeholder/jolie.jpg" alt="">
-                </div>
-                <div class="nlc-mb-8">
-                    <div class="d-flex aifs">
-                        <p class="text-big">Leah Shepherd</p>
-                        <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#verified" fill="white"/></svg>
-                    </div>
-                    <p>Author at in-aviator-game.in</p>
-					<p>Experience: <span class="bold">7 years</span></p>
-                </div>
-            </div>
-            <div class="d-flex fdc jcsb aife gap-16 md3-aifs">
-                <div class="label label_pos-static">Author</div>
-                <div class="f-aic gap-16 fww">
-                    <a href="" class="linkSocial" aria-label="murkrack">
-                        <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#murkrack"/></svg>
-                    </a>
-                    <a href="" class="linkSocial" aria-label="wiki">
-                        <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#wiki"/></svg>
-                    </a>
-                    <a href="" class="linkSocial" aria-label="email">
-                        <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#email"/></svg>
-                    </a>
-                    <a href="" class="linkSocial" aria-label="blog">
-                        <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#blog"/></svg>
-                    </a>
-                    <a href="" class="linkSocial linkSocial_instagram" aria-label="instagram">
-                        <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#instagram"/></svg>
-                    </a>
-                    <a href="" class="linkSocial linkSocial_facebook" aria-label="facebook">
-                        <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#facebook"/></svg>
-                    </a>
-                    <a href="" class="linkSocial linkSocial_linkedin" aria-label="linkedin">
-                        <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#linkedin"/></svg>
-                    </a>
-                    <a href="" class="linkSocial" aria-label="twitter">
-                        <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#x"/></svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Сео-текст -->
-    <section class="blogContent container p-16">
-        <div class="styledContent nlc-mb-32 min-w-0">
-            <div>
-                <p class="text-big">Стилі для базових елементів</p>
-                <p>Елементи мають бути обернуті в загальний блок з класом `styledContent`.</p>
-            </div>
-            
-            <p class="text-medium">Список ol</p>
-            <ol>
-                <li>New games</li>
-                <li>About 1win Betting Company: Main Details and Features</li>
-                <li>500% Welcome Bonus for New Players: Get 685,000 NGN</li>
-            </ol>
-            <p class="text-medium">Список ul</p>
-            <ul>
-                <li>New games</li>
-                <li>About 1win Betting Company: Main Details and Features Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea facere sint repellat sunt harum obcaecati vel et. Totam ab officia eius accusamus.</li>
-                <li>500% Welcome Bonus for New Players: Get 685,000 NGN</li>
-            </ul>
-            <p class="text-medium">Текст абзац "p"</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p class="text-medium">Заголовки</p>
-            <h1>Заголовок H1</h1>
-            <h2>Заголовок H2</h2>
-            <h3>Заголовок H3</h3>
-            <h4>Заголовок H4</h4>
-            <h5>Заголовок H5</h5>
-            <h6>Заголовок H6</h6>
-            <p class="text-medium">Посилання "a"</p>
-            <a href="">Link example</a>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa <a href="">Link example</a> nobis suscipit alias? Ullam distinctio reprehenderit eos suscipit minus voluptatum blanditiis unde doloremque recusandae voluptatibus, iusto doloribus necessitatibus! Vel, atque quisquam eum sunt recusandae provident modi tenetur dicta eius illo vitae.</p>
-            <p class="text-medium">Quote-warning</p>
-            <div class="quoteWarning">
-                <h2>Заголовок H2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-            <p class="text-medium">Button</p>
-            <a href="" class="btn btn_secondary">Play now</a>
-            <a href="" class="btn btn_primary">Play now</a>
-            <a href="" class="btn btn_primary w-100">Play now</a>
-            <p class="text-medium">Цитата</p>
-            <div class="quote">
-                <h2>Заголовок H2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <p class="text-small bold ta-r">Ім’я Прізвище</p>
-            </div>
-            <p class="text-medium">Таблиця</p>
-            <div class="table-auto-scroll">
-                <table>
-                    <tr>
-                        <th>Заголовок</th>
-                        <th>Заголовок</th>
-                        <th>Заголовок</th>
-                        <th>Заголовок более длинный</th>
-                    </tr>
-                    <tr>
-                        <td>Заголовок</td>
-                        <td>Some text</td>
-                        <td>Some text</td>
-                        <td>Some text</td>
-                    </tr>
-                    <tr>
-                        <td>Заголовок</td>
-                        <td>Some text</td>
-                        <td>Some text</td>
-                        <td>Some text</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="card-2">
-            <div class="text-big mb-16">Last posts by Leah Shepherd</div>
-            <nav class="d-flex fdc gap-16 child-link-default">
-                <a href="">500% Welcome Bonus for New Players: Get 685,000 NGN</a>
-                <a href="">SABDC – The South African Book Development Council</a>
-                <a href="">Complete South African Online Casinos List in 2024</a>
-                <a href="">Punt Casino Login & Sign-Up Guide in 2024</a>
-            </nav>
-        </div>
-    </section>
     
-    <!-- Ссылки -->
-    <section class="container p-16 mb-24">
-        <div class="card-2">
-            <div class="text-big mb-16">Publications of the author on other sites</div>
-            <nav class="d-flex fdc gap-16 child-link-default">
-                <a href="">500% Welcome Bonus for New Players: Get 685,000 NGN</a>
-                <a href="">SABDC – The South African Book Development Council</a>
-                <a href="">Complete South African Online Casinos List in 2024</a>
-                <a href="">Punt Casino Login & Sign-Up Guide in 2024</a>
-            </nav>
+    <!-- breadcrumbs -->
+<nav class="breadcrumbs container p-16">
+    <ul class="d-flex fww" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li class="breadcrumbs__link" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/" itemprop="item">
+                <span itemprop="name">Online Casino South Africa</span>
+                <meta itemprop="position" content="0">
+            </a>
+        </li>
+        <li class="breadcrumbs__link" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/razdel/" itemprop="item">
+                <span itemprop="name">Leah Shepherd</span>
+                <meta itemprop="position" content="1">
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Карточка автора -->
+<section class="authorCard container p-16">
+    <div class="authorCard__body">
+        <div class="f-aic fww gap-16">
+            <div class="authorCard__image">
+                <img class="wh-100" src="img/placeholder/jolie.jpg" alt="">
+            </div>
+            <div class="nlc-mb-8">
+                <div class="d-flex aifs">
+                    <p class="text-big">Leah Shepherd</p>
+                    <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#verified" fill="white"/></svg>
+                </div>
+                <p>Author at in-aviator-game.in</p>
+                <p>Experience: <span class="bold">7 years</span></p>
+            </div>
         </div>
-    </section>
+        <div class="d-flex fdc jcsb aife gap-16 md3-aifs">
+            <div class="label label_pos-static">Author</div>
+            <div class="f-aic gap-16 fww">
+                <a href="" class="linkSocial" aria-label="murkrack">
+                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#murkrack"/></svg>
+                </a>
+                <a href="" class="linkSocial" aria-label="wiki">
+                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#wiki"/></svg>
+                </a>
+                <a href="" class="linkSocial" aria-label="email">
+                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#email"/></svg>
+                </a>
+                <a href="" class="linkSocial" aria-label="blog">
+                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#blog"/></svg>
+                </a>
+                <a href="" class="linkSocial linkSocial_instagram" aria-label="instagram">
+                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#instagram"/></svg>
+                </a>
+                <a href="" class="linkSocial linkSocial_facebook" aria-label="facebook">
+                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#facebook"/></svg>
+                </a>
+                <a href="" class="linkSocial linkSocial_linkedin" aria-label="linkedin">
+                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#linkedin"/></svg>
+                </a>
+                <a href="" class="linkSocial" aria-label="twitter">
+                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#x"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Сео-текст -->
+<section class="blogContent container p-16">
+    <div class="styledContent nlc-mb-32 min-w-0">
+        <div>
+            <p class="text-big">Стилі для базових елементів</p>
+            <p>Елементи мають бути обернуті в загальний блок з класом `styledContent`.</p>
+        </div>
+        
+        <p class="text-medium">Список ol</p>
+        <ol>
+            <li>New games</li>
+            <li>About 1win Betting Company: Main Details and Features</li>
+            <li>500% Welcome Bonus for New Players: Get 685,000 NGN</li>
+        </ol>
+        <p class="text-medium">Список ul</p>
+        <ul>
+            <li>New games</li>
+            <li>About 1win Betting Company: Main Details and Features Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea facere sint repellat sunt harum obcaecati vel et. Totam ab officia eius accusamus.</li>
+            <li>500% Welcome Bonus for New Players: Get 685,000 NGN</li>
+        </ul>
+        <p class="text-medium">Текст абзац "p"</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p class="text-medium">Заголовки</p>
+        <h1>Заголовок H1</h1>
+        <h2>Заголовок H2</h2>
+        <h3>Заголовок H3</h3>
+        <h4>Заголовок H4</h4>
+        <h5>Заголовок H5</h5>
+        <h6>Заголовок H6</h6>
+        <p class="text-medium">Посилання "a"</p>
+        <a href="">Link example</a>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa <a href="">Link example</a> nobis suscipit alias? Ullam distinctio reprehenderit eos suscipit minus voluptatum blanditiis unde doloremque recusandae voluptatibus, iusto doloribus necessitatibus! Vel, atque quisquam eum sunt recusandae provident modi tenetur dicta eius illo vitae.</p>
+        <p class="text-medium">Quote-warning</p>
+        <div class="quoteWarning">
+            <h2>Заголовок H2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <p class="text-medium">Button</p>
+        <a href="" class="btn btn_secondary">Play now</a>
+        <a href="" class="btn btn_primary">Play now</a>
+        <a href="" class="btn btn_primary w-100">Play now</a>
+        <p class="text-medium">Цитата</p>
+        <div class="quote">
+            <h2>Заголовок H2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="text-small bold ta-r">Ім’я Прізвище</p>
+        </div>
+        <p class="text-medium">Таблиця</p>
+        <div class="table-auto-scroll">
+            <table>
+                <tr>
+                    <th>Заголовок</th>
+                    <th>Заголовок</th>
+                    <th>Заголовок</th>
+                    <th>Заголовок более длинный</th>
+                </tr>
+                <tr>
+                    <td>Заголовок</td>
+                    <td>Some text</td>
+                    <td>Some text</td>
+                    <td>Some text</td>
+                </tr>
+                <tr>
+                    <td>Заголовок</td>
+                    <td>Some text</td>
+                    <td>Some text</td>
+                    <td>Some text</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="card-2">
+        <div class="text-big mb-16">Last posts by Leah Shepherd</div>
+        <nav class="d-flex fdc gap-16 child-link-default">
+            <a href="">500% Welcome Bonus for New Players: Get 685,000 NGN</a>
+            <a href="">SABDC – The South African Book Development Council</a>
+            <a href="">Complete South African Online Casinos List in 2024</a>
+            <a href="">Punt Casino Login & Sign-Up Guide in 2024</a>
+        </nav>
+    </div>
+</section>
+
+<!-- Ссылки -->
+<section class="container p-16 mb-24">
+    <div class="card-2">
+        <div class="text-big mb-16">Publications of the author on other sites</div>
+        <nav class="d-flex fdc gap-16 child-link-default">
+            <a href="">500% Welcome Bonus for New Players: Get 685,000 NGN</a>
+            <a href="">SABDC – The South African Book Development Council</a>
+            <a href="">Complete South African Online Casinos List in 2024</a>
+            <a href="">Punt Casino Login & Sign-Up Guide in 2024</a>
+        </nav>
+    </div>
+</section>
 
     <!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
 	<!-- Кнопка прокрутки вверх -->
@@ -403,23 +362,6 @@
     </button>
 </aside>
 
-
-<!-- Welcome bonus -->
-<aside class="welcomeBonus fixedBottomBox js-welcomeBonus">
-    <div class="container f-jcsb-aic welcomeBonus__boby">
-        <div class="label">Best Casino with Aviator game</div>
-        <img class="max-md3-dn" src="img/1win_2.svg" width="140" height="64" loading="lazy" alt="">
-        <img class="min-md3-dn" src="img/1win_mini.svg" width="40" height="40" loading="lazy" alt="">
-        <div class="md3-ta-c">
-            <p class="bold mb-8 md3-text-small md3-m0">Welcome bonus</p>
-            <p class="text-big md3-text-default">200% up to $530</p>
-        </div>
-        <a href="" class="btn btn_primary btn_animated">Claim bonus</a>
-    </div>
-    <button class="welcomeBonus__btn btn-round js-btnWelcomeBonusClose">
-        <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close"/></svg>
-    </button>
-</aside>
 
 <!-- В этот блок подгружается AJAX-сонтент, а именно банера -->
 <aside id="ajax-content" class="dn"></aside>
@@ -957,11 +899,6 @@
             <a href="/" class="logo p-0">
                 <img src="img/logo.svg" width="116" height="24" alt="logo">
             </a>
-            <button class="btn-dropdown btn-dropdown_filled js-popup-opener" data-popup-id="language" data-add-class="mod2">
-                <span>EN</span>
-                <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#arrow"/></svg>
-                <img class="w-24" src="img/countries-flags/united-kingdom.svg" loading="lazy" alt="">
-            </button>
         </div>
         <div class="boxInfo has-links">
             <div class="boxInfo__col">
@@ -974,7 +911,7 @@
                 </div>
             </div>
             <div class="boxInfo__col">
-                <p class="gray mb-16 leter-sp f-jcsb-aic">
+                <p class="bold mb-16 f-jcsb-aic">
                     <span>Information</span>
                     <button class="boxInfo__btn js-boxInfo-btn">
                         <span>ALL</span>
@@ -993,7 +930,7 @@
                 </nav>
             </div>
             <div class="boxInfo__col js-boxInfo-casinos">
-                <p class="gray mb-16 leter-sp">Top online casinos</p>
+                <p class="bold mb-16">Top online casinos</p>
                 <nav class="boxInfo__grid boxInfo__grid_3col">
                     <a href="">4RaBet</a>
                     <a href="">MostBet</a>
@@ -1006,191 +943,9 @@
                 </nav>
             </div>
         </div>
-        <div class="boxLinksApp">
-            <div class="boxLinksApp__subscribe">
-                <div class="card-1 subscribe">
-                    <div class="mb-16">
-                        <p class="bold">Let’s keep in touch</p>
-                        <p>Subscribe to get an emails with bonuses and tips.</p>
-                    </div>
-                    <div class="subscribe__input">
-                        <input type="text" placeholder="Your email">
-                        <button type="submit">Subscribe</button>
-                    </div>
-                </div>
-            </div>
-            <div class="boxLinksApp__mobile">
-                <a href="" class="linkApp">
-                    <span class="f-aic">
-                        <svg width="18" height="24"><use xlink:href="img/sprite/icons-sprite.svg#apple"/></svg>
-                        <span class="d-flex aifs fdc ml-8">
-                            <span class="gray">App for</span>
-                            <span class="bold">iOS</span>
-                        </span>
-                    </span>
-                    <svg class="w-24 rotate-270"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
-                </a>
-                <a href="" class="linkApp">
-                    <span class="f-aic">
-                        <svg width="28" height="24"><use xlink:href="img/sprite/icons-sprite.svg#android-green"/></svg>
-                        <span class="d-flex aifs fdc ml-8">
-                            <span class="gray">App for</span>
-                            <span class="bold">Android</span>
-                        </span>
-                    </span>
-                    <svg class="w-24 rotate-270"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
-                </a>
-            </div>
-            <div class="boxLinksApp__windows">
-                <a href="" class="linkApp linkApp_windows">
-                    <span class="f-aic linkApp__mod">
-                        <img src="img/windows.svg" loading="lazy" width="25" height="25" alt="">
-                        <span class="d-flex aifs fdc ml-8">
-                            <span class="gray">Application for</span>
-                            <span class="bold">Windows</span>
-                        </span>
-                    </span>
-                    <svg class="w-24 rotate-270"><use xlink:href="img/sprite/icons-sprite.svg#chevron"/></svg>
-                </a>
-            </div>
-        </div>
-        <div class="js-modalContainer">
-            <p class="leter-sp gray mb-16">Developer Licenses & Certificates</p>
-            <div class="bgOverlay min-md3-dn js-modalOverlay"></div>
-            <div class="certificates__list modal__body js-modalOpener js-modalBody">
-                <div class="modal__header f-jcsb-aic">
-                    <p class="text-medium">Developer Licenses & Certificates</p>
-                    <button class="btn-round js-modalClose">
-                        <svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#close"/></svg>
-                    </button>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/malta.svg" loading="lazy" alt="">
-                    <span>Malta Gaming Authority</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/canada.svg" loading="lazy" alt="">
-                    <span>Alcohol and Gaming Commission of Ontario</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/switzerland.svg" loading="lazy" alt="">
-                    <span>Swiss Gambling Supervisory Authority (Gespa)</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/gibraltar.svg" loading="lazy" alt="">
-                    <span>Gibraltar Gaming Commission</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/romania.svg" loading="lazy" alt="">
-                    <span>Romania National Gambling Office</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/croatia.svg" loading="lazy" alt="">
-                    <span>MINISTARSTVO FINANCIJA Porezna uprava</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/italy.svg" loading="lazy" alt="">
-                    <span>Autonoma dei Monopoli di Stato</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/bulgaria.svg" loading="lazy" alt="">
-                    <span>State Gambling Commission</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/serbia.svg" loading="lazy" alt="">
-                    <span>Ministry of Finance Gaming Authority</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/colombia.svg" loading="lazy" alt="">
-                    <span>Colijuegos</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/sweden.svg" loading="lazy" alt="">
-                    <span>Spelinspektionen</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/south-africa.svg" loading="lazy" alt="">
-                    <span>Western Cape Gambling and Racing Board</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/georgia.svg" loading="lazy" alt="">
-                    <span>Ministry of Finance of Georgia</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/greece.svg" loading="lazy" alt="">
-                    <span>Hellenic Gaming Commission</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/latvia.svg" loading="lazy" alt="">
-                    <span>Lotteries and Gambling Supervisory Inspection</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/lithuania.svg" loading="lazy" alt="">
-                    <span>Gaming Control Authority</span>
-                </div>
-                <div class="certificates__item">
-                    <img class="w-24" src="img/countries-flags/netherlands.svg" loading="lazy" alt="">
-                    <span>Kansspelautoriteit</span>
-                </div>
-                <a class="certificates__licenses md3-text-default link-default" href="">All Licenses & Certificates</a>
-            </div>
-        </div>
-        <div class="socials">
-            <div class="socials__row socials__row_1">
-                <div>
-                    <div class="card-1 f-aic gap-16">
-                        <img width="40" height="24" src="img/aws.svg" loading="lazy" alt="">
-                        <p>All games from developer Spribe are hosted on Amazon Web Services</p>
-                    </div>
-                </div>
-                <div>
-                    <div class="card-1 ufcPartner">
-                        <div>
-                            <img width="120" height="16" src="img/ufc-aviator.svg" alt="">
-                            <p class="bold mt-8">Official partner of UFC</p>
-                        </div>
-                        <div class="ufcPartner__img">
-                            <img class="socials__ufc_img" src="img/red-mma-gloves.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="socials__row socials__row_2">
-                <a href="" class="social">
-                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#telegram"/></svg>
-                </a>
-                <a href="" class="social">
-                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#youtube"/></svg>
-                </a>
-                <a href="" class="social">
-                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#x"/></svg>
-                </a>
-                <a href="" class="social">
-                    <svg class="w-24"><use xlink:href="img/sprite/socials-sprite.svg#facebook_2"/></svg>
-                </a>
-            </div>
-        </div>
-        <div class="f-jcsb-aic fww gap-16 md2-jcfs child-img-h-16">
-            <img src="img/partnerLogo/visa.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/mastercard.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/gpay.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/applepay.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/qiwi.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/bitcoin.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/etherium.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/tether.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/scrill.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/payeer.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/muchBetter.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/jcb.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/jcb.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/discover.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/interac.svg" loading="lazy" alt="">
-            <img src="img/partnerLogo/astropay.svg" loading="lazy" alt="">
-        </div>
         <div class="f-aic jcfs fww gap-16 gray">
             <p>18+</p>
-            <img width="91" height="12" class="lastLine__gambleImg" src="img/GambleAware_Logo.svg" loading="lazy" alt="">
+            <img width="91" height="12" class="lastLine__gambleImg" src="img/GambleAware_Logo_light.svg" loading="lazy" alt="">
             <p class="js-popup-opener" data-popup-id="advertisingDisclaimer">
                 <span class="lastLine__ad">Ad</span>
                 <span class="ml-8">Advertising Disclaimer</span>
