@@ -1250,7 +1250,7 @@ table th {
 }
 
 .linkSocial {
-  background-color: var(--color-bg);
+  background-color: var(--color-opposite);
   border-radius: var(--br-small);
   padding: 4px;
   display: inline-block;
@@ -1380,7 +1380,9 @@ table th {
 .card-2 {
   padding: 32px;
   border-radius: var(--br-large);
-  background-color: var(--color-light);
+  background-color: #fff;
+  -webkit-box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
 }
 
 .containerGame {
@@ -1458,8 +1460,8 @@ table th {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: var(--color-bg);
-  color: var(--color-opposite);
+  background: var(--color-opposite);
+  color: var(--color-bg);
   padding: 4px 12px;
   border-radius: var(--br-small);
   font-weight: 700;
@@ -1713,7 +1715,7 @@ table th {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 24px;
           flex: 0 0 24px;
-  background-image: url("../img/css-bg-image/plus_green.svg");
+  background-image: url("../img/css-bg-image/plus.svg");
 }
 
 .listComparison li:not(:last-child) {
@@ -1721,7 +1723,7 @@ table th {
 }
 
 .listComparison_negative li:before {
-  background-image: url("../img/css-bg-image/minus_gray.svg");
+  background-image: url("../img/css-bg-image/minus_light.svg");
 }
 
 .tagsList {
@@ -1734,7 +1736,8 @@ table th {
 }
 
 .tagsList li {
-  background-color: var(--color-light);
+  background-color: var(--color-opposite);
+  color: var(--color-bg);
   padding: 16px;
   border-radius: 8px;
   display: -webkit-box;
@@ -1813,8 +1816,22 @@ table th {
   border-radius: 8px;
 }
 
+.promocode svg use {
+  fill: #fff;
+}
+
 .promocode:hover {
   background-color: var(--color-light-hover);
+}
+
+.promocode_mod {
+  border: 1px solid var(--color-opposite);
+  background-color: var(--color-bg);
+  color: var(--color-opposite);
+}
+
+.promocode_mod svg use {
+  fill: var(--color-opposite);
 }
 
 .copied {
@@ -1941,6 +1958,8 @@ table th {
 .quoteWarning.mod-info:before {
   top: 16px;
   left: 16px;
+  width: 48px;
+  height: 48px;
   background-image: url("../img/css-bg-image/info.svg");
 }
 
@@ -2770,8 +2789,6 @@ ol.list li:before,
 }
 
 .bookmaker__body .label {
-  background-color: var(--color-opposite);
-  color: var(--color-bg);
   border-color: #fff;
 }
 
@@ -2982,6 +2999,7 @@ ol.list li:before,
   display: -ms-flexbox;
   display: flex;
   gap: 16px;
+  color: var(--color-bg);
 }
 
 .authorCard__body > * {
@@ -2995,6 +3013,10 @@ ol.list li:before,
   width: 128px;
   height: 128px;
   overflow: hidden;
+}
+
+.authorCard .label {
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .blogContent {
@@ -3011,7 +3033,9 @@ ol.list li:before,
 }
 
 .comparison__card {
-  background: var(--color-light);
+  background-color: #fff;
+  -webkit-box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
   padding: 16px;
   border-radius: 16px;
   position: relative;
@@ -3384,9 +3408,15 @@ ol.list li:before,
           justify-content: center;
 }
 
+.redirect__header {
+  padding: 0 16px;
+  border-radius: 8px;
+  background-color: var(--color-opposite);
+}
+
 .redirect__body {
-  padding: 32px;
-  border-radius: 32px;
+  padding: 16px;
+  border-radius: 24px;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 540px;
           flex: 0 1 540px;
@@ -4046,6 +4076,10 @@ position sticky у блока .stickyBlock */
 
   .md3-m0 {
     margin: 0;
+  }
+
+  .md3-p0 {
+    padding: 0;
   }
 
   .p-40-md3-16 {

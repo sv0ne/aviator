@@ -5,6 +5,12 @@
 })
 <!-- role="dialog" -->
 <body>
-    @@include('blocks/redirect.html')
+    @@include('blocks/redirect.html', {
+        "theme": "light",
+        "btnClass": "w-100",
+        "promoClass": "promocode promocode_mod",
+        "bodyClass": "redirect__body nlc-mb-16",
+        "headerClass": "f-jcsb-aic redirect__header"
+    })
 </body>
 </html>

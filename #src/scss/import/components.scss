@@ -293,7 +293,7 @@
 }
 
 .linkSocial{
-    background-color: var(--color-bg);
+    background-color: var(if($theme == "light", --color-opposite, --color-bg));
     border-radius: var(--br-small);
     padding: 4px;
     display: inline-block;
@@ -509,7 +509,10 @@
 .card-2{
     padding: 32px;
     border-radius: var(--br-large);
-    background-color: var(--color-light);
+    background-color: if($theme == "light", #fff, var(--color-light));
+    @if $theme == 'light' {
+        box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
+    }
     @media (max-width:#{$md3}px) {
         padding: 16px;
     }
@@ -585,8 +588,8 @@
     top: -13px;
     display: flex;
     align-items: center;
-    background: var(--color-bg);
-    color: var(--color-opposite);
+    background: var(if($theme == "light", --color-opposite, --color-bg));
+    color: var(if($theme == "light", --color-bg, --color-opposite));
     padding: 4px 12px;
     border-radius: var(--br-small);
     font-weight: 700;
@@ -826,14 +829,14 @@
 			width: 24px;
 			height: 24px;
             flex: 0 0 24px;
-			background-image: url("../img/css-bg-image/plus_green.svg");
+			background-image: url("../img/css-bg-image/plus.svg");
         }
         &:not(:last-child){
             margin-bottom: 16px;
         }
 	}
     &_negative li:before{
-        background-image: url("../img/css-bg-image/minus_gray.svg");
+        background-image: url(if($theme == "light", "../img/css-bg-image/minus_light.svg", "../img/css-bg-image/minus.svg"));
     }
 }
 
@@ -845,7 +848,10 @@
         gap: 16px;
     }
     li{
-        background-color: var(--color-light);
+        background-color: var(if($theme == "light", --color-opposite, --color-light));
+        @if($theme == 'light'){
+            color: var(--color-bg);
+        }
         padding: 16px;
         border-radius: 8px;
         display: flex;
@@ -934,8 +940,19 @@
     color: var(--color-light-seo);
     padding: 4px 12px;
     border-radius: 8px;
+    svg use {
+        fill: #fff;
+    }
     &:hover{
         background-color: var(--color-light-hover);
+    }
+    &_mod{
+        border: 1px solid var(--color-opposite);
+        background-color: var(--color-bg);
+        color: var(--color-opposite);
+        svg use {
+            fill: var(--color-opposite);
+        }
     }
 }
 
@@ -1010,7 +1027,11 @@
         &:before{
             top: 16px;
             left: 16px;
-            background-image: url("../img/css-bg-image/info.svg");
+            @if($theme == 'light'){
+                width: 48px;
+                height: 48px;
+            }
+            background-image: url(if($theme == "light", "../img/css-bg-image/info.svg", "../img/css-bg-image/info_1.svg"));
         }
     }
 }

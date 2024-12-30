@@ -1685,7 +1685,7 @@ table th {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 24px;
           flex: 0 0 24px;
-  background-image: url("../img/css-bg-image/plus_green.svg");
+  background-image: url("../img/css-bg-image/plus.svg");
 }
 
 .listComparison li:not(:last-child) {
@@ -1693,7 +1693,7 @@ table th {
 }
 
 .listComparison_negative li:before {
-  background-image: url("../img/css-bg-image/minus_gray.svg");
+  background-image: url("../img/css-bg-image/minus.svg");
 }
 
 .tagsList {
@@ -1771,8 +1771,22 @@ table th {
   border-radius: 8px;
 }
 
+.promocode svg use {
+  fill: #fff;
+}
+
 .promocode:hover {
   background-color: var(--color-light-hover);
+}
+
+.promocode_mod {
+  border: 1px solid var(--color-opposite);
+  background-color: var(--color-bg);
+  color: var(--color-opposite);
+}
+
+.promocode_mod svg use {
+  fill: var(--color-opposite);
 }
 
 .copied {
@@ -1899,7 +1913,7 @@ table th {
 .quoteWarning.mod-info:before {
   top: 16px;
   left: 16px;
-  background-image: url("../img/css-bg-image/info.svg");
+  background-image: url("../img/css-bg-image/info_1.svg");
 }
 
 .quote {
@@ -2900,7 +2914,7 @@ ol.list li:before,
 }
 
 .comparison__card {
-  background: var(--color-light);
+  background-color: var(--color-light);
   padding: 16px;
   border-radius: 16px;
   position: relative;
@@ -3956,6 +3970,10 @@ position sticky у блока .stickyBlock */
 
   .md3-m0 {
     margin: 0;
+  }
+
+  .md3-p0 {
+    padding: 0;
   }
 
   .p-40-md3-16 {

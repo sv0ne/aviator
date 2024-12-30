@@ -106,6 +106,12 @@ table{
 	}
 }
 
+.md3-p0{
+	@media (max-width:#{$md3}px) {
+		padding: 0;
+	}
+}
+
 .p-8{padding: 8px;}
 .p-16{padding: 16px;}
 .p-0{padding: 0 !important;}

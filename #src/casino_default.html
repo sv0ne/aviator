@@ -7,7 +7,13 @@
 <body> 
 	@@include('blocks/headers/header_default.html')
     
-    @@include('blocks/casino.html')
+    @@include('blocks/casino.html', {
+        "theme": "default",
+        "btnClass": "btn btn_primary",
+        "textClass": "text-small",
+        "imgPlus": "img/plus.svg",
+        "imgMinus": "img/minus.svg",
+    })
 
     <!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
 	@@include('blocks/common-blocks.html', {
