@@ -4330,6 +4330,11 @@ position sticky у блока .stickyBlock */
     padding-bottom: 177.78%;
   }
 
+  .videoContainer.js-videoContainer-flexible-mobile {
+    padding-top: 0;
+    height: var(--height-iframe, 80vh);
+  }
+
   .bigLabel {
     font-size: 28px;
     line-height: 34px;

@@ -607,6 +607,12 @@
         background: rgba(255, 255, 255, 0); /* immutable */
         z-index: 10;
     }
+    &.js-videoContainer-flexible-mobile{
+        @media (max-width:#{$md3}px) {
+            padding-top: 0;
+            height: var(--height-iframe, 80vh);
+        }
+    }
 }
 
 ///////////////////////////////////////////////////////////

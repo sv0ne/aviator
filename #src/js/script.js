@@ -11,6 +11,9 @@ $(document).ready(function () {
 	const BREAKPOINT_552 = 551.98;
 	const BREAKPOINT_md4 = 479.98;
 
+    let deviceScreenHeight = $(window).outerHeight();
+    let lastHeightScreen = 0;
+
     $(window).scroll(function() {
         let scrollTop = $(this).scrollTop();
         scrollForWelcomeBonus(scrollTop);
@@ -18,6 +21,9 @@ $(document).ready(function () {
         scrollForNavigation(scrollTop);
         scrollForTicket3(scrollTop);
         scrollForIframe(scrollTop);
+
+        deviceScreenHeight = $(window).outerHeight();
+        $('.js-test-1').text(deviceScreenHeight);
     });
 
 	@@include('_popup.js')
@@ -42,6 +48,7 @@ $(document).ready(function () {
             if(showBonuse === "box"){
                 $('.js-welcomeBonus').show();
                 $('.js-btnScrollToTop').addClass('hasBoxWelcomeBonus');
+                calcHeightIframe();
             }else{
                 $('.js-btnBonus').show();
             }
@@ -50,6 +57,7 @@ $(document).ready(function () {
             $('.js-welcomeBonus').hide();
             $('.js-btnScrollToTop').removeClass('hasBoxWelcomeBonus');
             $('.js-btnBonus').hide();
+            calcHeightIframe();
         }
     }
 
@@ -59,6 +67,7 @@ $(document).ready(function () {
         $('.js-btnScrollToTop').removeClass('hasBoxWelcomeBonus');
         $('.js-btnBonus').show();
         showBonuse = "btn";
+        calcHeightIframe();
     });
 
     // Закрыть кнопку бонуса показать плашку
@@ -67,6 +76,7 @@ $(document).ready(function () {
         $('.js-welcomeBonus').show();
         $('.js-btnScrollToTop').addClass('hasBoxWelcomeBonus');
         showBonuse = "box";
+        calcHeightIframe();
     });
 
     // Прокрутить вверх
@@ -170,9 +180,11 @@ $(document).ready(function () {
             $('.js-navigation').addClass('active');
             isActiveScrollNavigation = true;
             idsNavigationAnchor = getIdsNavElem();
+            calcHeightIframe();
         }else if(scrollTop <= $contentNav[0].offsetTop && isActiveScrollNavigation){
             $('.js-navigation').removeClass('active');
             isActiveScrollNavigation = false;
+            calcHeightIframe();
         }
 
         // Если скролл-навигация активна, вычисляем активные ссылки
@@ -309,6 +321,24 @@ $(document).ready(function () {
 
 /** ======================================================================== */
 /** ============ Прочее, несвязанные скрипты, каждый для разного =========== */
+
+    // Подсчет высоты iframe для игр
+    function calcHeightIframe(){
+        if(w > BREAKPOINT_md3){ return; }
+
+        $nav = $('.js-navigation');
+        let heightNavigation = $nav.hasClass('active') ? $nav.height() : 0;
+
+        $bonus = $('.js-welcomeBonus');
+        let heightBonus = $bonus.is(':visible') ? $bonus.height() : 0;
+        
+        let res = deviceScreenHeight - heightNavigation - heightBonus - 32;
+
+        if(lastHeightScreen === res) { return; }
+
+        lastHeightScreen = res;
+        $('body').css({"--height-iframe": res+"px"});
+    }
 
     // Превращает картинку data-bg-image в background-image
     (function ibg(){ 
@@ -525,8 +555,13 @@ $(document).ready(function () {
         // Определяем позицию блока js-playFree-container и прокручиваем до него
         function goToPlayFreeContainer() {
             let offsetTop = $('.js-playFree-container')[0].offsetTop;
+
+            // Перед проскролом учитываем высоту блока contentNav__list которая скрывается при скроле
+            let diff = offsetTop > $('.js-contentNav')[0].offsetTop && !isHideContentNavOnScroll ?
+                $('.js-contentNav .contentNav__list').height() : 0;
+            
             $('html, body').animate({
-                scrollTop: offsetTop-200
+                scrollTop: offsetTop - diff - 200
             }, 500);
             $('.js-playFree-btn').eq(0).click();
         }
