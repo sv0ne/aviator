@@ -17,10 +17,81 @@
 	a.red{color: #E81F76;}
 	a.blue{color: #3372FF;}
 	a:hover{text-decoration: underline;}
+
+	.switchContainer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border: 1px dashed #ccc;
+		padding: 8px;
+	}
+
+	.templateText {
+		display: flex; 
+		flex-direction: column;
+	}
+
+	.switch input {
+		position: absolute;
+		opacity: 0;
+	}
+
+	.switch {
+		display: inline-block;
+		font-size: 20px; /* 1 */
+		height: 1em;
+		width: 2em;
+		background: #BDB9A6;
+		border-radius: 1em;
+	}
+
+	.switch div {
+		height: 1em;
+		width: 1em;
+		border-radius: 1em;
+		background: #FFF;
+		box-shadow: 0 0.1em 0.3em rgba(0,0,0,0.3);
+		-webkit-transition: all 300ms;
+			-moz-transition: all 300ms;
+				transition: all 300ms;
+	}
+
+	.switch input:checked + div {
+		background-color: yellowgreen;
+		-webkit-transform: translate3d(100%, 0, 0);
+			-moz-transform: translate3d(100%, 0, 0);
+				transform: translate3d(100%, 0, 0);
+	}
 </style>
+<script>
+	$(document).ready(function () {
+		// При загрузке страницы проверяем, есть ли в localStorage ключ isRtl
+		if (localStorage.getItem('isRtl')) {
+			$('.switch input').prop('checked', true);
+		}
+
+		// Для переключения rtl, чтобы визуально проверить вид сайта справа налево
+		$('.switch input').on('change', function() {
+			if ($(this).is(':checked')) {
+				localStorage.setItem('isRtl', true);
+			} else {
+				localStorage.removeItem('isRtl');
+			}
+		});
+	});
+</script>
 <body>
 	<div class="wrap">
 		<ul>
+			<li class="switchContainer"> 
+				<span class="templateText">
+					<span>Вид сайта справа налево</span>
+					<span>(для удобства просмотра дизайна)</span>
+				</span> 
+				<label class="switch"><input type="checkbox" /><div></div></label>
+			</li>	
+			
+			
 			<li>----- DEFAULT - (стили: style_default.css) ----------------------</li>
 			<li><a href="home_default.html">Home</a></li>
 			<li><a href="casino_default.html">Casino</a></li>

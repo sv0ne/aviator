@@ -17,18 +17,22 @@
 	<script src="js/jquery-3.5.1.min.js"></script>
 	<script src="js/script.js"></script>
 	<script>
-		/** ВНИМАНИЕ!!! Этого скрипта не должно быть на проде. Он для удобства 
-		 * навигации на github-pages. */ 
+		/** ВНИМАНИЕ!!! Этого скрипта не должно быть на проде. */ 
 		$(document).ready(function () {
+			// Это для удобства навигации на github-pages
 			let href = window.location.href;
 			let isGithub = href.includes("sv0ne.github.io/aviator");
 			if (isGithub){
 				$('.logo').attr('href', 'https://sv0ne.github.io/aviator/');
 			}
 
-			// Добавляем в body класс с названием темы
-			let theme = localStorage.getItem('aviator-theme');
-			document.body.classList.add('theme-'+theme);
+			// Для переключения rtl, чтобы визуально проверить перевод
+			const urls = ["sv0ne.github.io/aviator", "192.168.0.103:3000", "localhost:3000"];
+			const isRtl = urls.some(url => href.includes(url));
+
+			if (isRtl && localStorage.getItem('isRtl')) {
+				document.documentElement.setAttribute('dir', 'rtl');
+			}
 		});
 	</script>
 	<title>Online Casino Aviator in South Africa [2024] - CasinoHEX</title>
