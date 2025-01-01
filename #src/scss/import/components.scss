@@ -44,7 +44,7 @@
             content: "";
             position: absolute;
             top: -20px;
-            left: -75px;
+            inset-inline-start: -75px;
             width: 15px;
             height: 80px;
             transform: rotate(45deg);
@@ -65,9 +65,9 @@
 }
 
 @keyframes btnLine {
-    0%{ left: -75px;}
-    25%{left: 120%;}
-    100%{left: 120%;}
+    0%{ inset-inline-start: -75px;}
+    25%{inset-inline-start: 120%;}
+    100%{inset-inline-start: 120%;}
 }
 
 
@@ -164,7 +164,9 @@
                 background-color: transparent;
             }
             padding: 0;
-            margin: -8px -8px 0 0;
+            margin-top: -8px;
+            margin-bottom: 0;
+            margin-inline: 0 -8px;
         }
     } @else {
         color: var(--color-opposite);
@@ -252,7 +254,8 @@
     width: 100%;
     background-color: var(--color-light);
     border-radius: var(--br-small);
-    padding: 16px 8px 16px 16px;
+    padding-block: 16px;
+    padding-inline: 16px 8px;
     &:hover{
         background-color: var(--color-light-hover);
     }
@@ -264,7 +267,7 @@
             justify-content: space-between;
             align-items: flex-start;
             .ml-8{
-                margin-left: 0;
+                margin-inline-start: 0;
             }
         }
     }
@@ -349,7 +352,7 @@
     }
     &__body{
         bottom: 24px;
-        right: 0;
+        inset-inline-end: 0;
         opacity: 0;
         visibility: hidden;
         position: absolute;
@@ -387,7 +390,7 @@
             visibility: hidden;
             &:not(.mod-left){
                 @media (max-width:1310px) {
-                    left: -100px;
+                    inset-inline-start: -100px;
                 }
             }
         }
@@ -444,7 +447,7 @@
                 transform: translateY(100%);
                 position: fixed;
                 bottom: 0;
-                left: 0;
+                inset-inline-start: 0;
                 width: 100%;
                 max-height: 75vh;
                 overflow-y: auto;
@@ -483,7 +486,7 @@
     width: 100%;
     height: 100%;
     top: 0;
-    left: 0;
+    inset-inline-start: 0;
     z-index: 52;
     background-color: rgba(0, 0, 0, 0.5); /* immutable */
     backdrop-filter: blur(5px);
@@ -584,7 +587,7 @@
 
 .label{
     position: absolute;
-    left: 32px;
+    inset-inline-start: 32px;
     top: -13px;
     display: flex;
     align-items: center;
@@ -597,10 +600,10 @@
     @extend .text-small;
     img{
         display: inline-block;
-        margin-right: 10px;
+        margin-inline-end: 10px;
     }
     @media (max-width:#{$md3}px) {
-        left: 16px;
+        inset-inline-start: 16px;
     }
     &_pos-static{
         position: static;
@@ -640,7 +643,7 @@
     &__input{
         display: none;
         position: absolute;
-        right: 0;
+        inset-inline-end: 0;
         top: 0;
         input{
             position: relative;
@@ -656,17 +659,21 @@
             content: "";
             position: absolute;
             top: 0;
-            left: -40px;
+            inset-inline-start: -40px;
             width: 60px;
             height: 40px;
-            background: linear-gradient(90deg, rgba(var(--shadow-2-start-rgb), 0) 0%, rgba(var(--shadow-2-start-rgb), 1) 50%, var(--shadow-2-end-hex) 100%);
+            --deg: 90deg;
+            html[dir="rtl"] & {
+                --deg: -90deg;
+            }
+            background: linear-gradient(var(--deg), rgba(var(--shadow-2-start-rgb), 0) 0%, rgba(var(--shadow-2-start-rgb), 1) 50%, var(--shadow-2-end-hex) 100%);
         }
     }
     &__icon{
         position: absolute;
         z-index: 3;
         top: 8px;
-        left: 8px;
+        inset-inline-start: 8px;
         use{
             fill: var(--fill-icon-primary);
         }
@@ -676,7 +683,7 @@
         outline: none;
         position: absolute;
         z-index: 3;
-        right: 8px;
+        inset-inline-end: 8px;
         top: 8px;
     }
     @media (max-width:#{$md3}px) {
@@ -723,7 +730,8 @@
 	input[type="radio"] + label{
 		display: flex;
 		align-items: center;
-        padding: 19px 16px 19px 56px;
+        padding-block: 19px;
+        padding-inline: 56px 16px;
 		border-radius: 8px;
 		position: relative;
 		cursor: pointer;
@@ -734,7 +742,7 @@
 		}
 		&:after{
 			top: calc(50% - 12px);
-			left: 16px;
+			inset-inline-start: 16px;
 			width: 24px;
 			height: 24px;
 			border: 2px solid var(--color-gray);
@@ -752,7 +760,7 @@
         &:before{
 			z-index: 2;
 			top: calc(50% - 6px);
-			left: 22px;
+			inset-inline-start: 22px;
 			width: 12px;
 			height: 12px;
 			background-color: var(--color-input-radio);
@@ -772,7 +780,7 @@
 		display: flex;
 		align-items: center;
 		span{
-			padding-left: 8px;
+			padding-inline-start: 8px;
 		}
         svg use{
             fill: #626262;
@@ -795,17 +803,20 @@
 	&__link {
         padding: 4px 0;
 		&:not(:first-child){
-			padding-left: 40px;
+			padding-inline-start: 40px;
 			position: relative;
 			&:before{
 				position: absolute;
 				content: "";
 				top: calc(50% - 12px);
-				left: 8px;
+				inset-inline-start: 8px;
 				width: 24px;
 				height: 24px;
 				background-image:  url(if($theme == "light", "../img/css-bg-image/chevron_down.svg", "../img/css-bg-image/chevron_down_1.svg"));
                 background-position: 50% 50%;
+                html[dir="rtl"] & {
+                    transform: rotate(180deg);
+                }
 			}
 		}
         &:last-child{
@@ -993,7 +1004,8 @@
 
 .quoteWarning{
     @extend .nlc-mb-16;
-    padding: 32px 32px 32px 112px;
+    padding-block: 32px;
+    padding-inline: 112px 32px;
     border-radius: 16px;
     background: if($theme == "light", linear-gradient(90deg, #FFF173 0%, #FFB800 100%), linear-gradient(90deg, rgba(255, 241, 115, 0.05) 0%, rgba(255, 184, 0, 0.05) 100%));
     position: relative;
@@ -1001,7 +1013,7 @@
         content: "";
         position: absolute;
         top: 32px;
-        left: 32px;
+        inset-inline-start: 32px;
         @if($theme == 'light'){
             width: 32px;
             height: 28px;
@@ -1015,18 +1027,19 @@
         padding: 80px 16px 16px 16px;
         &:before{
             top: 16px;
-            left: 16px;
+            inset-inline-start: 16px;
         }
     }
     &.mod-info{
-        padding: 16px 16px 16px 80px;
+        padding-block: 16px;
+        padding-inline: 80px 16px;
         min-height: 80px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         &:before{
             top: 16px;
-            left: 16px;
+            inset-inline-start: 16px;
             @if($theme == 'light'){
                 width: 48px;
                 height: 48px;
@@ -1049,11 +1062,11 @@
     }
     &:before{
         top: 0;
-        left: 32px;
+        inset-inline-start: 32px;
     }
     &:after{
         bottom: 0;
-        right: 32px;
+        inset-inline-end: 32px;
     }
     @media (max-width:#{$md3}px) {
         padding: 56px 16px;
@@ -1066,10 +1079,10 @@
             height: 24px;
         }
         &:before{
-            left: 16px;
+            inset-inline-start: 16px;
         }
         &:after{
-            right: 16px;
+            inset-inline-end: 16px;
         }
     }
 }
@@ -1112,8 +1125,8 @@
     }
 
     .p-40-md3-16, .firstScreen.p-16{
-        padding-right: 0 !important;
-        padding-left: 0 !important;
+        padding-inline-end: 0 !important;
+        padding-inline-start: 0 !important;
     }
 
     > ul, > ol {
@@ -1140,11 +1153,11 @@
 // Общее для двух списков
 ul.list, .styledContent > ul, ol.list, .styledContent > ol{
     li{
-		padding-left: 32px;
+		padding-inline-start: 32px;
         display: flex;
         align-items: center;
         @media (max-width:#{$md3}px) {
-            padding-left: 16px;
+            padding-inline-start: 16px;
         }
         &:not(:last-child){
             margin-bottom: 16px;

@@ -43,8 +43,8 @@
 		&:hover{
 			background-color: var(--color-light-hover);
 		}
-		&:first-child{margin-left: 0;}
-		&:last-child{margin-right: 0;}
+		&:first-child{margin-inline-start: 0;}
+		&:last-child{margin-inline-end: 0;}
 		&.active{
 			background-color: var(--color-opposite);
 			color: var(--color-bg);
@@ -55,7 +55,7 @@
 		top: calc(50% - 22px);
 		padding: 8px;
 		display: none;
-		left: 16px;
+		inset-inline-start: 16px;
 		z-index: 10;
 		background-color: var(--color-opposite);
 		border: 2px solid var(--color-light-seo);
@@ -63,8 +63,8 @@
 		box-shadow: 0px 0px 8px rgba(14, 21, 33, 0.15); /* immutable */
 		&.btn-prev{transform: rotate(180deg);}
 		&.btn-next{
-			left: auto;
-			right: 16px;
+			inset-inline-start: auto;
+			inset-inline-end: 16px;
 		}
 		&.open{
 			display: flex;
@@ -75,16 +75,22 @@
 		z-index: 5;
 		top: 0px;
 		bottom: 0px;
-		left: 0px;
+		inset-inline-start: 0px;
 		width: 40px;
 		pointer-events: none;
-		background: linear-gradient(270deg, rgba(var(--shadow-2-start-rgb), 0) 0%, rgba(var(--shadow-2-start-rgb), 0.9) 50%, var(--shadow-2-end-hex) 100%);
+		--degLeft: 270deg;
+		--degRight: 90deg;
+		html[dir="rtl"] & {
+			--degLeft: 90deg;
+			--degRight: 270deg;
+		}
+		background: linear-gradient(var(--degLeft), rgba(var(--shadow-2-start-rgb), 0) 0%, rgba(var(--shadow-2-start-rgb), 0.9) 50%, var(--shadow-2-end-hex) 100%);
 		opacity: 0;
 		transition: all 0.5s ease 0s;
 		&_right{
-			left: auto;
-			right: 0px;
-			background: linear-gradient(90deg, rgba(var(--shadow-2-start-rgb), 0) 0%, rgba(var(--shadow-2-start-rgb), 0.9) 50%, var(--shadow-2-end-hex) 100%);
+			inset-inline-start: auto;
+			inset-inline-end: 0px;
+			background: linear-gradient(var(--degRight), rgba(var(--shadow-2-start-rgb), 0) 0%, rgba(var(--shadow-2-start-rgb), 0.9) 50%, var(--shadow-2-end-hex) 100%);
 		}
 		&.open{
 			opacity: 1;

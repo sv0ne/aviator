@@ -3,7 +3,7 @@
   z-index: 33;
   position: fixed;
   bottom: 16px;
-  left: 16px;
+  inset-inline-start: 16px;
   padding: 16px;
   background-color: var(--color-bg);
   -webkit-box-shadow: var(--shadow);
@@ -48,8 +48,8 @@
   display: -ms-flexbox;
   display: flex;
   top: 16px;
-  left: 16px;
-  right: 16px;
+  inset-inline-start: 16px;
+  inset-inline-end: 16px;
   z-index: 3;
   gap: 4px;
 }
@@ -70,7 +70,7 @@
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
+  inset-inline-start: 0;
   width: 0%;
   height: 100%;
   background-color: var(--color-opposite);
@@ -88,4 +88,10 @@
 
 .baners.active {
   display: block;
+}
+
+html[dir=rtl] .baners .btn-round {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }

@@ -60,12 +60,13 @@ function openPopup(popupID, triggerRect, additionalClass) {
 				bodyLock();
 			}else{
 				let modalRect = $('#'+popupID)[0].getBoundingClientRect();
+				let isRtl = $('html').attr('dir') === 'rtl';
 
 				let top = 0, left = 0;
 				if(popupID === "language"){
 					top = additionalClass === undefined ? triggerRect.top + triggerRect.height + 8 
 						: document.documentElement.scrollTop + triggerRect.top - modalRect.height - 8;
-					left = triggerRect.left + triggerRect.width - 360;
+					left = isRtl ? triggerRect.left : triggerRect.left + triggerRect.width - 360;
 				}
 
 				$('#'+popupID).css({

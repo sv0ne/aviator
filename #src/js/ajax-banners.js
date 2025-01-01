@@ -5,6 +5,8 @@ $(document).ready(function() {
 /** ======================================================================== */
 /** ============================= Слайдер-баннер =========================== */
 
+let rotateDirection = $('html').attr('dir') === 'rtl' ? '' : '-';
+
 let currentSlide = 0, banersTimer;
 const $slider = $('.baners__slider');
 const totalSlides = $('.baners__slider img').length;
@@ -27,8 +29,8 @@ function showSlide(index) {
     } else {
         currentSlide = index;
     }
-
-    $slider.css('transform', `translateX(-${currentSlide * 320}px)`);
+    
+    $slider.css('transform', `translateX(${rotateDirection}${currentSlide * 320}px)`);
     
     $progressBars.each(function(idx){
         let elem = $(this);
