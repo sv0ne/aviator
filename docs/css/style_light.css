@@ -1518,6 +1518,12 @@ html[dir=rtl] .scroll__overlayArea {
   padding: 12px;
 }
 
+html[dir=rtl] .label-4 svg {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 .searchField {
   position: relative;
   height: 40px;

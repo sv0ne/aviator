@@ -1488,6 +1488,12 @@ html[dir=rtl] .scroll__overlayArea {
   background-color: rgb(52, 199, 89);
 }
 
+html[dir=rtl] .label-4 svg {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 .searchField {
   position: relative;
   height: 40px;
@@ -2279,12 +2285,6 @@ html[dir=rtl] .firstScreen__boby {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-}
-
-html[dir=rtl] .firstScreen__image {
-  -webkit-transform: scaleX(-1);
-      -ms-transform: scaleX(-1);
-          transform: scaleX(-1);
 }
 
 .textBanner {

@@ -159,9 +159,14 @@ $(document).ready(function () {
         if(index !== -1){
             let elemLink = $('.js-navigation-scroll .scroll__item').eq(index);
             elemLink.addClass('active');
-            offsetLeft = elemLink[0].offsetLeft - 8;
+            if($('html').attr('dir') === 'rtl'){
+                let t = $('.js-navigation-scroll').outerWidth();
+                offsetLeft = elemLink[0].offsetLeft + 8 - t + elemLink.outerWidth();
+            }else{
+                offsetLeft = elemLink[0].offsetLeft - 8;
+            }
         }
-
+        
         $('.js-navigation-scroll').stop().animate({scrollLeft: offsetLeft}, 300);
     }
 

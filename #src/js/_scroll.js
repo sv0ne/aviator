@@ -39,6 +39,9 @@ var ScrollElement = function(elem) {
 	// Просчитываем количество проскролла и выдаем scrollPosition
 	var calcPosition = function (action, direction) {
 		var diff = Math.round(scroll.width() +  paddingLeft + paddingRight - body.width());
+		if($('html').attr('dir') === 'rtl'){
+			diff = diff * -1;
+		};
 		var scrollLeft = Math.round(body.scrollLeft());
 
 		if(action === 'buttonClick'){
@@ -52,6 +55,7 @@ var ScrollElement = function(elem) {
 				if(scrollLeft < 0){scrollLeft = 0;}
 			}
 		}
+		
 		if(scrollLeft === 0){
 			scrollPosition('start');
 		}else if(scrollLeft === diff){

@@ -624,6 +624,11 @@
 .label-4{
     padding: 8px 16px;
     border-radius: var(--br-small);
+    html[dir="rtl"] &{
+        svg {
+            transform: rotate(180deg);
+        }
+    }
     @if($theme == 'light'){
         background-color: var(--color-opposite);
         padding: 12px;

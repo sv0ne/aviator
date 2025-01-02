@@ -289,9 +289,6 @@
             flex-direction: column;
             align-items: flex-end;
             justify-content: flex-end;
-            html[dir="rtl"] & {
-                transform: scaleX(-1);
-            }
             @media (max-width:#{$md2}px) {
                 img{
                     height: auto;
