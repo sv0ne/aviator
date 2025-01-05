@@ -562,7 +562,9 @@ $(document).ready(function () {
             let offsetTop = $('.js-playFree-container')[0].offsetTop;
 
             // Перед проскролом учитываем высоту блока contentNav__list которая скрывается при скроле
-            let diff = offsetTop > $('.js-contentNav')[0].offsetTop && !isHideContentNavOnScroll ?
+            let diff = $('.js-contentNav .contentNav__list').length > 0 &&
+                offsetTop > $('.js-contentNav')[0].offsetTop &&
+                !isHideContentNavOnScroll ?
                 $('.js-contentNav .contentNav__list').height() : 0;
             
             $('html, body').animate({
