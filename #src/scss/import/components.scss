@@ -35,6 +35,12 @@
         &:hover:not(.disabled){
             background: var(--bg-btn-info-hover);
         }
+        @if($theme == 'balloon'){
+            background: rgba(255, 255, 255, 0.3);
+            &:hover:not(.disabled){
+                background: rgba(255, 255, 255, 0.5);
+            }
+        }
     }
     &_animated{
         box-shadow: var(--shadow-btn-primary);
@@ -99,7 +105,7 @@
     &:hover{
         background-color: var(--color-light);
     }
-    @if($theme == 'default' or $theme == 'pin-up'){
+    @if($theme == "default" or $theme == "pin-up" or $theme == "balloon"){
         @media (max-width:#{$md3}px) {
             background-color: var(--color-light);
             border-radius: 0;
@@ -928,7 +934,7 @@
     padding: 8px;
     align-items: flex-start;
     img{
-        height: 24px;
+        height: if($theme == "balloon", 58px, 24px);
     }
 }
 

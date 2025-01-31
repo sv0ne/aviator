@@ -4461,7 +4461,7 @@ position sticky у блока .stickyBlock */
     border: none;
   }
 
-  .bigLabel__img:not(.bigLabel__img_4, .bigLabel__img_5) {
+  .bigLabel__img:not(.bigLabel__img_4, .bigLabel__img_5, .bigLabel__img_6) {
     width: 64px;
     height: 64px;
   }

@@ -59,6 +59,19 @@
                 flex: 1;
             }
         }
+        @if($theme == "balloon"){
+            @media (max-width:1310px) and (min-width:#{$md3}px) {
+                height: 74px;
+                align-items: center;
+            }
+        }
+    }
+    &__logo{
+        @if($theme == "balloon"){
+            @media (max-width:1310px) and (min-width:#{$md3}px) {
+                padding-top: 0;
+            }
+        }
     }
     &__menuBtn{
         @media (min-width:#{$md3}px) {
@@ -253,7 +266,7 @@
 
 ///////////////////////////////////////////////////////////
 
-@if $theme == "default" {
+@if $theme == "default" or $theme == "balloon" {
     .firstScreen{
         @media (min-width:#{$md3}px) {
             padding-bottom: 40px;
@@ -265,13 +278,24 @@
             html[dir="rtl"] & {
                 --deg: 313deg;
             }
-            background: linear-gradient(var(--deg), #008E4A 0%, #A5EF5B 100%);
+            @if $theme == "default" {
+                background: linear-gradient(var(--deg), #008E4A 0%, #A5EF5B 100%);
+            }
+            @if $theme == "balloon" {
+                z-index: 2;
+                position: relative;
+                background: linear-gradient(132.87deg, #00C0FF 0%, #009CFF 100%);
+            }
             display: flex;
         }
         &__text{
             flex: 0 0 66.5%;
             padding-block: 64px;
             padding-inline: 64px 0px;
+            @if $theme == "balloon" {
+                position: relative;
+                z-index: 2;
+            }
             @media (max-width:1030px) {
                 flex: 0 0 70%;
             }
@@ -289,6 +313,10 @@
             flex-direction: column;
             align-items: flex-end;
             justify-content: flex-end;
+            @if $theme == "balloon" {
+                position: relative;
+                z-index: 2;
+            }
             @media (max-width:#{$md2}px) {
                 img{
                     height: auto;
@@ -320,6 +348,30 @@
                 > * {
                     width: 100%;
                 }
+            }
+        }
+        @if $theme == "balloon" {
+            &__bg{
+                position: absolute;
+                top: -64px;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+                @media (max-width:540px) {
+                    top: -220px;
+                }
+            }
+            &__blur{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0);
+                backdrop-filter: blur(30px);
             }
         }
     }
@@ -369,6 +421,10 @@
         transform: rotate(-2deg);
         padding: 9px 37px;
         border-radius: 99px;
+        @if $theme == "balloon" {
+            background: var(--color-opposite);
+            color: rgba(248, 17, 66, 1);
+        }
         span{
             display: inline-block;
         }
@@ -423,6 +479,47 @@
             top: -10px;
             width: 60px;
             height: 60px;
+        }
+    }
+    @if($theme == "balloon"){
+        &__hand{
+            position: absolute;
+            inset-inline-end: -86px;
+            top: -41px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-end: -18px;
+                top: -16px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+        &__money2{
+            position: absolute;
+            inset-inline-end: 14px;
+            top: -80px;
+            width: 110px;
+            height: 110px;
+            @media (max-width:600px) {
+                inset-inline-end: -8px;
+                top: -36px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+        &__balloon{
+            position: absolute;
+            inset-inline-start: -150px;
+            top: -53px;
+            width: 219px;
+            height: 150px;
+            @media (max-width:600px) {
+                inset-inline-start: -37px;
+                top: 7px;
+                width: 64px;
+                height: 43px;
+            }
         }
     }
     &__coin{
@@ -556,6 +653,13 @@
     }
     &__content {
         flex: 1;
+        @if $theme == "balloon" {
+            .btn_primary{
+                @media (min-width:#{$md2}px) {
+                    padding: 16px 48px;
+                }
+            }
+        }
     }
     &__list {
         flex: 0 0 360px;
@@ -675,7 +779,7 @@
         width: 100px;
         height: 100px;
         @media (max-width:#{$md3}px) {
-            &:not(.bigLabel__img_4, .bigLabel__img_5){
+            &:not(.bigLabel__img_4, .bigLabel__img_5, .bigLabel__img_6){
                 width: 64px;
                 height: 64px;
             }
@@ -722,6 +826,20 @@
             @media (max-width:#{$md3}px) {
                 inset-inline-start: -5px;
                 bottom: 23px;
+            }
+        }
+        @if($theme == "balloon"){
+            &_6{
+                inset-inline-end: -88px;
+                bottom: -2px;
+                width: 135px;
+                height: 92px;
+                @media (max-width:#{$md3}px) {
+                    width: 78px;
+                    height: 46px;
+                    inset-inline-end: -30px;
+                    bottom: 12px;
+                }
             }
         }
     }
@@ -1272,7 +1390,7 @@
     }
     &__btn{
         position: absolute;
-        @if $theme == "default" or $theme == "pin-up"{
+        @if $theme == "default" or $theme == "pin-up" or $theme == "balloon"{
             inset-inline-end: 40px;
             top: calc(50% - 20px);
             @media (max-width:1413px) {
@@ -1709,6 +1827,26 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+        }
+    }
+}
+
+@if $theme == "balloon" {
+    .smartSoft{
+        background: linear-gradient(132.87deg, #00C0FF 0%, #009CFF 100%);
+        color: var(--color-opposite);
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        &__content{
+            display: flex;
+            gap: 4px;
+        }
+        &_divider{
+            background-color: var(--color-opposite);
+            width: 1px;
+            flex: 0 0 1px;
+            height: 40px;
         }
     }
 }

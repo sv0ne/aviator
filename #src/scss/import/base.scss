@@ -254,7 +254,12 @@ table{
 
 .fill-brand{fill: var(--fill-icon-brand-hex);}
 
-.bg-black-05{background-color: var(--bg-video-overlay);}
+.bg-black-05{
+	background-color: var(--bg-video-overlay);
+	@if($theme == "balloon"){
+		backdrop-filter: blur(16px);
+	}
+}
 
 ///////////////////////// FLEX ////////////////////////////
 
