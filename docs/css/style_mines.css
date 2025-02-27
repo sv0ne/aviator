@@ -943,27 +943,15 @@ html[dir=rtl] .scroll__overlayArea {
 }
 
 .btn_primary {
-  background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%);
   color: #fff;
   position: relative;
-}
-
-.btn_primary:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  margin: -2px;
-  border-radius: 9px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ED9412), to(#B4450B));
-  background: linear-gradient(180deg, #ED9412 0%, #B4450B 100%);
+  background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%) padding-box, linear-gradient(180deg, #ED9412 0%, #B4450B 100%) border-box;
+  border: 2px solid transparent;
+  padding: 10px 24px;
 }
 
 .btn_primary:hover {
-  background: linear-gradient(119.59deg, #F27012 0%, #F7A915 100%);
+  opacity: 0.9;
 }
 
 .btn_secondary,
@@ -995,6 +983,26 @@ html[dir=rtl] .scroll__overlayArea {
 
 .btn_info:hover:not(.disabled) {
   background: rgba(255, 255, 255, 0.5);
+}
+
+.btn_animated {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn_animated:after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  inset-inline-start: -75px;
+  width: 15px;
+  height: 80px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background: var(--color-gray);
+  -webkit-animation: btnLine 2s linear 0s infinite;
+          animation: btnLine 2s linear 0s infinite;
 }
 
 @-webkit-keyframes btnLine {
@@ -1486,9 +1494,8 @@ html[dir=rtl] .scroll__overlayArea {
   padding: 8px 16px;
   border-radius: var(--br-small);
   background-color: rgb(52, 199, 89);
-  background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%);
-  color: #fff;
-  position: relative;
+  background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%) padding-box, linear-gradient(180deg, #ED9412 0%, #B4450B 100%) border-box;
+  border: 2px solid transparent;
 }
 
 html[dir=rtl] .label-4 svg {
@@ -1503,24 +1510,6 @@ html[dir=rtl] .label-4 svg {
 
 .label-4 svg use {
   fill: #232325;
-}
-
-.label-4:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  margin: -2px;
-  border-radius: 9px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ED9412), to(#B4450B));
-  background: linear-gradient(180deg, #ED9412 0%, #B4450B 100%);
-}
-
-.label-4:hover {
-  background: linear-gradient(119.59deg, #F27012 0%, #F7A915 100%);
 }
 
 .searchField {
@@ -4322,6 +4311,10 @@ position sticky у блока .stickyBlock */
   .navigation.posts-navigation .nav-previous a,
   .navigation.posts-navigation .nav-next a {
     padding: 12px 16px;
+  }
+
+  .btn_primary {
+    padding: 10px 16px;
   }
 
   .btn-4 {

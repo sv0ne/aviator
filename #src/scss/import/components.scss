@@ -20,20 +20,17 @@
     }
     &_primary{
         @if($version == 'v1'){
-            background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%);
             color: #fff;
             position: relative;
-            &:before{
-                content: '';
-                position: absolute;
-                top: 0; right: 0; bottom: 0; left: 0;
-                z-index: -1;
-                margin: -2px;
-                border-radius: 9px;
-                background: linear-gradient(180deg, #ED9412 0%, #B4450B 100%);
+            background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%) padding-box, 
+              linear-gradient(180deg, #ED9412 0%, #B4450B 100%) border-box;
+            border: 2px solid transparent;
+            padding: 10px 24px;
+            @media (max-width:#{$md3}px) {
+                padding: 10px 16px;
             }
             &:hover{
-                background: linear-gradient(119.59deg, #F27012 0%, #F7A915 100%);
+                opacity: 0.9;
             }
         } @else {
             background: var(--color-brand);
@@ -68,19 +65,19 @@
     &_animated{
         @if($version == 'v0'){
             box-shadow: var(--shadow-btn-primary);
-            position: relative;
-            overflow: hidden;
-            &:after{
-                content: "";
-                position: absolute;
-                top: -20px;
-                inset-inline-start: -75px;
-                width: 15px;
-                height: 80px;
-                transform: rotate(45deg);
-                background: var(--color-gray);
-                animation: btnLine 2s linear 0s infinite;
-            }
+        }
+        position: relative;
+        overflow: hidden;
+        &:after{
+            content: "";
+            position: absolute;
+            top: -20px;
+            inset-inline-start: -75px;
+            width: 15px;
+            height: 80px;
+            transform: rotate(45deg);
+            background: var(--color-gray);
+            animation: btnLine 2s linear 0s infinite;
         }
     }
     @if($theme == 'light'){
@@ -670,23 +667,11 @@
         background-color: rgba(52, 199, 89, 1);
     }
     @if($version == "v1"){
-        background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%);
-        color: #fff;
-        position: relative;
+        background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%) padding-box, 
+              linear-gradient(180deg, #ED9412 0%, #B4450B 100%) border-box;
+        border: 2px solid transparent;
         svg use{
             fill: #232325;
-        }
-        &:before{
-            content: '';
-            position: absolute;
-            top: 0; right: 0; bottom: 0; left: 0;
-            z-index: -1;
-            margin: -2px;
-            border-radius: 9px;
-            background: linear-gradient(180deg, #ED9412 0%, #B4450B 100%);
-        }
-        &:hover{
-            background: linear-gradient(119.59deg, #F27012 0%, #F7A915 100%);
         }
     }
 }
