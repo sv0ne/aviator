@@ -1494,6 +1494,10 @@ html[dir=rtl] .label-4 svg {
           transform: rotate(180deg);
 }
 
+.label-4 svg use {
+  fill: #fff;
+}
+
 .searchField {
   position: relative;
   height: 40px;

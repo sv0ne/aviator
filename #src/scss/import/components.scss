@@ -7,17 +7,40 @@
     border-radius: var(--br-small);
     padding: 12px 24px;
     @media (max-width:#{$md3}px) {
-        padding: 8px 16px;
+        @if($version == 'v1'){
+            padding: 12px 16px;
+        } @else {
+            padding: 8px 16px;
+        }
+        
     }
     &.disabled{
         opacity: 0.5;
         pointer-events: none;
     }
     &_primary{
-        background: var(--color-brand);
-        color: var(--color-btn-primary);
-        &:hover{
-            background: var(--color-brand-hover);
+        @if($version == 'v1'){
+            background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%);
+            color: #fff;
+            position: relative;
+            &:before{
+                content: '';
+                position: absolute;
+                top: 0; right: 0; bottom: 0; left: 0;
+                z-index: -1;
+                margin: -2px;
+                border-radius: 9px;
+                background: linear-gradient(180deg, #ED9412 0%, #B4450B 100%);
+            }
+            &:hover{
+                background: linear-gradient(119.59deg, #F27012 0%, #F7A915 100%);
+            }
+        } @else {
+            background: var(--color-brand);
+            color: var(--color-btn-primary);
+            &:hover{
+                background: var(--color-brand-hover);
+            }
         }
     }
     &_secondary{
@@ -43,19 +66,21 @@
         }
     }
     &_animated{
-        box-shadow: var(--shadow-btn-primary);
-        position: relative;
-        overflow: hidden;
-        &:after{
-            content: "";
-            position: absolute;
-            top: -20px;
-            inset-inline-start: -75px;
-            width: 15px;
-            height: 80px;
-            transform: rotate(45deg);
-            background: var(--color-gray);
-            animation: btnLine 2s linear 0s infinite;
+        @if($version == 'v0'){
+            box-shadow: var(--shadow-btn-primary);
+            position: relative;
+            overflow: hidden;
+            &:after{
+                content: "";
+                position: absolute;
+                top: -20px;
+                inset-inline-start: -75px;
+                width: 15px;
+                height: 80px;
+                transform: rotate(45deg);
+                background: var(--color-gray);
+                animation: btnLine 2s linear 0s infinite;
+            }
         }
     }
     @if($theme == 'light'){
@@ -635,11 +660,34 @@
             transform: rotate(180deg);
         }
     }
+    svg use{
+        fill: #fff;
+    }
     @if($theme == 'light'){
         background-color: var(--color-opposite);
         padding: 12px;
     } @else {
         background-color: rgba(52, 199, 89, 1);
+    }
+    @if($version == "v1"){
+        background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%);
+        color: #fff;
+        position: relative;
+        svg use{
+            fill: #232325;
+        }
+        &:before{
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: -1;
+            margin: -2px;
+            border-radius: 9px;
+            background: linear-gradient(180deg, #ED9412 0%, #B4450B 100%);
+        }
+        &:hover{
+            background: linear-gradient(119.59deg, #F27012 0%, #F7A915 100%);
+        }
     }
 }
 
@@ -937,6 +985,31 @@
         height: if($theme == "balloon", 58px, 24px);
     }
 }
+
+@if($version == 'v1'){
+    .logoBtn{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 5px 14px;
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 700;
+        margin-inline-start: 8px;
+        &__flag{
+            border: 2px solid #fff;
+            width: 24px;
+            height: 24px;
+            flex: 0 0 24px;
+            border-radius: 99px;
+        }
+        @media (max-width:#{$md3}px) {
+            padding: 5px 14px;
+        }
+        &.m-0{margin: 0;}
+    }
+}
+
 
 @if($theme == 'light'){
     .logoText{

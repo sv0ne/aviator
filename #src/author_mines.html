@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('blocks/head.html', {
+    "theme": "mines"
+})
+<!-- role="dialog" -->
+<body> 
+	@@include('blocks/headers/header_mines.html')
+    
+    @@include('blocks/author.html')
+
+    <!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
+	@@include('blocks/common-blocks.html', {
+		"theme": "default"
+	})
+	@@include('blocks/footers/footer_mines.html')
+	@@include('blocks/common-scripts.html')
+</body>
+</html>
