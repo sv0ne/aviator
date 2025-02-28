@@ -30,9 +30,13 @@
                 background: linear-gradient(119.59deg, #FDA0FF 0%, #DD1DDD 100%) padding-box, 
                 linear-gradient(96.44deg, #D629D4 0%, #FDD8FF 100%) border-box;
             }
-            @if($theme == "jetX" or $theme == "mineIsland"){
+            @if($theme == "jetX"){
                 background: linear-gradient(119.59deg, #FF79C5 0%, #BE0A73 100%) padding-box, 
                 linear-gradient(96.44deg, #FFD5FE 0%, #46E6B5 100%) border-box;
+            }
+            @if($theme == "mineIsland"){
+                background: linear-gradient(119.59deg, #6AD0FF 0%, #375FDC 100%) padding-box, 
+                linear-gradient(96.44deg, #CFEDFC 0%, #8DB6FC 100%) border-box;
             }
             border: 2px solid transparent;
             padding: 10px 24px;
@@ -685,9 +689,13 @@
             background: linear-gradient(119.59deg, #FDA0FF 0%, #DD1DDD 100%) padding-box, 
             linear-gradient(96.44deg, #D629D4 0%, #FDD8FF 100%) border-box;
         }
-        @if($theme == "jetX" or $theme == "mineIsland"){
+        @if($theme == "jetX"){
             background: linear-gradient(119.59deg, #FF79C5 0%, #BE0A73 100%) padding-box, 
             linear-gradient(96.44deg, #FFD5FE 0%, #46E6B5 100%) border-box;
+        }
+        @if($theme == "mineIsland"){
+            background: linear-gradient(119.59deg, #6AD0FF 0%, #375FDC 100%) padding-box, 
+            linear-gradient(96.44deg, #CFEDFC 0%, #8DB6FC 100%) border-box;
         }
         border: 2px solid transparent;
         svg use{

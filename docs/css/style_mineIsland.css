@@ -945,7 +945,7 @@ html[dir=rtl] .scroll__overlayArea {
 .btn_primary {
   color: #fff;
   position: relative;
-  background: linear-gradient(119.59deg, #FF79C5 0%, #BE0A73 100%) padding-box, linear-gradient(96.44deg, #FFD5FE 0%, #46E6B5 100%) border-box;
+  background: linear-gradient(119.59deg, #6AD0FF 0%, #375FDC 100%) padding-box, linear-gradient(96.44deg, #CFEDFC 0%, #8DB6FC 100%) border-box;
   border: 2px solid transparent;
   padding: 10px 24px;
 }
@@ -1494,7 +1494,7 @@ html[dir=rtl] .scroll__overlayArea {
   padding: 8px 16px;
   border-radius: var(--br-small);
   background-color: rgb(52, 199, 89);
-  background: linear-gradient(119.59deg, #FF79C5 0%, #BE0A73 100%) padding-box, linear-gradient(96.44deg, #FFD5FE 0%, #46E6B5 100%) border-box;
+  background: linear-gradient(119.59deg, #6AD0FF 0%, #375FDC 100%) padding-box, linear-gradient(96.44deg, #CFEDFC 0%, #8DB6FC 100%) border-box;
   border: 2px solid transparent;
 }
 
@@ -2408,15 +2408,15 @@ html[dir=rtl] .firstScreen__boby {
 
 .textBanner__x1 {
   position: absolute;
-  inset-inline-start: -84px;
-  top: -68px;
+  inset-inline-start: -76px;
+  top: -61px;
   width: 126px;
   height: 126px;
 }
 
 .textBanner__x2 {
   position: absolute;
-  inset-inline-end: -72px;
+  inset-inline-end: -76px;
   top: -46px;
   width: 126px;
   height: 126px;
@@ -4900,7 +4900,7 @@ position sticky у блока .stickyBlock */
 
   .textBanner__x1 {
     inset-inline-start: -47px;
-    top: -18px;
+    top: -30px;
     width: 64px;
     height: 64px;
   }

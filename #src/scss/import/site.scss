@@ -760,9 +760,8 @@
                 height: 64px;
             }
         }
-        
     }
-    @if($theme == "jetX" or $theme == "mineIsland"){
+    @if($theme == "jetX"){
         &__x1{
             position: absolute;
             inset-inline-start: -84px;
@@ -806,7 +805,51 @@
                 height: 64px;
             }
         }
-        
+    }
+    @if($theme == "mineIsland"){
+        &__x1{
+            position: absolute;
+            inset-inline-start: -76px;
+            top: -61px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-start: -47px;
+                top: -30px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__x2{
+            position: absolute;
+            inset-inline-end: -76px;
+            top: -46px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-end: -36px;
+                top: -23px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__money2{
+            position: absolute;
+            inset-inline-end: 27px;
+            top: -80px;
+            width: 110px;
+            height: 110px;
+            @media (max-width:#{$md2}px) {
+                inset-inline-end: -7px;
+                top: -86px;
+            }
+            @media (max-width:600px) {
+                inset-inline-end: 3px;
+                top: -50px;
+                width: 64px;
+                height: 64px;
+            }
+        }
     }
     &__coin{
         position: absolute;
