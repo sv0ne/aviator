@@ -1815,37 +1815,7 @@ html[dir=rtl] .breadcrumbs__link:not(:first-child):before {
 }
 
 .logo img {
-  height: 58px;
-}
-
-.logoBtn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 8px;
-  padding: 5px 14px;
-  font-size: 24px;
-  line-height: 28px;
-  font-weight: 700;
-  -webkit-margin-start: 8px;
-          margin-inline-start: 8px;
-}
-
-.logoBtn__flag {
-  border: 2px solid #fff;
-  width: 24px;
-  height: 24px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 24px;
-          flex: 0 0 24px;
-  border-radius: 99px;
-}
-
-.logoBtn.m-0 {
-  margin: 0;
+  height: 40px;
 }
 
 .promocode {
@@ -4430,10 +4400,6 @@ position sticky у блока .stickyBlock */
     gap: 16px;
   }
 
-  .logoBtn {
-    padding: 5px 14px;
-  }
-
   .quoteWarning {
     padding: 80px 16px 16px 16px;
   }
@@ -5058,7 +5024,6 @@ position sticky у блока .stickyBlock */
     position: absolute;
     top: 16px;
     inset-inline-start: 8px;
-    top: 27px;
   }
 }
 

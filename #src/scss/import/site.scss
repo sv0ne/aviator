@@ -104,9 +104,6 @@
                 position: absolute;
                 top: 16px;
                 inset-inline-start: 8px;
-                @if($version == "v1"){
-                    top: 27px;
-                }
             }
         }
     }

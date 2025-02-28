@@ -967,34 +967,15 @@
     padding: 8px;
     align-items: flex-start;
     img{
-        height: if($theme == "balloon", 58px, 24px);
-    }
-}
-
-@if($version == 'v1'){
-    .logoBtn{
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 5px 14px;
-        font-size: 24px;
-        line-height: 28px;
-        font-weight: 700;
-        margin-inline-start: 8px;
-        &__flag{
-            border: 2px solid #fff;
-            width: 24px;
+        @if $theme == "balloon" and $version == "v0" {
+            height: 58px;
+        } @else if $theme == "balloon" and $version == "v1" {
+            height: 40px;
+        } @else {
             height: 24px;
-            flex: 0 0 24px;
-            border-radius: 99px;
         }
-        @media (max-width:#{$md3}px) {
-            padding: 5px 14px;
-        }
-        &.m-0{margin: 0;}
     }
 }
-
 
 @if($theme == 'light'){
     .logoText{
