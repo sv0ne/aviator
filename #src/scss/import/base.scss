@@ -256,7 +256,7 @@ table{
 
 .bg-black-05{
 	background-color: var(--bg-video-overlay);
-	@if($theme == "balloon" or $theme == "mines"){
+	@if($theme == "balloon" or $theme == "mines" or $theme == "towerX"){
 		backdrop-filter: blur(16px);
 	}
 }
