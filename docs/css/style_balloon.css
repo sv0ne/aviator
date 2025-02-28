@@ -4091,6 +4091,9 @@ ol.list li:before,
   .textBanner__t1 {
     font-size: var(--fz-text-big);
     line-height: var(--lh-text-big);
+    -webkit-transform: translateY(4px);
+        -ms-transform: translateY(4px);
+            transform: translateY(4px);
   }
 
   .textBanner__t2 {
