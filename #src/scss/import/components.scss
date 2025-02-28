@@ -22,8 +22,14 @@
         @if($theme == 'mines' or $theme == "towerX"){
             color: #fff;
             position: relative;
-            background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%) padding-box, 
-              linear-gradient(180deg, #ED9412 0%, #B4450B 100%) border-box;
+            @if($theme == 'mines'){
+                background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%) padding-box, 
+                linear-gradient(180deg, #ED9412 0%, #B4450B 100%) border-box;
+            }
+            @if($theme == 'towerX'){
+                background: linear-gradient(119.59deg, #FDA0FF 0%, #DD1DDD 100%) padding-box, 
+                linear-gradient(96.44deg, #D629D4 0%, #FDD8FF 100%) border-box;
+            }
             border: 2px solid transparent;
             padding: 10px 24px;
             @media (max-width:#{$md3}px) {
@@ -667,8 +673,14 @@
         background-color: rgba(52, 199, 89, 1);
     }
     @if($theme == 'mines' or $theme == "towerX"){
-        background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%) padding-box, 
-              linear-gradient(180deg, #ED9412 0%, #B4450B 100%) border-box;
+        @if($theme == 'mines'){
+            background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%) padding-box, 
+            linear-gradient(180deg, #ED9412 0%, #B4450B 100%) border-box;
+        }
+        @if($theme == 'towerX'){
+            background: linear-gradient(119.59deg, #FDA0FF 0%, #DD1DDD 100%) padding-box, 
+            linear-gradient(96.44deg, #D629D4 0%, #FDD8FF 100%) border-box;
+        }
         border: 2px solid transparent;
         svg use{
             fill: #232325;

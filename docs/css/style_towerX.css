@@ -945,7 +945,7 @@ html[dir=rtl] .scroll__overlayArea {
 .btn_primary {
   color: #fff;
   position: relative;
-  background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%) padding-box, linear-gradient(180deg, #ED9412 0%, #B4450B 100%) border-box;
+  background: linear-gradient(119.59deg, #FDA0FF 0%, #DD1DDD 100%) padding-box, linear-gradient(96.44deg, #D629D4 0%, #FDD8FF 100%) border-box;
   border: 2px solid transparent;
   padding: 10px 24px;
 }
@@ -1494,7 +1494,7 @@ html[dir=rtl] .scroll__overlayArea {
   padding: 8px 16px;
   border-radius: var(--br-small);
   background-color: rgb(52, 199, 89);
-  background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%) padding-box, linear-gradient(180deg, #ED9412 0%, #B4450B 100%) border-box;
+  background: linear-gradient(119.59deg, #FDA0FF 0%, #DD1DDD 100%) padding-box, linear-gradient(96.44deg, #D629D4 0%, #FDD8FF 100%) border-box;
   border: 2px solid transparent;
 }
 
@@ -2406,28 +2406,28 @@ html[dir=rtl] .firstScreen__boby {
   height: 110px;
 }
 
-.textBanner__bigStar {
+.textBanner__x1 {
   position: absolute;
-  inset-inline-start: -98px;
-  top: -86px;
-  width: 180px;
-  height: 180px;
+  inset-inline-start: -84px;
+  top: -68px;
+  width: 126px;
+  height: 126px;
+}
+
+.textBanner__x2 {
+  position: absolute;
+  inset-inline-end: -86px;
+  top: -46px;
+  width: 126px;
+  height: 126px;
 }
 
 .textBanner__money2 {
   position: absolute;
-  inset-inline-end: 14px;
+  inset-inline-end: 66px;
   top: -80px;
   width: 110px;
   height: 110px;
-}
-
-.textBanner__bomb {
-  position: absolute;
-  inset-inline-end: -86px;
-  top: -41px;
-  width: 126px;
-  height: 126px;
 }
 
 .textBanner__coin {
@@ -3404,6 +3404,34 @@ html[dir=rtl] .subscribe__input button {
           transform: translate(-50%, -50%);
 }
 
+.smartSoft {
+  background: linear-gradient(132.87deg, #00C0FF 0%, #009CFF 100%);
+  color: var(--color-opposite);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+}
+
+.smartSoft__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4px;
+}
+
+.smartSoft_divider {
+  background-color: var(--color-opposite);
+  width: 1px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 1px;
+          flex: 0 0 1px;
+  height: 40px;
+}
+
 .fairTechnology {
   background-color: #ECEDF3;
   /* immutable */
@@ -4110,6 +4138,11 @@ ol.list li:before,
   .textBanner__t4 {
     font-size: 32px;
     line-height: 36px;
+  }
+
+  .textBanner__money2 {
+    inset-inline-end: 17px;
+    top: -86px;
   }
 
   .textBanner__coin {
@@ -4862,23 +4895,23 @@ position sticky у блока .stickyBlock */
     height: 60px;
   }
 
-  .textBanner__bigStar {
-    inset-inline-start: -54px;
-    top: -42px;
-    width: 84px;
-    height: 84px;
-  }
-
-  .textBanner__money2 {
-    inset-inline-end: -36px;
-    top: -50px;
+  .textBanner__x1 {
+    inset-inline-start: -38px;
+    top: -18px;
     width: 64px;
     height: 64px;
   }
 
-  .textBanner__bomb {
-    inset-inline-end: -35px;
+  .textBanner__x2 {
+    inset-inline-end: -36px;
     top: -23px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .textBanner__money2 {
+    inset-inline-end: 25px;
+    top: -50px;
     width: 64px;
     height: 64px;
   }
