@@ -85,7 +85,7 @@
     }
     &:not(.header_v2){
         @media (max-width:1310px) {
-            @if($theme == "mines" or $theme == "towerX" or $theme == "jetX"){
+            @if($theme == "mines" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland"){
                 flex-direction: column-reverse;
                 @media (max-width:#{$md3}px) {
                     flex-direction: column;
@@ -102,7 +102,7 @@
         @media (max-width:1310px) and (min-width:#{$md3}px) {
             .header__logo{
                 position: absolute;
-                @if($theme == "mines" or $theme == "towerX" or $theme == "jetX"){
+                @if($theme == "mines" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland"){
                     top: 8px;
                 } @else {
                     top: 16px;
@@ -142,7 +142,7 @@
             filter: blur(5px);
         }
     }
-    @if($theme == "mines" or $theme == "towerX" or $theme == "jetX"){
+    @if($theme == "mines" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland"){
         .searchField__input:before{
             height: 32px;
             top: 4px;
@@ -279,7 +279,7 @@
         inset-inline-start: 0;
         width: 100%;
         height: 100%;
-        @if $theme == "mines" or $theme == "towerX" or $theme == "jetX" {
+        @if $theme == "mines" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" {
             background: linear-gradient(180deg, rgba(13, 16, 22, 0) 0%, #232325 100%);
         } @else {
             background: linear-gradient(180deg, rgba(13, 16, 22, 0) 0%, rgba(13, 16, 22, 0) 90%, #0D1016 100%);
@@ -400,7 +400,7 @@
     }
 }
 
-@if $theme == "mines" or $theme == "towerX" or $theme == "jetX" {
+@if $theme == "mines" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" {
     .firstScreen{
         @media (min-width:#{$md3}px) {
             padding-bottom: 40px;
@@ -574,7 +574,7 @@
             background: var(--color-opposite);
             color: rgba(248, 17, 66, 1);
         }
-        @if $theme == "mines" or $theme == "towerX" or $theme == "jetX" {
+        @if $theme == "mines" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" {
             background: #fff;
             color: rgba(35, 35, 37, 1);
         }
@@ -762,7 +762,7 @@
         }
         
     }
-    @if($theme == "jetX"){
+    @if($theme == "jetX" or $theme == "mineIsland"){
         &__x1{
             position: absolute;
             inset-inline-start: -84px;
@@ -960,7 +960,7 @@
         @media (max-width:#{$md3}px) {
             flex: 0;
         }
-        @if $theme == 'mines' or $theme == "towerX" or $theme == "jetX" {
+        @if $theme == 'mines' or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" {
             background: #232325;
         }
     }
@@ -1679,7 +1679,7 @@
     }
     &__btn{
         position: absolute;
-        @if $theme == "default" or $theme == "pin-up" or $theme == "balloon" or $theme == "mines" or $theme == "towerX" or $theme == "jetX" {
+        @if $theme == "default" or $theme == "pin-up" or $theme == "balloon" or $theme == "mines" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" {
             inset-inline-end: 40px;
             top: calc(50% - 20px);
             @media (max-width:1413px) {
@@ -2120,7 +2120,7 @@
     }
 }
 
-@if $theme == "balloon" or $theme == "towerX" or $theme == "jetX" {
+@if $theme == "balloon" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" {
     .smartSoft{
         background: linear-gradient(132.87deg, #00C0FF 0%, #009CFF 100%);
         color: var(--color-opposite);
