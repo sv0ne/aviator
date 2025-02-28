@@ -2643,13 +2643,6 @@ html[dir=rtl] .firstScreen__boby {
   bottom: 60px;
 }
 
-.bigLabel__img_6 {
-  inset-inline-end: -88px;
-  bottom: -2px;
-  width: 135px;
-  height: 92px;
-}
-
 .navigationScroll {
   position: fixed;
   top: 0;
@@ -3409,34 +3402,6 @@ html[dir=rtl] .subscribe__input button {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-}
-
-.smartSoft {
-  background: linear-gradient(132.87deg, #00C0FF 0%, #009CFF 100%);
-  color: var(--color-opposite);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 16px;
-}
-
-.smartSoft__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 4px;
-}
-
-.smartSoft_divider {
-  background-color: var(--color-opposite);
-  width: 1px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 1px;
-          flex: 0 0 1px;
-  height: 40px;
 }
 
 .fairTechnology {
@@ -4657,13 +4622,6 @@ position sticky у блока .stickyBlock */
     bottom: 23px;
   }
 
-  .bigLabel__img_6 {
-    width: 78px;
-    height: 46px;
-    inset-inline-end: -30px;
-    bottom: 12px;
-  }
-
   .contentNav__header {
     padding: 16px;
   }
@@ -5013,16 +4971,9 @@ position sticky у блока .stickyBlock */
 }
 
 @media (max-width: 1310px) and (min-width: 767.98px) {
-  .header__buttons {
-    height: 74px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-
   .header:not(.header_v2) .header__logo {
     position: absolute;
-    top: 16px;
+    top: 8px;
     inset-inline-start: 8px;
   }
 }
