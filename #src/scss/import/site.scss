@@ -678,15 +678,15 @@
     @if($theme == "mines"){
         &__bigStar{
             position: absolute;
-            inset-inline-start: -98px;
-            top: -86px;
-            width: 180px;
-            height: 180px;
+            inset-inline-start: -69px;
+            top: -61px;
+            width: 126px;
+            height: 126px;
             @media (max-width:600px) {
-                inset-inline-start: -54px;
-                top: -42px;
-                width: 84px;
-                height: 84px;
+                inset-inline-start: -35px;
+                top: -31px;
+                width: 64px;
+                height: 64px;
             }
         }
         &__money2{
