@@ -201,7 +201,7 @@
         <a href="" class="btn btn_primary btn_animated">Play Aviator</a>
     </div>
 </header>
-<div class="firstscreen-bg js-ibg" data-bg-image="./img/mines-bg.jpg"></div>
+<div class="firstscreen-bg js-ibg" data-bg-image="./img/mines-bg.webp"></div>
 
 	<main class="styledContent container">
 	<!-- firstScreen -->
@@ -219,8 +219,22 @@
 							</div>
 							<p class="text-huge textBanner__t3">
 								<span>like a professional</span>
-								<img src="img/bomb.png" class="textBanner__bomb" width="126" height="126" alt="">
-								<img src="img/big-star.png" class="textBanner__bigStar" width="126" height="126" alt="">
+								<img src="img/firstScreen/bomb-450.webp" 
+									srcset="img/firstScreen/bomb-64.webp 64w, 
+											img/firstScreen/bomb-128.webp 128w, 
+											img/firstScreen/bomb-256.webp 256w, 
+											img/firstScreen/bomb-450.webp 450w" 
+									sizes="(max-width: 600px) 64px, 
+											126px"
+									class="textBanner__bomb" width="126" height="126" alt="">
+								<img src="img/firstScreen/big-star-400.webp"
+									srcset="img/firstScreen/big-star-64.webp 64w, 
+											img/firstScreen/big-star-128.webp 128w, 
+											img/firstScreen/big-star-256.webp 256w, 
+											img/firstScreen/big-star-400.webp 400w" 
+									sizes="(max-width: 600px) 64px, 
+											126px" 
+									class="textBanner__bigStar" width="126" height="126" alt="">
 							</p>
 						</div>
 						<p>Our site will help you learn all the official details about the aviator game and strategies that will increase your chances of winning real money.</p>
@@ -233,10 +247,16 @@
 						</div>
 					</div>
 					<div class="firstScreen__image">
-						<img src="img/phones/mines.webp" width="540" height="540" loading="lazy" alt="">
+						<img 
+							src="img/phones/mines-720.webp" 
+							srcset="img/phones/mines-300.webp 300w, 
+									img/phones/mines-540.webp 540w,
+									img/phones/mines-720.webp 720w"  
+							sizes="(max-width: 992px) 300px, 540px"
+							width="540" height="540" alt="">
 					</div>
 					<div class="firstScreen__bg">
-						<img src="img/image12.jpg" width="945" height="542" loading="lazy" alt="">
+						<img src="img/image12.webp" width="945" height="542" loading="lazy" alt="">
 						<div class="firstScreen__blur"></div>
 					</div>
 				</div>
@@ -261,7 +281,7 @@
 						<iframe class="posa" src="" data-src="https://demo.spribe.io/launch/aviator?currency=GHS&lang=EN" width="776" height="437" scrolling="none" frameborder="0" id="gameIframe" title="aviator-demo"></iframe>
 					</div>
 					<div class="posa js-playFree-control">
-						<img src="img/image12.jpg" class="posa" loading="lazy" alt="">
+						<img src="img/image12.webp" class="posa" loading="lazy" alt="">
 						<div class="bg-black-05 z-2 posa f-jcc-aic fdc gap-16">
 							<a href="https://rozetka.com.ua/ua/" target="_blank" class="btn btn_primary">Play for real money</a>
 							<button type="button" class="btn btn_info js-playFree-btn">Play free</button>
