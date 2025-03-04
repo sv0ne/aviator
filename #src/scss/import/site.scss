@@ -676,7 +676,7 @@
         }
     }
     @if($theme == "mines"){
-        &__bigStar{
+        &__x1{
             position: absolute;
             inset-inline-start: -69px;
             top: -61px;
@@ -685,6 +685,19 @@
             @media (max-width:600px) {
                 inset-inline-start: -35px;
                 top: -31px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__x2{
+            position: absolute;
+            inset-inline-end: -86px;
+            top: -41px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-end: -35px;
+                top: -23px;
                 width: 64px;
                 height: 64px;
             }
@@ -698,19 +711,6 @@
             @media (max-width:600px) {
                 inset-inline-end: -36px;
                 top: -50px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__bomb{
-            position: absolute;
-            inset-inline-end: -86px;
-            top: -41px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-end: -35px;
-                top: -23px;
                 width: 64px;
                 height: 64px;
             }

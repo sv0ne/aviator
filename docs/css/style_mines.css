@@ -2406,10 +2406,18 @@ html[dir=rtl] .firstScreen__boby {
   height: 110px;
 }
 
-.textBanner__bigStar {
+.textBanner__x1 {
   position: absolute;
   inset-inline-start: -69px;
   top: -61px;
+  width: 126px;
+  height: 126px;
+}
+
+.textBanner__x2 {
+  position: absolute;
+  inset-inline-end: -86px;
+  top: -41px;
   width: 126px;
   height: 126px;
 }
@@ -2420,14 +2428,6 @@ html[dir=rtl] .firstScreen__boby {
   top: -80px;
   width: 110px;
   height: 110px;
-}
-
-.textBanner__bomb {
-  position: absolute;
-  inset-inline-end: -86px;
-  top: -41px;
-  width: 126px;
-  height: 126px;
 }
 
 .textBanner__coin {
@@ -4865,9 +4865,16 @@ position sticky у блока .stickyBlock */
     height: 60px;
   }
 
-  .textBanner__bigStar {
+  .textBanner__x1 {
     inset-inline-start: -35px;
     top: -31px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .textBanner__x2 {
+    inset-inline-end: -35px;
+    top: -23px;
     width: 64px;
     height: 64px;
   }
@@ -4875,13 +4882,6 @@ position sticky у блока .stickyBlock */
   .textBanner__money2 {
     inset-inline-end: -36px;
     top: -50px;
-    width: 64px;
-    height: 64px;
-  }
-
-  .textBanner__bomb {
-    inset-inline-end: -35px;
-    top: -23px;
     width: 64px;
     height: 64px;
   }
