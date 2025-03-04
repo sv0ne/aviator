@@ -809,19 +809,6 @@
     @if($theme == "mineIsland"){
         &__x1{
             position: absolute;
-            inset-inline-start: -76px;
-            top: -61px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-start: -47px;
-                top: -30px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__x2{
-            position: absolute;
             inset-inline-end: -76px;
             top: -46px;
             width: 126px;
@@ -829,6 +816,20 @@
             @media (max-width:600px) {
                 inset-inline-end: -36px;
                 top: -23px;
+                width: 64px;
+                height: 64px;
+            }
+            
+        }
+        &__x2{
+            position: absolute;
+            inset-inline-start: -76px;
+            top: -61px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-start: -47px;
+                top: -30px;
                 width: 64px;
                 height: 64px;
             }

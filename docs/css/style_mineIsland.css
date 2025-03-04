@@ -2408,16 +2408,16 @@ html[dir=rtl] .firstScreen__boby {
 
 .textBanner__x1 {
   position: absolute;
-  inset-inline-start: -76px;
-  top: -61px;
+  inset-inline-end: -76px;
+  top: -46px;
   width: 126px;
   height: 126px;
 }
 
 .textBanner__x2 {
   position: absolute;
-  inset-inline-end: -76px;
-  top: -46px;
+  inset-inline-start: -76px;
+  top: -61px;
   width: 126px;
   height: 126px;
 }
@@ -4899,15 +4899,15 @@ position sticky у блока .stickyBlock */
   }
 
   .textBanner__x1 {
-    inset-inline-start: -47px;
-    top: -30px;
+    inset-inline-end: -36px;
+    top: -23px;
     width: 64px;
     height: 64px;
   }
 
   .textBanner__x2 {
-    inset-inline-end: -36px;
-    top: -23px;
+    inset-inline-start: -47px;
+    top: -30px;
     width: 64px;
     height: 64px;
   }
