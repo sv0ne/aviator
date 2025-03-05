@@ -4514,12 +4514,7 @@ position sticky у блока .stickyBlock */
   }
 
   .firstScreen__image {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    display: none;
   }
 
   .firstScreen__title {
