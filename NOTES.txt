@@ -1,11 +1,4 @@
-Поиск и замена по проекту (только то что в кавычках)
-"btn_green" -> "btn_primary btn_animated"
-"btn_blue" -> "btn_secondary"
-"btn-3 btn-3_green" -> "btn btn_primary"
-"btn-3 btn-3_white" -> "btn btn_secondary"
-"btn-3 btn-3_black" -> "btn btn_info"
-
-Заменить иконки в блоках bookmaker с такого формата
-<img src="img/icon-16/cup.svg" width="16" height="16" loading="lazy" alt="">
-на такой
-<svg class="w-16 fill-brand"><use xlink:href="img/sprite/icons-sprite.svg#cup"/></svg>
+Поиск и замена для каждой темы: "img/theme-firstScreen" (должно найти 10 совпадений в каждой теме) на "img/_byTheme" 
+Поиск и замена для тем jetX, towerX, mineIsland: "img/blurBackgrounds" (должно найти 3 совпадений в темах jetX, towerX, mineIsland) на "img/_byTheme/название темы" где название темы это jetX, towerX, mineIsland
+Поиск и замена только для темы mines "img/image12.webp" (2 совпадения) на "img/_byTheme/mines/mines-bg-2.webp"
+Поиск и замена только для темы mines "img/mines-bg.webp" (1 совпадения) на "img/_byTheme/mines/mines-bg.webp"
