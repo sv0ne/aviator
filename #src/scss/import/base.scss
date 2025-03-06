@@ -256,7 +256,7 @@ table{
 
 .bg-black-05{
 	background-color: var(--bg-video-overlay);
-	@if($theme == "balloon" or $theme == "mines" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland"){
+	@if($theme == "balloon" or $theme == "mines" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal"){
 		backdrop-filter: blur(16px);
 	}
 }
