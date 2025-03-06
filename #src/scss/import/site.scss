@@ -715,7 +715,7 @@
             }
         }
     }
-    @if($theme == "towerX" or $theme == "footballX" or $theme == "hilo" or $theme == "goal"){
+    @if($theme == "towerX"){
         &__x1{
             position: absolute;
             inset-inline-start: -84px;
@@ -845,6 +845,141 @@
             }
             @media (max-width:600px) {
                 inset-inline-end: 3px;
+                top: -50px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+    }
+    @if($theme == "footballX"){
+        &__x1{
+            position: absolute;
+            inset-inline-start: -84px;
+            top: -68px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-start: -38px;
+                top: -18px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__x2{
+            position: absolute;
+            inset-inline-end: -86px;
+            top: -46px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-end: -36px;
+                top: -23px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__money2{
+            position: absolute;
+            inset-inline-end: 19px;
+            top: -80px;
+            width: 110px;
+            height: 110px;
+            @media (max-width:#{$md2}px) {
+                inset-inline-end: 17px;
+                top: -86px;
+            }
+            @media (max-width:600px) {
+                inset-inline-end: 7px;
+                top: -50px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+    }
+    @if($theme == "goal"){
+        &__x1{
+            position: absolute;
+            inset-inline-start: -84px;
+            top: -68px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-start: -38px;
+                top: -18px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__x2{
+            position: absolute;
+            inset-inline-end: -86px;
+            top: -46px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-end: -36px;
+                top: -23px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__money2{
+            position: absolute;
+            inset-inline-end: 15px;
+            top: -80px;
+            width: 110px;
+            height: 110px;
+            @media (max-width:#{$md2}px) {
+                inset-inline-end: 17px;
+                top: -86px;
+            }
+            @media (max-width:600px) {
+                inset-inline-end: 3px;
+                top: -50px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+    }
+    @if($theme == "hilo"){
+        &__x1{
+            position: absolute;
+            inset-inline-start: -84px;
+            top: -68px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-start: -38px;
+                top: -18px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__x2{
+            position: absolute;
+            inset-inline-end: -86px;
+            top: -46px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-end: -36px;
+                top: -23px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__money2{
+            position: absolute;
+            inset-inline-end: 16px;
+            top: -80px;
+            width: 110px;
+            height: 110px;
+            @media (max-width:#{$md2}px) {
+                inset-inline-end: -8px;
+                top: -86px;
+            }
+            @media (max-width:600px) {
+                inset-inline-end: 2px;
                 top: -50px;
                 width: 64px;
                 height: 64px;

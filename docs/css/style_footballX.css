@@ -945,7 +945,7 @@ html[dir=rtl] .scroll__overlayArea {
 .btn_primary {
   color: #fff;
   position: relative;
-  background: linear-gradient(119.59deg, #FDA0FF 0%, #DD1DDD 100%) padding-box, linear-gradient(96.44deg, #D629D4 0%, #FDD8FF 100%) border-box;
+  background: linear-gradient(119.59deg, #E1CE00 0%, #FF9D00 100%) padding-box, linear-gradient(96.44deg, #C88616 0%, #FFFFB1 100%) border-box;
   border: 2px solid transparent;
   padding: 10px 24px;
 }
@@ -1494,7 +1494,7 @@ html[dir=rtl] .scroll__overlayArea {
   padding: 8px 16px;
   border-radius: var(--br-small);
   background-color: rgb(52, 199, 89);
-  background: linear-gradient(119.59deg, #FDA0FF 0%, #DD1DDD 100%) padding-box, linear-gradient(96.44deg, #D629D4 0%, #FDD8FF 100%) border-box;
+  background: linear-gradient(119.59deg, #E1CE00 0%, #FF9D00 100%) padding-box, linear-gradient(96.44deg, #C88616 0%, #FFFFB1 100%) border-box;
   border: 2px solid transparent;
 }
 
@@ -2424,7 +2424,7 @@ html[dir=rtl] .firstScreen__boby {
 
 .textBanner__money2 {
   position: absolute;
-  inset-inline-end: 66px;
+  inset-inline-end: 19px;
   top: -80px;
   width: 110px;
   height: 110px;
@@ -4908,7 +4908,7 @@ position sticky у блока .stickyBlock */
   }
 
   .textBanner__money2 {
-    inset-inline-end: 25px;
+    inset-inline-end: 7px;
     top: -50px;
     width: 64px;
     height: 64px;

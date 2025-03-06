@@ -26,7 +26,7 @@
                 background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%) padding-box, 
                 linear-gradient(180deg, #ED9412 0%, #B4450B 100%) border-box;
             }
-            @if($theme == 'towerX' or $theme == "footballX" or $theme == "hilo" or $theme == "goal"){
+            @if($theme == 'towerX'){
                 background: linear-gradient(119.59deg, #FDA0FF 0%, #DD1DDD 100%) padding-box, 
                 linear-gradient(96.44deg, #D629D4 0%, #FDD8FF 100%) border-box;
             }
@@ -37,6 +37,18 @@
             @if($theme == "mineIsland"){
                 background: linear-gradient(119.59deg, #6AD0FF 0%, #375FDC 100%) padding-box, 
                 linear-gradient(96.44deg, #CFEDFC 0%, #8DB6FC 100%) border-box;
+            }
+            @if($theme == "footballX"){
+                background: linear-gradient(119.59deg, #E1CE00 0%, #FF9D00 100%) padding-box, 
+                linear-gradient(96.44deg, #C88616 0%, #FFFFB1 100%) border-box;
+            }
+            @if($theme == "goal"){
+                background: radial-gradient(50% 88.04% at 50% 50%, #8ED32D 0%, #2D7500 100%) padding-box, 
+                linear-gradient(96.44deg, #084300 0%, #2A7B36 100%) border-box;
+            }
+            @if($theme == "hilo"){
+                background: radial-gradient(50% 88.04% at 50% 50%, #8ED32D 0%, #2D7500 100%) padding-box, 
+                linear-gradient(96.44deg, #084300 0%, #2A7B36 100%) border-box;
             }
             border: 2px solid transparent;
             padding: 10px 24px;
@@ -685,7 +697,7 @@
             background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%) padding-box, 
             linear-gradient(180deg, #ED9412 0%, #B4450B 100%) border-box;
         }
-        @if($theme == 'towerX' or $theme == "footballX" or $theme == "hilo" or $theme == "goal"){
+        @if($theme == 'towerX'){
             background: linear-gradient(119.59deg, #FDA0FF 0%, #DD1DDD 100%) padding-box, 
             linear-gradient(96.44deg, #D629D4 0%, #FDD8FF 100%) border-box;
         }
@@ -696,6 +708,18 @@
         @if($theme == "mineIsland"){
             background: linear-gradient(119.59deg, #6AD0FF 0%, #375FDC 100%) padding-box, 
             linear-gradient(96.44deg, #CFEDFC 0%, #8DB6FC 100%) border-box;
+        }
+        @if($theme == "footballX"){
+            background: linear-gradient(119.59deg, #E1CE00 0%, #FF9D00 100%) padding-box, 
+            linear-gradient(96.44deg, #C88616 0%, #FFFFB1 100%) border-box;
+        }
+        @if($theme == "goal"){
+            background: radial-gradient(50% 88.04% at 50% 50%, #8ED32D 0%, #2D7500 100%) padding-box, 
+            linear-gradient(96.44deg, #084300 0%, #2A7B36 100%) border-box;
+        }
+        @if($theme == "hilo"){
+            background: radial-gradient(50% 88.04% at 50% 50%, #8ED32D 0%, #2D7500 100%) padding-box, 
+            linear-gradient(96.44deg, #084300 0%, #2A7B36 100%) border-box;
         }
         border: 2px solid transparent;
         svg use{
