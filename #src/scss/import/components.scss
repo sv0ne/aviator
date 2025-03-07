@@ -19,7 +19,7 @@
         pointer-events: none;
     }
     &_primary{
-        @if($theme == 'mines' or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal" or $theme == "penalty" or $theme == "plinko"){
+        @if($theme == 'mines' or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal"){
             color: #fff;
             position: relative;
             @if($theme == 'mines'){
@@ -42,7 +42,7 @@
                 background: linear-gradient(119.59deg, #E1CE00 0%, #FF9D00 100%) padding-box, 
                 linear-gradient(96.44deg, #C88616 0%, #FFFFB1 100%) border-box;
             }
-            @if($theme == "goal" or $theme == "penalty" or $theme == "plinko"){
+            @if($theme == "goal"){
                 background: radial-gradient(50% 88.04% at 50% 50%, #8ED32D 0%, #2D7500 100%) padding-box, 
                 linear-gradient(96.44deg, #084300 0%, #2A7B36 100%) border-box;
             }
@@ -55,6 +55,19 @@
             @media (max-width:#{$md3}px) {
                 padding: 10px 16px;
             }
+            &:hover{
+                opacity: 0.9;
+            }
+        } @else if ($theme == "plinko" or $theme == "penalty"){
+            @if($theme == "plinko"){
+                background: linear-gradient(90deg, #24EE89 0%, #9FE871 100%);
+                box-shadow: 0px 2px 0px 0px rgba(29, 202, 106, 1);
+            }
+            @if($theme == "penalty"){
+                background: linear-gradient(90deg, #FEFF00 0%, #FFBE00 100%);
+                box-shadow: 0px 2px 0px 0px rgba(224, 73, 0, 1);
+            }
+            color: var(--color-bg);
             &:hover{
                 opacity: 0.9;
             }
@@ -692,7 +705,7 @@
     } @else {
         background-color: rgba(52, 199, 89, 1);
     }
-    @if($theme == 'mines' or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal" or $theme == "penalty" or $theme == "plinko"){
+    @if($theme == 'mines' or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal"){
         @if($theme == 'mines'){
             background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%) padding-box, 
             linear-gradient(180deg, #ED9412 0%, #B4450B 100%) border-box;
@@ -713,7 +726,7 @@
             background: linear-gradient(119.59deg, #E1CE00 0%, #FF9D00 100%) padding-box, 
             linear-gradient(96.44deg, #C88616 0%, #FFFFB1 100%) border-box;
         }
-        @if($theme == "goal" or $theme == "penalty" or $theme == "plinko"){
+        @if($theme == "goal"){
             background: radial-gradient(50% 88.04% at 50% 50%, #8ED32D 0%, #2D7500 100%) padding-box, 
             linear-gradient(96.44deg, #084300 0%, #2A7B36 100%) border-box;
         }
@@ -722,6 +735,18 @@
             linear-gradient(96.44deg, #084300 0%, #2A7B36 100%) border-box;
         }
         border: 2px solid transparent;
+        svg use{
+            fill: #232325;
+        }
+    } @else if ($theme == "plinko" or $theme == "penalty"){
+        @if($theme == "plinko"){
+            background: linear-gradient(90deg, #24EE89 0%, #9FE871 100%);
+            box-shadow: 0px 2px 0px 0px rgba(29, 202, 106, 1);
+        }
+        @if($theme == "penalty"){
+            background: linear-gradient(90deg, #FEFF00 0%, #FFBE00 100%);
+            box-shadow: 0px 2px 0px 0px rgba(224, 73, 0, 1);
+        }
         svg use{
             fill: #232325;
         }
@@ -1021,8 +1046,10 @@
     img{
         @if $theme == "balloon" {
             height: 58px;
-        } @else if $theme == "mines" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal" or $theme == "penalty" or $theme == "plinko" {
+        } @else if $theme == "mines" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal" or $theme == "plinko" {
             height: 40px;
+        } @else if $theme == "penalty" {
+            height: 28px;
         } @else {
             height: 24px;
         }

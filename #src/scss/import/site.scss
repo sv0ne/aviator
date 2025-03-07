@@ -541,6 +541,10 @@
     }
     &__t2{
         margin-top: -13px;
+        @if $theme == "penalty" {
+            margin-left: -90px;
+            margin-right: -90px;
+        }
         position: relative;
         z-index: 2;
         background: linear-gradient(90.85deg, #474D5B 0.05%, #232325 99.95%);
@@ -896,7 +900,7 @@
             }
         }
     }
-    @if($theme == "goal" or $theme == "penalty" or $theme == "plinko"){
+    @if($theme == "goal"){
         &__x1{
             position: absolute;
             inset-inline-start: -84px;
@@ -980,6 +984,96 @@
             }
             @media (max-width:600px) {
                 inset-inline-end: 2px;
+                top: -50px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+    }
+    @if($theme == "plinko"){
+        &__x1{
+            position: absolute;
+            inset-inline-start: -84px;
+            top: -68px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-start: -38px;
+                top: -18px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__x2{
+            position: absolute;
+            inset-inline-end: -86px;
+            top: -46px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-end: -36px;
+                top: -23px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__money2{
+            position: absolute;
+            inset-inline-end: 15px;
+            top: -80px;
+            width: 110px;
+            height: 110px;
+            @media (max-width:#{$md2}px) {
+                inset-inline-end: 17px;
+                top: -86px;
+            }
+            @media (max-width:600px) {
+                inset-inline-end: 3px;
+                top: -50px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+    }
+    @if($theme == "penalty"){
+        &__x1{
+            position: absolute;
+            inset-inline-start: -84px;
+            top: -40px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-start: -46px;
+                top: -14px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__x2{
+            position: absolute;
+            inset-inline-end: -86px;
+            top: -27px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-end: -47px;
+                top: -12px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__money2{
+            position: absolute;
+            inset-inline-end: 172px;
+            top: -80px;
+            width: 110px;
+            height: 110px;
+            @media (max-width:#{$md2}px) {
+                inset-inline-end: 17px;
+                top: -86px;
+            }
+            @media (max-width:600px) {
+                inset-inline-end: 60px;
                 top: -50px;
                 width: 64px;
                 height: 64px;
