@@ -62,12 +62,17 @@
             @if($theme == "plinko"){
                 background: linear-gradient(90deg, #24EE89 0%, #9FE871 100%);
                 box-shadow: 0px 2px 0px 0px rgba(29, 202, 106, 1);
+                color: var(--color-bg);
             }
-            @if($theme == "penalty" or $theme == "luckyJet" or $theme == "thimbles"){
+            @if($theme == "penalty" or $theme == "thimbles"){
                 background: linear-gradient(90deg, #FEFF00 0%, #FFBE00 100%);
                 box-shadow: 0px 2px 0px 0px rgba(224, 73, 0, 1);
+                color: var(--color-bg);
             }
-            color: var(--color-bg);
+            @if($theme == "luckyJet"){
+                background: linear-gradient(90deg, #5C24FC 0%, #944EF5 100%);
+                box-shadow: 0px 10px 20px 0px rgba(25, 201, 245, 0.1), 0px 10px 20px 0px rgba(92, 36, 252, 0.1), 0px -2px 4px 0px rgba(148, 78, 245, 1) inset, 0px -8px 8px 0px rgba(148, 78, 245, 0.6) inset;
+            }
             &:hover{
                 opacity: 0.9;
             }
@@ -747,13 +752,16 @@
         @if($theme == "plinko"){
             background: linear-gradient(90deg, #24EE89 0%, #9FE871 100%);
             box-shadow: 0px 2px 0px 0px rgba(29, 202, 106, 1);
+            svg use{ fill: #232325; }
         }
-        @if($theme == "penalty" or $theme == "luckyJet" or $theme == "thimbles"){
+        @if($theme == "penalty" or $theme == "thimbles"){
             background: linear-gradient(90deg, #FEFF00 0%, #FFBE00 100%);
             box-shadow: 0px 2px 0px 0px rgba(224, 73, 0, 1);
+            svg use{ fill: #232325; }
         }
-        svg use{
-            fill: #232325;
+        @if($theme == "luckyJet"){
+            background: linear-gradient(90deg, #5C24FC 0%, #944EF5 100%);
+            box-shadow: 0px 10px 20px 0px rgba(25, 201, 245, 0.1), 0px 10px 20px 0px rgba(92, 36, 252, 0.1), 0px -2px 4px 0px rgba(148, 78, 245, 1) inset, 0px -8px 8px 0px rgba(148, 78, 245, 0.6) inset;
         }
     }
 }
@@ -1051,9 +1059,9 @@
     img{
         @if $theme == "balloon" {
             height: 58px;
-        } @else if $theme == "mines" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal" or $theme == "plinko" {
+        } @else if $theme == "mines" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal" or $theme == "plinko" or $theme == "thimbles" or $theme == "luckyJet" {
             height: 40px;
-        } @else if $theme == "penalty" or $theme == "luckyJet" or $theme == "thimbles" {
+        } @else if $theme == "penalty" {
             height: 28px;
         } @else {
             height: 24px;

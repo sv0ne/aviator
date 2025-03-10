@@ -541,7 +541,7 @@
     }
     &__t2{
         margin-top: -13px;
-        @if $theme == "penalty" or $theme == "luckyJet" or $theme == "thimbles" {
+        @if $theme == "penalty" or $theme == "thimbles" {
             margin-left: -90px;
             margin-right: -90px;
         }
@@ -1035,7 +1035,7 @@
             }
         }
     }
-    @if($theme == "penalty" or $theme == "luckyJet" or $theme == "thimbles"){
+    @if($theme == "penalty"){
         &__x1{
             position: absolute;
             inset-inline-start: -84px;
@@ -1074,6 +1074,96 @@
             }
             @media (max-width:600px) {
                 inset-inline-end: 60px;
+                top: -50px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+    }
+    @if($theme == "thimbles"){
+        &__x1{
+            position: absolute;
+            inset-inline-start: -81px;
+            top: -57px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-start: -46px;
+                top: -14px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__x2{
+            position: absolute;
+            inset-inline-end: -86px;
+            top: -44px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-end: -47px;
+                top: -12px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__money2{
+            position: absolute;
+            inset-inline-end: 83px;
+            top: -80px;
+            width: 110px;
+            height: 110px;
+            @media (max-width:#{$md2}px) {
+                inset-inline-end: 17px;
+                top: -86px;
+            }
+            @media (max-width:600px) {
+                inset-inline-end: 30px;
+                top: -50px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+    }
+    @if($theme == "luckyJet"){
+        &__x1{
+            position: absolute;
+            inset-inline-start: -84px;
+            top: -61px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-start: -46px;
+                top: -14px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__x2{
+            position: absolute;
+            inset-inline-end: -83px;
+            top: -41px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-end: -47px;
+                top: -12px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__money2{
+            position: absolute;
+            inset-inline-end: 0px;
+            top: -80px;
+            width: 110px;
+            height: 110px;
+            @media (max-width:#{$md2}px) {
+                inset-inline-end: -13px;
+                top: -86px;
+            }
+            @media (max-width:600px) {
+                inset-inline-end: -5px;
                 top: -50px;
                 width: 64px;
                 height: 64px;
@@ -2096,15 +2186,26 @@
     }
 }
 
-@if $theme == "pin-up" {
+@if $theme == "pin-up" or $theme == "luckyJet" {
     .casinoInfo{
-        background: var(--border-casino-info);
-        padding: 1px;
+        @if $theme == "pin-up" {
+            background: var(--border-casino-info);
+            padding: 1px;
+        }
         border-radius: var(--br-large);
         &__body{
             border-radius: var(--br-large);
             padding: 32px;
-            background: var(--bg-casino-info);
+            @if $theme == "pin-up" {
+                background: var(--bg-casino-info);
+            }
+            @if $theme == "luckyJet" {
+                background: linear-gradient(85.83deg, #38A8FA 1.14%, #0167CA 100%);
+                .link-3{
+                    background: var(--color-opposite);
+                    color: var(--color-bg);
+                }
+            }
             @media (max-width:#{$md3}px) {
                 padding: 16px;
             }
@@ -2392,7 +2493,7 @@
     }
 }
 
-@if $theme == "balloon" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal" or $theme == "penalty" or $theme == "plinko" or $theme == "luckyJet" or $theme == "thimbles" {
+@if $theme == "balloon" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" {
     .smartSoft{
         background: linear-gradient(132.87deg, #00C0FF 0%, #009CFF 100%);
         color: var(--color-opposite);
@@ -2412,7 +2513,7 @@
     }
 }
 
-@if $theme == "plinko" or $theme == "penalty" or $theme == "luckyJet" or $theme == "thimbles" {
+@if $theme == "plinko" or $theme == "penalty" or $theme == "thimbles" {
     .collaboration{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -2466,7 +2567,7 @@
     }
 }
 
-@if $theme == "penalty" or $theme == "luckyJet" or $theme == "thimbles" {
+@if $theme == "penalty" or $theme == "thimbles" {
     .supportBanner{
         display: flex;
         flex-direction: column;

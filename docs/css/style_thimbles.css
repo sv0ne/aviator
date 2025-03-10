@@ -1821,7 +1821,7 @@ html[dir=rtl] .breadcrumbs__link:not(:first-child):before {
 }
 
 .logo img {
-  height: 28px;
+  height: 40px;
 }
 
 .promocode {
@@ -2416,8 +2416,8 @@ html[dir=rtl] .firstScreen__boby {
 
 .textBanner__x1 {
   position: absolute;
-  inset-inline-start: -84px;
-  top: -40px;
+  inset-inline-start: -81px;
+  top: -57px;
   width: 126px;
   height: 126px;
 }
@@ -2425,14 +2425,14 @@ html[dir=rtl] .firstScreen__boby {
 .textBanner__x2 {
   position: absolute;
   inset-inline-end: -86px;
-  top: -27px;
+  top: -44px;
   width: 126px;
   height: 126px;
 }
 
 .textBanner__money2 {
   position: absolute;
-  inset-inline-end: 172px;
+  inset-inline-end: 83px;
   top: -80px;
   width: 110px;
   height: 110px;
@@ -3410,34 +3410,6 @@ html[dir=rtl] .subscribe__input button {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-}
-
-.smartSoft {
-  background: linear-gradient(132.87deg, #00C0FF 0%, #009CFF 100%);
-  color: var(--color-opposite);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 16px;
-}
-
-.smartSoft__content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 4px;
-}
-
-.smartSoft_divider {
-  background-color: var(--color-opposite);
-  width: 1px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 1px;
-          flex: 0 0 1px;
-  height: 40px;
 }
 
 .collaboration {
@@ -5038,7 +5010,7 @@ position sticky у блока .stickyBlock */
   }
 
   .textBanner__money2 {
-    inset-inline-end: 60px;
+    inset-inline-end: 30px;
     top: -50px;
     width: 64px;
     height: 64px;
