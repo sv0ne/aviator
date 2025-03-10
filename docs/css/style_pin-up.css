@@ -1313,6 +1313,10 @@ html[dir=rtl] .scroll__overlayArea {
   width: 200px;
 }
 
+.tooltip_top .tooltip__body {
+  bottom: 68px;
+}
+
 .popover {
   position: relative;
 }

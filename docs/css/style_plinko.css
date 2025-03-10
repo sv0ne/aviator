@@ -1321,6 +1321,10 @@ html[dir=rtl] .scroll__overlayArea {
   width: 200px;
 }
 
+.tooltip_top .tooltip__body {
+  bottom: 68px;
+}
+
 .popover {
   position: relative;
 }
@@ -3434,6 +3438,66 @@ html[dir=rtl] .subscribe__input button {
   height: 40px;
 }
 
+.collaboration {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.collaboration__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 16px;
+}
+
+.collaboration__list .card-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 45%;
+          flex: 1 0 45%;
+  height: 70px;
+}
+
+.collaboration__list .card-1 img {
+  max-width: 100%;
+}
+
+.collaboration__list .tooltip_top:nth-child(odd) .tooltip__body {
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+}
+
+.collaboration__list_4col .card-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 22%;
+          flex: 1 0 22%;
+}
+
+.collaborationBanner {
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 32px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.collaborationBanner__text {
+  position: relative;
+  z-index: 2;
+  max-width: 288px;
+}
+
 .fairTechnology {
   background-color: #ECEDF3;
   /* immutable */
@@ -4188,6 +4252,12 @@ ol.list li:before,
   .boxInfo_mod_v2 .boxInfo__col:nth-child(1) {
     grid-column: auto;
   }
+
+  .collaboration__list_4col .card-1 {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 45%;
+            flex: 1 0 45%;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -4825,6 +4895,10 @@ position sticky у блока .stickyBlock */
   .socials__row_2 {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+  }
+
+  .collaboration {
+    grid-template-columns: 1fr;
   }
 
   .social {

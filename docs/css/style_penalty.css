@@ -1321,6 +1321,10 @@ html[dir=rtl] .scroll__overlayArea {
   width: 200px;
 }
 
+.tooltip_top .tooltip__body {
+  bottom: 68px;
+}
+
 .popover {
   position: relative;
 }
@@ -3436,6 +3440,122 @@ html[dir=rtl] .subscribe__input button {
   height: 40px;
 }
 
+.collaboration {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.collaboration__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 16px;
+}
+
+.collaboration__list .card-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 45%;
+          flex: 1 0 45%;
+  height: 70px;
+}
+
+.collaboration__list .card-1 img {
+  max-width: 100%;
+}
+
+.collaboration__list .tooltip_top:nth-child(odd) .tooltip__body {
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+}
+
+.collaboration__list_4col .card-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 22%;
+          flex: 1 0 22%;
+}
+
+.supportBanner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  border-radius: 8px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.supportBanner__header {
+  background-color: rgb(2, 149, 255);
+  -webkit-padding-start: 61px;
+          padding-inline-start: 61px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  color: rgb(252, 221, 17);
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 120%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-top: 12px;
+  padding-bottom: 16px;
+}
+
+.supportBanner__footer {
+  background-color: rgb(252, 221, 17);
+  -webkit-padding-start: 61px;
+          padding-inline-start: 61px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+  color: rgb(2, 149, 255);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 120%;
+  padding-bottom: 41px;
+}
+
+.supportBanner__footer a {
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.supportBanner__footer a:hover {
+  text-decoration: underline;
+}
+
+.supportBanner__qrcode {
+  position: absolute;
+  inset-inline-end: 30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 3;
+  width: 110px;
+  height: 110px;
+  border-radius: 4px;
+}
+
 .fairTechnology {
   background-color: #ECEDF3;
   /* immutable */
@@ -4190,6 +4310,12 @@ ol.list li:before,
   .boxInfo_mod_v2 .boxInfo__col:nth-child(1) {
     grid-column: auto;
   }
+
+  .collaboration__list_4col .card-1 {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 45%;
+            flex: 1 0 45%;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -4829,6 +4955,10 @@ position sticky у блока .stickyBlock */
         flex-wrap: wrap;
   }
 
+  .collaboration {
+    grid-template-columns: 1fr;
+  }
+
   .social {
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -4995,6 +5125,13 @@ position sticky у блока .stickyBlock */
   }
 }
 
+@media (max-width: 440px) {
+  .supportBanner__qrcode {
+    width: 72px;
+    height: 72px;
+  }
+}
+
 @media (min-width: 767.98px) and (max-width: 1310px) {
   .popover-popup:not(.mod-left) {
     inset-inline-start: -100px;
@@ -5049,5 +5186,21 @@ position sticky у блока .stickyBlock */
 @media (max-width: 992.98px) and (min-width: 767.98px) {
   .boxInfo_mod_v2 .boxInfo__col:nth-child(3) {
     grid-column: 1/3;
+  }
+}
+
+@media ((max-width: 930px) and (min-width: 767.98px)) or (max-width: 492px) {
+  .supportBanner__header {
+    -webkit-padding-start: 16px;
+            padding-inline-start: 16px;
+  }
+
+  .supportBanner__footer {
+    -webkit-padding-start: 16px;
+            padding-inline-start: 16px;
+  }
+
+  .supportBanner__qrcode {
+    inset-inline-end: 16px;
   }
 }
