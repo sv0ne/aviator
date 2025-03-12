@@ -5074,6 +5074,13 @@ position sticky у блока .stickyBlock */
   }
 }
 
+@media (max-width: 420px) {
+  .logo img {
+    height: 30px;
+    width: 117px;
+  }
+}
+
 @media (min-width: 767.98px) and (max-width: 1310px) {
   .popover-popup:not(.mod-left) {
     inset-inline-start: -100px;

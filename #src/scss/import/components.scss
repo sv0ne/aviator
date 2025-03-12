@@ -59,7 +59,7 @@
                 opacity: 0.9;
             }
         } @else if ($theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix" or $theme == "penalty" or $theme == "luckyJet" or $theme == "thimbles"){
-            @if($theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix"){
+            @if($theme == "plinko" or $theme == "spaceXY"){
                 background: linear-gradient(90deg, #FED317 0%, #FCA400 100%);
                 box-shadow: 0px 2px 0px 0px rgba(165, 58, 0, 1);
                 color: var(--color-bg);
@@ -72,6 +72,14 @@
             @if($theme == "luckyJet"){
                 background: linear-gradient(90deg, #5C24FC 0%, #944EF5 100%);
                 box-shadow: 0px 10px 20px 0px rgba(25, 201, 245, 0.1), 0px 10px 20px 0px rgba(92, 36, 252, 0.1), 0px -2px 4px 0px rgba(148, 78, 245, 1) inset, 0px -8px 8px 0px rgba(148, 78, 245, 0.6) inset;
+            }
+            @if($theme == "aviatrix"){
+                background: linear-gradient(90deg, #FF5621 0%, #FFA621 100%);
+            }
+            @if($theme == "spaceman"){
+                background: linear-gradient(90deg, #FFCC00 0%, #FF9721 100%);
+                box-shadow: 0px 2px 0px 0px rgba(255, 0, 208, 1);
+                color: var(--color-bg);
             }
             &:hover{
                 opacity: 0.9;
@@ -749,7 +757,7 @@
             fill: #232325;
         }
     } @else if ($theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix" or $theme == "penalty" or $theme == "luckyJet" or $theme == "thimbles"){
-        @if($theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix"){
+        @if($theme == "plinko" or $theme == "spaceXY"){
             background: linear-gradient(90deg, #FED317 0%, #FCA400 100%);
             box-shadow: 0px 2px 0px 0px rgba(165, 58, 0, 1);
             svg use{ fill: #232325; }
@@ -762,6 +770,15 @@
         @if($theme == "luckyJet"){
             background: linear-gradient(90deg, #5C24FC 0%, #944EF5 100%);
             box-shadow: 0px 10px 20px 0px rgba(25, 201, 245, 0.1), 0px 10px 20px 0px rgba(92, 36, 252, 0.1), 0px -2px 4px 0px rgba(148, 78, 245, 1) inset, 0px -8px 8px 0px rgba(148, 78, 245, 0.6) inset;
+        }
+        @if($theme == "aviatrix"){
+            background: linear-gradient(90deg, #FF5621 0%, #FFA621 100%);
+            svg use{ fill: #232325; }
+        }
+        @if($theme == "spaceman"){
+            background: linear-gradient(90deg, #FFCC00 0%, #FF9721 100%);
+            box-shadow: 0px 2px 0px 0px rgba(255, 0, 208, 1);
+            svg use{ fill: #232325; }
         }
     }
 }
@@ -1059,10 +1076,38 @@
     img{
         @if $theme == "balloon" {
             height: 58px;
-        } @else if $theme == "mines" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal" or $theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix" or $theme == "thimbles" or $theme == "luckyJet" {
+        } @else if $theme == "mines" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal" or $theme == "plinko" or $theme == "thimbles" {
             height: 40px;
         } @else if $theme == "penalty" {
             height: 28px;
+        } @else if $theme == "spaceman" {
+            height: 40px;
+            @media (max-width:#{$md4}px) {
+                height: 28px;
+                width: 139px;
+            }
+            @media (max-width:420px) {
+                height: 22px;
+                width: 109px;
+            }
+        } @else if $theme == "aviatrix" {
+            height: 40px;
+            @media (max-width:420px) {
+                height: 24px;
+                width: 94px;
+            }
+        } @else if $theme == "spaceXY" {
+            height: 40px;
+            @media (max-width:420px) {
+                height: 32px;
+                width: 111px;
+            }
+        } @else if $theme == "luckyJet" {
+            height: 40px;
+            @media (max-width:420px) {
+                height: 30px;
+                width: 117px;
+            }
         } @else {
             height: 24px;
         }

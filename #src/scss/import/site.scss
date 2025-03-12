@@ -541,7 +541,7 @@
     }
     &__t2{
         margin-top: -13px;
-        @if $theme == "penalty" or $theme == "thimbles" {
+        @if $theme == "penalty" or $theme == "thimbles" or $theme == "spaceman" {
             margin-left: -90px;
             margin-right: -90px;
         }
@@ -2527,15 +2527,30 @@
             gap: 16px;
             .card-1{
                 flex: 1 0 45%;
-                height: 70px;
+                @if $theme == "spaceman" or $theme == "aviatrix" {
+                    height: 62px;
+                } @else {
+                    height: 70px;
+                }
+                position: relative;
                 img{
                     max-width: 100%;
+                }
+                &__factor{
+                    position: absolute;
+                    top: -8px;
+                    inset-inline-end: 4px;
                 }
             }
             .tooltip_top:nth-child(odd){
                 .tooltip__body{
                     inset-inline-start: 0;
                     inset-inline-end: auto;
+                }
+            }
+            &_3col{
+                .card-1{
+                    flex: 1 0 30%;
                 }
             }
             &_4col{
@@ -2550,7 +2565,7 @@
     }
 }
 
-@if $theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix" {
+@if $theme == "plinko" or $theme == "spaceXY" {
     .collaborationBanner{
         border-radius: 8px;
         overflow: hidden;
@@ -2563,6 +2578,75 @@
             position: relative;
             z-index: 2;
             max-width: 288px;
+        }
+    }
+}
+
+@if $theme == "aviatrix" {
+    .collaborationBanner{
+        border-radius: 8px;
+        padding: 32px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--color-light);
+        @media (max-width:#{$md4}px) {
+            padding: 16px;
+        }
+        &__text{
+            position: relative;
+            z-index: 2;
+        }
+        &__image{
+            position: absolute;
+            top: -16px;
+            inset-inline-end: 14%;
+            width: 176px;
+            height: 100px;
+            @media ((max-width:950px) and (min-width:#{$md3}px)) or (max-width:500px){
+                inset-inline-end: 7%;
+            }
+        }
+    }
+}
+
+@if $theme == "spaceman" {
+    .collaborationBanner{
+        border-radius: 8px;
+        padding: 16px 32px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--color-light);
+        @media (max-width:#{$md3}px) {
+            padding: 32px;
+        }
+        @media (max-width:#{$md4}px) {
+            padding: 16px;
+        }
+        &__text{
+            position: relative;
+            z-index: 2;
+            max-width: 256px;
+            @media ((max-width:1000px) and (min-width:#{$md3}px)) or (max-width:#{$md4}px) {
+                max-width: none;
+            }
+        }
+        &__image{
+            position: absolute;
+            bottom: 0;
+            inset-inline-end: 0;
+            width: 259px;
+            height: 172px;
+            @media ((max-width:1000px) and (min-width:#{$md3}px)) or (max-width:#{$md4}px) {
+                bottom: auto;
+                top: -16px;
+                inset-inline-end: 2%;
+                width: 140px;
+                height: 93px;
+            }
         }
     }
 }

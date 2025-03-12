@@ -943,10 +943,10 @@ html[dir=rtl] .scroll__overlayArea {
 }
 
 .btn_primary {
-  background: -webkit-gradient(linear, left top, right top, from(#FED317), to(#FCA400));
-  background: linear-gradient(90deg, #FED317 0%, #FCA400 100%);
-  -webkit-box-shadow: 0px 2px 0px 0px rgb(165, 58, 0);
-          box-shadow: 0px 2px 0px 0px rgb(165, 58, 0);
+  background: -webkit-gradient(linear, left top, right top, from(#FFCC00), to(#FF9721));
+  background: linear-gradient(90deg, #FFCC00 0%, #FF9721 100%);
+  -webkit-box-shadow: 0px 2px 0px 0px rgb(255, 0, 208);
+          box-shadow: 0px 2px 0px 0px rgb(255, 0, 208);
   color: var(--color-bg);
 }
 
@@ -1498,10 +1498,10 @@ html[dir=rtl] .scroll__overlayArea {
   padding: 8px 16px;
   border-radius: var(--br-small);
   background-color: rgb(52, 199, 89);
-  background: -webkit-gradient(linear, left top, right top, from(#FED317), to(#FCA400));
-  background: linear-gradient(90deg, #FED317 0%, #FCA400 100%);
-  -webkit-box-shadow: 0px 2px 0px 0px rgb(165, 58, 0);
-          box-shadow: 0px 2px 0px 0px rgb(165, 58, 0);
+  background: -webkit-gradient(linear, left top, right top, from(#FFCC00), to(#FF9721));
+  background: linear-gradient(90deg, #FFCC00 0%, #FF9721 100%);
+  -webkit-box-shadow: 0px 2px 0px 0px rgb(255, 0, 208);
+          box-shadow: 0px 2px 0px 0px rgb(255, 0, 208);
 }
 
 html[dir=rtl] .label-4 svg {
@@ -2356,6 +2356,8 @@ html[dir=rtl] .firstScreen__boby {
 
 .textBanner__t2 {
   margin-top: -13px;
+  margin-left: -90px;
+  margin-right: -90px;
   position: relative;
   z-index: 2;
   background: linear-gradient(90.85deg, #474D5B 0.05%, #232325 99.95%);
@@ -3429,16 +3431,29 @@ html[dir=rtl] .subscribe__input button {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 45%;
           flex: 1 0 45%;
-  height: 70px;
+  height: 62px;
+  position: relative;
 }
 
 .collaboration__list .card-1 img {
   max-width: 100%;
 }
 
+.collaboration__list .card-1__factor {
+  position: absolute;
+  top: -8px;
+  inset-inline-end: 4px;
+}
+
 .collaboration__list .tooltip_top:nth-child(odd) .tooltip__body {
   inset-inline-start: 0;
   inset-inline-end: auto;
+}
+
+.collaboration__list_3col .card-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 30%;
+          flex: 1 0 30%;
 }
 
 .collaboration__list_4col .card-1 {
@@ -3449,8 +3464,7 @@ html[dir=rtl] .subscribe__input button {
 
 .collaborationBanner {
   border-radius: 8px;
-  overflow: hidden;
-  padding: 32px;
+  padding: 16px 32px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3462,12 +3476,21 @@ html[dir=rtl] .subscribe__input button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: var(--color-light);
 }
 
 .collaborationBanner__text {
   position: relative;
   z-index: 2;
-  max-width: 288px;
+  max-width: 256px;
+}
+
+.collaborationBanner__image {
+  position: absolute;
+  bottom: 0;
+  inset-inline-end: 0;
+  width: 259px;
+  height: 172px;
 }
 
 .fairTechnology {
@@ -4873,6 +4896,10 @@ position sticky у блока .stickyBlock */
     grid-template-columns: 1fr;
   }
 
+  .collaborationBanner {
+    padding: 32px;
+  }
+
   .social {
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -5027,6 +5054,11 @@ position sticky у блока .stickyBlock */
             flex: 0 0 100%;
   }
 
+  .logo img {
+    height: 28px;
+    width: 139px;
+  }
+
   .reviews__card {
     padding: 16px;
   }
@@ -5036,6 +5068,17 @@ position sticky у блока .stickyBlock */
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+
+  .collaborationBanner {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .logo img {
+    height: 22px;
+    width: 109px;
   }
 }
 
@@ -5093,5 +5136,19 @@ position sticky у блока .stickyBlock */
 @media (max-width: 992.98px) and (min-width: 767.98px) {
   .boxInfo_mod_v2 .boxInfo__col:nth-child(3) {
     grid-column: 1/3;
+  }
+}
+
+@media ((max-width: 1000px) and (min-width: 767.98px)) or (max-width: 479.98px) {
+  .collaborationBanner__text {
+    max-width: none;
+  }
+
+  .collaborationBanner__image {
+    bottom: auto;
+    top: -16px;
+    inset-inline-end: 2%;
+    width: 140px;
+    height: 93px;
   }
 }
