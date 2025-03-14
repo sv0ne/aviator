@@ -1080,34 +1080,9 @@
             height: 40px;
         } @else if $theme == "penalty" {
             height: 28px;
-        } @else if $theme == "spaceman" {
-            height: 40px;
-            @media (max-width:#{$md4}px) {
-                height: 28px;
-                width: 139px;
-            }
-            @media (max-width:420px) {
-                height: 22px;
-                width: 109px;
-            }
-        } @else if $theme == "aviatrix" {
-            height: 40px;
-            @media (max-width:420px) {
-                height: 24px;
-                width: 94px;
-            }
-        } @else if $theme == "spaceXY" {
-            height: 40px;
-            @media (max-width:420px) {
-                height: 32px;
-                width: 111px;
-            }
-        } @else if $theme == "luckyJet" {
-            height: 40px;
-            @media (max-width:420px) {
-                height: 30px;
-                width: 117px;
-            }
+        } @else if $theme == "spaceman" or $theme == "aviatrix" or $theme == "spaceXY" or $theme == "luckyJet" {
+            max-width: 100%;
+            height: auto;
         } @else {
             height: 24px;
         }

@@ -1816,7 +1816,8 @@ html[dir=rtl] .breadcrumbs__link:not(:first-child):before {
 }
 
 .logo img {
-  height: 40px;
+  max-width: 100%;
+  height: auto;
 }
 
 .promocode {
@@ -5055,13 +5056,6 @@ position sticky у блока .stickyBlock */
 
   .collaborationBanner {
     padding: 16px;
-  }
-}
-
-@media (max-width: 420px) {
-  .logo img {
-    height: 24px;
-    width: 94px;
   }
 }
 
