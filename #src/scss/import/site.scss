@@ -990,7 +990,7 @@
             }
         }
     }
-    @if($theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken"){
+    @if($theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix"){
         &__x1{
             position: absolute;
             inset-inline-start: -84px;
@@ -1020,6 +1020,51 @@
         &__money2{
             position: absolute;
             inset-inline-end: 15px;
+            top: -80px;
+            width: 110px;
+            height: 110px;
+            @media (max-width:#{$md2}px) {
+                inset-inline-end: 17px;
+                top: -86px;
+            }
+            @media (max-width:600px) {
+                inset-inline-end: 3px;
+                top: -50px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+    }
+    @if($theme == "chicken"){
+        &__x1{
+            position: absolute;
+            inset-inline-start: -84px;
+            top: -68px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-start: -38px;
+                top: -18px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__x2{
+            position: absolute;
+            inset-inline-end: -86px;
+            top: -46px;
+            width: 126px;
+            height: 126px;
+            @media (max-width:600px) {
+                inset-inline-end: -36px;
+                top: -23px;
+                width: 64px;
+                height: 64px;
+            }
+        }
+        &__money2{
+            position: absolute;
+            inset-inline-end: 67px;
             top: -80px;
             width: 110px;
             height: 110px;
@@ -2582,7 +2627,7 @@
     }
 }
 
-@if $theme == "aviatrix" or $theme == "chicken" {
+@if $theme == "aviatrix" {
     .collaborationBanner{
         border-radius: 8px;
         padding: 32px;
@@ -2606,6 +2651,55 @@
             height: 100px;
             @media ((max-width:950px) and (min-width:#{$md3}px)) or (max-width:500px){
                 inset-inline-end: 7%;
+            }
+        }
+    }
+}
+
+@if $theme == "chicken" {
+    .collaborationBanner{
+        border-radius: 8px;
+        padding: 16px 32px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--color-light);
+        @media (max-width:#{$md4}px) {
+            padding: 16px;
+        }
+        &__text{
+            position: relative;
+            z-index: 2;
+            &_2{
+                font-size: 24px;
+                line-height: 120%;
+                font-weight: 900;
+                max-width: 73%;
+                @media (max-width:#{$md3}px) {
+                    font-size: 18px;
+                }
+            }
+        }
+        &__image{
+            position: absolute;
+            top: -32px;
+            inset-inline-end: 16%;
+            width: 123px;
+            height: 100px;
+            @media ((max-width:950px) and (min-width:#{$md3}px)) or (max-width:500px){
+                inset-inline-end: 7%;
+            }
+        }
+        &__image2{
+            position: absolute;
+            top: -77px;
+            inset-inline-end: -1%;
+            width: 210px;
+            transform: rotate(15deg);
+            @media (max-width:#{$md4}px) {
+                transform: scale(0.8) rotate(15deg);
+                inset-inline-end: -7%;
             }
         }
     }

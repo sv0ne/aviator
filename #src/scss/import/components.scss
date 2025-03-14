@@ -73,8 +73,12 @@
                 background: linear-gradient(90deg, #5C24FC 0%, #944EF5 100%);
                 box-shadow: 0px 10px 20px 0px rgba(25, 201, 245, 0.1), 0px 10px 20px 0px rgba(92, 36, 252, 0.1), 0px -2px 4px 0px rgba(148, 78, 245, 1) inset, 0px -8px 8px 0px rgba(148, 78, 245, 0.6) inset;
             }
-            @if($theme == "aviatrix" or $theme == "chicken"){
+            @if($theme == "aviatrix"){
                 background: linear-gradient(90deg, #FF5621 0%, #FFA621 100%);
+            }
+            @if($theme == "chicken"){
+                background: rgba(241, 190, 10, 1);
+                color: var(--color-bg);
             }
             @if($theme == "spaceman"){
                 background: linear-gradient(90deg, #FFCC00 0%, #FF9721 100%);
@@ -771,8 +775,12 @@
             background: linear-gradient(90deg, #5C24FC 0%, #944EF5 100%);
             box-shadow: 0px 10px 20px 0px rgba(25, 201, 245, 0.1), 0px 10px 20px 0px rgba(92, 36, 252, 0.1), 0px -2px 4px 0px rgba(148, 78, 245, 1) inset, 0px -8px 8px 0px rgba(148, 78, 245, 0.6) inset;
         }
-        @if($theme == "aviatrix" or $theme == "chicken"){
+        @if($theme == "aviatrix"){
             background: linear-gradient(90deg, #FF5621 0%, #FFA621 100%);
+            svg use{ fill: #232325; }
+        }
+        @if($theme == "chicken"){
+            background: rgba(241, 190, 10, 1);
             svg use{ fill: #232325; }
         }
         @if($theme == "spaceman"){

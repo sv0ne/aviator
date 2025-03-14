@@ -943,8 +943,8 @@ html[dir=rtl] .scroll__overlayArea {
 }
 
 .btn_primary {
-  background: -webkit-gradient(linear, left top, right top, from(#FF5621), to(#FFA621));
-  background: linear-gradient(90deg, #FF5621 0%, #FFA621 100%);
+  background: rgb(241, 190, 10);
+  color: var(--color-bg);
 }
 
 .btn_primary:hover {
@@ -1495,8 +1495,7 @@ html[dir=rtl] .scroll__overlayArea {
   padding: 8px 16px;
   border-radius: var(--br-small);
   background-color: rgb(52, 199, 89);
-  background: -webkit-gradient(linear, left top, right top, from(#FF5621), to(#FFA621));
-  background: linear-gradient(90deg, #FF5621 0%, #FFA621 100%);
+  background: rgb(241, 190, 10);
 }
 
 html[dir=rtl] .label-4 svg {
@@ -2426,7 +2425,7 @@ html[dir=rtl] .firstScreen__boby {
 
 .textBanner__money2 {
   position: absolute;
-  inset-inline-end: 15px;
+  inset-inline-end: 67px;
   top: -80px;
   width: 110px;
   height: 110px;
@@ -3458,7 +3457,7 @@ html[dir=rtl] .subscribe__input button {
 
 .collaborationBanner {
   border-radius: 8px;
-  padding: 32px;
+  padding: 16px 32px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3478,12 +3477,29 @@ html[dir=rtl] .subscribe__input button {
   z-index: 2;
 }
 
+.collaborationBanner__text_2 {
+  font-size: 24px;
+  line-height: 120%;
+  font-weight: 900;
+  max-width: 73%;
+}
+
 .collaborationBanner__image {
   position: absolute;
-  top: -16px;
-  inset-inline-end: 14%;
-  width: 176px;
+  top: -32px;
+  inset-inline-end: 16%;
+  width: 123px;
   height: 100px;
+}
+
+.collaborationBanner__image2 {
+  position: absolute;
+  top: -77px;
+  inset-inline-end: -1%;
+  width: 210px;
+  -webkit-transform: rotate(15deg);
+      -ms-transform: rotate(15deg);
+          transform: rotate(15deg);
 }
 
 .fairTechnology {
@@ -4889,6 +4905,10 @@ position sticky у блока .stickyBlock */
     grid-template-columns: 1fr;
   }
 
+  .collaborationBanner__text_2 {
+    font-size: 18px;
+  }
+
   .social {
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -5056,6 +5076,13 @@ position sticky у блока .stickyBlock */
 
   .collaborationBanner {
     padding: 16px;
+  }
+
+  .collaborationBanner__image2 {
+    -webkit-transform: scale(0.8) rotate(15deg);
+        -ms-transform: scale(0.8) rotate(15deg);
+            transform: scale(0.8) rotate(15deg);
+    inset-inline-end: -7%;
   }
 }
 
