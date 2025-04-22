@@ -256,7 +256,7 @@ table{
 
 .bg-black-05{
 	background-color: var(--bg-video-overlay);
-	@if($theme == "balloon" or $theme == "mines" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal" or $theme == "penalty" or $theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "luckyJet" or $theme == "thimbles"){
+	@if($theme == "balloon" or $theme == "mines" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal" or $theme == "penalty" or $theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "dragonTigerLuck" or $theme == "luckyJet" or $theme == "thimbles"){
 		backdrop-filter: blur(16px);
 	}
 }
