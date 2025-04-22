@@ -1,1 +1,138 @@
-$(document).ready((function(){let e,t="rtl"===$("html").attr("dir")?"":"-",s=0;const n=$(".baners__slider"),a=$(".baners__slider img").length,i=$(".baners__timelane");for(let e=0;e<a;e++)i.append('<div class="baners__progressBar"></div>');const o=$(".baners__timelane .baners__progressBar");function r(e){s=e>=a?0:e<0?a-1:e,n.css("transform",`translateX(${t}${320*s}px)`),o.each((function(e){let t=$(this);s>e?(t.removeClass("animate"),setTimeout((function(){t.addClass("active")}),15)):s==e?(t.removeClass("active"),setTimeout((function(){t.addClass("animate")}),15)):t.removeClass("animate active")}))}function c(){clearTimeout(e),r(s+1),e=setTimeout(c,5e3)}$(".js-baners-next").click(c),$(".js-baners-prev").click((function(){clearTimeout(e),r(s-1),e=setTimeout(c,5e3)}));let l=!1;function u(){!0!==l&&($("#ajax-content").removeClass("dn"),$(".baners").addClass("active"),r(0),e=setTimeout(c,5e3),l=!0)}$(".js-baners-close").click((function(){$(".baners").removeClass("active"),clearTimeout(e),l=!1,sessionStorage.setItem("banersHide","true")}));let m,d,f=$("title").text();$(document).on("mouseleave",(function(){"true"!=sessionStorage.getItem("banersHide")&&u(),d=setTimeout(()=>{!function e(){$("title").text("💵—FREE MONEY— "+f),setTimeout((function(){$("title").text("—FREE MONEY— "+f)}),1e3),m=setTimeout((function(){e()}),1e4)}(),u()},6e4)})),$(document).on("mouseenter",(function(){clearTimeout(d),clearTimeout(m),$("title").text(f)}))}));
+$(document).ready(function() {
+
+// ВНИМАНИЕ!!! Это файл подгружается ajax-ом через 11 сек.
+
+/** ======================================================================== */
+/** ============================= Слайдер-баннер =========================== */
+
+let rotateDirection = $('html').attr('dir') === 'rtl' ? '' : '-';
+
+let currentSlide = 0, banersTimer;
+const $slider = $('.baners__slider');
+const totalSlides = $('.baners__slider img').length;
+
+// Динамически добавляем прогресс-бары
+const $timelane = $('.baners__timelane');
+for (let i = 0; i < totalSlides; i++) {
+    $timelane.append('<div class="baners__progressBar"></div>');
+}
+
+// Теперь получаем все прогресс-бары
+const $progressBars = $('.baners__timelane .baners__progressBar');
+
+// Показать слайд по индексу
+function showSlide(index) {
+    if (index >= totalSlides) {
+        currentSlide = 0;
+    } else if (index < 0) {
+        currentSlide = totalSlides - 1;
+    } else {
+        currentSlide = index;
+    }
+    
+    $slider.css('transform', `translateX(${rotateDirection}${currentSlide * 320}px)`);
+    
+    $progressBars.each(function(idx){
+        let elem = $(this);
+        if(currentSlide > idx){
+            elem.removeClass('animate');
+            setTimeout(function () { elem.addClass('active'); }, 15);
+        }else if(currentSlide == idx){
+            elem.removeClass('active');
+            setTimeout(function () { elem.addClass('animate'); }, 15);
+        }else{
+            elem.removeClass('animate active');
+        }
+    });
+}
+
+// Следующий слайд
+function nextSlide() {
+    clearTimeout(banersTimer);
+    showSlide(currentSlide + 1);
+    banersTimer = setTimeout(nextSlide, 5000);
+}
+
+// Предыдущий слайд
+function prevSlide() {
+    clearTimeout(banersTimer);
+    showSlide(currentSlide - 1);
+    banersTimer = setTimeout(nextSlide, 5000);
+}
+
+// Пнопки переключения слайдера
+$('.js-baners-next').click(nextSlide);
+$('.js-baners-prev').click(prevSlide);
+
+let isShowSlider = false;
+// Показать слайдер
+function showSlider(){
+    if(isShowSlider === true) { return; }
+    $("#ajax-content").removeClass('dn');
+    $('.baners').addClass('active');
+    showSlide(0);
+    banersTimer = setTimeout(nextSlide, 5000);
+    isShowSlider = true;
+}
+
+// Скрыть слайдер
+function hideSlider(){
+    $('.baners').removeClass('active');
+    clearTimeout(banersTimer);
+    isShowSlider = false;
+}
+
+// Закрыть слайдер
+$('.js-baners-close').click(function(){
+    hideSlider();
+    sessionStorage.setItem('banersHide', 'true');
+});
+
+/** ======================================================================== */
+/** ========== Анимированный title, логика появления слайдер-баннера ======= */
+
+let titleDefault = $('title').text();
+let subTextTitle_1 = "💵—FREE MONEY—";
+let subTextTitle_2 = "—FREE MONEY—";
+
+let animateTitleTimer;
+// Анимируем title
+function setAnimatedTitle() {
+    $('title').text(subTextTitle_1+" "+titleDefault);
+    setTimeout(function () {
+        $('title').text(subTextTitle_2+" "+titleDefault);
+    },1000);
+
+    animateTitleTimer = setTimeout(function () {
+        setAnimatedTitle();
+    },10000);
+}
+
+// Возвращаем нормальный title
+function setDefaultTitle() {
+    clearTimeout(animateTitleTimer);
+    $('title').text(titleDefault);
+}
+
+let timeMouseLeave;
+// Через 60 сек после ухода, анимируем title, показываем баннер.
+$(document).on("mouseleave", function(){
+    if(sessionStorage.getItem('banersHide') != 'true'){
+        showSlider();
+    }
+
+    timeMouseLeave = setTimeout(() => {
+        setAnimatedTitle();
+        showSlider();
+    }, 60 * 1000);
+});
+
+// При возврате на страницу, возвращаем дефолтный title
+$(document).on("mouseenter", function(){
+    clearTimeout(timeMouseLeave);
+    setDefaultTitle();
+});
+
+/** ======================================================================== */
+
+});
