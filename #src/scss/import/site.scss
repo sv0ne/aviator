@@ -2608,7 +2608,7 @@
     }
 }
 
-@if $theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "dragonTigerLuck" or $theme == "penalty" or $theme == "thimbles" {
+@if $theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "penalty" or $theme == "thimbles" {
     .collaboration{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -2622,7 +2622,7 @@
             gap: 16px;
             .card-1{
                 flex: 1 0 45%;
-                @if $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "dragonTigerLuck" {
+                @if $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" {
                     height: 62px;
                 } @else {
                     height: 70px;

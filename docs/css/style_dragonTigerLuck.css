@@ -3402,56 +3402,6 @@ html[dir=rtl] .subscribe__input button {
           transform: translate(-50%, -50%);
 }
 
-.collaboration {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.collaboration__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 16px;
-}
-
-.collaboration__list .card-1 {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 45%;
-          flex: 1 0 45%;
-  height: 62px;
-  position: relative;
-}
-
-.collaboration__list .card-1 img {
-  max-width: 100%;
-}
-
-.collaboration__list .card-1__factor {
-  position: absolute;
-  top: -8px;
-  inset-inline-end: 4px;
-}
-
-.collaboration__list .tooltip_top:nth-child(odd) .tooltip__body {
-  inset-inline-start: 0;
-  inset-inline-end: auto;
-}
-
-.collaboration__list_3col .card-1 {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 30%;
-          flex: 1 0 30%;
-}
-
-.collaboration__list_4col .card-1 {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 22%;
-          flex: 1 0 22%;
-}
-
 .pixel {
   display: grid;
   gap: 16px;
@@ -4336,12 +4286,6 @@ ol.list li:before,
     grid-column: auto;
   }
 
-  .collaboration__list_4col .card-1 {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 45%;
-            flex: 1 0 45%;
-  }
-
   .pixel_mod1 {
     grid-template-columns: 1fr;
   }
@@ -4982,10 +4926,6 @@ position sticky у блока .stickyBlock */
   .socials__row_2 {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-  }
-
-  .collaboration {
-    grid-template-columns: 1fr;
   }
 
   .pixel__col_main {
