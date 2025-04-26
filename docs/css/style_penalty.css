@@ -157,6 +157,10 @@ img {
   vertical-align: top;
 }
 
+.styledContent img {
+  max-width: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -357,6 +361,10 @@ table th {
   margin-bottom: 32px;
 }
 
+.author-block.mb-32 {
+  margin-bottom: 10px;
+}
+
 .p-8 {
   padding: 8px;
 }
@@ -494,8 +502,13 @@ table th {
   text-decoration: underline;
 }
 
+.child-img-h-16 {
+  height: 36px;
+  overflow-y: hidden;
+}
+
 .child-img-h-16 > img {
-  height: 16px;
+  height: 36px;
 }
 
 .rotate-270 {

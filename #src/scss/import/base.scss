@@ -100,6 +100,10 @@ table{
 .mt-32{margin-top: 32px;}
 .mb-32{margin-bottom: 32px;}
 
+.author-block.mb-32 {
+	margin-bottom: 10px;
+}
+
 .md3-m0{
 	@media (max-width:#{$md3}px) {
 		margin: 0;
@@ -215,9 +219,14 @@ table{
 .tt-u{text-transform: uppercase;}
 .td-u{text-decoration: underline;}
 
+.child-img-h-16 {
+	height: 36px;
+	overflow-y: hidden;
+}
+
 .child-img-h-16{
 	> img {
-		height: 16px;
+		height: 36px;
 	}
 }
 
