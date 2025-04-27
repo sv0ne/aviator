@@ -15,8 +15,8 @@
 }
 
 .text-medium{
-  font-size: var(--fz-text-medium);
-	line-height: var(--lh-text-medium);
+  font-size: var(--fz-text-big);
+	line-height: var(--lh-text-big);
   font-weight: bold;
 }
 
@@ -36,6 +36,8 @@
 }
 
 .bold{
+  font-size: var(--fz-text-medium);
+  line-height: var(--lh-text-medium);
   font-weight: bold;
 }
 

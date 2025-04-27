@@ -146,6 +146,20 @@
   color: var(--color-form-error);
 }
 
+.wp-caption-text {
+  text-align: center;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.wp-caption {
+  max-width: 100%;
+}
+
+article.searchResult__item {
+  margin-bottom: 2em;
+}
+
 .wpcf7-form > p > .wpcf7-form-control-wrap:first-of-type{
   @media (min-width:#{$md3}px) {
     grid-column: 1 / 3;

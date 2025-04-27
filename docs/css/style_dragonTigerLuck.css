@@ -1023,14 +1023,9 @@ html[dir='rtl'] .scroll__overlayArea {
 }
 
 .btn_info {
-  background: var(--bg-btn-info);
   color: var(--color-btn-info);
   border: var(--border-btn-info);
   background: rgba(255, 255, 255, 0.3);
-}
-
-.btn_info:hover:not(.disabled) {
-  background: var(--bg-btn-info-hover);
 }
 
 .btn_info:hover:not(.disabled) {
@@ -1055,6 +1050,30 @@ html[dir='rtl'] .scroll__overlayArea {
   background: var(--color-gray);
   -webkit-animation: btnLine 2s linear 0s infinite;
   animation: btnLine 2s linear 0s infinite;
+}
+
+.btn_left,
+.alignleft {
+  margin: 20px 30px;
+  float: left;
+}
+
+.btn_right,
+.alignright {
+  margin: 20px 30px;
+  float: right;
+}
+
+.btn_center,
+.aligncenter {
+  margin: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.btn_center {
+  width: 40%;
 }
 
 @-webkit-keyframes btnLine {
@@ -1507,6 +1526,10 @@ html[dir='rtl'] .scroll__overlayArea {
   background: linear-gradient(85.83deg, #004db8 1.14%, #f14624 100%);
 }
 
+.cardApp > .flex-1 > img {
+  max-height: 36px;
+}
+
 .label {
   position: absolute;
   inset-inline-start: 32px;
@@ -1776,7 +1799,10 @@ html[dir='rtl'] .searchField__input:before {
   inset-inline-start: 8px;
   width: 24px;
   height: 24px;
-  background-image: url('../img/css-bg-image/chevron_down_1.svg');
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.3 10.6329C7.7 10.2329 8.3 10.2329 8.7 10.6329L12 13.9329L15.3 10.6329C15.7 10.2329 16.3 10.2329 16.7 10.6329C17.1 11.0329 17.1 11.6329 16.7 12.0329L12.7 16.0329C12.5 16.2329 12.3 16.3329 12 16.3329C11.7 16.3329 11.5 16.2329 11.3 16.0329L7.3 12.0329C6.9 11.6329 6.9 11.0329 7.3 10.6329Z' fill='%236C6C6E'/%3E%3C/svg%3E");
   background-position: 50% 50%;
 }
 
@@ -1811,7 +1837,7 @@ html[dir='rtl'] .breadcrumbs__link:not(:first-child):before {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 24px;
   flex: 0 0 24px;
-  background-image: url('../img/css-bg-image/plus.svg');
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 4.42017C16.415 4.42017 20 8.00517 20 12.4202C20 16.8352 16.415 20.4202 12 20.4202C7.585 20.4202 4 16.8352 4 12.4202C4 8.00517 7.585 4.42017 12 4.42017ZM8.41211 11.3701C7.85982 11.3701 7.41211 11.8178 7.41211 12.3701C7.41266 12.922 7.86021 13.3691 8.41211 13.3691H10.9512V15.9061L10.9502 15.9071C10.9502 16.4594 11.3979 16.9071 11.9502 16.9071C12.5021 16.9066 12.9492 16.459 12.9492 15.9071V13.3691H15.4881C16.04 13.3685 16.4871 12.921 16.4871 12.3691C16.486 11.8176 16.0386 11.3711 15.4871 11.3711H12.9492V8.8311C12.9486 8.27921 12.5011 7.8321 11.9492 7.8321C11.3977 7.83321 10.9512 8.2806 10.9512 8.8321V11.3711H8.41311L8.41211 11.3701Z' fill='%2334C759'/%3E%3C/svg%3E");
 }
 
 .listComparison li:not(:last-child) {
@@ -1819,7 +1845,7 @@ html[dir='rtl'] .breadcrumbs__link:not(:first-child):before {
 }
 
 .listComparison_negative li:before {
-  background-image: url('../img/css-bg-image/minus.svg');
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M20 12.4202C20 8.00517 16.415 4.42017 12 4.42017C7.585 4.42017 4 8.00517 4 12.4202C4 16.8352 7.585 20.4202 12 20.4202C16.415 20.4202 20 16.8352 20 12.4202ZM7.41211 12.3701C7.41211 11.8178 7.85982 11.3701 8.41211 11.3701L8.41311 11.3711H15.4871C16.0386 11.3711 16.486 11.8176 16.4871 12.3691C16.4871 12.921 16.04 13.3685 15.4881 13.3691H8.41211C7.86021 13.3691 7.41266 12.922 7.41211 12.3701Z' fill='white' fill-opacity='0.3'/%3E%3C/svg%3E");
 }
 
 .tagsList {
@@ -1904,16 +1930,6 @@ html[dir='rtl'] .breadcrumbs__link:not(:first-child):before {
 
 .promocode:hover {
   background-color: var(--color-light-hover);
-}
-
-.promocode_mod {
-  border: 1px solid var(--color-opposite);
-  background-color: var(--color-bg);
-  color: var(--color-opposite);
-}
-
-.promocode_mod svg use {
-  fill: var(--color-opposite);
 }
 
 .copied {
@@ -2030,7 +2046,7 @@ html[dir='rtl'] .breadcrumbs__link:not(:first-child):before {
   inset-inline-start: 32px;
   width: 48px;
   height: 48px;
-  background-image: url('../img/css-bg-image/attention_1.svg');
+  background-image: url("data:image/svg+xml,%3Csvg width='48' height='49' viewBox='0 0 48 49' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M37 38.7329H11C9.344 38.7329 8 37.3889 8 35.7329C8 35.1609 8.16 34.6269 8.438 34.1729L21.804 12.0209C22.236 11.2529 23.058 10.7329 24 10.7329C25.04 10.7329 25.932 11.3649 26.316 12.2649L39.552 34.1549C39.836 34.6129 40 35.1549 40 35.7329C40 37.3889 38.656 38.7329 37 38.7329ZM26 32.7329C26 31.6289 25.104 30.7329 24 30.7329C22.896 30.7329 22 31.6289 22 32.7329C22 33.8369 22.896 34.7329 24 34.7329C25.104 34.7329 26 33.8369 26 32.7329ZM26 20.7329C26 19.6289 25.104 18.7329 24 18.7329C22.896 18.7329 22 19.6289 22 20.7329V26.7329C22 27.8369 22.896 28.7329 24 28.7329C25.104 28.7329 26 27.8369 26 26.7329V20.7329Z' fill='url(%23paint0_linear_597_3954)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_597_3954' x1='8' y1='24.7329' x2='40' y2='24.7329' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FFF173'/%3E%3Cstop offset='1' stop-color='%23FFB800'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
 }
 
 .quoteWarning.mod-info {
@@ -2052,7 +2068,7 @@ html[dir='rtl'] .breadcrumbs__link:not(:first-child):before {
 .quoteWarning.mod-info:before {
   top: 16px;
   inset-inline-start: 16px;
-  background-image: url('../img/css-bg-image/info_1.svg');
+  background-image: url("data:image/svg+xml,%3Csvg width='48' height='49' viewBox='0 0 48 49' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M24 7.6767C32.83 7.6767 40 14.8467 40 23.6767C40 32.5067 32.83 39.6767 24 39.6767C15.17 39.6767 8 32.5067 8 23.6767C8 14.8467 15.17 7.6767 24 7.6767ZM26.6625 31.6767C27.7625 31.6767 28.6545 30.7847 28.6545 29.6847C28.6545 28.5847 27.7625 27.6907 26.6625 27.6907H25.9965V21.1907C25.9965 20.3047 25.5185 19.6767 24.6365 19.6767C24.6305 19.6767 21.3665 19.6767 21.3665 19.6767C20.2585 19.6767 19.3565 20.5767 19.3565 21.6867C19.3565 22.7967 20.2585 23.6967 21.3665 23.6967H21.9905V27.6907H21.3085C20.2085 27.6907 19.3145 28.5847 19.3145 29.6847C19.3145 30.7847 20.2085 31.6767 21.3085 31.6767H26.6625ZM24.0004 12.9927C25.4824 12.9927 26.6844 14.1947 26.6844 15.6767C26.6844 17.1587 25.4824 18.3607 24.0004 18.3607C22.5184 18.3607 21.3164 17.1587 21.3164 15.6767C21.3164 14.1947 22.5184 12.9927 24.0004 12.9927Z' fill='url(%23paint0_linear_1175_5255)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_1175_5255' x1='8' y1='23.6767' x2='40' y2='23.6767' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23FFF173'/%3E%3Cstop offset='1' stop-color='%23FFB800'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
 }
 
 .quote {
@@ -2066,7 +2082,7 @@ html[dir='rtl'] .breadcrumbs__link:not(:first-child):before {
   position: absolute;
   width: 48px;
   height: 48px;
-  background-image: url('../img/css-bg-image/quote_white.svg');
+  background-image: url("data:image/svg+xml,%3Csvg width='48' height='49' viewBox='0 0 48 49' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 0.712891L21.8 9.24622V48.7129L9 40.1796V0.712891Z' fill='%23fff'/%3E%3Cpath d='M26.0664 0.712891L38.8664 9.24622V48.7129L26.0664 40.1796V0.712891Z' fill='%23fff'/%3E%3C/svg%3E");
 }
 
 .quote:before {
@@ -2080,12 +2096,12 @@ html[dir='rtl'] .breadcrumbs__link:not(:first-child):before {
 }
 
 .styledContent {
-  --space-bottom: 32px;
+  --space-bottom: 25px;
   padding: 0 16px;
 }
 
 .styledContent > p {
-  line-height: 170%;
+  line-height: 140%;
   margin-bottom: var(--space-bottom);
 }
 
@@ -2133,6 +2149,7 @@ html[dir='rtl'] .breadcrumbs__link:not(:first-child):before {
 }
 
 .styledContent .quoteWarning {
+  clear: both;
   margin-bottom: var(--space-bottom);
 }
 
@@ -2631,6 +2648,7 @@ html[dir='rtl'] .firstScreen__boby {
 .videoContainer {
   width: 100%;
   height: 0;
+  min-height: 550px;
   padding-bottom: 56.25%;
   background: var(--color-light-300);
   position: relative;
@@ -2839,9 +2857,9 @@ html[dir='rtl'] .firstScreen__boby {
 }
 
 .dropdown__item.active .dropdown__btn {
-  -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
   -webkit-transition: all 0.15s ease 0s;
   transition: all 0.15s ease 0s;
 }
@@ -2870,9 +2888,9 @@ html[dir='rtl'] .firstScreen__boby {
 .dropdown__btn {
   -webkit-transition: all 0.15s ease 0s;
   transition: all 0.15s ease 0s;
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
   background-color: transparent;
   width: 24px;
   height: 24px;
@@ -2880,7 +2898,7 @@ html[dir='rtl'] .firstScreen__boby {
   -ms-flex: 0 0 24px;
   flex: 0 0 24px;
   display: inline-block;
-  background-image: url('../img/css-bg-image/chevron_down_1.svg');
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.3 10.6329C7.7 10.2329 8.3 10.2329 8.7 10.6329L12 13.9329L15.3 10.6329C15.7 10.2329 16.3 10.2329 16.7 10.6329C17.1 11.0329 17.1 11.6329 16.7 12.0329L12.7 16.0329C12.5 16.2329 12.3 16.3329 12 16.3329C11.7 16.3329 11.5 16.2329 11.3 16.0329L7.3 12.0329C6.9 11.6329 6.9 11.0329 7.3 10.6329Z' fill='%236C6C6E'/%3E%3C/svg%3E");
 }
 
 .comment {
@@ -2973,7 +2991,7 @@ html[dir='rtl'] .firstScreen__boby {
 }
 
 .bookmaker__footer {
-  padding: 16px 32px 32px 32px;
+  padding: 16px 32px 52px 32px;
 }
 
 .reviews__body {
@@ -3184,7 +3202,7 @@ html[dir='rtl'] .authorCard__body {
 }
 
 .comparison__card {
-  background-color: var(--color-light);
+  background: var(--color-light);
   padding: 16px;
   border-radius: 16px;
   position: relative;
@@ -3735,8 +3753,8 @@ html[dir='rtl'] .subscribe__input button {
 .text-medium,
 .searchResult__item .entry-title a,
 .styledContent > h2 {
-  font-size: var(--fz-text-medium);
-  line-height: var(--lh-text-medium);
+  font-size: var(--fz-text-big);
+  line-height: var(--lh-text-big);
   font-weight: bold;
 }
 
@@ -3768,6 +3786,8 @@ html[dir='rtl'] .subscribe__input button {
 .styledContent h6,
 ol.list li:before,
 .styledContent > ol li:before {
+  font-size: var(--fz-text-medium);
+  line-height: var(--lh-text-medium);
   font-weight: bold;
 }
 
@@ -3965,6 +3985,20 @@ ol.list li:before,
   padding: 0 !important;
   border: none !important;
   color: var(--color-form-error);
+}
+
+.wp-caption-text {
+  text-align: center;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.wp-caption {
+  max-width: 100%;
+}
+
+article.searchResult__item {
+  margin-bottom: 2em;
 }
 
 @media (min-width: 530px) {
@@ -4299,6 +4333,29 @@ ol.list li:before,
 }
 
 @media (max-width: 1024px) {
+  .btn_left,
+  .alignleft {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .btn_right,
+  .alignright {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .btn_center {
+    width: auto;
+    max-width: 100%;
+  }
+
   .bookmaker__row {
     grid-template-columns: 1fr 1fr auto;
   }
@@ -4645,7 +4702,7 @@ position sticky у блока .stickyBlock */
 
   .quote:before,
   .quote:after {
-    background-image: url('../img/css-bg-image/quote_white_min.svg');
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 0.750977L10.9 5.01764V24.751L4.5 20.4843V0.750977Z' fill='%23fff'/%3E%3Cpath d='M13.0333 0.750977L19.4333 5.01764V24.751L13.0333 20.4843V0.750977Z' fill='%23fff'/%3E%3C/svg%3E");
     width: 24px;
     height: 24px;
   }
@@ -4899,7 +4956,9 @@ position sticky у блока .stickyBlock */
   }
 
   .comment_reply {
-    margin-inline: 40px 0;
+    margin-top: 16px;
+    -webkit-margin-start: 40px;
+    margin-inline-start: 40px;
   }
 
   .bookmaker__row {
