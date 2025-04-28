@@ -15,6 +15,10 @@
         display: flex;
         align-items: center;
         flex: 1;
+        @media (max-width:if($theme == "pin-up", "1580px", "1310px")) and (min-width:#{$md3}px) {
+            grid-column: span 2;
+            grid-row: 2;
+        }
     }
     &__menu{
         padding-block: 8px;
@@ -42,7 +46,6 @@
                 padding: 8px;
             }
         }
-
         @media (max-width:#{$md3}px) {
             flex: 1;
             padding: 8px;
@@ -55,21 +58,10 @@
         display: flex;
         padding: 8px;
         @media (max-width:#{$md3}px) {
+            grid-row: 1;
+            grid-column: span 2;
             > * {
                 flex: 1;
-            }
-        }
-        @if($theme == "balloon"){
-            @media (max-width:1310px) and (min-width:#{$md3}px) {
-                height: 74px;
-                align-items: center;
-            }
-        }
-    }
-    &__logo{
-        @if($theme == "balloon"){
-            @media (max-width:1310px) and (min-width:#{$md3}px) {
-                padding-top: 0;
             }
         }
     }
@@ -83,50 +75,11 @@
             padding: 8px;
         }
     }
-    &:not(.header_v2){
-        @media (max-width:1310px) {
-            @if index($group_1, $theme) {
-                flex-direction: column-reverse;
-                @media (max-width:#{$md3}px) {
-                    flex-direction: column;
-                }
-            } @else {
-                flex-direction: column-reverse;
-            }
-            align-items: stretch;
-            .header__buttons{
-                justify-content: flex-end;
-            }
-        }
-        
-        @media (max-width:1310px) and (min-width:#{$md3}px) {
-            .header__logo{
-                position: absolute;
-                @if index($group_1, $theme) {
-                    top: 8px;
-                } @else {
-                    top: 16px;
-                }
-                
-                inset-inline-start: 8px;
-            }
-        }
+    @media (max-width:if($theme == "pin-up", "1580px", "1312px")) {
+        display: grid;
+        grid-template-columns: 1fr auto;
     }
-    &_v2{
-        @media (max-width:1580px) {
-            flex-direction: column-reverse;
-            align-items: stretch;
-            .header__buttons{
-                justify-content: flex-end;
-            }
-        }
-        @media (max-width:1580px) and (min-width:#{$md3}px) {
-            .header__logo{
-                position: absolute;
-                top: 16px;
-                inset-inline-start: 8px;
-            }
-        }
+    @if $theme == "pin-up" {
         .header__menu{
             padding: 8px 0px;
             gap: 0;
@@ -136,19 +89,15 @@
                 }
             }
         }
-        .searchField__input:before{
-            height: 32px;
-            top: 4px;
-            filter: blur(5px);
-        }
     }
-    @if index($group_1, $theme) {
-        .searchField__input:before{
-            height: 32px;
-            top: 4px;
-            filter: blur(5px);
-        }
-    }
+    // Вроде как ненужное
+    // @if $theme == "default" or $theme == "light" or $theme == "balloon" {
+    //     .searchField__input:before{
+    //         top: 0;
+    //         height: 40px;
+    //         filter: none;
+    //     }
+    // }
 }
 
 ////////// Попапы в header-е

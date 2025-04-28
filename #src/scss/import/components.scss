@@ -869,10 +869,11 @@
         &:before{
             content: "";
             position: absolute;
-            top: 0;
+            height: 32px;
+            top: 4px;
+            filter: blur(5px);
             inset-inline-start: -40px;
             width: 60px;
-            height: 40px;
             --deg: 90deg;
             html[dir="rtl"] & {
                 --deg: -90deg;
@@ -1135,18 +1136,10 @@
     padding: 8px;
     align-items: flex-start;
     img{
-        @if $theme == "balloon" {
-            height: 58px;
-        } @else if $theme == "mines" or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal" or $theme == "plinko" or $theme == "thimbles" {
-            height: 40px;
-        } @else if $theme == "penalty" {
-            height: 28px;
-        } @else if $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "dragonTigerLuck" or $theme == "spaceXY" or $theme == "luckyJet" {
-            max-width: 100%;
-            height: auto;
-        } @else {
-            height: 24px;
-        }
+        height: 40px;
+        width: auto;
+        object-fit: contain;
+        max-width: 100%;
     }
 }
 
@@ -1155,7 +1148,6 @@
         height: 11px;
         padding: 0 6px;
         transform: skew(-20deg);
-    
         background-color: #E50539;
         font-size: 10px;
         line-height: 12px;
