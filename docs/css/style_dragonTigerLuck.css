@@ -4152,7 +4152,7 @@ article.searchResult__item {
   }
 }
 
-@media (max-width: 1312px) {
+@media (max-width: 1310px) {
   .header {
     display: grid;
     grid-template-columns: 1fr auto;

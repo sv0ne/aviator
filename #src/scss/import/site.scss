@@ -75,7 +75,7 @@
             padding: 8px;
         }
     }
-    @media (max-width:if($theme == "pin-up", "1580px", "1312px")) {
+    @media (max-width:if($theme == "pin-up", "1580px", "1310px")) {
         display: grid;
         grid-template-columns: 1fr auto;
     }
