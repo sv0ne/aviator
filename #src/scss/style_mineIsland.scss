@@ -84,6 +84,23 @@ $fontfamily: -apple-system, BlinkMacSystemFont, 'Helvetica', 'Arial', 'Segoe UI'
 
 $theme: "mineIsland";
 
+$x1_inset: -76px;
+$x1_top: -46px;
+$x1_inset_600: -36px;
+$x1_top_600: -23px;
+
+$x2_inset: -76px;
+$x2_top: -61px;
+$x2_inset_600: -47px;
+$x2_top_600: -30px;
+
+$money_inset: 27px;
+$money_top: -80px;
+$money_inset_md2: -7px;
+$money_top_md2: -86px;
+$money_inset_600: 3px;
+$money_top_600: -50px;
+
 // --------------------------------------------------------
 
 @import "import/null"; // Обнуляющие стили

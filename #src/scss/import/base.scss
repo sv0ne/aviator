@@ -265,7 +265,9 @@ table{
 
 .bg-black-05{
 	background-color: var(--bg-video-overlay);
-	@if index($group_2, $theme) {
+	@if($theme == "default" or $theme == "pin-up" or $theme == "light"){
+
+	} @else {
 		backdrop-filter: blur(16px);
 	}
 }

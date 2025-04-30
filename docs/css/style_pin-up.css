@@ -2313,6 +2313,8 @@ ol.list li:before,
 
 .textBanner__t2 {
   margin-top: -13px;
+  margin-left: -100px;
+  margin-right: -100px;
   position: relative;
   z-index: 2;
   background: linear-gradient(90.85deg, #474D5B 0.05%, #232325 99.95%);
@@ -2331,12 +2333,12 @@ ol.list li:before,
   margin-top: -4px;
   position: relative;
   z-index: 3;
-  background: linear-gradient(93.51deg, #EF6C0D 3.79%, #F15B25 106.13%);
   -webkit-transform: rotate(-2deg);
       -ms-transform: rotate(-2deg);
           transform: rotate(-2deg);
   padding: 9px 37px;
   border-radius: 99px;
+  background: linear-gradient(93.51deg, #EF6C0D 3.79%, #F15B25 106.13%);
 }
 
 .textBanner__t3 span {
@@ -2357,22 +2359,6 @@ ol.list li:before,
 
 .textBanner__t4 span {
   display: inline-block;
-}
-
-.textBanner__money {
-  position: absolute;
-  inset-inline-end: -60px;
-  top: -29px;
-  width: 110px;
-  height: 110px;
-}
-
-.textBanner__coin {
-  position: absolute;
-  inset-inline-start: 46px;
-  top: -89px;
-  width: 115px;
-  height: 115px;
 }
 
 .ticket {
@@ -4038,13 +4024,6 @@ article.searchResult__item {
     line-height: 36px;
   }
 
-  .textBanner__coin {
-    inset-inline-start: 31px;
-    top: -61px;
-    width: 80px;
-    height: 80px;
-  }
-
   .ticket_1 {
     top: -46px;
     inset-inline-end: 7px;
@@ -4792,20 +4771,6 @@ position sticky у блока .stickyBlock */
     font-size: var(--fz-text-medium);
     line-height: var(--lh-text-medium);
     padding: 4px 16px;
-  }
-
-  .textBanner__money {
-    inset-inline-end: -39px;
-    top: -10px;
-    width: 60px;
-    height: 60px;
-  }
-
-  .textBanner__coin {
-    inset-inline-start: 16px;
-    top: -46px;
-    width: 60px;
-    height: 60px;
   }
 
   .ticket_1 {

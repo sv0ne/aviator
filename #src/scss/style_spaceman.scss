@@ -84,6 +84,32 @@ $fontfamily: -apple-system, BlinkMacSystemFont, 'Helvetica', 'Arial', 'Segoe UI'
 
 $theme: "spaceman";
 
+$x1_inset: -84px;
+$x1_top: -68px;
+$x1_inset_600: -38px;
+$x1_top_600: -18px;
+
+$x2_inset: -86px;
+$x2_top: -46px;
+$x2_inset_600: -36px;
+$x2_top_600: -23px;
+
+$money_inset: 15px;
+$money_top: -80px;
+$money_inset_md2: 17px;
+$money_top_md2: -86px;
+$money_inset_600: 3px;
+$money_top_600: -50px;
+
+@mixin btn_primary() {
+	background: linear-gradient(90deg, #FFCC00 0%, #FF9721 100%);
+    box-shadow: 0px 2px 0px 0px rgba(255, 0, 208, 1);
+    color: var(--color-bg);
+    &:hover{
+        opacity: 0.9;
+    }
+}
+
 // --------------------------------------------------------
 
 @import "import/null"; // Обнуляющие стили

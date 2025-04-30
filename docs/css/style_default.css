@@ -2365,12 +2365,12 @@ html[dir=rtl] .firstScreen__boby {
   margin-top: -4px;
   position: relative;
   z-index: 3;
-  background: linear-gradient(93.51deg, #EF6C0D 3.79%, #F15B25 106.13%);
   -webkit-transform: rotate(-2deg);
       -ms-transform: rotate(-2deg);
           transform: rotate(-2deg);
   padding: 9px 37px;
   border-radius: 99px;
+  background: linear-gradient(93.51deg, #EF6C0D 3.79%, #F15B25 106.13%);
 }
 
 .textBanner__t3 span {

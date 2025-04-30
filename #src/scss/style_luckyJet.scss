@@ -84,6 +84,23 @@ $fontfamily: -apple-system, BlinkMacSystemFont, 'Helvetica', 'Arial', 'Segoe UI'
 
 $theme: "luckyJet";
 
+$x1_inset: -84px;
+$x1_top: -61px;
+$x1_inset_600: -46px;
+$x1_top_600: -14px;
+
+$x2_inset: -83px;
+$x2_top: -41px;
+$x2_inset_600: -47px;
+$x2_top_600: -12px;
+
+$money_inset: 0px;
+$money_top: -80px;
+$money_inset_md2: -13px;
+$money_top_md2: -86px;
+$money_inset_600: -5px;
+$money_top_600: -50px;
+
 // --------------------------------------------------------
 
 @import "import/null"; // Обнуляющие стили

@@ -228,10 +228,10 @@
         inset-inline-start: 0;
         width: 100%;
         height: 100%;
-        @if index($group_1, $theme) {
-            background: linear-gradient(180deg, rgba(13, 16, 22, 0) 0%, #232325 100%);
-        } @else {
+        @if($theme == "default" or $theme == "pin-up" or $theme == "light" or $theme == "balloon"){
             background: linear-gradient(180deg, rgba(13, 16, 22, 0) 0%, rgba(13, 16, 22, 0) 90%, #0D1016 100%);
+        } @else {
+            background: linear-gradient(180deg, rgba(13, 16, 22, 0) 0%, #232325 100%);
         }
     }
 }
@@ -361,7 +361,7 @@
                 &:after{
                     content: "";
                     position: absolute;
-                    top: 0; left: 0; width: 100%; height: 100%;
+                    top: 0; inset-inline-start: 0; width: 100%; height: 100%;
                     border-radius: 16px;
                     background: linear-gradient(111.34deg, #FFFFFF 0%, rgba(255, 255, 255, 0.1) 50%, #FFFFFF 100%);
                 }
@@ -407,7 +407,7 @@
                 justify-content: center;
                 height: 100%;           
                 position: absolute;
-                right: -32px;
+                inset-inline-end: -32px;
                 z-index: 2;
             }
             @media (max-width:#{$md3}px) {
@@ -490,9 +490,11 @@
     }
     &__t2{
         margin-top: -13px;
-        @if $theme == "penalty" or $theme == "thimbles" or $theme == "spaceman" or $theme == "dragonTigerLuck" {
-            margin-left: -90px;
-            margin-right: -90px;
+        @if $theme == "default" {
+            
+        } @else {
+            margin-left: -100px;
+            margin-right: -100px;
         }
         @if $theme == "dragonTigerLuck" {
             @media (min-width:#{$md2}px) {
@@ -524,15 +526,17 @@
         margin-top: -4px;
         position: relative;
         z-index: 3;
-        background: linear-gradient(93.51deg, #EF6C0D 3.79%, #F15B25 106.13%);
         transform: rotate(-2deg);
         padding: 9px 37px;
         border-radius: 99px;
-        @if $theme == "balloon" {
+        @if($theme == "default" or $theme == "pin-up" or $theme == "light"){
+            background: linear-gradient(93.51deg, #EF6C0D 3.79%, #F15B25 106.13%);
+        }
+        @else if $theme == "balloon" {
             background: var(--color-opposite);
             color: rgba(248, 17, 66, 1);
         }
-        @if index($group_1, $theme) {
+        @else {
             background: #fff;
             color: rgba(35, 35, 37, 1);
         }
@@ -579,20 +583,42 @@
             line-height: 43px;
         }
     }
-    &__money{
-        position: absolute;
-        inset-inline-end: -60px;
-        top: -29px;
-        width: 110px;
-        height: 110px;
-        @media (max-width:600px) {
-            inset-inline-end: -39px;
-            top: -10px;
-            width: 60px;
-            height: 60px;
+    @if($theme == "default"){
+        &__money{
+            position: absolute;
+            inset-inline-end: -60px;
+            top: -29px;
+            width: 110px;
+            height: 110px;
+            @media (max-width:600px) {
+                inset-inline-end: -39px;
+                top: -10px;
+                width: 60px;
+                height: 60px;
+            }
         }
-    }
-    @if($theme == "balloon"){
+        &__coin{
+            position: absolute;
+            inset-inline-start: 46px;
+            top: -89px;
+            width: 115px;
+            height: 115px;
+            @media (max-width:#{$md2}px) {
+                inset-inline-start: 31px;
+                top: -61px;
+                width: 80px;
+                height: 80px;
+            }
+            @media (max-width:600px) {
+                inset-inline-start: 16px;
+                top: -46px;
+                width: 60px;
+                height: 60px;
+            }
+        }
+    } @else if($theme == "pin-up" or $theme == "light"){
+
+    } @else if($theme == "balloon"){
         &__hand{
             position: absolute;
             inset-inline-end: -86px;
@@ -632,606 +658,49 @@
                 height: 43px;
             }
         }
-    }
-    @if($theme == "mines"){
+    } @else {
         &__x1{
             position: absolute;
-            inset-inline-start: -69px;
-            top: -61px;
+            inset-inline-start: $x1_inset;
+            top: $x1_top;
             width: 126px;
             height: 126px;
             @media (max-width:600px) {
-                inset-inline-start: -35px;
-                top: -31px;
+                inset-inline-start: $x1_inset_600;
+                top: $x1_top_600;
                 width: 64px;
                 height: 64px;
             }
         }
         &__x2{
             position: absolute;
-            inset-inline-end: -86px;
-            top: -41px;
+            inset-inline-end: $x2_inset;
+            top: $x2_top;
             width: 126px;
             height: 126px;
             @media (max-width:600px) {
-                inset-inline-end: -35px;
-                top: -23px;
+                inset-inline-end: $x2_inset_600;
+                top: $x2_top_600;
                 width: 64px;
                 height: 64px;
             }
         }
         &__money2{
             position: absolute;
-            inset-inline-end: 14px;
-            top: -80px;
-            width: 110px;
-            height: 110px;
-            @media (max-width:600px) {
-                inset-inline-end: -36px;
-                top: -50px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-    }
-    @if($theme == "towerX"){
-        &__x1{
-            position: absolute;
-            inset-inline-start: -84px;
-            top: -68px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-start: -38px;
-                top: -18px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__x2{
-            position: absolute;
-            inset-inline-end: -86px;
-            top: -46px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-end: -36px;
-                top: -23px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__money2{
-            position: absolute;
-            inset-inline-end: 66px;
-            top: -80px;
+            inset-inline-end: $money_inset;
+            top: $money_top;
             width: 110px;
             height: 110px;
             @media (max-width:#{$md2}px) {
-                inset-inline-end: 17px;
-                top: -86px;
+                inset-inline-end: $money_inset_md2;
+                top: $money_top_md2;
             }
             @media (max-width:600px) {
-                inset-inline-end: 25px;
-                top: -50px;
+                inset-inline-end: $money_inset_600;
+                top: $money_top_600;
                 width: 64px;
                 height: 64px;
             }
-        }
-    }
-    @if($theme == "jetX"){
-        &__x1{
-            position: absolute;
-            inset-inline-start: -84px;
-            top: -68px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-start: -47px;
-                top: -18px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__x2{
-            position: absolute;
-            inset-inline-end: -72px;
-            top: -46px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-end: -36px;
-                top: -23px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__money2{
-            position: absolute;
-            inset-inline-end: 27px;
-            top: -80px;
-            width: 110px;
-            height: 110px;
-            @media (max-width:#{$md2}px) {
-                inset-inline-end: -7px;
-                top: -86px;
-            }
-            @media (max-width:600px) {
-                inset-inline-end: 3px;
-                top: -50px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-    }
-    @if($theme == "mineIsland"){
-        &__x1{
-            position: absolute;
-            inset-inline-end: -76px;
-            top: -46px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-end: -36px;
-                top: -23px;
-                width: 64px;
-                height: 64px;
-            }
-            
-        }
-        &__x2{
-            position: absolute;
-            inset-inline-start: -76px;
-            top: -61px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-start: -47px;
-                top: -30px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__money2{
-            position: absolute;
-            inset-inline-end: 27px;
-            top: -80px;
-            width: 110px;
-            height: 110px;
-            @media (max-width:#{$md2}px) {
-                inset-inline-end: -7px;
-                top: -86px;
-            }
-            @media (max-width:600px) {
-                inset-inline-end: 3px;
-                top: -50px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-    }
-    @if($theme == "footballX"){
-        &__x1{
-            position: absolute;
-            inset-inline-start: -84px;
-            top: -68px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-start: -38px;
-                top: -18px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__x2{
-            position: absolute;
-            inset-inline-end: -86px;
-            top: -46px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-end: -36px;
-                top: -23px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__money2{
-            position: absolute;
-            inset-inline-end: 19px;
-            top: -80px;
-            width: 110px;
-            height: 110px;
-            @media (max-width:#{$md2}px) {
-                inset-inline-end: 17px;
-                top: -86px;
-            }
-            @media (max-width:600px) {
-                inset-inline-end: 7px;
-                top: -50px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-    }
-    @if($theme == "goal"){
-        &__x1{
-            position: absolute;
-            inset-inline-start: -84px;
-            top: -68px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-start: -38px;
-                top: -18px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__x2{
-            position: absolute;
-            inset-inline-end: -86px;
-            top: -46px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-end: -36px;
-                top: -23px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__money2{
-            position: absolute;
-            inset-inline-end: 15px;
-            top: -80px;
-            width: 110px;
-            height: 110px;
-            @media (max-width:#{$md2}px) {
-                inset-inline-end: 17px;
-                top: -86px;
-            }
-            @media (max-width:600px) {
-                inset-inline-end: 3px;
-                top: -50px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-    }
-    @if($theme == "hilo"){
-        &__x1{
-            position: absolute;
-            inset-inline-start: -84px;
-            top: -68px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-start: -38px;
-                top: -18px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__x2{
-            position: absolute;
-            inset-inline-end: -86px;
-            top: -46px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-end: -36px;
-                top: -23px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__money2{
-            position: absolute;
-            inset-inline-end: 16px;
-            top: -80px;
-            width: 110px;
-            height: 110px;
-            @media (max-width:#{$md2}px) {
-                inset-inline-end: -8px;
-                top: -86px;
-            }
-            @media (max-width:600px) {
-                inset-inline-end: 2px;
-                top: -50px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-    }
-    @if($theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix"){
-        &__x1{
-            position: absolute;
-            inset-inline-start: -84px;
-            top: -68px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-start: -38px;
-                top: -18px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__x2{
-            position: absolute;
-            inset-inline-end: -86px;
-            top: -46px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-end: -36px;
-                top: -23px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__money2{
-            position: absolute;
-            inset-inline-end: 15px;
-            top: -80px;
-            width: 110px;
-            height: 110px;
-            @media (max-width:#{$md2}px) {
-                inset-inline-end: 17px;
-                top: -86px;
-            }
-            @media (max-width:600px) {
-                inset-inline-end: 3px;
-                top: -50px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-    }
-    @if($theme == "chicken"){
-        &__x1{
-            position: absolute;
-            inset-inline-start: -84px;
-            top: -68px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-start: -38px;
-                top: -18px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__x2{
-            position: absolute;
-            inset-inline-end: -86px;
-            top: -46px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-end: -36px;
-                top: -23px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__money2{
-            position: absolute;
-            inset-inline-end: 67px;
-            top: -80px;
-            width: 110px;
-            height: 110px;
-            @media (max-width:#{$md2}px) {
-                inset-inline-end: 17px;
-                top: -86px;
-            }
-            @media (max-width:600px) {
-                inset-inline-end: 3px;
-                top: -50px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-    }
-    @if($theme == "dragonTigerLuck"){
-        &__x1{
-            position: absolute;
-            inset-inline-start: -84px;
-            top: -48px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-start: -50px;
-                top: -18px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__x2{
-            position: absolute;
-            inset-inline-end: -86px;
-            top: -46px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-end: -42px;
-                top: -16px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__money2{
-            position: absolute;
-            inset-inline-end: 102px;
-            top: -80px;
-            width: 110px;
-            height: 110px;
-            @media (max-width:#{$md2}px) {
-                inset-inline-end: 17px;
-                top: -86px;
-            }
-            @media (max-width:600px) {
-                inset-inline-end: 49px;
-                top: -50px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-    }
-    @if($theme == "penalty"){
-        &__x1{
-            position: absolute;
-            inset-inline-start: -84px;
-            top: -40px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-start: -46px;
-                top: -14px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__x2{
-            position: absolute;
-            inset-inline-end: -86px;
-            top: -27px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-end: -47px;
-                top: -12px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__money2{
-            position: absolute;
-            inset-inline-end: 172px;
-            top: -80px;
-            width: 110px;
-            height: 110px;
-            @media (max-width:#{$md2}px) {
-                inset-inline-end: 17px;
-                top: -86px;
-            }
-            @media (max-width:600px) {
-                inset-inline-end: 60px;
-                top: -50px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-    }
-    @if($theme == "thimbles"){
-        &__x1{
-            position: absolute;
-            inset-inline-start: -81px;
-            top: -57px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-start: -46px;
-                top: -14px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__x2{
-            position: absolute;
-            inset-inline-end: -86px;
-            top: -44px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-end: -47px;
-                top: -12px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__money2{
-            position: absolute;
-            inset-inline-end: 83px;
-            top: -80px;
-            width: 110px;
-            height: 110px;
-            @media (max-width:#{$md2}px) {
-                inset-inline-end: 17px;
-                top: -86px;
-            }
-            @media (max-width:600px) {
-                inset-inline-end: 30px;
-                top: -50px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-    }
-    @if($theme == "luckyJet"){
-        &__x1{
-            position: absolute;
-            inset-inline-start: -84px;
-            top: -61px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-start: -46px;
-                top: -14px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__x2{
-            position: absolute;
-            inset-inline-end: -83px;
-            top: -41px;
-            width: 126px;
-            height: 126px;
-            @media (max-width:600px) {
-                inset-inline-end: -47px;
-                top: -12px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-        &__money2{
-            position: absolute;
-            inset-inline-end: 0px;
-            top: -80px;
-            width: 110px;
-            height: 110px;
-            @media (max-width:#{$md2}px) {
-                inset-inline-end: -13px;
-                top: -86px;
-            }
-            @media (max-width:600px) {
-                inset-inline-end: -5px;
-                top: -50px;
-                width: 64px;
-                height: 64px;
-            }
-        }
-    }
-    &__coin{
-        position: absolute;
-        inset-inline-start: 46px;
-        top: -89px;
-        width: 115px;
-        height: 115px;
-        @media (max-width:#{$md2}px) {
-            inset-inline-start: 31px;
-            top: -61px;
-            width: 80px;
-            height: 80px;
-        }
-        @media (max-width:600px) {
-            inset-inline-start: 16px;
-            top: -46px;
-            width: 60px;
-            height: 60px;
         }
     }
 }
@@ -1367,7 +836,9 @@
         @media (max-width:#{$md3}px) {
             flex: 0;
         }
-        @if index($group_1, $theme) {
+        @if($theme == "default" or $theme == "pin-up" or $theme == "light" or $theme == "balloon"){
+
+        } @else {
             background: #232325;
         }
     }

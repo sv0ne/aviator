@@ -2368,6 +2368,8 @@ html[dir=rtl] .firstScreen__boby {
 
 .textBanner__t2 {
   margin-top: -13px;
+  margin-left: -100px;
+  margin-right: -100px;
   position: relative;
   z-index: 2;
   background: linear-gradient(90.85deg, #474D5B 0.05%, #232325 99.95%);
@@ -2386,7 +2388,6 @@ html[dir=rtl] .firstScreen__boby {
   margin-top: -4px;
   position: relative;
   z-index: 3;
-  background: linear-gradient(93.51deg, #EF6C0D 3.79%, #F15B25 106.13%);
   -webkit-transform: rotate(-2deg);
       -ms-transform: rotate(-2deg);
           transform: rotate(-2deg);
@@ -2416,17 +2417,9 @@ html[dir=rtl] .firstScreen__boby {
   display: inline-block;
 }
 
-.textBanner__money {
-  position: absolute;
-  inset-inline-end: -60px;
-  top: -29px;
-  width: 110px;
-  height: 110px;
-}
-
 .textBanner__x1 {
   position: absolute;
-  inset-inline-end: -76px;
+  inset-inline-start: -76px;
   top: -46px;
   width: 126px;
   height: 126px;
@@ -2434,7 +2427,7 @@ html[dir=rtl] .firstScreen__boby {
 
 .textBanner__x2 {
   position: absolute;
-  inset-inline-start: -76px;
+  inset-inline-end: -76px;
   top: -61px;
   width: 126px;
   height: 126px;
@@ -2446,14 +2439,6 @@ html[dir=rtl] .firstScreen__boby {
   top: -80px;
   width: 110px;
   height: 110px;
-}
-
-.textBanner__coin {
-  position: absolute;
-  inset-inline-start: 46px;
-  top: -89px;
-  width: 115px;
-  height: 115px;
 }
 
 .ticket {
@@ -3911,7 +3896,7 @@ article.searchResult__item {
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
+    inset-inline-start: 0;
     width: 100%;
     height: 100%;
     border-radius: 16px;
@@ -3934,7 +3919,7 @@ article.searchResult__item {
             justify-content: center;
     height: 100%;
     position: absolute;
-    right: -32px;
+    inset-inline-end: -32px;
     z-index: 2;
   }
 
@@ -4166,13 +4151,6 @@ article.searchResult__item {
   .textBanner__money2 {
     inset-inline-end: -7px;
     top: -86px;
-  }
-
-  .textBanner__coin {
-    inset-inline-start: 31px;
-    top: -61px;
-    width: 80px;
-    height: 80px;
   }
 
   .ticket_1 {
@@ -4913,22 +4891,15 @@ position sticky у блока .stickyBlock */
     padding: 4px 16px;
   }
 
-  .textBanner__money {
-    inset-inline-end: -39px;
-    top: -10px;
-    width: 60px;
-    height: 60px;
-  }
-
   .textBanner__x1 {
-    inset-inline-end: -36px;
+    inset-inline-start: -36px;
     top: -23px;
     width: 64px;
     height: 64px;
   }
 
   .textBanner__x2 {
-    inset-inline-start: -47px;
+    inset-inline-end: -47px;
     top: -30px;
     width: 64px;
     height: 64px;
@@ -4939,13 +4910,6 @@ position sticky у блока .stickyBlock */
     top: -50px;
     width: 64px;
     height: 64px;
-  }
-
-  .textBanner__coin {
-    inset-inline-start: 16px;
-    top: -46px;
-    width: 60px;
-    height: 60px;
   }
 
   .ticket_1 {
