@@ -92,7 +92,7 @@
                 background: var(--color-brand-hover);
             }
         } @else {
-            @include btn_primary();
+            @include btn_primary;
         }
     }
     &_secondary{
@@ -765,10 +765,10 @@
     @if($theme == 'light'){
         background-color: var(--color-opposite);
         padding: 12px;
-    } @else {
+    }@else if ($theme == 'pin-up' or $theme == "default" or $theme == "balloon") {
         background-color: rgba(52, 199, 89, 1);
     }
-    @if($theme == 'mines' or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal"){
+    @else if($theme == 'mines' or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal"){
         @if($theme == 'mines'){
             background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%) padding-box, 
             linear-gradient(180deg, #ED9412 0%, #B4450B 100%) border-box;
@@ -801,7 +801,7 @@
         svg use{
             fill: #232325;
         }
-    } @else if ($theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "penalty" or $theme == "luckyJet" or $theme == "thimbles"){
+    } @else if ($theme == "plinko" or $theme == "spaceXY" or $theme == "aviatrix" or $theme == "chicken" or $theme == "penalty" or $theme == "luckyJet" or $theme == "thimbles"){
         @if($theme == "plinko" or $theme == "spaceXY"){
             background: linear-gradient(90deg, #FED317 0%, #FCA400 100%);
             box-shadow: 0px 2px 0px 0px rgba(165, 58, 0, 1);
@@ -824,14 +824,8 @@
             background: rgba(241, 190, 10, 1);
             svg use{ fill: #232325; }
         }
-        @if($theme == "spaceman"){
-            background: linear-gradient(90deg, #FFCC00 0%, #FF9721 100%);
-            box-shadow: 0px 2px 0px 0px rgba(255, 0, 208, 1);
-            svg use{ fill: #232325; }
-        }
-    } @else if($theme == "dragonTigerLuck"){
-        background: linear-gradient(83.56deg, #FF00D0 0%, #00D6FF 100%);
-        border: 2px solid rgba(255, 255, 255, 1);
+    } @else {
+        @include label_4;
     }
 }
 

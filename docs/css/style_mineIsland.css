@@ -1539,7 +1539,6 @@ html[dir=rtl] .scroll__overlayArea {
 .label-4 {
   padding: 8px 16px;
   border-radius: var(--br-small);
-  background-color: rgb(52, 199, 89);
   background: linear-gradient(119.59deg, #6AD0FF 0%, #375FDC 100%) padding-box, linear-gradient(96.44deg, #CFEDFC 0%, #8DB6FC 100%) border-box;
   border: 2px solid transparent;
 }
