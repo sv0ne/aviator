@@ -939,7 +939,15 @@ html[dir=rtl] .scroll__overlayArea {
 .wpcf7-form-control.wpcf7-submit,
 .navigation.posts-navigation .nav-previous a,
 .navigation.posts-navigation .nav-next a {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
   font-weight: 700;
   border-radius: var(--br-small);
