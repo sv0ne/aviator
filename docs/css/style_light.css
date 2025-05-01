@@ -3094,8 +3094,7 @@ ol.list li:before,
   padding: 32px;
   border-radius: 16px;
   --deg: 106deg;
-  background: -webkit-gradient(linear, left top, left bottom, from(var(--deg)), color-stop(22.23%, #008E4A), color-stop(77.77%, #A5EF5B));
-  background: linear-gradient(var(--deg), #008E4A 22.23%, #A5EF5B 77.77%);
+  background-color: #232325;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3105,6 +3104,11 @@ ol.list li:before,
 
 html[dir=rtl] .authorCard__body {
   --deg: 286deg;
+}
+
+.authorCard__body .linkSocial:not(.linkSocial_instagram):not(.linkSocial_facebook):not(.linkSocial_linkedin) {
+  padding: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .authorCard__body > * {
