@@ -127,10 +127,10 @@
         &:after{
             content: "";
             position: absolute;
-            top: -20px;
+            top: -40px;
             inset-inline-start: -75px;
             width: 15px;
-            height: 80px;
+            height: 180px;
             transform: rotate(45deg);
             background: var(--color-gray);
             animation: btnLine 2s linear 0s infinite;

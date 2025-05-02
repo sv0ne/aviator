@@ -1006,10 +1006,10 @@ html[dir=rtl] .scroll__overlayArea {
 .btn_animated:after {
   content: "";
   position: absolute;
-  top: -20px;
+  top: -40px;
   inset-inline-start: -75px;
   width: 15px;
-  height: 80px;
+  height: 180px;
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
@@ -3919,7 +3919,7 @@ article.searchResult__item {
   }
 }
 
-@media (max-width: 1420px) {
+@media (max-width: 1520px) {
   .header__menu {
     padding: 8px 0;
     gap: 0;
