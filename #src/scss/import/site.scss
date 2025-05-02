@@ -2185,7 +2185,7 @@
     }
 }
 
-@if $theme == "dragonTigerLuck" {
+@if $theme == "dragonTigerLuck" or $theme == "fortune-rabbit" or $theme == "fortune-ox" or $theme == "fortune-tiger" {
     .pixel {
         display: grid;
         gap: 16px;
