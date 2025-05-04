@@ -84,6 +84,20 @@ $fontfamily: -apple-system, BlinkMacSystemFont, 'Helvetica', 'Arial', 'Segoe UI'
 
 $theme: "light";
 
+@mixin btn_primary() {
+	background: var(--color-brand);
+    color: var(--color-btn-primary);
+    &:hover{
+        background: var(--color-brand-hover);
+    }
+}
+
+@mixin label_4() {
+    background-color: var(--color-opposite);
+    padding: 12px;
+    svg use{ fill: #fff; }
+}
+
 // --------------------------------------------------------
 
 @import "import/null"; // Обнуляющие стили

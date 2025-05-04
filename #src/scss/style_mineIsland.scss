@@ -101,6 +101,30 @@ $money_top_md2: -86px;
 $money_inset_600: 3px;
 $money_top_600: -50px;
 
+@mixin btn_primary() {
+	color: #fff;
+    position: relative;
+    background: linear-gradient(119.59deg, #6AD0FF 0%, #375FDC 100%) padding-box, 
+        linear-gradient(96.44deg, #CFEDFC 0%, #8DB6FC 100%) border-box;
+    border: 2px solid transparent;
+    padding: 10px 24px;
+    @media (max-width:#{$md3}px) {
+        padding: 10px 16px;
+    }
+    &:hover{
+        opacity: 0.9;
+    }
+}
+
+@mixin label_4() {
+    background: linear-gradient(119.59deg, #6AD0FF 0%, #375FDC 100%) padding-box, 
+        linear-gradient(96.44deg, #CFEDFC 0%, #8DB6FC 100%) border-box;
+    border: 2px solid transparent;
+    svg use{
+        fill: #232325;
+    }
+}
+
 // --------------------------------------------------------
 
 @import "import/null"; // Обнуляющие стили

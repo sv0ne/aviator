@@ -113,6 +113,7 @@ $money_top_600: -50px;
 @mixin label_4() {
     background: linear-gradient(180deg, #F3B516 0%, #EB7403 100%);
     border: 2px solid rgba(208, 96, 17, 1);
+    svg use{ fill: #fff; }
 }
 
 // --------------------------------------------------------

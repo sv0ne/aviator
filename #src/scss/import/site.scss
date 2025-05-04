@@ -1711,7 +1711,7 @@
     }
 }
 
-@if $theme == "pin-up" or $theme == "luckyJet" {
+@if $theme == "pin-up" or $theme == "luckyJet" or $theme == "brawl-pirates" {
     .casinoInfo{
         @if $theme == "pin-up" {
             background: var(--border-casino-info);
@@ -1724,7 +1724,7 @@
             @if $theme == "pin-up" {
                 background: var(--bg-casino-info);
             }
-            @if $theme == "luckyJet" {
+            @if $theme == "luckyJet" or $theme == "brawl-pirates" {
                 background: linear-gradient(85.83deg, #38A8FA 1.14%, #0167CA 100%);
                 .link-3{
                     background: var(--color-opposite);
@@ -2038,7 +2038,7 @@
     }
 }
 
-@if $theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "penalty" or $theme == "thimbles" {
+@if $theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "penalty" or $theme == "thimbles" or $theme == "sweet-bonanza" or $theme == "tower-rush" {
     .collaboration{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -2052,8 +2052,10 @@
             gap: 16px;
             .card-1{
                 flex: 1 0 45%;
-                @if $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" {
+                @if $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "sweet-bonanza" {
                     height: 62px;
+                } @else if $theme == "tower-rush"{
+                    height: auto;
                 } @else {
                     height: 70px;
                 }
@@ -2076,6 +2078,11 @@
             &_3col{
                 .card-1{
                     flex: 1 0 30%;
+                    @if $theme == "tower-rush"{
+                        @media ((min-width:#{$md3}px) and (max-width:1070px)) or (max-width:560px){
+                            flex: 1 0 40%;
+                        }
+                    }
                 }
             }
             &_4col{
@@ -2086,6 +2093,61 @@
                     }
                 }
             }
+        }
+        @if $theme == "tower-rush" {
+            &__text{
+                margin-inline-start: 8px;
+                font-family: "Arial";
+                text-transform: uppercase;
+                font-size: 8px;
+                font-weight: bold;
+                letter-spacing: 0px;
+                line-height: 120%;
+            }
+        }
+    }
+}
+
+@if $theme == "teen-patti" or $theme == "teen-patti-gold" {
+    .techSupport {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        @media (max-width:#{$md3}px) {
+            grid-template-columns: 1fr;
+        }
+		&__col {
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            padding: 16px 32px;
+            @media (max-width:#{$md4}px) {
+                padding: 16px;
+                gap: 16px;
+            }
+			&_1 {
+                background: linear-gradient(90deg, #7600A3 0%, #2C003D 100%);
+                @media ((max-width:880px) and (min-width:#{$md3}px)) or (max-width:#{$md4}px) {
+                    flex-direction: column;
+                    gap: 16px;
+                }
+            }
+			&_2 {
+                background: linear-gradient(90deg, #FE346E 0%, #FF6390 100%);
+                img{
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+		}
+        &__imgText{
+            flex: 0 0 60%;
+        }
+		&__imgCash {
+            margin-bottom: -120px;
+            transform: translateY(-60px);
         }
     }
 }
@@ -2377,14 +2439,26 @@
     }
 }
 
-@if $theme == "spaceman" {
+@if $theme == "spaceman" or $theme == "sweet-bonanza" or $theme == "tower-rush" {
     .collaborationBanner{
         border-radius: 8px;
         padding: 16px 32px;
         position: relative;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        @if $theme == "tower-rush" {
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding-inline-end: 16px;
+            @media (max-width:#{$md4}px) {
+                flex-direction: column;
+                gap: 32px;
+            }
+        } @else {
+            flex-direction: column;
+            justify-content: center;
+        }
+        
         background-color: var(--color-light);
         @media (max-width:#{$md3}px) {
             padding: 32px;
@@ -2399,19 +2473,41 @@
             @media ((max-width:1000px) and (min-width:#{$md3}px)) or (max-width:#{$md4}px) {
                 max-width: none;
             }
+            @if $theme == "tower-rush" {
+                @media (max-width:#{$md4}px) {
+                    text-align: center;
+                }
+            }
         }
-        &__image{
-            position: absolute;
-            bottom: 0;
-            inset-inline-end: 0;
-            width: 259px;
-            height: 172px;
-            @media ((max-width:1000px) and (min-width:#{$md3}px)) or (max-width:#{$md4}px) {
-                bottom: auto;
-                top: -16px;
-                inset-inline-end: 2%;
-                width: 140px;
-                height: 93px;
+        @if $theme == "tower-rush" {
+            &__videoContainer{
+                position: relative;
+            }
+            &__video{
+                border-radius: 4px;
+            }
+            &__imgTop{
+                position: absolute;
+                top: -28px;
+                right: -16px;
+                width: 100%;
+                height: 100%;
+                z-index: 3;
+            }
+        } @else {
+            &__image{
+                position: absolute;
+                bottom: 0;
+                inset-inline-end: 0;
+                width: 259px;
+                height: 172px;
+                @media ((max-width:1000px) and (min-width:#{$md3}px)) or (max-width:#{$md4}px) {
+                    bottom: auto;
+                    top: -16px;
+                    inset-inline-end: 2%;
+                    width: 140px;
+                    height: 93px;
+                }
             }
         }
     }

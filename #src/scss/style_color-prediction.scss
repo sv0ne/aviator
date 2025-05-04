@@ -113,6 +113,7 @@ $money_top_600: -50px;
 @mixin label_4() {
     background: rgba(32, 198, 34, 1);
     border: 2px solid rgba(255, 255, 255, 1);
+    svg use{ fill: #fff; }
 }
 
 // --------------------------------------------------------

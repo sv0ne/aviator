@@ -21,79 +21,7 @@
         pointer-events: none;
     }
     &_primary{
-        @if($theme == 'mines' or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal"){
-            color: #fff;
-            position: relative;
-            @if($theme == 'mines'){
-                background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%) padding-box, 
-                linear-gradient(180deg, #ED9412 0%, #B4450B 100%) border-box;
-            }
-            @if($theme == 'towerX'){
-                background: linear-gradient(119.59deg, #FDA0FF 0%, #DD1DDD 100%) padding-box, 
-                linear-gradient(96.44deg, #D629D4 0%, #FDD8FF 100%) border-box;
-            }
-            @if($theme == "jetX"){
-                background: linear-gradient(119.59deg, #FF79C5 0%, #BE0A73 100%) padding-box, 
-                linear-gradient(96.44deg, #FFD5FE 0%, #46E6B5 100%) border-box;
-            }
-            @if($theme == "mineIsland"){
-                background: linear-gradient(119.59deg, #6AD0FF 0%, #375FDC 100%) padding-box, 
-                linear-gradient(96.44deg, #CFEDFC 0%, #8DB6FC 100%) border-box;
-            }
-            @if($theme == "footballX"){
-                background: linear-gradient(119.59deg, #E1CE00 0%, #FF9D00 100%) padding-box, 
-                linear-gradient(96.44deg, #C88616 0%, #FFFFB1 100%) border-box;
-            }
-            @if($theme == "goal"){
-                background: radial-gradient(50% 88.04% at 50% 50%, #8ED32D 0%, #2D7500 100%) padding-box, 
-                linear-gradient(96.44deg, #084300 0%, #2A7B36 100%) border-box;
-            }
-            @if($theme == "hilo"){
-                background: radial-gradient(50% 88.04% at 50% 50%, #8ED32D 0%, #2D7500 100%) padding-box, 
-                linear-gradient(96.44deg, #084300 0%, #2A7B36 100%) border-box;
-            }
-            border: 2px solid transparent;
-            padding: 10px 24px;
-            @media (max-width:#{$md3}px) {
-                padding: 10px 16px;
-            }
-            &:hover{
-                opacity: 0.9;
-            }
-        } @else if ($theme == "plinko" or $theme == "spaceXY" or $theme == "aviatrix" or $theme == "chicken" or $theme == "penalty" or $theme == "luckyJet" or $theme == "thimbles"){
-            @if($theme == "plinko" or $theme == "spaceXY"){
-                background: linear-gradient(90deg, #FED317 0%, #FCA400 100%);
-                box-shadow: 0px 2px 0px 0px rgba(165, 58, 0, 1);
-                color: var(--color-bg);
-            }
-            @if($theme == "penalty" or $theme == "thimbles"){
-                background: linear-gradient(90deg, #FEFF00 0%, #FFBE00 100%);
-                box-shadow: 0px 2px 0px 0px rgba(224, 73, 0, 1);
-                color: var(--color-bg);
-            }
-            @if($theme == "luckyJet"){
-                background: linear-gradient(90deg, #5C24FC 0%, #944EF5 100%);
-                box-shadow: 0px 10px 20px 0px rgba(25, 201, 245, 0.1), 0px 10px 20px 0px rgba(92, 36, 252, 0.1), 0px -2px 4px 0px rgba(148, 78, 245, 1) inset, 0px -8px 8px 0px rgba(148, 78, 245, 0.6) inset;
-            }
-            @if($theme == "aviatrix"){
-                background: linear-gradient(90deg, #FF5621 0%, #FFA621 100%);
-            }
-            @if($theme == "chicken"){
-                background: rgba(241, 190, 10, 1);
-                color: var(--color-bg);
-            }
-            &:hover{
-                opacity: 0.9;
-            }
-        } @else if($theme == "default" or $theme == "pin-up" or $theme == "light" or $theme == "balloon") {
-            background: var(--color-brand);
-            color: var(--color-btn-primary);
-            &:hover{
-                background: var(--color-brand-hover);
-            }
-        } @else {
-            @include btn_primary;
-        }
+        @include btn_primary;
     }
     &_secondary{
         background: var(--bg-btn-secondary);
@@ -759,74 +687,7 @@
             transform: rotate(180deg);
         }
     }
-    svg use{
-        fill: #fff;
-    }
-    @if($theme == 'light'){
-        background-color: var(--color-opposite);
-        padding: 12px;
-    }@else if ($theme == 'pin-up' or $theme == "default" or $theme == "balloon") {
-        background-color: rgba(52, 199, 89, 1);
-    }
-    @else if($theme == 'mines' or $theme == "towerX" or $theme == "jetX" or $theme == "mineIsland" or $theme == "footballX" or $theme == "hilo" or $theme == "goal"){
-        @if($theme == 'mines'){
-            background: linear-gradient(119.59deg, #F7A915 0%, #F27012 100%) padding-box, 
-            linear-gradient(180deg, #ED9412 0%, #B4450B 100%) border-box;
-        }
-        @if($theme == 'towerX'){
-            background: linear-gradient(119.59deg, #FDA0FF 0%, #DD1DDD 100%) padding-box, 
-            linear-gradient(96.44deg, #D629D4 0%, #FDD8FF 100%) border-box;
-        }
-        @if($theme == "jetX"){
-            background: linear-gradient(119.59deg, #FF79C5 0%, #BE0A73 100%) padding-box, 
-            linear-gradient(96.44deg, #FFD5FE 0%, #46E6B5 100%) border-box;
-        }
-        @if($theme == "mineIsland"){
-            background: linear-gradient(119.59deg, #6AD0FF 0%, #375FDC 100%) padding-box, 
-            linear-gradient(96.44deg, #CFEDFC 0%, #8DB6FC 100%) border-box;
-        }
-        @if($theme == "footballX"){
-            background: linear-gradient(119.59deg, #E1CE00 0%, #FF9D00 100%) padding-box, 
-            linear-gradient(96.44deg, #C88616 0%, #FFFFB1 100%) border-box;
-        }
-        @if($theme == "goal"){
-            background: radial-gradient(50% 88.04% at 50% 50%, #8ED32D 0%, #2D7500 100%) padding-box, 
-            linear-gradient(96.44deg, #084300 0%, #2A7B36 100%) border-box;
-        }
-        @if($theme == "hilo"){
-            background: radial-gradient(50% 88.04% at 50% 50%, #8ED32D 0%, #2D7500 100%) padding-box, 
-            linear-gradient(96.44deg, #084300 0%, #2A7B36 100%) border-box;
-        }
-        border: 2px solid transparent;
-        svg use{
-            fill: #232325;
-        }
-    } @else if ($theme == "plinko" or $theme == "spaceXY" or $theme == "aviatrix" or $theme == "chicken" or $theme == "penalty" or $theme == "luckyJet" or $theme == "thimbles"){
-        @if($theme == "plinko" or $theme == "spaceXY"){
-            background: linear-gradient(90deg, #FED317 0%, #FCA400 100%);
-            box-shadow: 0px 2px 0px 0px rgba(165, 58, 0, 1);
-            svg use{ fill: #232325; }
-        }
-        @if($theme == "penalty" or $theme == "thimbles"){
-            background: linear-gradient(90deg, #FEFF00 0%, #FFBE00 100%);
-            box-shadow: 0px 2px 0px 0px rgba(224, 73, 0, 1);
-            svg use{ fill: #232325; }
-        }
-        @if($theme == "luckyJet"){
-            background: linear-gradient(90deg, #5C24FC 0%, #944EF5 100%);
-            box-shadow: 0px 10px 20px 0px rgba(25, 201, 245, 0.1), 0px 10px 20px 0px rgba(92, 36, 252, 0.1), 0px -2px 4px 0px rgba(148, 78, 245, 1) inset, 0px -8px 8px 0px rgba(148, 78, 245, 0.6) inset;
-        }
-        @if($theme == "aviatrix"){
-            background: linear-gradient(90deg, #FF5621 0%, #FFA621 100%);
-            svg use{ fill: #232325; }
-        }
-        @if($theme == "chicken"){
-            background: rgba(241, 190, 10, 1);
-            svg use{ fill: #232325; }
-        }
-    } @else {
-        @include label_4;
-    }
+    @include label_4;
 }
 
 //////////////////////// Поля input ///////////////////////

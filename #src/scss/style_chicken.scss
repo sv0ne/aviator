@@ -101,6 +101,19 @@ $money_top_md2: -86px;
 $money_inset_600: 3px;
 $money_top_600: -50px;
 
+@mixin btn_primary() {
+	background: rgba(241, 190, 10, 1);
+    color: var(--color-bg);
+    &:hover{
+        opacity: 0.9;
+    }
+}
+
+@mixin label_4() {
+    background: rgba(241, 190, 10, 1);
+    svg use{ fill: #232325; }
+}
+
 // --------------------------------------------------------
 
 @import "import/null"; // Обнуляющие стили

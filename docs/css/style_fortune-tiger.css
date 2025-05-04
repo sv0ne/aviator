@@ -1552,10 +1552,6 @@ html[dir=rtl] .label-4 svg {
 }
 
 .label-4 svg use {
-  fill: #fff;
-}
-
-.label-4 svg use {
   fill: #FFE02A;
 }
 

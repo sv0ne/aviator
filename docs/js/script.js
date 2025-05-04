@@ -901,8 +901,13 @@ $(".scroll").each(function(){new ScrollElement($(this));});
             isActive ? $(this).find('.js-dropdown-body').show() : $(this).find('.js-dropdown-body').hide();
         });
     })();
-    
-/** ======================================================================== */
 
+    // lazyload загрузка видео в футере (тема tower-rush)
+    (function () {
+        let videoLink = $(".js-footer-video").data('src');
+        $(".js-footer-video").attr('src', videoLink);    
+    })();
+/** ======================================================================== */
+    
 });
 

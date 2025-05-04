@@ -84,6 +84,19 @@ $fontfamily: -apple-system, BlinkMacSystemFont, 'Helvetica', 'Arial', 'Segoe UI'
 
 $theme: "pin-up";
 
+@mixin btn_primary() {
+	background: var(--color-brand);
+    color: var(--color-btn-primary);
+    &:hover{
+        background: var(--color-brand-hover);
+    }
+}
+
+@mixin label_4() {
+    background-color: rgba(52, 199, 89, 1);
+    svg use{ fill: #fff; }
+}
+
 // --------------------------------------------------------
 
 @import "import/null"; // Обнуляющие стили
