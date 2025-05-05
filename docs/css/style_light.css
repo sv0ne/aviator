@@ -2967,6 +2967,26 @@ ol.list li:before,
           align-items: center;
 }
 
+.bookmaker__col .btn.btn_primary,
+.bookmaker__col .btn_primary.wpcf7-form-control.wpcf7-submit,
+.bookmaker__col .navigation.posts-navigation .nav-previous a.btn_primary,
+.navigation.posts-navigation .nav-previous .bookmaker__col a.btn_primary,
+.bookmaker__col .navigation.posts-navigation .nav-next a.btn_primary,
+.navigation.posts-navigation .nav-next .bookmaker__col a.btn_primary {
+  background: var(--bg-btn-secondary);
+  color: var(--color-btn-secondary);
+  border: var(--border-btn-secondary);
+}
+
+.bookmaker__col .btn.btn_primary:hover,
+.bookmaker__col .btn_primary.wpcf7-form-control.wpcf7-submit:hover,
+.bookmaker__col .navigation.posts-navigation .nav-previous a.btn_primary:hover,
+.navigation.posts-navigation .nav-previous .bookmaker__col a.btn_primary:hover,
+.bookmaker__col .navigation.posts-navigation .nav-next a.btn_primary:hover,
+.navigation.posts-navigation .nav-next .bookmaker__col a.btn_primary:hover {
+  background-color: var(--bg-btn-secondary-hover);
+}
+
 .bookmaker__footer {
   padding: 16px 32px 52px 32px;
 }

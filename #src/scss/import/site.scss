@@ -1279,6 +1279,16 @@
         @media (max-width:550px) {
             padding: 0;
         }
+        @if $theme == "light" {
+            .btn.btn_primary{
+                background: var(--bg-btn-secondary);
+                color: var(--color-btn-secondary);
+                border: var(--border-btn-secondary);
+                &:hover{
+                    background-color: var(--bg-btn-secondary-hover);
+                }
+            }
+        }
     }
     &__footer{
         padding: 16px 32px 52px 32px;
