@@ -2523,6 +2523,10 @@ ol.list li:before,
   margin-bottom: 40px;
 }
 
+.howToPlay__body {
+  padding: 32px 0;
+}
+
 .howToPlay__title {
   font-size: 48px;
   line-height: 58px;
@@ -4621,6 +4625,15 @@ position sticky у блока .stickyBlock */
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+
+  .howToPlay__body {
+    padding-bottom: 0;
+  }
+
+  .howToPlay__title {
+    font-size: 30px;
+    line-height: 36px;
   }
 
   .howToPlay__btn {
