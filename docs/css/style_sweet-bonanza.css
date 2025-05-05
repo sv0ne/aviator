@@ -143,10 +143,6 @@ img {
   vertical-align: top;
 }
 
-.styledContent img {
-  max-width: 100%;
-}
-
 h1,
 h2,
 h3,
@@ -233,6 +229,10 @@ img.w-24 {
   display: block;
 }
 
+.styledContent img {
+  max-width: 100%;
+}
+
 input[type=text],
 input[type=email],
 textarea {
@@ -257,6 +257,11 @@ table th {
 table th {
   background-color: var(--color-light-hex);
   text-align: left;
+}
+
+html :where(img[class*=wp-image-]) {
+  height: auto;
+  border-radius: 8px;
 }
 
 .mt-2 {
@@ -4138,6 +4143,11 @@ article.searchResult__item {
     float: none;
     width: auto;
     max-width: 100%;
+  }
+
+  img.alignleft,
+  img.alignright {
+    display: block;
   }
 
   .btn_center {

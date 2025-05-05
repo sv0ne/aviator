@@ -143,10 +143,6 @@ img {
   vertical-align: top;
 }
 
-.styledContent img {
-  max-width: 100%;
-}
-
 h1,
 h2,
 h3,
@@ -233,6 +229,10 @@ img.w-24 {
   display: block;
 }
 
+.styledContent img {
+  max-width: 100%;
+}
+
 input[type=text],
 input[type=email],
 textarea {
@@ -257,6 +257,11 @@ table th {
 table th {
   background-color: #E9E9EA;
   text-align: left;
+}
+
+html :where(img[class*=wp-image-]) {
+  height: auto;
+  border-radius: 8px;
 }
 
 .mt-2 {
@@ -1038,6 +1043,28 @@ html[dir=rtl] .scroll__overlayArea {
 .alignright {
   margin: 20px 30px;
   float: right;
+}
+
+.btn_secondary.btn_left,
+.btn_left.wpcf7-form-control.wpcf7-submit,
+.navigation.posts-navigation .nav-previous a.btn_left,
+.navigation.posts-navigation .nav-next a.btn_left,
+.btn_secondary.btn_right,
+.btn_right.wpcf7-form-control.wpcf7-submit,
+.navigation.posts-navigation .nav-previous a.btn_right,
+.navigation.posts-navigation .nav-next a.btn_right {
+  background-color: #E9E9E9;
+}
+
+.btn_secondary.btn_left:hover,
+.btn_left.wpcf7-form-control.wpcf7-submit:hover,
+.navigation.posts-navigation .nav-previous a.btn_left:hover,
+.navigation.posts-navigation .nav-next a.btn_left:hover,
+.btn_secondary.btn_right:hover,
+.btn_right.wpcf7-form-control.wpcf7-submit:hover,
+.navigation.posts-navigation .nav-previous a.btn_right:hover,
+.navigation.posts-navigation .nav-next a.btn_right:hover {
+  background-color: #DEDEDF;
 }
 
 .btn_center,
@@ -2607,6 +2634,7 @@ ol.list li:before,
   -webkit-transform: rotate(-2deg);
       -ms-transform: rotate(-2deg);
           transform: rotate(-2deg);
+  color: #fff;
 }
 
 .bigLabel_mod {
@@ -4079,6 +4107,11 @@ article.searchResult__item {
     max-width: 100%;
   }
 
+  img.alignleft,
+  img.alignright {
+    display: block;
+  }
+
   .btn_center {
     width: auto;
     max-width: 100%;
@@ -4565,9 +4598,9 @@ position sticky у блока .stickyBlock */
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 
   .howToPlay__btn {

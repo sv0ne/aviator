@@ -100,6 +100,21 @@
   }
 }
 
+@if $theme == "light" {
+    .btn_secondary.btn_left, .btn_secondary.btn_right{
+        background-color: #E9E9E9;
+        &:hover{
+            background-color: #DEDEDF;
+        }
+    }
+}
+
+img.alignleft, img.alignright{
+    @media (max-width:1024px) {
+        display: block;
+    }
+}
+
 .btn_center, .aligncenter {
   margin: 30px;
   margin-left: auto;

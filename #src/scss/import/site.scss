@@ -783,7 +783,7 @@
         @media (max-width:#{$md3}px) {
             margin-bottom: 16px;
             display: flex;
-            flex-direction: column-reverse;
+            flex-direction: column;
         }
         &__title{
             font-size: 48px;
@@ -910,6 +910,9 @@
     border-radius: 99px;
     background: linear-gradient(93.51deg, #EF6C0D 3.79%, #F15B25 106.13%);
     transform: rotate(-2deg);
+    @if $theme == "light" {
+        color: #fff;
+    }
     @media (max-width:#{$md3}px) {
         font-size: 28px;
         line-height: 34px;

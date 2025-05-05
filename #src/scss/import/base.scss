@@ -48,6 +48,10 @@ img{
 	}
 }
 
+.styledContent img{
+	max-width: 100%;
+}
+
 input[type="text"], input[type="email"], textarea{
 	outline: none;
 	color: var(--color-opposite);
@@ -70,6 +74,11 @@ table{
 		background-color: if($theme == "light", #E9E9EA, var(--color-light-hex));
 		text-align: left;
 	}
+}
+
+html :where(img[class*=wp-image-]){
+	height: auto;
+	border-radius: 8px;
 }
 
 ///////////////////// MARGIN-PADDING //////////////////////
