@@ -2191,6 +2191,12 @@ ol.list li:before,
   border-bottom: 1px solid var(--color-light);
 }
 
+.header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .header__panel {
   display: -webkit-box;
   display: -ms-flexbox;
