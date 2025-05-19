@@ -1866,12 +1866,76 @@ html[dir=rtl] .breadcrumbs__link:not(:first-child):before {
           align-items: flex-start;
 }
 
-.logo img {
+.logo__image img {
   height: 40px;
   width: auto;
   -o-object-fit: contain;
      object-fit: contain;
   max-width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.logo__flag {
+  width: 24px;
+  height: 24px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 24px;
+          flex: 0 0 24px;
+  padding: 2px;
+  background-color: #fff;
+  border-radius: 99px;
+  margin-left: -8px;
+  position: relative;
+  -webkit-mask: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgb(0, 0, 0)));
+  -webkit-mask: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0) 100%);
+          mask: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgb(0, 0, 0)));
+          mask: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0) 100%);
+}
+
+.logo:hover .logo__flag {
+  z-index: 3;
+  -webkit-animation: popEffect 0.3s ease;
+          animation: popEffect 0.3s ease;
+  -webkit-mask: none;
+  /* Повне видалення маски */
+  mask: none;
+  -webkit-filter: drop-shadow(-2px 2px 4px rgba(0, 0, 0, 0.3137254902));
+          filter: drop-shadow(-2px 2px 4px rgba(0, 0, 0, 0.3137254902));
+}
+
+@-webkit-keyframes popEffect {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  40% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes popEffect {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  40% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 .promocode {
@@ -2331,6 +2395,15 @@ html[dir=rtl] .firstScreen__boby {
   z-index: 3;
 }
 
+.firstScreen__imageWrapper {
+  position: relative;
+}
+
+.firstScreen__flag {
+  -webkit-animation: scaled 8s ease 1s infinite;
+          animation: scaled 8s ease 1s infinite;
+}
+
 .firstScreen__bg {
   overflow: hidden;
   border-radius: 14px;
@@ -2357,6 +2430,40 @@ html[dir=rtl] .firstScreen__boby {
   height: 100%;
   background: rgba(0, 0, 0, 0.01);
   backdrop-filter: blur(30px);
+}
+
+@-webkit-keyframes scaled {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  10% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+
+  15% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scaled {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  10% {
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+
+  15% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 .textBanner {

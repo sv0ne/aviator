@@ -423,6 +423,12 @@
                 }
             }
         }
+        &__imageWrapper{
+            position: relative;
+        }
+        &__flag{
+            animation: scaled 8s ease 1s infinite;
+        }
         &__title{
             @media (max-width:#{$md3}px) {
                 font-size: 32px;
@@ -473,6 +479,18 @@
             background: rgba(0, 0, 0, 0.01);
             backdrop-filter: blur(30px);
         }
+    }
+}
+
+@keyframes scaled {
+    0%{
+        transform: scale(1);
+    }
+    10%{
+        transform: scale(1.15);
+    }
+    15%{
+        transform: scale(1);
     }
 }
 

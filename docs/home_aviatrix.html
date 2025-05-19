@@ -43,8 +43,13 @@
 <body> 
 	<header class="header">
     <div class="header__logo">
-        <a href="/" class=" logo">
-            <img src="img/uploads/aviatrix/logo-india.svg" width="140" height="40" alt="logo">
+        <a href="/" class="logo">
+            <span class="logo__image">
+                <img src="img/uploads/aviatrix/logo.svg" width="140" height="40" alt="logo">
+            </span>
+            <span class="logo__flag">
+                <img src="img/lang/pl.svg" width="20" height="20" alt="flag">
+            </span>
         </a>
     </div>
     <div class="header__panel js-modalContainer">
@@ -252,7 +257,10 @@
 						</div>
 					</div>
 					<div class="firstScreen__image">
-						<img src="img/uploads/aviatrix/phone-540x540.webp" width="540" height="540" alt="">
+						<div class="firstScreen__imageWrapper">
+							<img src="img/uploads/aviatrix/phone-540x540.webp" width="540" height="540" alt="">
+							<img class="posa firstScreen__flag" src="img/flag-layer/in.webp" alt="">
+						</div>
 					</div>
 					<div class="firstScreen__bg">
 						<img src="img/byTheme/aviatrix/aviatrix-bg.webp" width="200" height="106" loading="lazy" alt="">
@@ -1405,7 +1413,12 @@
     <div class="container footer__body nlc-mb-16">
         <div class="f-jcsb-aic">
             <a href="/" class="logo p-0">
-                <img src="img/uploads/aviatrix/logo-india.svg" width="180" height="40" alt="logo">
+                <span class="logo__image">
+                    <img src="img/uploads/aviatrix/logo.svg" width="140" height="40" alt="logo">
+                </span>
+                <span class="logo__flag">
+                    <img src="img/lang/pl.svg" width="20" height="20" alt="flag">
+                </span>
             </a>
             <button class="btn-dropdown btn-dropdown_filled js-popup-opener" data-popup-id="language" data-add-class="mod2">
                 <span>EN</span>
