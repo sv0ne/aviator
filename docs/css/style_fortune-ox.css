@@ -2399,11 +2399,6 @@ html[dir=rtl] .firstScreen__boby {
   position: relative;
 }
 
-.firstScreen__flag {
-  -webkit-animation: scaled 8s ease 1s infinite;
-          animation: scaled 8s ease 1s infinite;
-}
-
 .firstScreen__bg {
   overflow: hidden;
   border-radius: 14px;
@@ -2438,12 +2433,12 @@ html[dir=rtl] .firstScreen__boby {
             transform: scale(1);
   }
 
-  10% {
+  50% {
     -webkit-transform: scale(1.15);
             transform: scale(1.15);
   }
 
-  15% {
+  100% {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
@@ -2455,12 +2450,12 @@ html[dir=rtl] .firstScreen__boby {
             transform: scale(1);
   }
 
-  10% {
+  50% {
     -webkit-transform: scale(1.15);
             transform: scale(1.15);
   }
 
-  15% {
+  100% {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
@@ -4123,6 +4118,11 @@ article.searchResult__item {
     height: 100%;
     border-radius: 16px;
     background: linear-gradient(111.34deg, #FFFFFF 0%, rgba(255, 255, 255, 0.1) 50%, #FFFFFF 100%);
+  }
+
+  .firstScreen__bobyWrap:hover .firstScreen__flag {
+    -webkit-animation: scaled 0.5s ease 0s forwards;
+            animation: scaled 0.5s ease 0s forwards;
   }
 
   .firstScreen__image {

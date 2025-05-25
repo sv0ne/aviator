@@ -2378,12 +2378,12 @@ ol.list li:before,
             transform: scale(1);
   }
 
-  10% {
+  50% {
     -webkit-transform: scale(1.15);
             transform: scale(1.15);
   }
 
-  15% {
+  100% {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
@@ -2395,12 +2395,12 @@ ol.list li:before,
             transform: scale(1);
   }
 
-  10% {
+  50% {
     -webkit-transform: scale(1.15);
             transform: scale(1.15);
   }
 
-  15% {
+  100% {
     -webkit-transform: scale(1);
             transform: scale(1);
   }

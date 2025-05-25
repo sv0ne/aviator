@@ -368,6 +368,11 @@
                     border-radius: 16px;
                     background: linear-gradient(111.34deg, #FFFFFF 0%, rgba(255, 255, 255, 0.1) 50%, #FFFFFF 100%);
                 }
+                &:hover{
+                    .firstScreen__flag{
+                        animation: scaled 0.5s ease 0s forwards;
+                    }
+                }
             }
         }
         &__boby{
@@ -427,7 +432,7 @@
             position: relative;
         }
         &__flag{
-            animation: scaled 8s ease 1s infinite;
+            
         }
         &__title{
             @media (max-width:#{$md3}px) {
@@ -486,10 +491,10 @@
     0%{
         transform: scale(1);
     }
-    10%{
+    50%{
         transform: scale(1.15);
     }
-    15%{
+    100%{
         transform: scale(1);
     }
 }
@@ -518,6 +523,24 @@
             margin-right: -100px;
         }
         @if $theme == "dragonTigerLuck" {
+            @media (min-width:#{$md2}px) {
+                font-size: 48px !important;
+                line-height: 56px !important;
+            }
+        }
+        @if $theme == "bigger-bass-bonanza" {
+            @media (min-width:#{$md2}px) {
+                font-size: 48px !important;
+                line-height: 56px !important;
+            }
+        }
+        @if $theme == "buffalo-king-megaways" {
+            @media (min-width:#{$md2}px) {
+                font-size: 48px !important;
+                line-height: 56px !important;
+            }
+        }
+        @if $theme == "mission-uncrossable" {
             @media (min-width:#{$md2}px) {
                 font-size: 48px !important;
                 line-height: 56px !important;
@@ -2082,7 +2105,7 @@
     }
 }
 
-@if $theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "penalty" or $theme == "thimbles" or $theme == "sweet-bonanza" or $theme == "tower-rush" {
+@if $theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "mission-uncrossable" or $theme == "penalty" or $theme == "thimbles" or $theme == "sweet-bonanza" or $theme == "big-bass-bonanza" or $theme == "sugar-rush" or $theme == "buffalo-king-megaways" or $theme == "starlight-princess" or $theme == "bigger-bass-bonanza" or $theme == "big-bass-splash" or $theme == "tower-rush" {
     .collaboration{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -2096,7 +2119,7 @@
             gap: 16px;
             .card-1{
                 flex: 1 0 45%;
-                @if $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "sweet-bonanza" {
+                @if $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "mission-uncrossable" or $theme == "sweet-bonanza" or $theme == "big-bass-bonanza" or $theme == "sugar-rush" or $theme == "buffalo-king-megaways" or $theme == "starlight-princess" or $theme == "bigger-bass-bonanza" or $theme == "big-bass-splash" {
                     height: 62px;
                 } @else if $theme == "tower-rush"{
                     height: auto;
@@ -2242,7 +2265,7 @@
     }
 }
 
-@if $theme == "chicken" {
+@if $theme == "chicken" or $theme == "mission-uncrossable" {
     .collaborationBanner{
         border-radius: 8px;
         padding: 16px 32px;
@@ -2483,7 +2506,7 @@
     }
 }
 
-@if $theme == "spaceman" or $theme == "sweet-bonanza" or $theme == "tower-rush" {
+@if $theme == "spaceman" or $theme == "sweet-bonanza" or $theme == "big-bass-bonanza" or $theme == "sugar-rush" or $theme == "buffalo-king-megaways" or $theme == "starlight-princess" or $theme == "bigger-bass-bonanza" or $theme == "big-bass-splash" or $theme == "tower-rush" {
     .collaborationBanner{
         border-radius: 8px;
         padding: 16px 32px;
