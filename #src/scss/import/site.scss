@@ -528,7 +528,7 @@
                 line-height: 56px !important;
             }
         }
-        @if $theme == "bigger-bass-bonanza" {
+        @if $theme == "bigger-bass-bonanza" or $theme == "dog-house-megaways"{
             @media (min-width:#{$md2}px) {
                 font-size: 48px !important;
                 line-height: 56px !important;
@@ -2105,7 +2105,7 @@
     }
 }
 
-@if $theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "mission-uncrossable" or $theme == "penalty" or $theme == "thimbles" or $theme == "sweet-bonanza" or $theme == "big-bass-bonanza" or $theme == "sugar-rush" or $theme == "buffalo-king-megaways" or $theme == "starlight-princess" or $theme == "bigger-bass-bonanza" or $theme == "big-bass-splash" or $theme == "tower-rush" {
+@if $theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "mission-uncrossable" or $theme == "penalty" or $theme == "thimbles" or $theme == "sweet-bonanza" or $theme == "master-joker" or $theme == "dog-house-megaways" or $theme == "sugar-rush-1000" or $theme == "book-of-the-fallen" or $theme == "big-bass-bonanza" or $theme == "sugar-rush" or $theme == "buffalo-king-megaways" or $theme == "starlight-princess" or $theme == "bigger-bass-bonanza" or $theme == "big-bass-splash" or $theme == "tower-rush" {
     .collaboration{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -2119,7 +2119,7 @@
             gap: 16px;
             .card-1{
                 flex: 1 0 45%;
-                @if $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "mission-uncrossable" or $theme == "sweet-bonanza" or $theme == "big-bass-bonanza" or $theme == "sugar-rush" or $theme == "buffalo-king-megaways" or $theme == "starlight-princess" or $theme == "bigger-bass-bonanza" or $theme == "big-bass-splash" {
+                @if $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "mission-uncrossable" or $theme == "sweet-bonanza" or $theme == "big-bass-bonanza" or $theme == "dog-house-megaways" or $theme == "sugar-rush-1000" or $theme == "book-of-the-fallen" or $theme == "master-joker" or $theme == "sugar-rush" or $theme == "buffalo-king-megaways" or $theme == "starlight-princess" or $theme == "bigger-bass-bonanza" or $theme == "big-bass-splash" {
                     height: 62px;
                 } @else if $theme == "tower-rush"{
                     height: auto;
@@ -2175,7 +2175,7 @@
     }
 }
 
-@if $theme == "teen-patti" or $theme == "teen-patti-gold" {
+@if $theme == "teen-patti" or $theme == "teen-patti-gold" or $theme == "jhandi-munda" {
     .techSupport {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -2314,7 +2314,7 @@
     }
 }
 
-@if $theme == "color-prediction" or $theme == "dragon-tiger" or $theme == "ludo" {
+@if $theme == "color-prediction" or $theme == "dragon-tiger" or $theme == "ludo" or $theme == "money-pot" or $theme == "money-coming" {
     .mission {
         color: #fff;
         display: grid;
@@ -2506,7 +2506,7 @@
     }
 }
 
-@if $theme == "spaceman" or $theme == "sweet-bonanza" or $theme == "big-bass-bonanza" or $theme == "sugar-rush" or $theme == "buffalo-king-megaways" or $theme == "starlight-princess" or $theme == "bigger-bass-bonanza" or $theme == "big-bass-splash" or $theme == "tower-rush" {
+@if $theme == "spaceman" or $theme == "sweet-bonanza" or $theme == "big-bass-bonanza" or $theme == "dog-house-megaways" or $theme == "sugar-rush-1000" or $theme == "book-of-the-fallen" or $theme == "master-joker" or $theme == "sugar-rush" or $theme == "buffalo-king-megaways" or $theme == "starlight-princess" or $theme == "bigger-bass-bonanza" or $theme == "big-bass-splash" or $theme == "tower-rush" {
     .collaborationBanner{
         border-radius: 8px;
         padding: 16px 32px;
