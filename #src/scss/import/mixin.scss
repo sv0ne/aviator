@@ -28,24 +28,3 @@
         @return $else-value;
     }
 }
-
-/////////////////////// Название тем по порядку ///////////////////////
-
-// default, pin-up, light, balloon, mines
-// towerX, jetX, mineIsland, footballX, hilo 
-// goal, penalty, plinko, thimbles, luckyJet
-// aviatrix, spaceman, spaceXY, chicken, dragonTigerLuck
-
-///////////////////////////// Условия /////////////////////////////////
-
-$group_1: (
-  "mines", "towerX", "jetX", "mineIsland", "footballX", 
-  "hilo", "goal", "penalty", "plinko", "thimbles", 
-  "luckyJet", "aviatrix", "spaceman", "spaceXY", "chicken", 
-  "dragonTigerLuck", "fortune-rabbit", "fortune-ox", "fortune-tiger", "color-prediction", 
-  "dragon-tiger", "ludo", "sweet-bonanza", "brawl-pirates", "tower-rush",
-  "teen-patti", "teen-patti-gold", "big-bass-bonanza", "big-bass-splash", "bigger-bass-bonanza",
-  "starlight-princess", "buffalo-king-megaways", "sugar-rush", "mission-uncrossable", "dog-house-megaways",
-  "master-joker", "book-of-the-fallen", "sugar-rush-1000", "jhandi-munda", "money-coming",
-  "money-pot"
-);

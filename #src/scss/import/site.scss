@@ -352,7 +352,7 @@
     }
 }
 
-@if index($group_1, $theme) {
+@if not index(("default", "pin-up", "light", "balloon"), $theme) {
     .firstScreen{
         @media (min-width:#{$md3}px) {
             padding-bottom: 40px;
