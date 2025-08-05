@@ -19,8 +19,10 @@
         opacity: 0.5;
         pointer-events: none;
     }
-    &_primary{
-        @include btn_primary;
+    @if($theme != "new-format"){
+        &_primary{
+            @include btn_primary;
+        }
     }
     &_secondary{
         background: var(--bg-btn-secondary);
@@ -701,7 +703,9 @@ img.alignleft, img.alignright{
             transform: rotate(180deg);
         }
     }
-    @include label_4;
+    @if($theme != 'new-format'){
+        @include label_4;
+    }
 }
 
 //////////////////////// Поля input ///////////////////////
