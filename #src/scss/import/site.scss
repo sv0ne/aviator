@@ -556,7 +556,7 @@
                 line-height: 56px !important;
             }
         }
-        @if $theme == "bigger-bass-bonanza" or $theme == "dog-house-megaways"{
+        @if $theme == "bigger-bass-bonanza"{
             @media (min-width:#{$md2}px) {
                 font-size: 48px !important;
                 line-height: 56px !important;
@@ -2133,7 +2133,7 @@
     }
 }
 
-@if $theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "mission-uncrossable" or $theme == "penalty" or $theme == "thimbles" or $theme == "sweet-bonanza" or $theme == "master-joker" or $theme == "dog-house-megaways" or $theme == "sugar-rush-1000" or $theme == "book-of-the-fallen" or $theme == "big-bass-bonanza" or $theme == "sugar-rush" or $theme == "buffalo-king-megaways" or $theme == "starlight-princess" or $theme == "bigger-bass-bonanza" or $theme == "big-bass-splash" or $theme == "tower-rush" {
+@if $theme == "plinko" or $theme == "spaceXY" or $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "mission-uncrossable" or $theme == "penalty" or $theme == "thimbles" or $theme == "sweet-bonanza" or $theme == "big-bass-bonanza" or $theme == "sugar-rush" or $theme == "buffalo-king-megaways" or $theme == "starlight-princess" or $theme == "bigger-bass-bonanza" or $theme == "big-bass-splash" {
     .collaboration{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -2147,11 +2147,9 @@
             gap: 16px;
             .card-1{
                 flex: 1 0 45%;
-                @if $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "mission-uncrossable" or $theme == "sweet-bonanza" or $theme == "big-bass-bonanza" or $theme == "dog-house-megaways" or $theme == "sugar-rush-1000" or $theme == "book-of-the-fallen" or $theme == "master-joker" or $theme == "sugar-rush" or $theme == "buffalo-king-megaways" or $theme == "starlight-princess" or $theme == "bigger-bass-bonanza" or $theme == "big-bass-splash" {
+                @if $theme == "spaceman" or $theme == "aviatrix" or $theme == "chicken" or $theme == "mission-uncrossable" or $theme == "sweet-bonanza" or $theme == "big-bass-bonanza" or $theme == "sugar-rush" or $theme == "buffalo-king-megaways" or $theme == "starlight-princess" or $theme == "bigger-bass-bonanza" or $theme == "big-bass-splash" {
                     height: 62px;
-                } @else if $theme == "tower-rush"{
-                    height: auto;
-                } @else {
+                } @else if $theme == "plinko" or $theme == "spaceXY" or $theme == "penalty" or $theme == "thimbles" {
                     height: 70px;
                 }
                 position: relative;
@@ -2173,11 +2171,6 @@
             &_3col{
                 .card-1{
                     flex: 1 0 30%;
-                    @if $theme == "tower-rush"{
-                        @media ((min-width:#{$md3}px) and (max-width:1070px)) or (max-width:560px){
-                            flex: 1 0 40%;
-                        }
-                    }
                 }
             }
             &_4col{
@@ -2187,17 +2180,6 @@
                         flex: 1 0 45%;
                     }
                 }
-            }
-        }
-        @if $theme == "tower-rush" {
-            &__text{
-                margin-inline-start: 8px;
-                font-family: "Arial";
-                text-transform: uppercase;
-                font-size: 8px;
-                font-weight: bold;
-                letter-spacing: 0px;
-                line-height: 120%;
             }
         }
     }
@@ -2422,25 +2404,14 @@
     }
 }
 
-@if $theme == "spaceman" or $theme == "sweet-bonanza" or $theme == "big-bass-bonanza" or $theme == "dog-house-megaways" or $theme == "sugar-rush-1000" or $theme == "book-of-the-fallen" or $theme == "master-joker" or $theme == "sugar-rush" or $theme == "buffalo-king-megaways" or $theme == "starlight-princess" or $theme == "bigger-bass-bonanza" or $theme == "big-bass-splash" or $theme == "tower-rush" {
+@if $theme == "spaceman" or $theme == "sweet-bonanza" or $theme == "big-bass-bonanza" or $theme == "sugar-rush" or $theme == "buffalo-king-megaways" or $theme == "starlight-princess" or $theme == "bigger-bass-bonanza" or $theme == "big-bass-splash" {
     .collaborationBanner{
         border-radius: 8px;
         padding: 16px 32px;
         position: relative;
         display: flex;
-        @if $theme == "tower-rush" {
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            padding-inline-end: 16px;
-            @media (max-width:#{$md4}px) {
-                flex-direction: column;
-                gap: 32px;
-            }
-        } @else {
-            flex-direction: column;
-            justify-content: center;
-        }
+        flex-direction: column;
+        justify-content: center;
         
         background-color: var(--color-light);
         @media (max-width:#{$md3}px) {
@@ -2456,41 +2427,19 @@
             @media ((max-width:1000px) and (min-width:#{$md3}px)) or (max-width:#{$md4}px) {
                 max-width: none;
             }
-            @if $theme == "tower-rush" {
-                @media (max-width:#{$md4}px) {
-                    text-align: center;
-                }
-            }
         }
-        @if $theme == "tower-rush" {
-            &__videoContainer{
-                position: relative;
-            }
-            &__video{
-                border-radius: 4px;
-            }
-            &__imgTop{
-                position: absolute;
-                top: -28px;
-                right: -16px;
-                width: 100%;
-                height: 100%;
-                z-index: 3;
-            }
-        } @else {
-            &__image{
-                position: absolute;
-                bottom: 0;
-                inset-inline-end: 0;
-                width: 259px;
-                height: 172px;
-                @media ((max-width:1000px) and (min-width:#{$md3}px)) or (max-width:#{$md4}px) {
-                    bottom: auto;
-                    top: -16px;
-                    inset-inline-end: 2%;
-                    width: 140px;
-                    height: 93px;
-                }
+        &__image{
+            position: absolute;
+            bottom: 0;
+            inset-inline-end: 0;
+            width: 259px;
+            height: 172px;
+            @media ((max-width:1000px) and (min-width:#{$md3}px)) or (max-width:#{$md4}px) {
+                bottom: auto;
+                top: -16px;
+                inset-inline-end: 2%;
+                width: 140px;
+                height: 93px;
             }
         }
     }

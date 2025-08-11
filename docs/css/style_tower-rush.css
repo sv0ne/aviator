@@ -3528,109 +3528,6 @@ html[dir=rtl] .subscribe__input button {
           transform: translate(-50%, -50%);
 }
 
-.collaboration {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-
-.collaboration__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 16px;
-}
-
-.collaboration__list .card-1 {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 45%;
-          flex: 1 0 45%;
-  height: auto;
-  position: relative;
-}
-
-.collaboration__list .card-1 img {
-  max-width: 100%;
-}
-
-.collaboration__list .card-1__factor {
-  position: absolute;
-  top: -8px;
-  inset-inline-end: 4px;
-}
-
-.collaboration__list .tooltip_top:nth-child(odd) .tooltip__body {
-  inset-inline-start: 0;
-  inset-inline-end: auto;
-}
-
-.collaboration__list_3col .card-1 {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 30%;
-          flex: 1 0 30%;
-}
-
-.collaboration__list_4col .card-1 {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 22%;
-          flex: 1 0 22%;
-}
-
-.collaboration__text {
-  -webkit-margin-start: 8px;
-          margin-inline-start: 8px;
-  font-family: "Arial";
-  text-transform: uppercase;
-  font-size: 8px;
-  font-weight: bold;
-  letter-spacing: 0px;
-  line-height: 120%;
-}
-
-.collaborationBanner {
-  border-radius: 8px;
-  padding: 16px 32px;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 16px;
-  -webkit-padding-end: 16px;
-          padding-inline-end: 16px;
-  background-color: var(--color-light);
-}
-
-.collaborationBanner__text {
-  position: relative;
-  z-index: 2;
-  max-width: 256px;
-}
-
-.collaborationBanner__videoContainer {
-  position: relative;
-}
-
-.collaborationBanner__video {
-  border-radius: 4px;
-}
-
-.collaborationBanner__imgTop {
-  position: absolute;
-  top: -28px;
-  right: -16px;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-}
-
 .fairTechnology {
   background-color: #ECEDF3;
   /* immutable */
@@ -3784,6 +3681,109 @@ ol.list li:before,
 
 .tt-u {
   text-transform: uppercase;
+}
+
+.collaboration {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.collaboration__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 16px;
+}
+
+.collaboration__list .card-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 45%;
+          flex: 1 0 45%;
+  height: auto;
+  position: relative;
+}
+
+.collaboration__list .card-1 img {
+  max-width: 100%;
+}
+
+.collaboration__list .card-1__factor {
+  position: absolute;
+  top: -8px;
+  inset-inline-end: 4px;
+}
+
+.collaboration__list .tooltip_top:nth-child(odd) .tooltip__body {
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+}
+
+.collaboration__list_3col .card-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 30%;
+          flex: 1 0 30%;
+}
+
+.collaboration__list_4col .card-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 22%;
+          flex: 1 0 22%;
+}
+
+.collaboration__text {
+  -webkit-margin-start: 8px;
+          margin-inline-start: 8px;
+  font-family: "Arial";
+  text-transform: uppercase;
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: 0px;
+  line-height: 120%;
+}
+
+.collaborationBanner {
+  border-radius: 8px;
+  padding: 16px 32px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 16px;
+  -webkit-padding-end: 16px;
+          padding-inline-end: 16px;
+  background-color: var(--color-light);
+}
+
+.collaborationBanner__text {
+  position: relative;
+  z-index: 2;
+  max-width: 256px;
+}
+
+.collaborationBanner__videoContainer {
+  position: relative;
+}
+
+.collaborationBanner__video {
+  border-radius: 4px;
+}
+
+.collaborationBanner__imgTop {
+  position: absolute;
+  top: -28px;
+  right: -16px;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
 }
 
 .lg-1 {
@@ -5041,14 +5041,6 @@ position sticky у блока .stickyBlock */
         flex-wrap: wrap;
   }
 
-  .collaboration {
-    grid-template-columns: 1fr;
-  }
-
-  .collaborationBanner {
-    padding: 32px;
-  }
-
   .social {
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -5064,6 +5056,14 @@ position sticky у блока .stickyBlock */
   .md3-text-default {
     font-size: var(--fz-text-default);
     line-height: var(--lh-text-default);
+  }
+
+  .collaboration {
+    grid-template-columns: 1fr;
+  }
+
+  .collaborationBanner {
+    padding: 32px;
   }
 
   .wpcf7-spinner {
