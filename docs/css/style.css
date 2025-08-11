@@ -2381,6 +2381,34 @@ html[dir=rtl] .firstScreen__boby {
   position: relative;
 }
 
+.firstScreen__flagSVG:after,
+.firstScreen__flagSVG:before {
+  content: "";
+  background-image: var(--flag-url);
+  background-size: cover;
+  position: absolute;
+}
+
+.firstScreen__flagSVG:before {
+  top: 32px;
+  right: 48px;
+  width: 64px;
+  height: 64px;
+  -webkit-transform: perspective(80px) rotateY(45deg) rotateX(45deg);
+          transform: perspective(80px) rotateY(45deg) rotateX(45deg);
+}
+
+.firstScreen__flagSVG:after {
+  bottom: 32px;
+  right: 30%;
+  width: 128px;
+  height: 128px;
+  -webkit-transform: perspective(80px) rotateY(15deg) rotateX(20deg) skewX(10deg) translateX(10px);
+          transform: perspective(80px) rotateY(15deg) rotateX(20deg) skewX(10deg) translateX(10px);
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+}
+
 .firstScreen__bg {
   overflow: hidden;
   border-radius: 14px;
@@ -3978,7 +4006,7 @@ article.searchResult__item {
     background: linear-gradient(111.34deg, #FFFFFF 0%, rgba(255, 255, 255, 0.1) 50%, #FFFFFF 100%);
   }
 
-  .firstScreen__bobyWrap:hover .firstScreen__flag {
+  .firstScreen__bobyWrap:hover .firstScreen__flagSVG {
     -webkit-animation: scaled 0.5s ease 0s forwards;
             animation: scaled 0.5s ease 0s forwards;
   }

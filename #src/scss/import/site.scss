@@ -369,8 +369,14 @@
                     background: linear-gradient(111.34deg, #FFFFFF 0%, rgba(255, 255, 255, 0.1) 50%, #FFFFFF 100%);
                 }
                 &:hover{
-                    .firstScreen__flag{
-                        animation: scaled 0.5s ease 0s forwards;
+                    @if $theme == "new-format" {
+                        .firstScreen__flagSVG{
+                            animation: scaled 0.5s ease 0s forwards;
+                        }
+                    } @else {
+                        .firstScreen__flag{
+                            animation: scaled 0.5s ease 0s forwards;
+                        }
                     }
                 }
             }
@@ -431,8 +437,30 @@
         &__imageWrapper{
             position: relative;
         }
-        &__flag{
-            
+        @if $theme == "new-format" {
+            &__flagSVG{
+                &:after, &:before{
+                    content: "";
+                    background-image: var(--flag-url);
+                    background-size: cover;
+                    position: absolute;
+                }
+                &:before {
+                    top: 32px;
+                    right: 48px;
+                    width: 64px;
+                    height: 64px;
+                    transform: perspective(80px) rotateY(45deg) rotateX(45deg);
+                }
+                &:after {
+                    bottom: 32px;
+                    right: 30%;
+                    width: 128px;
+                    height: 128px;
+                    transform: perspective(80px) rotateY(15deg) rotateX(20deg) skewX(10deg) translateX(10px);
+                    filter: blur(4px);
+                }
+            }
         }
         &__title{
             @media (max-width:#{$md3}px) {
