@@ -16,6 +16,15 @@
     svg use{ fill: #232325; }
 }
 
+.textBanner__x1{
+    inset-inline-start: -84px;
+    top: -48px;
+    @media (max-width:600px) {
+        inset-inline-start: -50px;
+        top: -18px;
+    }
+}
+
 .textBanner__x2{
     inset-inline-end: -86px;
     top: -46px;
