@@ -1,0 +1,38 @@
+.btn_primary {
+  background: -webkit-gradient(linear, left bottom, left top, from(#670DAE), color-stop(105.95%, #A435FA));
+  background: linear-gradient(360deg, #670DAE 0%, #A435FA 105.95%);
+  border: 2px solid rgb(170, 171, 175);
+  color: #FFF;
+  padding: 10px 24px;
+}
+
+.btn_primary:hover {
+  opacity: 0.9;
+}
+
+.label-4 {
+  background: -webkit-gradient(linear, left bottom, left top, from(#670DAE), color-stop(105.95%, #A435FA));
+  background: linear-gradient(360deg, #670DAE 0%, #A435FA 105.95%);
+  border: 2px solid rgb(170, 171, 175);
+}
+
+.label-4 svg use {
+  fill: #FFF;
+}
+
+.textBanner__x2 {
+  inset-inline-end: -85px;
+  top: -52px;
+}
+
+@media (max-width: 600px) {
+  .textBanner__x1 {
+    inset-inline-start: -38px;
+    top: -41px;
+  }
+
+  .textBanner__x2 {
+    inset-inline-end: -38px;
+    top: -34px;
+  }
+}
