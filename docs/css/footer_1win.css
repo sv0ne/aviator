@@ -1,0 +1,38 @@
+.casinoInfo {
+  border-radius: var(--br-large);
+}
+
+.casinoInfo__body {
+  border-radius: var(--br-large);
+  padding: 32px;
+  background: linear-gradient(85.83deg, #38A8FA 1.14%, #0167CA 100%);
+}
+
+.casinoInfo__body .link-3 {
+  background: var(--color-opposite);
+  color: var(--color-bg);
+}
+
+@media (max-width: 767.98px) {
+  .casinoInfo__body {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 615px) {
+  .casinoInfo__body .link-3 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .casinoInfo__links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}

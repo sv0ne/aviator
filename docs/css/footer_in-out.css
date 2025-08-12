@@ -1,0 +1,81 @@
+.collaboration {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.collaborationBanner {
+  border-radius: 8px;
+  padding: 16px 32px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--color-light);
+}
+
+.collaborationBanner__text {
+  position: relative;
+  z-index: 2;
+}
+
+.collaborationBanner__text_2 {
+  font-size: 24px;
+  line-height: 120%;
+  font-weight: 900;
+  max-width: 73%;
+}
+
+.collaborationBanner__image {
+  position: absolute;
+  top: -32px;
+  inset-inline-end: 16%;
+  width: 123px;
+  height: 100px;
+}
+
+.collaborationBanner__image2 {
+  position: absolute;
+  top: -77px;
+  inset-inline-end: -1%;
+  width: 210px;
+  -webkit-transform: rotate(15deg);
+      -ms-transform: rotate(15deg);
+          transform: rotate(15deg);
+}
+
+@media (max-width: 767.98px) {
+  .collaboration {
+    grid-template-columns: 1fr;
+  }
+
+  .collaborationBanner__text_2 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .collaborationBanner {
+    padding: 16px;
+  }
+
+  .collaborationBanner__image2 {
+    -webkit-transform: scale(0.8) rotate(15deg);
+        -ms-transform: scale(0.8) rotate(15deg);
+            transform: scale(0.8) rotate(15deg);
+    inset-inline-end: -7%;
+  }
+}
+
+@media ((max-width: 950px) and (min-width: 767.98px)) or (max-width: 500px) {
+  .collaborationBanner__image {
+    inset-inline-end: 7%;
+  }
+}

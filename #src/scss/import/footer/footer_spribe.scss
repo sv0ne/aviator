@@ -1,0 +1,54 @@
+.socials{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    @media (max-width:#{$md3}px) {
+        flex-direction: column;
+    }
+    &__row{
+        display: flex;
+        gap: 16px;
+        > * {
+            flex: 1;
+        }
+        &_1{
+            flex: 10;
+            .card-1{
+                min-width: 220px;
+            }
+            @media (max-width:#{$md4}px) {
+                flex-direction: column;
+            }
+        }
+        &_2{
+            flex: 1;
+            align-items: center;
+            @media (max-width:#{$md3}px) {
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+
+.ufcPartner{
+    background: linear-gradient(90deg, #FA4031 0%, #6C0606 100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    > * {
+        flex: 0 0 50%;
+    }
+    &__img{
+        position: relative;
+        img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.fairTechnology{
+    background-color: #ECEDF3; /* immutable */
+}

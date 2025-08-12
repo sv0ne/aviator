@@ -1,0 +1,105 @@
+.collaboration {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.collaboration__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 16px;
+}
+
+.collaboration__list .card-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 45%;
+          flex: 1 0 45%;
+  height: 62px;
+  position: relative;
+}
+
+.collaboration__list .card-1 img {
+  max-width: 100%;
+}
+
+.collaboration__list .card-1__factor {
+  position: absolute;
+  top: -8px;
+  inset-inline-end: 4px;
+}
+
+.collaboration__list .tooltip_top:nth-child(odd) .tooltip__body {
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+}
+
+.collaboration__list_3col .card-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 30%;
+          flex: 1 0 30%;
+}
+
+.collaboration__list_4col .card-1 {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 22%;
+          flex: 1 0 22%;
+}
+
+.collaborationBanner {
+  border-radius: 8px;
+  padding: 32px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--color-light);
+}
+
+.collaborationBanner__text {
+  position: relative;
+  z-index: 2;
+}
+
+.collaborationBanner__image {
+  position: absolute;
+  top: -16px;
+  inset-inline-end: 14%;
+  width: 176px;
+  height: 100px;
+}
+
+@media (max-width: 992.98px) {
+  .collaboration__list_4col .card-1 {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 45%;
+            flex: 1 0 45%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .collaboration {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .collaborationBanner {
+    padding: 16px;
+  }
+}
+
+@media ((max-width: 950px) and (min-width: 767.98px)) or (max-width: 500px) {
+  .collaborationBanner__image {
+    inset-inline-end: 7%;
+  }
+}

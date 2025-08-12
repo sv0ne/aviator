@@ -1,0 +1,49 @@
+.socials{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    @media (max-width:#{$md3}px) {
+        flex-direction: column;
+    }
+    &__row{
+        display: flex;
+        gap: 16px;
+        > * {
+            flex: 1;
+        }
+        &_1{
+            flex: 10;
+            .card-1{
+                min-width: 220px;
+            }
+            @media (max-width:#{$md4}px) {
+                flex-direction: column;
+            }
+        }
+        &_2{
+            flex: 1;
+            align-items: center;
+            @media (max-width:#{$md3}px) {
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+
+.smartSoft{
+    background: linear-gradient(132.87deg, #00C0FF 0%, #009CFF 100%);
+    color: var(--color-opposite);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    &__content{
+        display: flex;
+        gap: 4px;
+    }
+    &_divider{
+        background-color: var(--color-opposite);
+        width: 1px;
+        flex: 0 0 1px;
+        height: 40px;
+    }
+}

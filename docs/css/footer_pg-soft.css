@@ -1,0 +1,154 @@
+.pixel {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr 1fr;
+  color: var(--color-bg);
+}
+
+.pixel__col {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  position: relative;
+}
+
+.pixel__col_2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+}
+
+.pixel__label {
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 120%;
+}
+
+.pixel__extra {
+  font-weight: 900;
+  font-size: 140px;
+  line-height: 140px;
+}
+
+.pixel__title {
+  font-weight: 900;
+  letter-spacing: 0%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  white-space: nowrap;
+  background: rgb(20, 230, 145);
+  z-index: 3;
+}
+
+.pixel__title_mod {
+  background: rgb(255, 185, 25);
+}
+
+.pixel__item {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  z-index: 5;
+}
+
+.pixel__item_1 {
+  top: -9px;
+  left: -9px;
+  background-color: rgb(255, 185, 25);
+}
+
+.pixel__item_2 {
+  top: -9px;
+  left: -9px;
+  background-color: rgb(25, 190, 230);
+}
+
+.pixel__item_3 {
+  top: 0px;
+  left: -4px;
+  background-color: rgb(230, 25, 115);
+}
+
+.pixel__item_4 {
+  top: -9px;
+  left: 4px;
+  background-color: rgb(25, 135, 230);
+}
+
+.pixel__item_5 {
+  bottom: 0px;
+  right: 16px;
+  background-color: rgb(20, 230, 145);
+}
+
+.pixel__item_6 {
+  top: -8px;
+  left: 48px;
+  background-color: rgb(100, 20, 230);
+}
+
+.pixel__item_7 {
+  top: -8px;
+  right: 0px;
+  background-color: rgb(25, 190, 230);
+}
+
+.pixel__item_8 {
+  bottom: -8px;
+  left: 50%;
+  background-color: rgb(255, 185, 25);
+}
+
+.pixel__item_9 {
+  bottom: -8px;
+  left: 20%;
+  background-color: rgb(255, 75, 0);
+}
+
+.pixel__item_10 {
+  bottom: -12px;
+  right: 0px;
+  background-color: rgb(20, 230, 145);
+}
+
+@media (max-width: 992.98px) {
+  .pixel_mod1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .pixel__col_main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 16px;
+  }
+
+  .pixel__extra {
+    font-size: 100px;
+    line-height: 100px;
+  }
+
+  .pixel__title {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .pixel_mod2 {
+    grid-template-columns: 1fr;
+  }
+}
