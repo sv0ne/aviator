@@ -548,6 +548,13 @@ $(document).ready(function () {
     (function () {
         // При клике на Play free запускаем iframe
         $('.js-playFree-btn').click(function(){
+            const urlDemoBase64 = $('.firstScreen .js-playFree-btn-outside').data('href');
+            if(urlDemoBase64){
+                const urlDemo = window.atob(urlDemoBase64);
+                window.open(urlDemo, "_blank", "noopener,noreferrer");
+                return;
+            }
+
             $(this).closest('.js-playFree-container').find('.js-playFree-control').addClass('dn');
             let iframe = $(this).closest('.js-playFree-container').find('.js-playFree-body iframe');
             iframe.attr('src', iframe.data('src'));
