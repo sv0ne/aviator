@@ -6,7 +6,7 @@
 })
 <!-- role="dialog" -->
 <body> 
-	@@include('blocks/common-section/header_common.html', {
+	@@include('blocks/common-section/header-newThemes.html', {
 		"theme": "fruit-shop",
 		"formatLogo": "png",
 		"playBtnText": "Play Fruit Shop"
@@ -14,28 +14,24 @@
 
 	<main class="styledContent container">
 		<!-- firstScreen -->
-		@@include('blocks/common-section/firstScreen-newFormat.html', {
+		@@include('blocks/common-section/firstScreen-newThemes.html', {
 			"theme": "fruit-shop",
 			"title": "Fruit Shop"
 		})
 
 		<!-- Топ 5 -->
-		@@include('blocks/common-section/topFive.html', {
+		@@include('blocks/common-section/topFive-newThemes.html', {
 			"theme": "fruit-shop",
 		})
 
-		@@include('blocks/breadcrumbs.html')
-		@@include('blocks/seo-text_mines.html')
 		@@include('blocks/faq.html')
-		@@include('blocks/bookmakers.html')
-		@@include('blocks/reviews.html')
 	</main>
 	
 	<!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
 	@@include('blocks/common-blocks.html', {
 		"theme": "default"
 	})
-	@@include('blocks/footers/footer_common.html', {
+	@@include('blocks/common-section/footer-newThemes.html', {
 		"theme": "fruit-shop",
 		"formatLogo": "png",
         "footerName": "netent20"
