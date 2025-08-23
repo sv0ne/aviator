@@ -1,114 +1,30 @@
-:root {
-    --color-bg: rgba(35, 35, 37, 1);
-    --color-bg-hover: rgba(57, 57, 59, 1);
-    --color-opposite: #ffffff;
-    --color-opposite-hover: rgba(255, 255, 255, 0.7);
-    --color-opposite-hex-hover: #D3D3D3;
+:root{
+    --x1_inset: -84px;
+    --x1_top: -68px;
+    --x1_inset_600: -38px;
+    --x1_top_600: -18px;
 
-    --color-brand: linear-gradient(90deg, #FFF173 0%, #FFB800 100%);
-    --color-brand-hover: #FFB800;
+    --x2_inset: -86px;
+    --x2_top: -46px;
+    --x2_inset_600: -36px;
+    --x2_top_600: -23px;
 
-    --fill-icon-primary: rgba(255, 255, 255, 0.3);
-    --fill-icon-secondary: rgba(255, 255, 255, 0.3);
-    --fill-icon-brand-hex: #FFB800;
-
-    --color-light: rgba(255, 255, 255, 0.05);
-    --color-light-hover: rgba(255, 255, 255, 0.1);
-    --color-light-hex: #2E2E30;
-    --color-light-hex-hover: #454547;
-
-    --color-light-seo: #ccc;
-
-    --color-gray: rgba(255, 255, 255, 0.3);
-
-    --bg-btn-bonus: linear-gradient(225deg, #6D28FF 0%, #FA00FF 100%);
-    --bg-btn-bonus-hover: linear-gradient(225deg,#FA00FF 0%, #6D28FF 100%);
-
-    --color-btn-primary: rgba(35, 35, 37, 1);
-    --shadow-btn-primary: 0px 8px 50px 0px rgba(255, 212, 0, 0.5);
-
-    --color-btn-secondary: rgba(35, 35, 37, 1);
-    --bg-btn-secondary: #ffffff;
-    --bg-btn-secondary-hover: rgba(211, 211, 211, 1);
-    --border-btn-secondary: none;
-
-    --color-btn-info: #ffffff;
-    --bg-btn-info: rgba(35, 35, 37, 1);
-    --bg-btn-info-hover: rgba(57, 57, 59, 1);
-    --border-btn-info: none;
-
-    --border-casino-info: linear-gradient(111.17deg, #FFB800 0%, rgba(255, 36, 0, 0) 100.01%);
-    --bg-casino-info: linear-gradient(160deg, rgba(255, 36, 0, 0) 40%, rgba(255, 212, 0, 0.8) 100%), #13171F;
-
-    --color-input-radio: rgba(63, 105, 255, 1);
-    --color-search-border: rgba(63, 105, 255, 0.3);
-
-    --color-form-border: rgba(255, 59, 48, 0.3);
-    --color-form-error: rgba(255, 59, 48, 1);
-
-    --bg-video-overlay: rgba(30, 30, 30, 0.5);
-
-    --br-small: 8px;
-    --br-large: 16px;
-    --shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.5);
-    --shadow-2-start-rgb: 35, 35, 37;
-    --shadow-2-end-hex: #232325;
-
-    --fz-text-default: 15px;
-    --lh-text-default: 18px;
-    --fz-text-big: 30px;
-    --lh-text-big: 36px;
-    --fz-text-medium: 20px;
-    --lh-text-medium: 24px;
-    --fz-text-small: 13px;
-    --lh-text-small: 16px;
+    --money_inset: 16px;
+    --money_top: -80px;
+    --money_inset_md2: -8px;
+    --money_top_md2: -86px;
+    --money_inset_600: 2px;
+    --money_top_600: -50px;
 }
 
-@import "import/mixin"; // Подключаю миксины
-
-// ================== Подключаем шрифты ===================
-@import "import/fonts";
-// --------------------------------------------------------
-
-// ====================== Переменные ======================
-
-$minwidth: 320px;
-$mw: 1200;
-$md1: $mw;
-$md2: 992.98;
-$md3: 767.98;
-$md4: 479.98;
-$fontfamily: -apple-system, BlinkMacSystemFont, 'Helvetica', 'Arial', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', sans-serif;
-
-// =================== Переменные темы ====================
-
-$theme: "hilo";
-
-$x1_inset: -84px;
-$x1_top: -68px;
-$x1_inset_600: -38px;
-$x1_top_600: -18px;
-
-$x2_inset: -86px;
-$x2_top: -46px;
-$x2_inset_600: -36px;
-$x2_top_600: -23px;
-
-$money_inset: 16px;
-$money_top: -80px;
-$money_inset_md2: -8px;
-$money_top_md2: -86px;
-$money_inset_600: 2px;
-$money_top_600: -50px;
-
-@mixin btn_primary() {
+.btn_primary{
 	color: #fff;
     position: relative;
     background: radial-gradient(50% 88.04% at 50% 50%, #8ED32D 0%, #2D7500 100%) padding-box, 
         linear-gradient(96.44deg, #084300 0%, #2A7B36 100%) border-box;
     border: 2px solid transparent;
     padding: 10px 24px;
-    @media (max-width:#{$md3}px) {
+    @media (max-width:767.98px) {
         padding: 10px 16px;
     }
     &:hover{
@@ -116,7 +32,7 @@ $money_top_600: -50px;
     }
 }
 
-@mixin label_4() {
+.label-4{
     background: radial-gradient(50% 88.04% at 50% 50%, #8ED32D 0%, #2D7500 100%) padding-box, 
         linear-gradient(96.44deg, #084300 0%, #2A7B36 100%) border-box;
     border: 2px solid transparent;
@@ -124,42 +40,3 @@ $money_top_600: -50px;
         fill: #232325;
     }
 }
-
-// --------------------------------------------------------
-
-@import "import/null"; // Обнуляющие стили
-
-// ===================== Оболочка =========================
-
-.wrapper{
-	width: 100%;
-	min-height: 100%;
-	display: flex;
-	flex-direction: column;
-	@media (max-width:#{$md3}px) {
-	    overflow: hidden;/* Выше 768 мы его убираем чтобы сработал 
-	    position sticky у блока .stickyBlock */
-	}
-}
-
-// --------------------------------------------------------
-
-// ================= Основная сетка =======================
-.container{
-	max-width: $mw+px; margin: 0 auto; width: 100%;
-}
-// --------------------------------------------------------
-
-// ============== Импортируем все стили ===================
-
-@import "import/base"; // Вертска переиспользуемых блоков
-@import "import/popups"; // Попапы
-@import "import/scroll"; // Скролл
-@import "import/components"; // Компоненты
-@import "import/site"; // Последовательная верстка всего сайта
-@import "import/text"; // Для текста
-@import "import/footer/footer_spribe";
-@import "import/test"; // Для теста
-@import "import/сustom_wp"; // Подстраиваемся под WP
-
-// --------------------------------------------------------

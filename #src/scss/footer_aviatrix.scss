@@ -2,4 +2,75 @@ $md2: 992.98;
 $md3: 767.98;
 $md4: 479.98;
 
-@import "import/footer/footer_aviatrix";
+.collaboration{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    @media (max-width:#{$md3}px) {
+        grid-template-columns: 1fr;
+    }
+    &__list{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        .card-1{
+            flex: 1 0 45%;
+            height: 62px;
+            position: relative;
+            img{
+                max-width: 100%;
+            }
+            &__factor{
+                position: absolute;
+                top: -8px;
+                inset-inline-end: 4px;
+            }
+        }
+        .tooltip_top:nth-child(odd){
+            .tooltip__body{
+                inset-inline-start: 0;
+                inset-inline-end: auto;
+            }
+        }
+        &_3col{
+            .card-1{
+                flex: 1 0 30%;
+            }
+        }
+        &_4col{
+            .card-1{
+                flex: 1 0 22%;
+                @media (max-width:#{$md2}px) {
+                    flex: 1 0 45%;
+                }
+            }
+        }
+    }
+}
+
+.collaborationBanner{
+    border-radius: 8px;
+    padding: 32px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color-light);
+    @media (max-width:#{$md4}px) {
+        padding: 16px;
+    }
+    &__text{
+        position: relative;
+        z-index: 2;
+    }
+    &__image{
+        position: absolute;
+        top: -16px;
+        inset-inline-end: 14%;
+        width: 176px;
+        height: 100px;
+        @media ((max-width:950px) and (min-width:#{$md3}px)) or (max-width:500px){
+            inset-inline-end: 7%;
+        }
+    }
+}

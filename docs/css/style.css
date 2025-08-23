@@ -2570,24 +2570,24 @@ html[dir=rtl] .firstScreen__boby {
 
 .textBanner__x1 {
   position: absolute;
-  inset-inline-start: -84px;
-  top: -48px;
+  inset-inline-start: var(--x1_inset, -84px);
+  top: var(--x1_top, -48px);
   width: 126px;
   height: 126px;
 }
 
 .textBanner__x2 {
   position: absolute;
-  inset-inline-end: -72px;
-  top: -72px;
+  inset-inline-end: var(--x2_inset, -72px);
+  top: var(--x2_top, -72px);
   width: 126px;
   height: 126px;
 }
 
 .textBanner__money2 {
   position: absolute;
-  inset-inline-end: 20px;
-  top: -80px;
+  inset-inline-end: var(--money_inset, 20px);
+  top: var(--money_top, -80px);
   width: 110px;
   height: 110px;
 }
@@ -4209,8 +4209,8 @@ article.searchResult__item {
   }
 
   .textBanner__money2 {
-    inset-inline-end: -7px;
-    top: -86px;
+    inset-inline-end: var(--money_inset_md2, -7px);
+    top: var(--money_top_md2, -86px);
   }
 
   .ticket_1 {
@@ -4936,22 +4936,22 @@ position sticky у блока .stickyBlock */
   }
 
   .textBanner__x1 {
-    inset-inline-start: -50px;
-    top: -18px;
+    inset-inline-start: var(--x1_inset_600, -50px);
+    top: var(--x1_top_600, -18px);
     width: 64px;
     height: 64px;
   }
 
   .textBanner__x2 {
-    inset-inline-end: -25px;
-    top: -50px;
+    inset-inline-end: var(--x2_inset_600, -25px);
+    top: var(--x2_top_600, -50px);
     width: 64px;
     height: 64px;
   }
 
   .textBanner__money2 {
-    inset-inline-end: 5px;
-    top: -50px;
+    inset-inline-end: var(--money_inset_600, 5px);
+    top: var(--money_top_600, -50px);
     width: 64px;
     height: 64px;
   }

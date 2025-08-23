@@ -1,139 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 @@include('blocks/head.html', {
-    "footerName": "old",
+    "footerName": "spribe",
 	"theme": "goal"
 })
 <!-- role="dialog" -->
 <body> 
-	@@include('blocks/common-section/header_common_v1.html',{
-		"logoSrc": "img/uploads/goal/logo.svg",
-		"bgSrc": "./img/byTheme/goal/goal-bg.webp",
+	@@include('blocks/common-section/header-newThemes.html', {
+		"theme": "goal",
+		"formatLogo": "svg",
+		"playBtnText": "goal game"
 	})
 
 	<main class="styledContent container">
-	<!-- firstScreen -->
-		<section class="firstScreen container p-16">
-			<div class="firstScreen__bobyWrap">
-				<div class="firstScreen__boby">
-					<div class="firstScreen__text nlc-mb-16">
-						<div class="textBanner tt-u bold">
-							<p class="text-extra-large textBanner__t1">play</p>
-							<div class="pos-r">
-								<div class="text-extra-large textBanner__t2">
-									<span>goal game</span>
-									<img src="img/money.svg" class="textBanner__money2" width="115" height="115" alt="">
-								</div>
-							</div>
-							<p class="text-huge textBanner__t3">
-								<span>like a professional</span>
-								<img src="img/byTheme/goal/objLeft-256x256.webp" 
-									srcset="img/byTheme/goal/objLeft-64x64.webp 64w, 
-											img/byTheme/goal/objLeft-128x128.webp 128w, 
-											img/byTheme/goal/objLeft-256x256.webp 256w" 
-									sizes="(max-width: 600px) 64px, 
-											126px"
-									class="textBanner__x1" width="126" height="126" alt="">
-								<img src="img/byTheme/goal/objRight-256x256.webp"
-									srcset="img/byTheme/goal/objRight-64x64.webp 64w, 
-											img/byTheme/goal/objRight-128x128.webp 128w, 
-											img/byTheme/goal/objRight-256x256.webp 256w" 
-									sizes="(max-width: 600px) 64px, 
-											126px" 
-									class="textBanner__x2" width="126" height="126" alt="">
-							</p>
-						</div>
-						<p>Our site will help you learn all the official details about the aviator game and strategies that will increase your chances of winning real money.</p>
-						<h1 class="text-big">Aviator Game (h1)</h1>
-						<p>Aviator is a popular crash game for real money in India in 2024. Developed by Spribe, this online casino game is simple to play: place a bet and withdraw it before the red plane flies away. The longer the plane stays in the air, the higher the multiplier on your winnings. This is why the game is called Aviator.</p>
-						<p>The RTP is around 97%, making it highly possible to win ₹1,00,000.</p>
-						<div class="f-aic gap-16 firstScreen__buttons">
-							<button class="btn btn_info js-playFree-btn-outside">Play free</button>
-							<a href="" class="btn btn_primary">Play for real money</a>
-						</div>
-					</div>
-					<div class="firstScreen__image">
-						<img src="img/uploads/goal/phone-540x540.webp" width="540" height="540" alt="">
-					</div>
-					<div class="firstScreen__bg">
-						<img src="img/byTheme/goal/goal-bg.webp" width="200" height="106" loading="lazy" alt="">
-						<div class="firstScreen__blur"></div>
-					</div>
-				</div>
-			</div>
-		</section>
+		<!-- firstScreen -->
+		@@include('blocks/common-section/firstScreen-newThemes.html', {
+			"theme": "goal",
+			"title": "goal game"
+		})
 
 		<!-- Топ 5 -->
-		<article class="topFive container p-40-md3-16">
-			<div class="topFive__content nlc-mb-16">
-				<div class="f-aic jcfe gap-16">
-					<button class="btn-5 js-popup-opener max-md3-dn" data-popup-id="problem">
-						<span>Problem?</span>
-						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#attention"/></svg>
-					</button>
-					<button class="btn-5 max-md3-dn js-btn-fullscreen">
-						<span>Fullscreen</span>
-						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#fullscreen"/></svg>
-					</button>
-				</div>
-				<div class="videoContainer js-videoContainer-flexible-mobile js-fullscreen-box js-playFree-container">
-					<div class="js-playFree-body posa dn z-3">
-						<iframe class="posa" src="" data-src="https://demo.spribe.io/launch/aviator?currency=GHS&lang=EN" width="776" height="437" scrolling="none" frameborder="0" id="gameIframe" title="aviator-demo"></iframe>
-					</div>
-					<div class="posa js-playFree-control">
-						<img src="img/byTheme/goal/goal-bg.webp" class="posa" loading="lazy" alt="">
-						<div class="bg-black-05 z-2 posa f-jcc-aic fdc gap-16">
-							<a href="https://rozetka.com.ua/ua/" target="_blank" class="btn btn_primary">Play for real money</a>
-							<button type="button" class="btn btn_info js-playFree-btn">Play free</button>
-						</div>
-					</div>
-				</div>
-				<a href="" class="btn btn_primary w-100">Play for real money with 200% bonus</a>
-			</div>
-			<div class="topFive__list max-md3-dn">
-				<p class="text-big mb-16">Top 5 casinos</p>
-				<a href="/update-page/#1win" class="btn-4">
-					<span class="btn-4__img">
-						<img src="img/casino/1win_2.svg" loading="lazy" alt="">
-					</span>
-					<span class="bold flex-1">100% up to $530</span>
-					<span class="label-4">
-						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#back"/></svg>
-					</span>
-				</a>
-				<a href="/update-page/#4rabet" class="btn-4">
-					<span class="btn-4__img">
-						<img src="img/casino/4rabet.svg" loading="lazy" alt="">
-					</span>
-					<span class="bold flex-1">120% up to $600 + 25 FS + 100 gifts</span>
-					<span class="label-4">
-						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#back"/></svg>
-					</span>
-				</a>
-				<a href="/update-page/#1win" class="btn-4">
-					<span class="btn-4__img">
-						<img src="img/casino/mostbet.svg" loading="lazy" alt="">
-					</span>
-					<span class="bold flex-1">80 Free Spins</span>
-					<span class="label-4">
-						<svg class="w-24"><use xlink:href="img/sprite/icons-sprite.svg#back"/></svg>
-					</span>
-				</a>
-			</div>
-		</article>
+		@@include('blocks/common-section/topFive-newThemes.html', {
+			"theme": "goal",
+		})
 
-		@@include('blocks/breadcrumbs.html')
-		@@include('blocks/seo-text.html')
 		@@include('blocks/faq.html')
-		@@include('blocks/bookmakers.html')
-		@@include('blocks/reviews.html')
 	</main>
 	
 	<!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
 	@@include('blocks/common-blocks.html', {
 		"theme": "default"
 	})
-    @@include('blocks/common-section/footer_common.html', {
+	@@include('blocks/common-section/footer-newThemes.html', {
 		"theme": "goal",
 		"formatLogo": "svg",
         "footerName": "spribe"

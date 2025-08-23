@@ -2,4 +2,44 @@ $md2: 992.98;
 $md3: 767.98;
 $md4: 479.98;
 
-@import "import/footer/footer_m-play";
+.techSupport {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    @media (max-width:#{$md3}px) {
+        grid-template-columns: 1fr;
+    }
+    &__col {
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+        padding: 16px 32px;
+        @media (max-width:#{$md4}px) {
+            padding: 16px;
+            gap: 16px;
+        }
+        &_1 {
+            background: linear-gradient(90deg, #7600A3 0%, #2C003D 100%);
+            @media ((max-width:880px) and (min-width:#{$md3}px)) or (max-width:#{$md4}px) {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+        &_2 {
+            background: linear-gradient(90deg, #FE346E 0%, #FF6390 100%);
+            img{
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+    &__imgText{
+        flex: 0 0 60%;
+    }
+    &__imgCash {
+        margin-bottom: -120px;
+        transform: translateY(-60px);
+    }
+}

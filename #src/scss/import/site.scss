@@ -550,30 +550,6 @@
             margin-left: -100px;
             margin-right: -100px;
         }
-        @if $theme == "dragonTigerLuck" {
-            @media (min-width:#{$md2}px) {
-                font-size: 48px !important;
-                line-height: 56px !important;
-            }
-        }
-        @if $theme == "bigger-bass-bonanza"{
-            @media (min-width:#{$md2}px) {
-                font-size: 48px !important;
-                line-height: 56px !important;
-            }
-        }
-        @if $theme == "buffalo-king-megaways" {
-            @media (min-width:#{$md2}px) {
-                font-size: 48px !important;
-                line-height: 56px !important;
-            }
-        }
-        @if $theme == "mission-uncrossable" {
-            @media (min-width:#{$md2}px) {
-                font-size: 48px !important;
-                line-height: 56px !important;
-            }
-        }
         position: relative;
         z-index: 2;
         background: linear-gradient(90.85deg, #474D5B 0.05%, #232325 99.95%);
@@ -733,43 +709,43 @@
     } @else {
         &__x1{
             position: absolute;
-            inset-inline-start: $x1_inset;
-            top: $x1_top;
+            inset-inline-start: var(--x1_inset, -84px);
+            top: var(--x1_top, -48px);
             width: 126px;
             height: 126px;
             @media (max-width:600px) {
-                inset-inline-start: $x1_inset_600;
-                top: $x1_top_600;
+                inset-inline-start: var(--x1_inset_600, -50px);
+                top: var(--x1_top_600, -18px);
                 width: 64px;
                 height: 64px;
             }
         }
         &__x2{
             position: absolute;
-            inset-inline-end: $x2_inset;
-            top: $x2_top;
+            inset-inline-end: var(--x2_inset, -72px);
+            top: var(--x2_top, -72px);
             width: 126px;
             height: 126px;
             @media (max-width:600px) {
-                inset-inline-end: $x2_inset_600;
-                top: $x2_top_600;
+                inset-inline-end: var(--x2_inset_600, -25px);
+                top: var(--x2_top_600, -50px);
                 width: 64px;
                 height: 64px;
             }
         }
         &__money2{
             position: absolute;
-            inset-inline-end: $money_inset;
-            top: $money_top;
+            inset-inline-end: var(--money_inset, 20px);
+            top: var(--money_top, -80px);
             width: 110px;
             height: 110px;
             @media (max-width:#{$md2}px) {
-                inset-inline-end: $money_inset_md2;
-                top: $money_top_md2;
+                inset-inline-end: var(--money_inset_md2, -7px);
+                top: var(--money_top_md2, -86px);
             }
             @media (max-width:600px) {
-                inset-inline-end: $money_inset_600;
-                top: $money_top_600;
+                inset-inline-end: var(--money_inset_600, 5px);
+                top: var(--money_top_600, -50px);
                 width: 64px;
                 height: 64px;
             }

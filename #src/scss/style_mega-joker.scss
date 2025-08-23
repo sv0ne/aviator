@@ -1,3 +1,22 @@
+:root{
+    --x1_inset: -84px;
+    --x1_top: -48px;
+    --x1_inset_600: -50px;
+    --x1_top_600: -18px;
+
+    --x2_inset: -90px;
+    --x2_top: -46px;
+    --x2_inset_600: -48px;
+    --x2_top_600: -30px;
+
+    --money_inset: 20px;
+    --money_top: -80px;
+    --money_inset_md2: -7px;
+    --money_top_md2: -86px;
+    --money_inset_600: 5px;
+    --money_top_600: -50px;
+}
+
 .btn_primary{
     background: linear-gradient(161.96deg, #04E204 17.19%, #2D8A1E 92.79%);
     color: #fff;
@@ -10,13 +29,4 @@
 .label-4{
     background: linear-gradient(161.96deg, #04E204 17.19%, #2D8A1E 92.79%);
     svg use{ fill: #FFF; }
-}
-
-.textBanner__x2{
-    inset-inline-end: -90px;
-    top: -46px;
-    @media (max-width:600px) {
-        inset-inline-end: -48px;
-        top: -30px;
-    }
 }

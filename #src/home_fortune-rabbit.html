@@ -1,41 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 @@include('blocks/head.html', {
-    "footerName": "old",
+    "footerName": "pg-soft",
 	"theme": "fortune-rabbit"
 })
 <!-- role="dialog" -->
 <body> 
-	@@include('blocks/common-section/header_common.html', {
+	@@include('blocks/common-section/header-newThemes.html', {
 		"theme": "fortune-rabbit",
 		"formatLogo": "png",
-		"playBtnText": "Fotrune Rabbit"
+		"playBtnText": "Fortune Rabbit"
 	})
 
 	<main class="styledContent container">
 		<!-- firstScreen -->
-		@@include('blocks/common-section/firstScreen.html', {
+		@@include('blocks/common-section/firstScreen-newThemes.html', {
 			"theme": "fortune-rabbit",
 			"title": "Fortune Rabbit"
 		})
 
 		<!-- Топ 5 -->
-		@@include('blocks/common-section/topFive.html', {
+		@@include('blocks/common-section/topFive-newThemes.html', {
 			"theme": "fortune-rabbit",
 		})
 
-		@@include('blocks/breadcrumbs.html')
-		@@include('blocks/seo-text.html')
 		@@include('blocks/faq.html')
-		@@include('blocks/bookmakers.html')
-		@@include('blocks/reviews.html')
 	</main>
 	
 	<!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
 	@@include('blocks/common-blocks.html', {
 		"theme": "default"
 	})
-	@@include('blocks/common-section/footer_common.html', {
+	@@include('blocks/common-section/footer-newThemes.html', {
 		"theme": "fortune-rabbit",
 		"formatLogo": "png",
         "footerName": "pg-soft"
