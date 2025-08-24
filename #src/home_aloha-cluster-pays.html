@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('blocks/head.html', {
+    "footerName": "netent20",
+	"theme": "aloha-cluster-pays"
+})
+<!-- role="dialog" -->
+<body> 
+	@@include('blocks/common-section/header-newThemes.html', {
+		"theme": "aloha-cluster-pays",
+		"formatLogo": "webp",
+		"playBtnText": "aloha cluster pays"
+	})
+
+	<main class="styledContent container">
+		<!-- firstScreen -->
+		@@include('blocks/common-section/firstScreen-newThemes.html', {
+			"theme": "aloha-cluster-pays",
+			"title": "aloha cluster pays"
+		})
+
+		<!-- Топ 5 -->
+		@@include('blocks/common-section/topFive-newThemes.html', {
+			"theme": "aloha-cluster-pays",
+		})
+
+		@@include('blocks/faq.html')
+	</main>
+	
+	<!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
+	@@include('blocks/common-blocks.html', {
+		"theme": "default"
+	})
+	@@include('blocks/common-section/footer-newThemes.html', {
+		"theme": "aloha-cluster-pays",
+		"formatLogo": "webp",
+        "footerName": "netent20"
+	})
+	@@include('blocks/common-scripts.html')
+</body>
+</html>

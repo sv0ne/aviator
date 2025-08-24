@@ -1,0 +1,38 @@
+:root {
+    --x1_inset: -84px;
+    --x1_top: -48px;
+    --x1_inset_600: -50px;
+    --x1_top_600: -18px;
+
+    --x2_inset: -82px;
+    --x2_top: -39px;
+    --x2_inset_600: -42px;
+    --x2_top_600: -28px;
+
+    --money_inset: 20px;
+    --money_top: -80px;
+    --money_inset_md2: -7px;
+    --money_top_md2: -86px;
+    --money_inset_600: 5px;
+    --money_top_600: -50px;
+}
+
+.btn_primary{
+    background: rgba(255, 0, 173, 1);
+    box-shadow: 4px 4px 0px 0px rgba(0, 255, 255, 1);
+    padding: 10px 24px;
+    color: #fff;
+    &:hover{
+        opacity: 0.9;
+    }
+}
+
+.label-4{
+    background: rgba(255, 0, 173, 1);
+    box-shadow: 4px 4px 0px 0px rgba(0, 255, 255, 1);
+    svg use{ fill: #fff; }
+}
+
+.textBanner__money2{
+    display: none;
+}

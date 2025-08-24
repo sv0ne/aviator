@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('blocks/head.html', {
+    "footerName": "pg-soft",
+	"theme": "wild-bounty-showdown"
+})
+<!-- role="dialog" -->
+<body> 
+	@@include('blocks/common-section/header-newThemes.html', {
+		"theme": "wild-bounty-showdown",
+		"formatLogo": "webp",
+		"playBtnText": "Play wild bounty"
+	})
+
+	<main class="styledContent container">
+		<!-- firstScreen -->
+		@@include('blocks/common-section/firstScreen-newThemes.html', {
+			"theme": "wild-bounty-showdown",
+			"title": "wild bounty showdown"
+		})
+
+		<!-- Топ 5 -->
+		@@include('blocks/common-section/topFive-newThemes.html', {
+			"theme": "wild-bounty-showdown",
+		})
+
+		@@include('blocks/faq.html')
+	</main>
+	
+	<!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
+	@@include('blocks/common-blocks.html', {
+		"theme": "default"
+	})
+	@@include('blocks/common-section/footer-newThemes.html', {
+		"theme": "wild-bounty-showdown",
+		"formatLogo": "webp",
+        "footerName": "pg-soft"
+	})
+	@@include('blocks/common-scripts.html')
+</body>
+</html>

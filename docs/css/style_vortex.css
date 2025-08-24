@@ -36,3 +36,7 @@
 .label-4 svg use {
   fill: #FFF;
 }
+
+.textBanner__money2 {
+  display: none;
+}
