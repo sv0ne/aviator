@@ -546,14 +546,20 @@ $(document).ready(function () {
 
     // Кнопки 'Play free' и 'Demo' запускающие игру в блоке js-playFree-container
     (function () {
-        // При клике на Play free запускаем iframe
-        $('.js-playFree-btn').click(function(){
-            const urlDemoBase64 = $('.firstScreen .js-playFree-btn-outside').data('href');
-            if(urlDemoBase64){
+        // Открыть ссылку демо игры в новом окне если она есть
+        function openDemoLink(elem) {
+            const urlDemoBase64 = elem.data('href');
+            if(urlDemoBase64 !== undefined && urlDemoBase64 !== ""){
                 const urlDemo = window.atob(urlDemoBase64);
                 window.open(urlDemo, "_blank", "noopener,noreferrer");
-                return;
+                return true;
             }
+            return false;
+        }
+
+        // При клике на Play free запускаем iframe
+        $('.js-playFree-btn').click(function(){
+            if(openDemoLink($(this))) return;
 
             $(this).closest('.js-playFree-container').find('.js-playFree-control').addClass('dn');
             let iframe = $(this).closest('.js-playFree-container').find('.js-playFree-body iframe');
@@ -562,10 +568,14 @@ $(document).ready(function () {
         });
 
         // При клике на кнопку "Play free" которая находится вне блока, делаем прокрут до блока и запускаем его
-        $('.js-playFree-btn-outside').click(goToPlayFreeContainer);
+        $('.js-playFree-btn-outside').click(function(){
+            goToPlayFreeContainer($(this));
+        });
 
         // Определяем позицию блока js-playFree-container и прокручиваем до него
-        function goToPlayFreeContainer() {
+        function goToPlayFreeContainer(elem) {
+            if(openDemoLink(elem)) return;
+
             let offsetTop = $('.js-playFree-container')[0].offsetTop;
 
             // Перед проскролом учитываем высоту блока contentNav__list которая скрывается при скроле
@@ -585,7 +595,7 @@ $(document).ready(function () {
             let href = $(this).attr('href');
             if(href === ''){
                 e.preventDefault();
-                goToPlayFreeContainer();
+                goToPlayFreeContainer($(this));
             }
         });
     })();

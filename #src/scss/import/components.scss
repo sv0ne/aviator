@@ -78,7 +78,7 @@
 }
 
 @if($theme == 'new-format'){
-    .btn-href{
+    [data-href]{
         position: relative;
         display: inline-flex;
         gap: 8px;
@@ -93,7 +93,7 @@
         }
     }
 
-    .firstScreen .btn-href:after{
+    .firstScreen [data-href]:after{
         width: 18px;
         height: 18px;
         flex: 0 0 18px;
