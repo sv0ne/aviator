@@ -40,3 +40,9 @@
 .textBanner__money2 {
   display: none;
 }
+
+.firstScreen__image {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
