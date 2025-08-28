@@ -46,6 +46,12 @@
   line-height: 48px;
 }
 
+.firstScreen__image {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 @media (max-width: 660px) {
   .textBanner__t2 {
     font-size: 32px;
