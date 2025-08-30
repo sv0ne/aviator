@@ -1,0 +1,133 @@
+.oaks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.oaks__col {
+  border-radius: var(--br-small);
+  background-color: var(--color-light);
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 900;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.oaks__col img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.oaks__textLeft {
+  padding: 32px 0 32px 32px;
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.oaks__textLeft img {
+  margin-bottom: 32px;
+}
+
+.oaks__textClip {
+  background: linear-gradient(207.45deg, #F8B900 4.26%, #E67508 94.75%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.oaks__content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+  width: 100%;
+}
+
+.oaks__imgBg {
+  position: relative;
+  height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-margin-start: -40px;
+          margin-inline-start: -40px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.oaks__imgBg img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  -o-object-position: left;
+     object-position: left;
+}
+
+.oaks__area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 32px;
+  padding: 32px;
+}
+
+.oaks__imgWrapper {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 21.5%;
+          flex: 0 0 21.5%;
+}
+
+.oaks__imgWrapper img {
+  width: 100%;
+  height: auto;
+  max-width: 110px;
+}
+
+.oaks__textSmall {
+  font-size: 16px;
+  line-height: 1.2;
+  margin-top: 8px;
+}
+
+@media (max-width: 767.98px) {
+  .oaks {
+    grid-template-columns: 1fr;
+  }
+
+  .oaks__textLeft {
+    padding: 16px 0 16px 16px;
+  }
+
+  .oaks__area {
+    gap: 16px;
+    padding: 16px;
+  }
+}

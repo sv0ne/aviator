@@ -1,0 +1,95 @@
+$md2: 992.98;
+$md3: 767.98;
+$md4: 479.98;
+
+.oaks{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    @media (max-width:#{$md3}px) {
+        grid-template-columns: 1fr;
+    }
+    &__col{
+        border-radius: var(--br-small);
+        background-color: var(--color-light);
+        font-size: 30px;
+        line-height: 36px;
+        font-weight: 900;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+        img{
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+    }
+    &__textLeft{
+        padding: 32px 0 32px 32px;
+        position: relative;
+        z-index: 3;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        img{
+            margin-bottom: 32px;
+        }
+        @media (max-width:#{$md3}px) {
+            padding: 16px 0 16px 16px;
+        }
+    }
+    &__textClip{
+        background: linear-gradient(207.45deg, #F8B900 4.26%, #E67508 94.75%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+    }
+    &__content{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 8px;
+        width: 100%;
+    }
+    &__imgBg{
+        position: relative;
+        height: 100%;
+        flex: 1;
+        display: flex;
+        margin-inline-start: -40px;
+        justify-content: flex-end;
+        img{
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            object-position: left;
+        }
+    }
+    &__area{
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        padding: 32px;
+        @media (max-width:#{$md3}px) {
+            gap: 16px;
+            padding: 16px;
+        }
+    }
+    &__imgWrapper{
+        flex: 0 0 21.5%;
+        img{
+            width: 100%;
+            height: auto;
+            max-width: 110px;
+        }
+    }
+    &__textSmall{
+        font-size: 16px;
+        line-height: 1.2;
+        margin-top: 8px;
+    }
+}
