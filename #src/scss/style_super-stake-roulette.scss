@@ -1,0 +1,59 @@
+:root {
+    --x1_inset: -84px;
+    --x1_top: -48px;
+    --x1_inset_600: -50px;
+    --x1_top_600: -18px;
+
+    --x2_inset: -89px;
+    --x2_top: -41px;
+    --x2_inset_600: -46px;
+    --x2_top_600: -20px;
+
+    --money_inset: 20px;
+    --money_top: -80px;
+    --money_inset_md2: -7px;
+    --money_top_md2: -86px;
+    --money_inset_600: 5px;
+    --money_top_600: -50px;
+}
+
+.btn_primary{
+    background: rgba(122, 0, 0, 1);
+    border: 2px solid rgba(255, 217, 106, 1);
+    padding: 10px 24px;
+    color: #fff;
+    &:hover{
+        opacity: 0.9;
+    }
+}
+
+.label-4{
+    background: rgba(122, 0, 0, 1);
+    border: 2px solid rgba(255, 217, 106, 1);
+    svg use{ fill: #fff; }
+}
+
+.textBanner__money2{
+    display: none;
+}
+
+.firstScreen__image{
+    justify-content: flex-end;
+}
+
+.textBanner__t2{
+    font-size: 40px;
+    line-height: 46px;
+    @media (max-width:992px) {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    @media (max-width:768px) {
+        font-size: 32px;
+        line-height: 36px;
+    }
+    @media (max-width:480px) {
+        font-size: 30px;
+        line-height: 32px;
+    }
+}

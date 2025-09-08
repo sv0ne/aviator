@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('blocks/head.html', {
+    "footerName": "stake-logic",
+	"theme": "big-runner-deluxe"
+})
+<!-- role="dialog" -->
+<body> 
+	@@include('blocks/common-section/header-newThemes.html', {
+		"theme": "big-runner-deluxe",
+		"formatLogo": "webp",
+		"playBtnText": "big runner deluxe"
+	})
+
+	<main class="styledContent container">
+		<!-- firstScreen -->
+		@@include('blocks/common-section/firstScreen-newThemes.html', {
+			"theme": "big-runner-deluxe",
+			"title": "big runner deluxe"
+		})
+
+		<!-- Топ 5 -->
+		@@include('blocks/common-section/topFive-newThemes.html', {
+			"theme": "big-runner-deluxe",
+		})
+
+		@@include('blocks/faq.html')
+	</main>
+	
+	<!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
+	@@include('blocks/common-blocks.html', {
+		"theme": "default"
+	})
+	@@include('blocks/common-section/footer-newThemes.html', {
+		"theme": "big-runner-deluxe",
+		"formatLogo": "webp",
+        "footerName": "stake-logic"
+	})
+	@@include('blocks/common-scripts.html')
+</body>
+</html>
