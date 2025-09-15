@@ -491,6 +491,10 @@ html :where(img[class*=wp-image-]) {
   text-decoration: underline;
 }
 
+.fw-700 {
+  font-weight: 700;
+}
+
 .child-img-h-16 {
   height: 36px;
   overflow-y: hidden;
@@ -1121,7 +1125,7 @@ html[dir=rtl] .scroll__overlayArea {
 }
 
 .btn-4__img {
-  height: 24px;
+  height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1129,13 +1133,13 @@ html[dir=rtl] .scroll__overlayArea {
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 100px;
-          flex: 0 0 100px;
+      -ms-flex: 0 0 125px;
+          flex: 0 0 125px;
 }
 
 .btn-4__img img {
   height: 100%;
-  max-width: 100px;
+  max-width: 125px;
   -o-object-fit: contain;
      object-fit: contain;
 }
