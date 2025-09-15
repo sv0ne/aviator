@@ -1,0 +1,123 @@
+$md2: 992.98;
+$md3: 767.98;
+$md4: 479.98;
+
+.hpGaming{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    @media (max-width:#{$md3}px) {
+        grid-template-columns: 1fr;
+    }
+    &__col{
+        border-radius: var(--br-small);
+        background-color: var(--color-light);
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    &__content{
+        font-size: 30px;
+        line-height: 36px;
+        font-weight: 900;
+        text-transform: uppercase;
+        padding: 32px;
+        > *:not(:last-child){
+            margin-bottom: 32px;
+        }
+    }
+    &__body{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: column;
+        height: 100%;
+        overflow: hidden;
+        min-height: 217px;
+        padding: 0 64px;
+    }
+    &__text{
+        padding-bottom: 32px;
+        max-width: 290px;
+        text-align: center;
+    }
+}
+
+.gSymbol{
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-light);
+    border-radius: 99px;
+    &_1{
+        top: -11px;
+        left: -14px;
+        transform: rotate(12deg);
+    }
+    &_2{
+        top: 10px;
+        left: 17%;
+        transform: rotate(-3deg);
+    }
+    &_3{
+        top: 69px;
+        left: 3%;
+        transform: rotate(12deg);
+    }
+    &_4{
+        bottom: 20px;
+        left: 11%;
+        transform: rotate(-24deg);
+        @media (min-width:#{$md3}px) and (max-width:1000px){
+            left: 3%;
+        }
+        @media (max-width:540px) {
+            left: 2%;
+        }
+    }
+    &_5{
+        top: -11px;
+        right: -14px;
+    }
+    &_6{
+        top: 20px;
+        right: 16%;
+        transform: rotate(-25deg);
+    }
+    &_7{
+        top: 35%;
+        right: -13px;
+        transform: rotate(-25deg);
+    }
+    &_8{
+        bottom: 20px;
+        right: 10%;
+        transform: rotate(15deg);
+        @media (min-width:#{$md3}px) and (max-width:1000px){
+            right: 3%;
+        }
+        @media (max-width:540px) {
+            right: 2%;
+        }
+    }
+    &_img1{
+        top: 53px;
+        left: 30%;
+        transform: scale(1.4);
+        background-color: transparent;
+    }
+    &_img2{
+        top: 53px;
+        right: 35%;
+        transform: scale(1.4);
+        background-color: transparent;
+    }
+}

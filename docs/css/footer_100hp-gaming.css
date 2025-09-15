@@ -1,0 +1,179 @@
+.hpGaming {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.hpGaming__col {
+  border-radius: var(--br-small);
+  background-color: var(--color-light);
+}
+
+.hpGaming__col img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hpGaming__content {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 32px;
+}
+
+.hpGaming__content > *:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.hpGaming__body {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  min-height: 217px;
+  padding: 0 64px;
+}
+
+.hpGaming__text {
+  padding-bottom: 32px;
+  max-width: 290px;
+  text-align: center;
+}
+
+.gSymbol {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--color-light);
+  border-radius: 99px;
+}
+
+.gSymbol_1 {
+  top: -11px;
+  left: -14px;
+  -webkit-transform: rotate(12deg);
+      -ms-transform: rotate(12deg);
+          transform: rotate(12deg);
+}
+
+.gSymbol_2 {
+  top: 10px;
+  left: 17%;
+  -webkit-transform: rotate(-3deg);
+      -ms-transform: rotate(-3deg);
+          transform: rotate(-3deg);
+}
+
+.gSymbol_3 {
+  top: 69px;
+  left: 3%;
+  -webkit-transform: rotate(12deg);
+      -ms-transform: rotate(12deg);
+          transform: rotate(12deg);
+}
+
+.gSymbol_4 {
+  bottom: 20px;
+  left: 11%;
+  -webkit-transform: rotate(-24deg);
+      -ms-transform: rotate(-24deg);
+          transform: rotate(-24deg);
+}
+
+.gSymbol_5 {
+  top: -11px;
+  right: -14px;
+}
+
+.gSymbol_6 {
+  top: 20px;
+  right: 16%;
+  -webkit-transform: rotate(-25deg);
+      -ms-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+}
+
+.gSymbol_7 {
+  top: 35%;
+  right: -13px;
+  -webkit-transform: rotate(-25deg);
+      -ms-transform: rotate(-25deg);
+          transform: rotate(-25deg);
+}
+
+.gSymbol_8 {
+  bottom: 20px;
+  right: 10%;
+  -webkit-transform: rotate(15deg);
+      -ms-transform: rotate(15deg);
+          transform: rotate(15deg);
+}
+
+.gSymbol_img1 {
+  top: 53px;
+  left: 30%;
+  -webkit-transform: scale(1.4);
+      -ms-transform: scale(1.4);
+          transform: scale(1.4);
+  background-color: transparent;
+}
+
+.gSymbol_img2 {
+  top: 53px;
+  right: 35%;
+  -webkit-transform: scale(1.4);
+      -ms-transform: scale(1.4);
+          transform: scale(1.4);
+  background-color: transparent;
+}
+
+@media (max-width: 767.98px) {
+  .hpGaming {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .gSymbol_4 {
+    left: 2%;
+  }
+
+  .gSymbol_8 {
+    right: 2%;
+  }
+}
+
+@media (min-width: 767.98px) and (max-width: 1000px) {
+  .gSymbol_4 {
+    left: 3%;
+  }
+
+  .gSymbol_8 {
+    right: 3%;
+  }
+}

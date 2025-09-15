@@ -39,7 +39,12 @@
             </div>
             <div class="firstScreen__image">
                 <div class="firstScreen__imageWrapper">
-                    <img src="img/newThemes/@@theme/phone-540x540.webp" width="540" height="540" alt="">
+                    @@if(theme == "astronaut"){
+                        <img src="img/newThemes/@@theme/phone-540x540.svg" width="540" height="540" alt="">
+                    }
+                    @@if(theme != "astronaut"){
+                        <img src="img/newThemes/@@theme/phone-540x540.webp" width="540" height="540" alt="">
+                    }
                     <div class="posa firstScreen__flagSVG" style="--flag-url: url('../img/lang/it.svg')"></div>
                 </div>
             </div>

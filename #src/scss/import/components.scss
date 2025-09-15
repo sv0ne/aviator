@@ -206,13 +206,13 @@ img.alignleft, img.alignright{
         }
     }
     &__img{
-        height: 24px;
+        height: 60px;
         display: flex;
         align-items: center;
-        flex: 0 0 100px;
+        flex: 0 0 125px;
         img{
             height: 100%;
-            max-width: 100px;
+            max-width: 125px;
             object-fit: contain;
         }
         @media (max-width:#{$md3}px) {
