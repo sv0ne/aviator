@@ -1,0 +1,52 @@
+$md2: 992.98;
+$md3: 767.98;
+$md4: 479.98;
+
+.hg{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    @media (max-width:#{$md3}px) {
+        grid-template-columns: 1fr;
+    }
+    &__content{
+        padding: 32px;
+        border-radius: var(--br-small);
+        background-color: var(--color-light);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__body{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    &__item{
+        flex: 1 0 30%;
+        border-radius: var(--br-small);
+        background-color: var(--color-light);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        text-align: center;
+        @media (max-width:#{$md2}px) {
+            flex: 1 0 48%;
+        }
+    }
+    &__title{
+        font-size: 24px;
+        line-height: 120%;
+        margin-top: 32px;
+        margin-bottom: 8px;
+        font-weight: 900;
+    }
+    &__stats{
+        font-size: 40px;
+        line-height: 48px;
+        margin-bottom: 10px;
+        font-weight: 900;
+    }
+}

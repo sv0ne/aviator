@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('blocks/head.html', {
+    "footerName": "elk-studios",
+	"theme": "buffalo-toro"
+})
+<!-- role="dialog" -->
+<body> 
+	@@include('blocks/common-section/header-newThemes.html', {
+		"theme": "buffalo-toro",
+		"formatLogo": "webp",
+		"playBtnText": "Buffalo Toro"
+	})
+
+	<main class="styledContent container">
+		<!-- firstScreen -->
+		@@include('blocks/common-section/firstScreen-newThemes.html', {
+			"theme": "buffalo-toro",
+			"title": "Buffalo Toro"
+		})
+
+		<!-- Топ 5 -->
+		@@include('blocks/common-section/topFive-newThemes.html', {
+			"theme": "buffalo-toro",
+		})
+
+		@@include('blocks/faq.html')
+	</main>
+	
+	<!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
+	@@include('blocks/common-blocks.html', {
+		"theme": "default"
+	})
+	@@include('blocks/common-section/footer-newThemes.html', {
+		"theme": "buffalo-toro",
+		"formatLogo": "webp",
+        "footerName": "elk-studios"
+	})
+	@@include('blocks/common-scripts.html')
+</body>
+</html>

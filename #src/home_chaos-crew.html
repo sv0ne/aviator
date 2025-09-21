@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('blocks/head.html', {
+    "footerName": "hacksaw-gaming",
+	"theme": "chaos-crew"
+})
+<!-- role="dialog" -->
+<body> 
+	@@include('blocks/common-section/header-newThemes.html', {
+		"theme": "chaos-crew",
+		"formatLogo": "webp",
+		"playBtnText": "Chaos Crew"
+	})
+
+	<main class="styledContent container">
+		<!-- firstScreen -->
+		@@include('blocks/common-section/firstScreen-newThemes.html', {
+			"theme": "chaos-crew",
+			"title": "Chaos Crew"
+		})
+
+		<!-- Топ 5 -->
+		@@include('blocks/common-section/topFive-newThemes.html', {
+			"theme": "chaos-crew",
+		})
+
+		@@include('blocks/faq.html')
+	</main>
+	
+	<!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
+	@@include('blocks/common-blocks.html', {
+		"theme": "default"
+	})
+	@@include('blocks/common-section/footer-newThemes.html', {
+		"theme": "chaos-crew",
+		"formatLogo": "webp",
+        "footerName": "hacksaw-gaming"
+	})
+	@@include('blocks/common-scripts.html')
+</body>
+</html>
