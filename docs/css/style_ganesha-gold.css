@@ -1,0 +1,48 @@
+:root {
+  --x1_inset: -84px;
+  --x1_top: -62px;
+  --x1_inset_600: -35px;
+  --x1_top_600: -34px;
+  --x2_inset: -81px;
+  --x2_top: -35px;
+  --x2_inset_600: -45px;
+  --x2_top_600: -38px;
+  --money_inset: 20px;
+  --money_top: -80px;
+  --money_inset_md2: -7px;
+  --money_top_md2: -86px;
+  --money_inset_600: 5px;
+  --money_top_600: -50px;
+}
+
+.btn_primary {
+  background: -webkit-gradient(linear, left top, left bottom, from(#F8CF09), to(#D43500));
+  background: linear-gradient(180deg, #F8CF09 0%, #D43500 100%);
+  border: 2px solid rgb(240, 184, 53);
+  padding: 10px 24px;
+  color: #1A0100;
+}
+
+.btn_primary:hover {
+  opacity: 0.9;
+}
+
+.label-4 {
+  background: -webkit-gradient(linear, left top, left bottom, from(#F8CF09), to(#D43500));
+  background: linear-gradient(180deg, #F8CF09 0%, #D43500 100%);
+  border: 2px solid rgb(240, 184, 53);
+}
+
+.label-4 svg use {
+  fill: #1A0100;
+}
+
+.textBanner__money2 {
+  display: none;
+}
+
+.firstScreen__image {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}

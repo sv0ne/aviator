@@ -1,0 +1,67 @@
+$md2: 992.98;
+$md3: 767.98;
+$md4: 479.98;
+
+.pg{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    @media (max-width:#{$md3}px) {
+        grid-template-columns: 1fr;
+    }
+    &__content{
+        padding: 16px 32px;
+        border-radius: var(--br-small);
+        background-color: var(--color-light);
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        font-size: 20px;
+        line-height: 120%;
+        font-weight: 700;
+        @media (max-width:#{$md4}px) or ((max-width:880px) and (min-width:#{$md3}px)) {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+    &__body{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    &__item{
+        flex: 1 0 30%;
+        border-radius: var(--br-small);
+        background-color: var(--color-light);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 16px;
+        text-align: center;
+        position: relative;
+        @media (max-width:#{$md2}px) {
+            flex: 1 0 48%;
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 114px;
+            height: 105px;
+            background-image: url("data:image/svg+xml,%3Csvg width='114' height='105' viewBox='0 0 114 105' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.04' d='M119.254 14.9155L4.43848 -12.3086C3.43128 -7.91543 2.6005 -3.51493 1.94613 0.89293C-3.83063 39.895 4.22243 79.297 25.1593 113.249C26.5996 115.584 28.0951 117.881 29.6362 120.132C32.2612 123.967 35.0257 127.674 37.9323 131.242C41.8416 129.491 45.6919 127.577 49.4821 125.504C49.765 125.353 50.0493 125.196 50.3336 125.039C52.7209 123.72 55.0886 122.339 57.4242 120.899C58.6897 120.119 59.9414 119.324 61.1793 118.514C73.4179 110.525 84.413 101.116 93.9914 90.5311C97.3399 86.831 100.522 82.9824 103.513 78.9964L32.4163 62.1384C33.1262 64.7434 33.8982 67.3286 34.7458 69.8858C35.5443 72.3107 36.3996 74.7145 37.3183 77.0932L78.7675 86.9213C70.9864 94.7253 62.3998 101.66 53.1774 107.617C49.5427 109.979 45.7963 112.182 41.9665 114.228C37.858 108.409 34.1501 102.306 30.8804 95.9796C27.1121 88.7013 23.9207 81.123 21.3436 73.3054C20.41 70.4807 19.5587 67.6238 18.7885 64.7401C15.5483 52.593 13.7658 39.9698 13.608 27.1111C13.511 19.4735 13.9854 11.753 15.0697 4.0047L115.488 27.8152C112.671 36.1352 109.184 44.0782 105.101 51.6039L27.4255 33.1861C27.7807 37.9655 28.3632 42.7069 29.1608 47.3901L111.76 66.9754C114.22 63.0244 116.514 58.9709 118.638 54.8137C122.547 47.1721 125.887 39.1943 128.612 30.927C130.006 26.6946 131.24 22.3895 132.312 18.0118L119.254 14.9155Z' fill='white'/%3E%3C/svg%3E%0A");
+        }
+    }
+    &__text{
+        font-size: 20px;
+        line-height: 120%;
+        font-weight: 700;
+    }
+    &__stats{
+        font-size: 40px;
+        line-height: 48px;
+        margin-bottom: 10px;
+        font-weight: 900;
+    }
+}

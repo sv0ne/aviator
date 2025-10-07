@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('blocks/head.html', {
+    "footerName": "stake-logic",
+	"theme": "runner-runner-megaways"
+})
+<!-- role="dialog" -->
+<body> 
+	@@include('blocks/common-section/header-newThemes.html', {
+		"theme": "runner-runner-megaways",
+		"formatLogo": "webp",
+		"playBtnText": "runner runner megaways"
+	})
+
+	<main class="styledContent container">
+		<!-- firstScreen -->
+		@@include('blocks/common-section/firstScreen-newThemes.html', {
+			"theme": "runner-runner-megaways",
+			"title": "runner runner megaways"
+		})
+
+		<!-- Топ 5 -->
+		@@include('blocks/common-section/topFive-newThemes.html', {
+			"theme": "runner-runner-megaways",
+		})
+
+		@@include('blocks/faq.html')
+	</main>
+	
+	<!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
+	@@include('blocks/common-blocks.html', {
+		"theme": "default"
+	})
+	@@include('blocks/common-section/footer-newThemes.html', {
+		"theme": "runner-runner-megaways",
+		"formatLogo": "webp",
+        "footerName": "stake-logic"
+	})
+	@@include('blocks/common-scripts.html')
+</body>
+</html>

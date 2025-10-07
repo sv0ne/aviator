@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('blocks/head.html', {
+    "footerName": "push-gaming",
+	"theme": "razor-shark"
+})
+<!-- role="dialog" -->
+<body> 
+	@@include('blocks/common-section/header-newThemes.html', {
+		"theme": "razor-shark",
+		"formatLogo": "webp",
+		"playBtnText": "Razor Shark"
+	})
+
+	<main class="styledContent container">
+		<!-- firstScreen -->
+		@@include('blocks/common-section/firstScreen-newThemes.html', {
+			"theme": "razor-shark",
+			"title": "Razor Shark"
+		})
+
+		<!-- Топ 5 -->
+		@@include('blocks/common-section/topFive-newThemes.html', {
+			"theme": "razor-shark",
+		})
+
+		@@include('blocks/faq.html')
+	</main>
+	
+	<!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
+	@@include('blocks/common-blocks.html', {
+		"theme": "default"
+	})
+	@@include('blocks/common-section/footer-newThemes.html', {
+		"theme": "razor-shark",
+		"formatLogo": "webp",
+        "footerName": "push-gaming"
+	})
+	@@include('blocks/common-scripts.html')
+</body>
+</html>

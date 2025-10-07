@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('blocks/head.html', {
+    "footerName": "3oaks",
+	"theme": "aztec-sun"
+})
+<!-- role="dialog" -->
+<body> 
+	@@include('blocks/common-section/header-newThemes.html', {
+		"theme": "aztec-sun",
+		"formatLogo": "webp",
+		"playBtnText": "aztec sun"
+	})
+
+	<main class="styledContent container">
+		<!-- firstScreen -->
+		@@include('blocks/common-section/firstScreen-newThemes.html', {
+			"theme": "aztec-sun",
+			"title": "aztec sun"
+		})
+
+		<!-- Топ 5 -->
+		@@include('blocks/common-section/topFive-newThemes.html', {
+			"theme": "aztec-sun",
+		})
+
+		@@include('blocks/faq.html')
+	</main>
+	
+	<!-- !!! Ниже расположены блоки которые должны быть на всех страницах сайта  -->
+	@@include('blocks/common-blocks.html', {
+		"theme": "default"
+	})
+	@@include('blocks/common-section/footer-newThemes.html', {
+		"theme": "aztec-sun",
+		"formatLogo": "webp",
+        "footerName": "3oaks"
+	})
+	@@include('blocks/common-scripts.html')
+</body>
+</html>
