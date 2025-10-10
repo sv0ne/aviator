@@ -1296,7 +1296,7 @@
         }
     }
     &__logo{
-        height: 64px;
+        height: 120px;
         max-width: 220px;
         object-fit: contain;
     }
@@ -1306,10 +1306,23 @@
         align-items: flex-start;
         flex-direction: column;
         gap: 8px;
+        &:nth-child(2){
+            > p.bold{
+                font-size: 14px;
+            }
+            > p.text-big{
+                font-size: 24px;
+                line-height: 29px;
+            }
+        }
         &_3{
             display: flex;
             flex-direction: column;
             gap: 8px;
+            @media (min-width:1024px) {
+                padding: 32px 0px 8px 0px;
+            }
+            font-size: 14px;
             @media (max-width:#{$md3}px) and (min-width:550px){
                 grid-column: span 2;
                 flex-direction: row;
@@ -1635,6 +1648,27 @@
             box-shadow: 0px 8px 48px 0px rgba(0, 0, 0, 0.2);
             border-radius: 12px 12px 0px 0px;
         }
+        img.min-md3-dn{
+            width: 50px;
+            height: auto;
+        }
+        > .md3-ta-c{
+            @media (max-width:#{$md3}px) {
+                padding: 0px 2px 0px 2px;
+                > p.bold{
+                    font-size: 12px;
+                    font-weight:400;
+                }
+                > p.text-big{
+                    font-size:12px;
+                }
+            }
+        }
+        > .btn.btn_primary{
+            @media (max-width:#{$md3}px) {
+                font-size: 12px;
+            }
+        }
     }
     &__btn{
         position: absolute;
@@ -1683,6 +1717,12 @@
     &__body{
         @media (max-width:#{$md3}px) {
             padding: 8px 16px;
+            > p{
+                font-size: 12px;
+            }
+            .btn_info{
+                font-size: 12px;
+            }
         }
     }
     @media (max-width:#{$md3}px) {

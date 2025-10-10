@@ -106,10 +106,15 @@
   @media (max-width:1024px) {
     margin-left: auto;
     margin-right: auto;
-    float: none;
     width: auto;
     max-width: 100%;
   }
+}
+
+.btn_left{
+    @media (max-width:1024px) {
+        margin: 5px 16px 5px 0px;
+    }
 }
 
 .btn_right, .alignright {
@@ -118,10 +123,21 @@
   @media (max-width:1024px) {
     margin-left: auto;
     margin-right: auto;
-    float: none;
     width: auto;
     max-width: 100%;
   }
+}
+
+.btn_right{
+    @media (max-width:1024px) {
+        margin: 5px 0px 5px 16px;
+    }
+}
+
+.alignleft, .alignright{
+    @media (max-width:1024px) {
+        float: none;
+    }
 }
 
 @if $theme == "light" {

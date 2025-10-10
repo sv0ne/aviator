@@ -2943,7 +2943,7 @@ html[dir=rtl] .firstScreen__boby {
 }
 
 .bookmaker__logo {
-  height: 64px;
+  height: 120px;
   max-width: 220px;
   -o-object-fit: contain;
      object-fit: contain;
@@ -2964,6 +2964,15 @@ html[dir=rtl] .firstScreen__boby {
   gap: 8px;
 }
 
+.bookmaker__col:nth-child(2) > p.bold {
+  font-size: 14px;
+}
+
+.bookmaker__col:nth-child(2) > p.text-big {
+  font-size: 24px;
+  line-height: 29px;
+}
+
 .bookmaker__col_3 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2973,6 +2982,7 @@ html[dir=rtl] .firstScreen__boby {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 8px;
+  font-size: 14px;
 }
 
 .bookmaker__col_4 {
@@ -3237,6 +3247,11 @@ html[dir=rtl] .authorCard__body {
 .welcomeBonus__boby {
   padding: 24px 16px;
   position: relative;
+}
+
+.welcomeBonus__boby img.min-md3-dn {
+  width: 50px;
+  height: auto;
 }
 
 .welcomeBonus__btn {
@@ -4030,6 +4045,12 @@ article.searchResult__item {
   }
 }
 
+@media (min-width: 1024px) {
+  .bookmaker__col_3 {
+    padding: 32px 0px 8px 0px;
+  }
+}
+
 @media (max-width: 1520px) {
   .header__menu {
     padding: 8px 0;
@@ -4084,18 +4105,29 @@ article.searchResult__item {
   .alignleft {
     margin-left: auto;
     margin-right: auto;
-    float: none;
     width: auto;
     max-width: 100%;
+  }
+
+  .btn_left {
+    margin: 5px 16px 5px 0px;
   }
 
   .btn_right,
   .alignright {
     margin-left: auto;
     margin-right: auto;
-    float: none;
     width: auto;
     max-width: 100%;
+  }
+
+  .btn_right {
+    margin: 5px 0px 5px 16px;
+  }
+
+  .alignleft,
+  .alignright {
+    float: none;
   }
 
   img.alignleft,
@@ -4722,8 +4754,36 @@ position sticky у блока .stickyBlock */
     bottom: 124px;
   }
 
+  .welcomeBonus__boby > .md3-ta-c {
+    padding: 0px 2px 0px 2px;
+  }
+
+  .welcomeBonus__boby > .md3-ta-c > p.bold {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .welcomeBonus__boby > .md3-ta-c > p.text-big {
+    font-size: 12px;
+  }
+
+  .welcomeBonus__boby > .btn.btn_primary,
+  .welcomeBonus__boby > .btn_primary.wpcf7-form-control.wpcf7-submit,
+  .navigation.posts-navigation .nav-previous .welcomeBonus__boby > a.btn_primary,
+  .navigation.posts-navigation .nav-next .welcomeBonus__boby > a.btn_primary {
+    font-size: 12px;
+  }
+
   .cookie__body {
     padding: 8px 16px;
+  }
+
+  .cookie__body > p {
+    font-size: 12px;
+  }
+
+  .cookie__body .btn_info {
+    font-size: 12px;
   }
 
   .cookie {
