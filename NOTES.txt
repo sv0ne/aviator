@@ -1,4 +1,15 @@
-Поиск и замена для каждой темы: "img/theme-firstScreen" (должно найти 10 совпадений в каждой теме) на "img/_byTheme" 
-Поиск и замена для тем jetX, towerX, mineIsland: "img/blurBackgrounds" (должно найти 3 совпадений в темах jetX, towerX, mineIsland) на "img/_byTheme/название темы" где название темы это jetX, towerX, mineIsland
-Поиск и замена только для темы mines "img/image12.webp" (2 совпадения) на "img/_byTheme/mines/mines-bg-2.webp"
-Поиск и замена только для темы mines "img/mines-bg.webp" (1 совпадения) на "img/_byTheme/mines/mines-bg.webp"
+Для станиц home отключены не которые блоки
+После 
+
+    <!-- Топ 5 -->
+    @@include('blocks/common-section/topFive-newThemes.html', {
+        "theme": "ecuador-gold",
+    })
+
+Должны быть 
+
+    @@include('blocks/breadcrumbs.html')
+    @@include('blocks/seo-text.html')
+    @@include('blocks/faq.html')
+    @@include('blocks/bookmakers.html')
+    @@include('blocks/reviews.html')
