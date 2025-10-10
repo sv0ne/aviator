@@ -48,7 +48,7 @@
         }
     }
     &_animated{
-        @if($theme == 'default' or $theme == 'pin-up' or $theme == 'light' or $theme == 'balloon'){
+        @if($theme == "default" or $theme == "pin-up" or $theme == "light" or $theme == "balloon"){
             box-shadow: var(--shadow-btn-primary);
         }
         position: relative;
