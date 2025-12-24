@@ -1069,6 +1069,14 @@ img.alignleft, img.alignright{
             filter: drop-shadow(-2px 2px 4px #00000050);
         }
     }
+    @if($theme == 'default'){
+        img{
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+            max-width: 100%;
+        }
+    }
 }
 
 @keyframes popEffect {
