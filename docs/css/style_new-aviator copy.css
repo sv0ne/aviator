@@ -1,0 +1,124 @@
+:root {
+  --x1_inset: -84px;
+  --x1_top: -48px;
+  --x1_inset_600: -50px;
+  --x1_top_600: -18px;
+  --x2_inset: -83px;
+  --x2_top: -46px;
+  --x2_inset_600: -45px;
+  --x2_top_600: -30px;
+  --money_inset: 20px;
+  --money_top: -80px;
+  --money_inset_md2: -7px;
+  --money_top_md2: -86px;
+  --money_inset_600: 5px;
+  --money_top_600: -50px;
+}
+
+.btn_primary {
+  background: var(--color-brand);
+  color: var(--color-btn-primary);
+}
+
+.btn_primary:hover {
+  background: var(--color-brand-hover);
+}
+
+.label-4 {
+  background-color: rgb(52, 199, 89);
+}
+
+.label-4 svg use {
+  fill: #fff;
+}
+
+.textBanner__money2 {
+  display: none;
+}
+
+.textBanner__t3 {
+  background: linear-gradient(93.51deg, #EF6C0D 3.79%, #F15B25 106.13%);
+  color: #FFF;
+}
+
+.bg-black-05 {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.firstScreen__blur {
+  background: linear-gradient(133deg, #008E4A 0%, #A5EF5B 100%);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.firstScreen__bobyWrap:after {
+  background: none;
+}
+
+.firstscreen-bg {
+  display: none;
+}
+
+.firstScreen__buttons .btn.btn_info {
+  color: var(--color-btn-info);
+  border: var(--border-btn-info);
+  background: var(--bg-btn-info);
+}
+
+.firstScreen__buttons .btn.btn_info:hover:not(.disabled) {
+  background: var(--bg-btn-info-hover);
+}
+
+.firstScreen__buttons .btn.btn_primary {
+  background: var(--bg-btn-secondary);
+  color: var(--color-btn-secondary);
+  border: var(--border-btn-secondary);
+}
+
+.firstScreen__buttons .btn.btn_primary:hover {
+  background-color: var(--bg-btn-secondary-hover);
+}
+
+.firstScreen__image {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  inset-inline-end: 0px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: relative;
+  height: 100%;
+}
+
+.firstScreen__image img {
+  width: 100%;
+  height: auto;
+}
+
+.authorCard__body {
+  --deg: 106deg;
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--deg)), color-stop(22.23%, #008E4A), color-stop(77.77%, #A5EF5B));
+  background: linear-gradient(var(--deg), #008E4A 22.23%, #A5EF5B 77.77%);
+}
+
+html[dir=rtl] .authorCard__body {
+  --deg: 286deg;
+}
+
+@media (min-width: 767.98px) {
+  .firstScreen__boby {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .firstScreen__bobyWrap {
+    background: linear-gradient(133deg, #008E4A 0%, #A5EF5B 100%);
+    border-radius: 16px;
+    padding: 16px 32px;
+  }
+}
