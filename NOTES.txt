@@ -6,7 +6,7 @@
         "theme": "ecuador-gold",
     })
 
-Должны быть 
+Должны быть  
 
     @@include('blocks/breadcrumbs.html')
     @@include('blocks/seo-text.html')
