@@ -88,20 +88,16 @@
 .firstScreen__image {
   -ms-flex-item-align: end;
       align-self: flex-end;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  inset-inline-end: 0px;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  position: relative;
-  height: 100%;
 }
 
 .firstScreen__image img {
-  width: 100%;
-  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: right bottom;
+     object-position: right bottom;
 }
 
 .authorCard__body {
@@ -114,9 +110,19 @@ html[dir=rtl] .authorCard__body {
   --deg: 286deg;
 }
 
+.textBanner {
+  margin-bottom: 32px !important;
+}
+
 @media (min-width: 767.98px) {
   .firstScreen__boby {
     overflow: hidden;
+  }
+
+  .firstScreen__image {
+    position: relative;
+    grid-column: 2;
+    grid-row: 1/4;
   }
 }
 
@@ -126,8 +132,6 @@ html[dir=rtl] .authorCard__body {
   }
 
   .firstScreen__bobyWrap {
-    background: linear-gradient(133deg, #008E4A 0%, #A5EF5B 100%);
     border-radius: 16px;
-    padding: 16px 32px;
   }
 }

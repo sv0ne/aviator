@@ -349,7 +349,15 @@
         @media (min-width:#{$md3}px) {
             padding-bottom: 40px;
         }
+        &.is-flipped{
+            @media (max-width:#{$md3}px) {
+                .firstScreen__boby{
+                    transform: rotateY(180deg);
+                }
+            }
+        }
         &__bobyWrap{
+            perspective: 1000px;
             @media (min-width:#{$md3}px) {
                 padding: 4px;
                 position: relative;
@@ -382,27 +390,53 @@
             }
             z-index: 2;
             position: relative;
-            display: flex;
-            @media (max-width:#{$md3}px) {
-                flex-direction: column-reverse;
+            display: grid;
+            grid-template-columns: 66.5% auto;
+            @media (max-width:1030px) {
+                grid-template-columns: 70% auto;
+                
             }
+            @media (max-width:#{$md3}px) {
+                grid-template-columns: 1fr;
+                > *:not(.firstScreen__bg) {
+                    position: relative;
+                    z-index: 5;
+                    -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+                }
+                transition: transform 0.7s ease;
+                transform-style: preserve-3d;
+            } 
         }
         &__text{
-            flex: 0 0 66.5%;
-            padding-block: 64px;
+            padding-top: 64px;
             padding-inline: 64px 0px;
             position: relative;
             z-index: 3;
-            @media (max-width:1030px) {
-                flex: 0 0 70%;
-            }
             @media (max-width:#{$md2}px) {
-                padding-block: 32px;
+                padding-top: 32px;
                 padding-inline: 32px 0px;
             }
             @media (max-width:#{$md3}px) {
-                padding: 16px 0;
+                padding: 24px 16px 16px 16px;
+                grid-row: 1;
+                grid-column: 1;
                 flex: 1;
+            }
+        }
+        &__textArea{
+            grid-column: 1;
+            position: relative;
+            z-index: 3;
+            padding-top: 16px;
+            padding-inline: 64px 0px;
+            @media (max-width:#{$md2}px) {
+                padding-inline: 32px 0px;
+            }
+            @media (max-width:#{$md3}px) {
+                padding: 16px;
+                transform: rotateY(180deg);
+                grid-row: 1 / 4;
             }
         }
         &__image{
@@ -417,7 +451,8 @@
                 z-index: 2;
             }
             @media (max-width:#{$md3}px) {
-                display: none;
+                grid-column: 1;
+                grid-row: 2;
             }
             @media (max-width:#{$md2}px) {
                 img{
@@ -428,9 +463,16 @@
         }
         &__imageWrapper{
             position: relative;
+            @media (max-width:#{$md3}px) {
+                display: flex;
+                justify-content: center;
+            }
         }
         @if $theme == "new-format" {
             &__flagSVG{
+                @media (max-width:#{$md3}px) {
+                    display: none;
+                }
                 &:after, &:before{
                     content: "";
                     background-image: var(--flag-url);
@@ -465,7 +507,19 @@
             }
         }
         &__buttons{
+            grid-column: 1;
+            position: relative;
+            z-index: 3;
+            padding-top: 16px;
+            padding-bottom: 64px;
+            padding-inline: 64px 0px;
+            @media (max-width:#{$md2}px) {
+                padding-inline: 32px 0px;
+                padding-bottom: 32px;
+            }
             @media (max-width:#{$md3}px) {
+                padding: 0 16px 16px 16px;
+                grid-row: 3;
                 > * {
                     flex: 1;
                 }
@@ -478,6 +532,7 @@
             }
         }
         &__bg{
+            backface-visibility: inherit;
             overflow: hidden;
             border-radius: 14px;
             position: absolute;
@@ -490,12 +545,12 @@
                 width: 100%;
                 height: auto;
             }
-            @media (max-width:540px) {
-                top: -220px;
-            }
-            @media (max-width:#{$md3}px) {
-                display: none;
-            }
+            // @media (max-width:540px) {
+            //     top: -220px;
+            // }
+            // @media (max-width:#{$md3}px) {
+            //     display: none;
+            // }
         }
         &__blur{
             position: absolute;

@@ -919,6 +919,16 @@ $(".scroll").each(function(){new ScrollElement($(this));});
         });
     })();
 
+    // Логика переворота карточки firstScreen по клику на мобильных устройствах
+    (function () {
+        const card = document.querySelector('.firstScreen');
+        card.addEventListener('click', () => {
+            if(w < BREAKPOINT_md3){
+                card.classList.toggle('is-flipped');
+            }
+        });
+    })();
+
     // lazyload загрузка видео в футере (тема tower-rush)
     (function () {
         let videoLink = $(".js-footer-video").data('src');

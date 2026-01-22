@@ -81,9 +81,7 @@ $md2: 992.98;
 
 .firstScreen__bobyWrap{
     @media (max-width:#{$md3}px) {
-        background: linear-gradient(133deg, #008E4A 0%, #A5EF5B 100%);
         border-radius: 16px;
-        padding: 16px 32px;
     }
 }
 
@@ -95,13 +93,14 @@ $md2: 992.98;
 
 .firstScreen__image{
     align-self: flex-end;
-    flex: 1;
-    inset-inline-end: 0px;
     justify-content: flex-end;
-    position: relative;
-    height: 100%;
+    @media (min-width:#{$md3}px) {
+        position: relative;
+        grid-column: 2;
+        grid-row: 1/4;
+    }
     img{
-        width: 100%;
-        height: auto;
+        object-fit: contain;
+        object-position: right bottom;
     }
 }

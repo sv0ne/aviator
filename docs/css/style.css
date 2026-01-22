@@ -2389,14 +2389,18 @@ ol.list li:before,
   background: linear-gradient(180deg, rgba(13, 16, 22, 0) 0%, #232325 100%);
 }
 
+.firstScreen__bobyWrap {
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
 .firstScreen__boby {
   border-radius: 14px;
   --deg: 133deg;
   z-index: 2;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: 66.5% auto;
 }
 
 html[dir=rtl] .firstScreen__boby {
@@ -2404,13 +2408,18 @@ html[dir=rtl] .firstScreen__boby {
 }
 
 .firstScreen__text {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 66.5%;
-          flex: 0 0 66.5%;
-  padding-block: 64px;
+  padding-top: 64px;
   padding-inline: 64px 0px;
   position: relative;
   z-index: 3;
+}
+
+.firstScreen__textArea {
+  grid-column: 1;
+  position: relative;
+  z-index: 3;
+  padding-top: 16px;
+  padding-inline: 64px 0px;
 }
 
 .firstScreen__imageWrapper {
@@ -2445,7 +2454,18 @@ html[dir=rtl] .firstScreen__boby {
           filter: blur(4px);
 }
 
+.firstScreen__buttons {
+  grid-column: 1;
+  position: relative;
+  z-index: 3;
+  padding-top: 16px;
+  padding-bottom: 64px;
+  padding-inline: 64px 0px;
+}
+
 .firstScreen__bg {
+  -webkit-backface-visibility: inherit;
+          backface-visibility: inherit;
   overflow: hidden;
   border-radius: 14px;
   position: absolute;
@@ -4136,10 +4156,8 @@ article.searchResult__item {
 }
 
 @media (max-width: 1030px) {
-  .firstScreen__text {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 70%;
-            flex: 0 0 70%;
+  .firstScreen__boby {
+    grid-template-columns: 70% auto;
   }
 }
 
@@ -4219,13 +4237,22 @@ article.searchResult__item {
   }
 
   .firstScreen__text {
-    padding-block: 32px;
+    padding-top: 32px;
+    padding-inline: 32px 0px;
+  }
+
+  .firstScreen__textArea {
     padding-inline: 32px 0px;
   }
 
   .firstScreen__image img {
     height: auto;
     width: 300px;
+  }
+
+  .firstScreen__buttons {
+    padding-inline: 32px 0px;
+    padding-bottom: 32px;
   }
 
   .textBanner__t1 {
@@ -4635,21 +4662,59 @@ position sticky у блока .stickyBlock */
     border-radius: 0px;
   }
 
+  .firstScreen.is-flipped .firstScreen__boby {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  }
+
   .firstScreen__boby {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    grid-template-columns: 1fr;
+    -webkit-transition: -webkit-transform 0.7s ease;
+    transition: -webkit-transform 0.7s ease;
+    transition: transform 0.7s ease;
+    transition: transform 0.7s ease, -webkit-transform 0.7s ease;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+  }
+
+  .firstScreen__boby > *:not(.firstScreen__bg) {
+    position: relative;
+    z-index: 5;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
   .firstScreen__text {
-    padding: 16px 0;
+    padding: 24px 16px 16px 16px;
+    grid-row: 1;
+    grid-column: 1;
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
   }
 
+  .firstScreen__textArea {
+    padding: 16px;
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    grid-row: 1/4;
+  }
+
   .firstScreen__image {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .firstScreen__imageWrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .firstScreen__flagSVG {
     display: none;
   }
 
@@ -4658,14 +4723,15 @@ position sticky у блока .stickyBlock */
     line-height: 36px;
   }
 
+  .firstScreen__buttons {
+    padding: 0 16px 16px 16px;
+    grid-row: 3;
+  }
+
   .firstScreen__buttons > * {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
-  }
-
-  .firstScreen__bg {
-    display: none;
   }
 
   .textBanner__t5 {
@@ -5070,12 +5136,6 @@ position sticky у блока .stickyBlock */
   .bookmaker__footer {
     margin-top: 32px;
     padding: 0;
-  }
-}
-
-@media (max-width: 540px) {
-  .firstScreen__bg {
-    top: -220px;
   }
 }
 
