@@ -43,7 +43,6 @@
         display: flex;
         align-items: center;
         gap: 16px;
-
         @if($theme == 'light'){
             .btn-dropdown{
                 padding: 8px;
