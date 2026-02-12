@@ -3976,6 +3976,54 @@ article.searchResult__item {
     /* immutable */
   }
 
+  .header__logo {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+
+  .header__panel {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .header__menu {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .header__menuLinks {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    min-width: 0;
+    overflow-x: clip;
+    -webkit-margin-end: 16px;
+            margin-inline-end: 16px;
+  }
+
+  .header__menuLinks .popover:first-child .popover-popup {
+    inset-inline-start: 32px;
+  }
+
+  .header__menuLinks .popover.order-4 .popover-popup {
+    inset-inline-end: 32px;
+    inset-inline-start: auto !important;
+  }
+
+  .header__buttons {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
+
   .header__menuBtn {
     display: none;
   }
@@ -4571,6 +4619,10 @@ position sticky у блока .stickyBlock */
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+
+  .header__menuLinks > *:not(:last-child) {
+    margin-bottom: 16px;
   }
 
   .header__nav {

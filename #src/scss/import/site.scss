@@ -13,11 +13,18 @@
     }
     &__logo{
         display: flex;
+        @media (min-width:#{$md3}px) {
+            flex: 0 0 auto;
+        }
     }
     &__panel{
         display: flex;
         align-items: center;
         flex: 1;
+        @media (min-width:#{$md3}px) {
+            flex: 1 1 auto;
+            min-width: 0;
+        }
         @media (max-width:if($theme == "pin-up", "1580px", "1430px")) and (min-width:#{$md3}px) {
             grid-column: span 2;
             grid-row: 2;
@@ -29,12 +36,41 @@
         display: flex;
         flex: 1;
         gap: 16px;
+        @media (min-width:#{$md3}px) {
+            flex: 1 1 auto;
+            min-width: 0;
+        }
         @media (max-width:1520px) {
             padding: 8px 0;
             gap: 0;
         }
         .btn-dropdown svg use{
             fill: var(--fill-icon-primary);
+        }
+    }
+    &__menuLinks{
+        @media (min-width:#{$md3}px) {
+            display: flex;
+            flex: 1 1 auto;
+            min-width: 0;
+            overflow-x: clip;
+            margin-inline-end: 16px;
+            .popover:first-child{
+                .popover-popup{
+                    inset-inline-start: 32px;
+                }
+            }
+            .popover.order-4{
+                .popover-popup{
+                    inset-inline-end: 32px;
+                    inset-inline-start: auto !important;
+                }
+            }
+        }
+        @media (max-width:#{$md3}px) {
+            > *:not(:last-child){
+                margin-bottom: 16px;
+            }
         }
     }
     &__nav{
@@ -56,6 +92,9 @@
         }
     }
     &__buttons{
+        @media (min-width:#{$md3}px) {
+            flex: 0 0 auto;
+        }
         gap: 16px;
         display: flex;
         padding: 8px;
