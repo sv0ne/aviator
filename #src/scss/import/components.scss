@@ -945,6 +945,178 @@ img.alignleft, img.alignright{
 	}
 }
 
+/////////////////////// Contact page blocks ///////////////////////////
+
+.brandBanner{
+    padding: 16px 0 20px 0;
+    &__body{
+        background-color: var(--color-light);
+        border-radius: var(--br-large);
+        padding: 40px 16px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 40px;
+        position: relative;
+        overflow: hidden;
+        @media (max-width:#{$md4}px) {
+            gap: 20px;
+        }
+    }
+    &__content{
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    &__logo{
+        width: auto;
+        height: 40px;
+        object-fit: contain;
+        max-width: 100%;
+    }
+    &__text{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    &__title{
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 120%;
+    }
+    &__socials{
+        font-size: 13px;
+        line-height: 120%;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        a:hover{
+            text-decoration: underline;
+        }
+        a:not(:last-child){
+            position: relative;
+            &:after{
+                content: "";
+                position: absolute;
+                right: -10px;
+                top: 0;
+                display: inline-block;
+                width: 1px;
+                height: 16px;
+                background-color: var(--color-gray);
+            }
+        }
+    }
+    &__launch{
+        color: var(--color-gray);
+        font-size: 13px;
+        line-height: 120%;
+    }
+    &__petals{
+        width: 75px;
+        height: auto;
+        &_2{
+            transform: scaleX(-1);
+        }
+    }
+    &__blur{
+        position: absolute;
+        bottom: -100px;
+        width: 200px;
+        height: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -100px;
+        background: #FFFFFF;
+        filter: blur(120px);
+        z-index: -1;
+    }
+}
+
+.awards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 20px 0 40px 0;
+    @media (max-width:#{$md3}px) {
+        gap: 24px;
+        padding: 16px 0 24px 0;
+    }
+    &__item{
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 130%;
+        padding: 40px;
+        background-color: var(--color-light);
+        border-radius: var(--br-large);
+        @media (max-width:#{$md3}px) {
+            padding: 24px;
+        }
+    }
+}
+
+.cardsGame{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    width: 100%;
+    padding: 40px 0 16px 0;
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 639px) {
+        padding: 24px 0 16px 0;
+        display: grid;
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: 42vw;
+
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+
+        padding-inline-end: 16px;
+
+        gap: 16px;
+        padding-bottom: 24px;
+
+        //scroll-padding-left: 16px;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__item{
+        display: block;
+        border-radius: 24px;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.1s ease;
+            will-change: transform;
+            aspect-ratio: 3/4;
+        }
+        @media (max-width: 639px) {
+            scroll-snap-align: start;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover img {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
 /////////////////////////// Списки ///////////////////////////////
 
 .listComparison{
@@ -953,6 +1125,7 @@ img.alignleft, img.alignright{
         align-items: center;
         gap: 16px;
 		&:before{
+            display: none;
 			content: "";
 			width: 24px;
 			height: 24px;
