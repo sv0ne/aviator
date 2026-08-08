@@ -960,7 +960,7 @@ img.alignleft, img.alignright{
         position: relative;
         overflow: hidden;
         @media (max-width:#{$md4}px) {
-            gap: 20px;
+            gap: 8px;
         }
     }
     &__content{
@@ -1020,6 +1020,8 @@ img.alignleft, img.alignright{
     &__petals{
         width: 75px;
         height: auto;
+        flex-shrink: 1;
+        min-width: 0;
         &_2{
             transform: scaleX(-1);
         }

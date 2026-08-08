@@ -1907,6 +1907,9 @@ html[dir=rtl] .breadcrumbs__link:not(:first-child):before {
 .brandBanner__petals {
   width: 75px;
   height: auto;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  min-width: 0;
 }
 
 .brandBanner__petals_2 {
@@ -5411,7 +5414,7 @@ position sticky у блока .stickyBlock */
   }
 
   .brandBanner__body {
-    gap: 20px;
+    gap: 8px;
   }
 
   .tagsList li {
