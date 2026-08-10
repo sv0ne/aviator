@@ -1976,6 +1976,114 @@ html[dir=rtl] .breadcrumbs__link:not(:first-child):before {
   aspect-ratio: 3/4;
 }
 
+.cardsGrid {
+  padding-top: 16px;
+}
+
+.cardsGrid__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding: 16px 0;
+  color: var(--color-opposite);
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.cardsGrid__container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  width: 100%;
+  padding: 16px 0 40px 0;
+}
+
+.gameCard {
+  display: block;
+  aspect-ratio: 3/4;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  background: #1a1a1a;
+}
+
+.gameCard__name {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: anywhere;
+}
+
+.gameCard__provider {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 600;
+  color: white;
+  text-wrap: nowrap;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 8px 8px;
+  padding: 4px 8px;
+  backdrop-filter: blur(4px) saturate(200%);
+}
+
+.gameCard__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  /* беремо картинку зі змінної */
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: blur(20px) saturate(200%);
+          filter: blur(20px) saturate(200%);
+  /* saturate додає соковитості */
+  /* Трохи збільшуємо, щоб розмиті краї не світилися білим */
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 0.8;
+  /* Регулюємо яскравість підкладки */
+}
+
+.gameCard img {
+  width: 100%;
+  height: auto;
+  display: block;
+  -webkit-transition: -webkit-transform 0.1s ease;
+  transition: -webkit-transform 0.1s ease;
+  transition: transform 0.1s ease;
+  transition: transform 0.1s ease, -webkit-transform 0.1s ease;
+  will-change: transform;
+  mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, black), to(transparent));
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, black), to(transparent));
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
 .listComparison li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4430,6 +4538,10 @@ article.searchResult__item {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .cardsGrid__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .bookmaker__row {
     grid-template-columns: 1fr 1fr auto;
   }
@@ -5305,6 +5417,37 @@ position sticky у блока .stickyBlock */
   .cardsGame__item {
     scroll-snap-align: start;
   }
+
+  .cardsGrid {
+    padding-top: 8px;
+    -webkit-padding-start: 16px;
+            padding-inline-start: 16px;
+    margin: 0 -16px;
+  }
+
+  .cardsGrid__container {
+    display: grid;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 42vw;
+    overflow-x: auto;
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+    -webkit-padding-end: 16px;
+            padding-inline-end: 16px;
+    gap: 16px;
+    padding-bottom: 24px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .cardsGrid__container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gameCard {
+    scroll-snap-align: start;
+  }
 }
 
 @media (max-width: 600px) {
@@ -5471,6 +5614,12 @@ position sticky у блока .stickyBlock */
 
 @media (hover: hover) and (pointer: fine) {
   .cardsGame__item:hover img {
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+
+  .gameCard:hover img {
     -webkit-transform: scale(1.05);
         -ms-transform: scale(1.05);
             transform: scale(1.05);
