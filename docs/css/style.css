@@ -5420,33 +5420,10 @@ position sticky у блока .stickyBlock */
 
   .cardsGrid {
     padding-top: 8px;
-    -webkit-padding-start: 16px;
-            padding-inline-start: 16px;
-    margin: 0 -16px;
   }
 
   .cardsGrid__container {
-    display: grid;
-    grid-template-columns: none;
-    grid-auto-flow: column;
-    grid-auto-columns: 42vw;
-    overflow-x: auto;
-    -ms-scroll-snap-type: x mandatory;
-        scroll-snap-type: x mandatory;
-    -webkit-padding-end: 16px;
-            padding-inline-end: 16px;
-    gap: 16px;
-    padding-bottom: 24px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .cardsGrid__container::-webkit-scrollbar {
-    display: none;
-  }
-
-  .gameCard {
-    scroll-snap-align: start;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

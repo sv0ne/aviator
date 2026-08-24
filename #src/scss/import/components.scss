@@ -1123,8 +1123,6 @@ img.alignleft, img.alignright{
     padding-top: 16px;
     @media (max-width: 639px) {
         padding-top: 8px;
-        padding-inline-start: 16px;
-        margin: 0 -16px;
     }
     &__title{
         display: flex;
@@ -1146,27 +1144,7 @@ img.alignleft, img.alignright{
             grid-template-columns: repeat(3, 1fr);
         }
         @media (max-width: 639px) {
-            display: grid;
-            grid-template-columns: none;
-            grid-auto-flow: column;
-            grid-auto-columns: 42vw;
-
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-
-            padding-inline-end: 16px;
-
-            gap: 16px;
-            padding-bottom: 24px;
-
-            //scroll-padding-left: 16px;
-
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-
-            &::-webkit-scrollbar {
-                display: none;
-            }
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 }
@@ -1243,9 +1221,6 @@ img.alignleft, img.alignright{
         -webkit-mask-image: linear-gradient(to bottom,
                 black 50%,
                 transparent 100%);
-    }
-    @media (max-width: 639px) {
-        scroll-snap-align: start;
     }
     @media (hover: hover) and (pointer: fine) {
         &:hover img {
