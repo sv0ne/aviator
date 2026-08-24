@@ -1143,8 +1143,42 @@ img.alignleft, img.alignright{
         @media (max-width: 1024px) {
             grid-template-columns: repeat(3, 1fr);
         }
+    }
+    &:not(.disableScroll){
         @media (max-width: 639px) {
-            grid-template-columns: repeat(2, 1fr);
+            padding-inline-start: 16px;
+            margin: 0 -16px;
+
+            .cardsGrid__container{
+                display: grid;
+                grid-template-columns: none;
+                grid-auto-flow: column;
+                grid-auto-columns: 42vw;
+
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+
+                padding-inline-end: 16px;
+
+                gap: 16px;
+                padding-bottom: 24px;
+
+                //scroll-padding-left: 16px;
+
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+        }
+    }
+    &.disableScroll{
+        @media (max-width: 639px) {
+            .cardsGrid__container{
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     }
 }
@@ -1221,6 +1255,9 @@ img.alignleft, img.alignright{
         -webkit-mask-image: linear-gradient(to bottom,
                 black 50%,
                 transparent 100%);
+    }
+    @media (max-width: 639px) {
+        scroll-snap-align: start;
     }
     @media (hover: hover) and (pointer: fine) {
         &:hover img {

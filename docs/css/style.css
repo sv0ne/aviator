@@ -5422,8 +5422,38 @@ position sticky у блока .stickyBlock */
     padding-top: 8px;
   }
 
-  .cardsGrid__container {
+  .cardsGrid:not(.disableScroll) {
+    -webkit-padding-start: 16px;
+            padding-inline-start: 16px;
+    margin: 0 -16px;
+  }
+
+  .cardsGrid:not(.disableScroll) .cardsGrid__container {
+    display: grid;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 42vw;
+    overflow-x: auto;
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+    -webkit-padding-end: 16px;
+            padding-inline-end: 16px;
+    gap: 16px;
+    padding-bottom: 24px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .cardsGrid:not(.disableScroll) .cardsGrid__container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cardsGrid.disableScroll .cardsGrid__container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gameCard {
+    scroll-snap-align: start;
   }
 }
 
